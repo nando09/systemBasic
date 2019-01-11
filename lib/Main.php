@@ -19,7 +19,7 @@ class Main{
 	}
 
 	private function setUrl(){
-		$this->url = empty($_GET['url']) ? 'site' : $_GET['url'];
+		$this->url = empty($_GET['url']) ? 'Site' : $_GET['url'];
 	}
 
 	private function setExploder(){

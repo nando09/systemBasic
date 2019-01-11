@@ -1,3 +1,3 @@
 <?php include 'view/patterns/header.php' ?>
-<h1>HOME</h1>
+<h1>Fornecedores</h1>
 <?php include 'view/patterns/footer.php' ?>
