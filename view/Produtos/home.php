@@ -24,6 +24,7 @@
 		processData: false,
 		contentType: false,
 		success: function(dados) {
+			console.log(dados);
 			for (var i = 0; i < dados.length; i++) {
 				$("#produtos").append('<tr><td>' + dados[i] + '</td></tr>');
 			}
