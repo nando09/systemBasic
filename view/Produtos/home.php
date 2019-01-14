@@ -1,22 +1,21 @@
 <?php include 'view/patterns/header.php' ?>
+					<!--/.span3-->
+<div class="span7">
+	
+</div>
+<div class="span2">
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				<td>Produtos</td>
+				<td>
+					<strong>PRODUTOS</strong>
+				</td>
 			</tr>
 		</thead>
 		<tbody id="produtos">
-			<tr>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<td>@fat</td>
-			</tr>
-			<tr>
-				<td>@mdo</td>
-			</tr>
 		</tbody>
 	</table>
+</div>
 <script type="text/javascript">
 	$.ajax({
 		url: '/System/systemBasic/view/Produtos/produtos.php', // Url do lado server que vai receber o arquivo

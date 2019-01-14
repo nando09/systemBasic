@@ -1,4 +1,3 @@
-					</div>
 				</div>
 			</div>
 			<!--/.container-->
@@ -9,6 +8,9 @@
 				<b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights reserved.
 			</div>
 		</div>
+		<!-- BOOTSTRAP V4.2 -->
+		<!-- <script src="/System/systemBasic/bootstrap/js2/bootstrap.min.js" type="text/javascript"></script> -->
+		<!-- BOOTSTRAP V2.2.2 -->
 		<script src="/System/systemBasic/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="/System/systemBasic/scripts/flot/jquery.flot.js" type="text/javascript"></script>
 		<script src="/System/systemBasic/scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>

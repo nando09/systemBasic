@@ -5,6 +5,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Edmin</title>
+		<!-- BOOTSTRAP V4.2 -->
+		<!-- <link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.min.css" rel="stylesheet"> -->
+		<!-- <link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap-responsive.min.css" rel="stylesheet"> -->
+		<!-- BOOTSTRAP V4.2 -->
 		<link type="text/css" href="/System/systemBasic/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link type="text/css" href="/System/systemBasic/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 		<link type="text/css" href="/System/systemBasic/css/theme.css" rel="stylesheet">
@@ -106,6 +110,3 @@
 						</div>
 						<!--/.sidebar-->
 					</div>
-					<!--/.span3-->
-					<div class="span9">
-						
