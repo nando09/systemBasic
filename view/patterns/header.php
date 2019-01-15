@@ -5,12 +5,20 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Edmin</title>
+		<!-- BOOTSTRAP V4.2 -->
+		<!-- <link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.min.css" rel="stylesheet"> -->
+		<!-- <link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap-responsive.min.css" rel="stylesheet"> -->
+		<!-- BOOTSTRAP V4.2 -->
 		<link type="text/css" href="/System/systemBasic/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link type="text/css" href="/System/systemBasic/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 		<link type="text/css" href="/System/systemBasic/css/theme.css" rel="stylesheet">
 		<link type="text/css" href="/System/systemBasic/images/icons/css/font-awesome.css" rel="stylesheet">
 		<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 			rel='stylesheet'>
+		<script src="/System/systemBasic/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script src="/System/systemBasic/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
 	</head>
 	<body>
 		<div class="navbar navbar-fixed-top">
@@ -102,6 +110,3 @@
 						</div>
 						<!--/.sidebar-->
 					</div>
-					<!--/.span3-->
-					<div class="span9">
-						
