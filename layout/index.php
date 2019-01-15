@@ -6,50 +6,55 @@
 	<title>Edmin</title>
 	<link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap-responsive.min.css" rel="stylesheet">
-	<style type="text/css">
-		#body{
-			background: orange;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="/System/systemBasic/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/System/systemBasic/images/icons/fontawesome/css/all.css">
 </head>
 <body id="body">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
-				<a class="navbar-brand" href="#">Edmin</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<form class="form-inline">
-					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
-
-				<div class="collapse navbar-collapse my-2 my-lg-0" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-						</li>
-						<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Dropdown
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Something else here</a>
+			<div class="row">
+				<div class="col-md-1">Edmin</div>
+				<div class="col-md-3">
+					<div class="input-group">
+						<input type="text" class="form-control search-primary" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
 						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<ul class="nav justify-content-end">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Link</a>
 						</li>
 						<li class="nav-item">
-						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+							<a class="nav-link" href="#">Link</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+						</li>
+						<li class="nav-item">
+							<!-- Example split danger button -->
+							<div class="btn-group">
+								<div class="btn btn-sm nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fernando Batista</div>
+								<button class="btn btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span class="sr-only">Toggle Dropdown</span>
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Separated link</a>
+								</div>
+							</div>
 						</li>
 					</ul>
 				</div>
+			</div>
 		</div>
 	</nav>
+
 
 	<script src="/System/systemBasic/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>

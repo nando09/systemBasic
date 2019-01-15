@@ -7,9 +7,11 @@
 }
 
 #body{
-/*	background: orange;*/
+	background: orange;
 }
 
+
+/*  NAVAGAÇÂO  */
 .navbar{
 	border-bottom: 1px solid #bbb;
 }
@@ -27,4 +29,11 @@
 	padding: 0 10px;
 }
 
+.nav-link {
+	padding: 0 1rem;
+}
 
+.dropdown-menu {
+	right: 0;
+	left: inherit;
+}
