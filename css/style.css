@@ -1,0 +1,30 @@
+*{
+	color: gray;
+}
+
+.row{
+	width: 100%;
+}
+
+#body{
+/*	background: orange;*/
+}
+
+.navbar{
+	border-bottom: 1px solid #bbb;
+}
+
+.search-primary{
+	height: 25px;
+}
+
+.fas.fa-search{
+	font-size: 15px;
+}
+
+#button-addon2{
+	height: 25px;
+	padding: 0 10px;
+}
+
+
