@@ -36,7 +36,7 @@
 						<li class="nav-item">
 							<!-- Example split danger button -->
 							<div class="btn-group">
-								<div class="btn btn-sm nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fernando Batista</div>
+								<div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fernando Batista</div>
 								<button class="btn btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<span class="sr-only">Toggle Dropdown</span>
 								</button>
