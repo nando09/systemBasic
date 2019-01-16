@@ -31,6 +31,20 @@
 							<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Suporte</a>
 						</li>
 						<li class="nav-item">
+							<div class="btn-group">
+								<div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fas fa-sms"></i>
+								</div>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Seu Perfil</a>
+									<a class="dropdown-item" href="#">Editar Perfil</a>
+									<a class="dropdown-item" href="#">Configuração</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Logout</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item">
 							<!-- Example split danger button -->
 							<div class="btn-group">
 								<div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,8 +67,31 @@
 			</div>
 		</div>
 	</nav>
-
-
+	<div id="conteudo">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<ul class="list-group">
+						<li class="list-group-item disabled" aria-disabled="true">Fernando</li>
+						<li class="list-group-item"><a href="/System/systemBasic/Produtos">Painel </a></li>
+						<li class="list-group-item"><a href="/System/systemBasic/Clientes">Notícias </a></li>
+						<li class="list-group-item"><a href="/System/systemBasic/Fonecedores"><i class="menu-icon icon-paste"></i>Entrada </a></li>
+						<li class="list-group-item"><a href="/System/systemBasic/Pedidos"><i class="menu-icon icon-shopping-cart"></i>Projetos </a></li>
+					</ul>
+					<ul class="list-group nav-lateral">
+						<li class="list-group-item"><i class="menu-icon fab fa-dropbox"></i>Produtos</li>
+						<li class="list-group-item"><i class="menu-icon fas fa-address-book"></i>Clientes</li>
+						<li class="list-group-item"><i class="fas fa-truck-loading"></i>Fornecedores</li>
+						<li class="list-group-item"><i class="fas fa-cart-arrow-down"></i>Pedidos</li>
+					</ul>
+					<ul class="list-group nav-lateral">
+						<li class="list-group-item"><i class="fas fa-concierge-bell"></i>Serviços</li>
+						<li class="list-group-item"><i class="fas fa-sign-out-alt"></i>Logout</li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+	</div>
 	<script src="/System/systemBasic/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/bootstrap/js2/bootstrap.min.js" type="text/javascript"></script>

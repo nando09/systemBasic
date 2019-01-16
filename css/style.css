@@ -7,6 +7,11 @@ a{
 	color: #43484c;
 }
 
+a:hover{
+	color: #43484c;
+}
+
+
 .row{
 	width: 100%;
 }
@@ -41,7 +46,7 @@ a{
 }
 
 .btn-sm {
-	padding: 0 .5rem;
+	padding: 0;
 }
 
 .btn:focus {
@@ -49,8 +54,8 @@ a{
 }
 
 .form-control:focus {
-    border-color: #ffa500;
-    box-shadow: 0 0 0 0.2rem rgba(226, 104, 20, 0.25);
+	border-color: #ffa500;
+	box-shadow: 0 0 0 0.2rem rgba(226, 104, 20, 0.25);
 }
 
 .admin-home, .admin-search{
@@ -66,9 +71,42 @@ a{
 }
 
 .btn:not(:disabled):not(.disabled) {
-    cursor: auto;
+	cursor: auto;
 }
 
 .dropdown-menu {
 	border-radius: 0;
- }
+}
+
+.btn-group > .nav-link{
+	padding: 0.5rem;
+}
+
+.list-group-item {
+	background-color: #f8f9fa;
+	border-radius: 0;
+}
+
+.list-group-item:first-child, .list-group-item:last-child, .list-group-item.disabled{
+	border-radius: 0;
+}
+
+.list-group-item:hover, .list-group-item a:hover, .list-group-item:hover a {
+	background-color: #bbb;
+	text-decoration: none;
+	color: #f8f9fa;
+	cursor: pointer;
+}
+
+.list-group-item.disabled, .list-group-item:disabled {
+	background-color: #43474c;
+	color: #f8f9fa;
+}
+
+#conteudo{
+	margin-top: 10px;
+}
+
+.nav-lateral{
+	margin-top: 10px;
+}
