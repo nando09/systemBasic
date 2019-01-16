@@ -10,6 +10,15 @@
 				<td>
 					<strong>PRODUTOS</strong>
 				</td>
+<!-- 				<td>
+					<strong>CATEGORIA</strong>
+				</td>
+				<td>
+					<strong>VALOR</strong>
+				</td>
+				<td>
+					<strong>DESCRIÇÃO</strong>
+				</td> -->
 			</tr>
 		</thead>
 		<tbody id="produtos">
@@ -23,9 +32,9 @@
 		processData: false,
 		contentType: false,
 		success: function(dados) {
-			console.log(dados);
 			for (var i = 0; i < dados.length; i++) {
-				$("#produtos").append('<tr><td>' + dados[i] + '</td></tr>');
+				// $("#produtos").append('<tr><td>' + dados[i]['nome'] + '</td><td>' + dados[i]['categoria'] + '</td><td>' + dados[i]['valor'] + '</td><td>' + dados[i]['descricao'] + '</td></tr>');
+				$("#produtos").append('<tr><td>' + dados[i]['nome'] + '</td><td class="value">'+ dados[i]['id'] +'<td>');
 			}
 			// console.log(dados);
 		},
