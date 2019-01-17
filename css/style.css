@@ -105,13 +105,18 @@ a:hover{
 }
 
 #conteudo{
-	margin-top: 1rem;
+	margin-top: 1.4rem;
 }
 
 .nav-lateral{
-	margin-top: 1rem;
+	margin-top: 1.4rem;
 }
 
 .menu-icon{
 	width: 30px;
+}
+
+#footer{
+	margin-top: 1.4rem;
+	padding: 1.4rem;
 }
