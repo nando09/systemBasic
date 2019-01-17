@@ -73,20 +73,20 @@
 				<div class="col-md-3">
 					<ul class="list-group">
 						<li class="list-group-item disabled" aria-disabled="true">Fernando</li>
-						<li class="list-group-item"><a href="/System/systemBasic/Produtos">Painel </a></li>
-						<li class="list-group-item"><a href="/System/systemBasic/Clientes">Notícias </a></li>
-						<li class="list-group-item"><a href="/System/systemBasic/Fonecedores"><i class="menu-icon icon-paste"></i>Entrada </a></li>
-						<li class="list-group-item"><a href="/System/systemBasic/Pedidos"><i class="menu-icon icon-shopping-cart"></i>Projetos </a></li>
+						<li class="list-group-item"><a href="/System/systemBasic/Produtos"><i class="menu-icon fas fa-project-diagram"></i>Painel </a></li>
+						<li class="list-group-item"><a href="/System/systemBasic/Clientes"><i class="menu-icon fas fa-bullhorn"></i>Notícias </a></li>
+						<li class="list-group-item"><a href="/System/systemBasic/Fonecedores"><i class="menu-icon fas fa-inbox"></i>Entrada </a></li>
+						<li class="list-group-item"><a href="/System/systemBasic/Pedidos"><i class="menu-icon fas fa-tasks"></i>Projetos </a></li>
 					</ul>
 					<ul class="list-group nav-lateral">
 						<li class="list-group-item"><i class="menu-icon fab fa-dropbox"></i>Produtos</li>
 						<li class="list-group-item"><i class="menu-icon fas fa-address-book"></i>Clientes</li>
-						<li class="list-group-item"><i class="fas fa-truck-loading"></i>Fornecedores</li>
-						<li class="list-group-item"><i class="fas fa-cart-arrow-down"></i>Pedidos</li>
+						<li class="list-group-item"><i class="menu-icon fas fa-truck-loading"></i>Fornecedores</li>
+						<li class="list-group-item"><i class="menu-icon fas fa-cart-arrow-down"></i>Pedidos</li>
 					</ul>
 					<ul class="list-group nav-lateral">
-						<li class="list-group-item"><i class="fas fa-concierge-bell"></i>Serviços</li>
-						<li class="list-group-item"><i class="fas fa-sign-out-alt"></i>Logout</li>
+						<li class="list-group-item"><i class="menu-icon fas fa-concierge-bell"></i>Serviços</li>
+						<li class="list-group-item"><i class="menu-icon fas fa-sign-out-alt"></i>Logout</li>
 					</ul>
 				</div>
 			</div>
