@@ -12,7 +12,7 @@
 </head>
 <body id="body">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-1">
 					<p class="admin-home">System</p>
@@ -67,47 +67,56 @@
 			</div>
 		</div>
 	</nav>
-	<div id="conteudo">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<ul class="list-group">
-						<li class="list-group-item disabled" aria-disabled="true">Fernando</li>
-						<li class="list-group-item"><a href="/System/systemBasic/Produtos"><i class="menu-icon fas fa-project-diagram"></i>Painel </a></li>
-						<li class="list-group-item"><a href="/System/systemBasic/Clientes"><i class="menu-icon fas fa-bullhorn"></i>Notícias </a></li>
-						<li class="list-group-item"><a href="/System/systemBasic/Fonecedores"><i class="menu-icon fas fa-inbox"></i>Entrada </a></li>
-						<li class="list-group-item"><a href="/System/systemBasic/Pedidos"><i class="menu-icon fas fa-tasks"></i>Projetos </a></li>
-					</ul>
-					<ul class="list-group nav-lateral">
-						<li class="list-group-item"><i class="menu-icon fab fa-dropbox"></i>Produtos</li>
-						<li class="list-group-item"><i class="menu-icon fas fa-address-book"></i>Clientes</li>
-						<li class="list-group-item"><i class="menu-icon fas fa-truck-loading"></i>Fornecedores</li>
-						<li class="list-group-item"><i class="menu-icon fas fa-cart-arrow-down"></i>Pedidos</li>
-					</ul>
-					<ul class="list-group nav-lateral">
-						<li class="list-group-item"><i class="menu-icon fas fa-concierge-bell"></i>Serviços</li>
-						<li class="list-group-item"><i class="menu-icon fas fa-sign-out-alt"></i>Logout</li>
-					</ul>
+	<div id="primary" class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+				<ul class="list-group">
+					<li class="list-group-item disabled header" aria-disabled="true"></li>
+					<li class="list-group-item"><a href="/System/systemBasic/Produtos"><i class="menu-icon fas fa-project-diagram"></i>Painel </a></li>
+					<li class="list-group-item"><a href="/System/systemBasic/Clientes"><i class="menu-icon fas fa-bullhorn"></i>Notícias </a></li>
+					<li class="list-group-item"><a href="/System/systemBasic/Fonecedores"><i class="menu-icon fas fa-inbox"></i>Entrada </a></li>
+					<li class="list-group-item"><a href="/System/systemBasic/Pedidos"><i class="menu-icon fas fa-tasks"></i>Projetos </a></li>
+					<li class="list-group-item disabled footer" aria-disabled="true"></li>
+				</ul>
+				<ul class="list-group nav-lateral">
+					<li class="list-group-item disabled header" aria-disabled="true"></li>
+					<li class="list-group-item"><i class="menu-icon fab fa-dropbox"></i>Produtos</li>
+					<li class="list-group-item"><i class="menu-icon fas fa-address-book"></i>Clientes</li>
+					<li class="list-group-item"><i class="menu-icon fas fa-truck-loading"></i>Fornecedores</li>
+					<li class="list-group-item"><i class="menu-icon fas fa-cart-arrow-down"></i>Pedidos</li>
+					<li class="list-group-item disabled footer" aria-disabled="true"></li>
+				</ul>
+				<ul class="list-group nav-lateral">
+					<li class="list-group-item disabled header" aria-disabled="true"></li>
+					<li class="list-group-item"><i class="menu-icon fas fa-concierge-bell"></i>Serviços</li>
+					<li class="list-group-item"><i class="menu-icon fas fa-sign-out-alt"></i>Logout</li>
+					<li class="list-group-item disabled footer" aria-disabled="true"></li>
+				</ul>
+			</div>
+			<div class="col-md-10">
+				<div class="conteudo">
+					<h1>HOME</h1>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 	<footer id="footer" class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Special title treatment</h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
+						<div class="card-body text-center">
+							<h5 class="card-title">Planos</h5>
+							<p class="card-text">Conheça todos os planos ...</p>
+							<a href="#" class="btn btn-primary">Click aqui!</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
 					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Special title treatment</h5>
+						<div class="card-body text-center">
+							<h5 class="card-title"></h5>
 							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 							<a href="#" class="btn btn-primary">Go somewhere</a>
 						</div>

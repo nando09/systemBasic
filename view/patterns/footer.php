@@ -1,22 +1,31 @@
 				</div>
 			</div>
-			<!--/.container-->
 		</div>
-		<!--/.wrapper-->
-		<div class="footer">
-			<div class="container">
-				<b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights reserved.
+	</div>
+	<footer id="footer" class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body text-center">
+							<h5 class="card-title">Planos</h5>
+							<p class="card-text">Conheça todos os planos ...</p>
+							<a href="#" class="btn btn-primary">Click aqui!</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body text-center">
+							<h5 class="card-title"></h5>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!-- BOOTSTRAP V4.2 -->
-		<!-- <script src="/System/systemBasic/bootstrap/js2/bootstrap.min.js" type="text/javascript"></script> -->
-		<!-- BOOTSTRAP V2.2.2 -->
-		<script src="/System/systemBasic/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="/System/systemBasic/scripts/flot/jquery.flot.js" type="text/javascript"></script>
-		<script src="/System/systemBasic/scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
-		<script src="/System/systemBasic/scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
-		<!-- CONEXAO COM GRAFICOS -->
-		<!-- <script src="/System/systemBasic/scripts/common.js" type="text/javascript"></script> -->
-
-	</body>
+	</footer>
+</body>
 </html>

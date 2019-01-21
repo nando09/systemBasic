@@ -1,112 +1,106 @@
-<!-- https://fontawesome.com/v3.2.1/icons/ -->
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Edmin</title>
-		<!-- BOOTSTRAP V4.2 -->
-		<!-- <link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.min.css" rel="stylesheet"> -->
-		<!-- <link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap-responsive.min.css" rel="stylesheet"> -->
-		<!-- BOOTSTRAP V4.2 -->
-		<link type="text/css" href="/System/systemBasic/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link type="text/css" href="/System/systemBasic/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-		<link type="text/css" href="/System/systemBasic/css/theme.css" rel="stylesheet">
-		<link type="text/css" href="/System/systemBasic/images/icons/css/font-awesome.css" rel="stylesheet">
-		<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
-			rel='stylesheet'>
-		<script src="/System/systemBasic/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-		<script src="/System/systemBasic/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
-	</head>
-	<body>
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-						<i class="icon-reorder shaded"></i></a><a class="brand" href="/System/systemBasic/">Edmin </a>
-					<div class="nav-collapse collapse navbar-inverse-collapse">
-						<ul class="nav nav-icons">
-							<li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
-							<li><a href="#"><i class="icon-eye-open"></i></a></li>
-							<li><a href="#"><i class="icon-bar-chart"></i></a></li>
-						</ul>
-						<form class="navbar-search pull-left input-append" action="#">
-						<input type="text" class="span3">
-						<button class="btn" type="button">
-							<i class="icon-search"></i>
-						</button>
-						</form>
-						<ul class="nav pull-right">
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-								<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Item No. 1</a></li>
-									<li><a href="#">Don't Click</a></li>
-									<li class="divider"></li>
-									<li class="nav-header">Example Header</li>
-									<li><a href="#">A Separated link</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Support </a></li>
-							<li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<img src="/System/systemBasic/images/user.png" class="nav-avatar" />
-								<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Your Profile</a></li>
-									<li><a href="#">Edit Profile</a></li>
-									<li><a href="#">Account Settings</a></li>
-									<li class="divider"></li>
-									<li><a href="#">Logout</a></li>
-								</ul>
-							</li>
-						</ul>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edmin</title>
+	<link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/System/systemBasic/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/System/systemBasic/images/icons/fontawesome/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+	<script src="/System/systemBasic/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="/System/systemBasic/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+
+	<script src="/System/systemBasic/bootstrap/js2/bootstrap.min.js" type="text/javascript"></script>
+
+	<script src="/System/systemBasic/js/ajax.js" type="text/javascript"></script>
+	<script src="/System/systemBasic/js/bootstrap-growl.js" type="text/javascript"></script>
+<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script> -->
+</head>
+<body id="body">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-1">
+					<p class="admin-home">System</p>
+				</div>
+				<div class="col-md-3 admin-search">
+					<div class="input-group">
+						<input type="text" class="form-control search-primary" placeholder="Pesquisar" aria-label="Recipient's username" aria-describedby="button-addon2">
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary btn-search-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+						</div>
 					</div>
-					<!-- /.nav-collapse -->
+				</div>
+				<div class="col-md-8">
+					<ul class="nav justify-content-end">
+						<li class="nav-item">
+							<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Suporte</a>
+						</li>
+						<li class="nav-item">
+							<div class="btn-group">
+								<div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fas fa-sms"></i>
+								</div>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Seu Perfil</a>
+									<a class="dropdown-item" href="#">Editar Perfil</a>
+									<a class="dropdown-item" href="#">Configuração</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Logout</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item">
+							<!-- Example split danger button -->
+							<div class="btn-group">
+								<div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fas fa-female"></i>
+								</div>
+								<button class="btn btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span class="sr-only">Toggle Dropdown</span>
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Seu Perfil</a>
+									<a class="dropdown-item" href="#">Editar Perfil</a>
+									<a class="dropdown-item" href="#">Configuração</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#">Logout</a>
+								</div>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
-			<!-- /navbar-inner -->
 		</div>
-		<!-- /navbar -->
-		<div class="wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="span3">
-						<div class="sidebar">
-							<ul class="widget widget-menu unstyled">
-								<li class="active"><a href="/System/systemBasic/"><i class="menu-icon icon-dashboard"></i>Painel</a></li>
-								<li><a href="/System/systemBasic/Noticias"><i class="menu-icon icon-bullhorn"></i>Notícias</a>
-								</li>
-								<li><a href="/System/systemBasic/Entrada"><i class="menu-icon icon-inbox"></i>Entrada <b class="label green pull-right">
-									11</b> </a></li>
-								<li><a href="/System/systemBasic/Projetos"><i class="menu-icon icon-tasks"></i>Projetos <b class="label orange pull-right">
-									19</b> </a></li>
-							</ul>
-							<!--/.widget-nav-->
-							
-							
-							<ul class="widget widget-menu unstyled">
-								<li><a href="/System/systemBasic/Produtos"><i class="menu-icon icon-dropbox"></i> Produtos </a></li>
-								<li><a href="/System/systemBasic/Clientes"><i class="menu-icon icon-book"></i>Clientes </a></li>
-								<li><a href="/System/systemBasic/Fonecedores"><i class="menu-icon icon-paste"></i>Fornecedores </a></li>
-								<li><a href="/System/systemBasic/Pedidos"><i class="menu-icon icon-shopping-cart"></i>Pedidos </a></li>
-							</ul>
-							<!--/.widget-nav-->
-							<ul class="widget widget-menu unstyled">
-								<li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
-								</i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-								</i>Serviços</a>
-									<ul id="togglePages" class="collapse unstyled">
-										<li><a href="/System/systemBasic/other-login.html"><i class="icon-inbox"></i>Login </a></li>
-										<li><a href="/System/systemBasic/other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
-										<li><a href="/System/systemBasic/other-user-listing.html">
-											<i class="icon-group"></i>Usuários
-										</a></li>
-									</ul>
-								</li>
-								<li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
-							</ul>
-						</div>
-						<!--/.sidebar-->
-					</div>
+	</nav>
+	<div id="primary" class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+				<div class="list-group">
+					<a class="list-group-item disabled header" aria-disabled="true"></a>
+					<a class="list-group-item" href="/System/systemBasic/"><i class="menu-icon fas fa-project-diagram"></i>Painel </a>
+					<a class="list-group-item" href="/System/systemBasic/Noticias"><i class="menu-icon fas fa-bullhorn"></i>Notícias </a>
+					<a class="list-group-item" href="/System/systemBasic/Entrada"><i class="menu-icon fas fa-inbox"></i>Entrada </a>
+					<a class="list-group-item" href="/System/systemBasic/Projetos"><i class="menu-icon fas fa-tasks"></i>Projetos </a>
+					<a class="list-group-item disabled footer" aria-disabled="true"></a>
+				</div>
+				<div class="list-group nav-lateral">
+					<a class="list-group-item disabled header" aria-disabled="true"></a>
+					<a class="list-group-item" href="/System/systemBasic/Produtos"><i class="menu-icon fab fa-dropbox"></i>Produtos </a>
+					<a class="list-group-item" href="/System/systemBasic/Clientes"><i class="menu-icon fas fa-address-book"></i>Clientes </a>
+					<a class="list-group-item" href="/System/systemBasic/Fornecedores"><i class="menu-icon fas fa-truck-loading"></i>Fornecedores </a>
+					<a class="list-group-item" href="/System/systemBasic/Pedidos"><i class="menu-icon fas fa-cart-arrow-down"></i>Pedidos </a>
+					<a class="list-group-item disabled footer" aria-disabled="true"></a>
+				</div>
+				<div class="list-group nav-lateral">
+					<a class="list-group-item disabled header" aria-disabled="true"></a>
+					<a class="list-group-item"><i class="menu-icon fas fa-concierge-bell"></i>Serviços</a>
+					<a class="list-group-item"><i class="menu-icon fas fa-sign-out-alt"></i>Logout</a>
+					<a class="list-group-item disabled footer" aria-disabled="true"></a>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<div class="conteudo">

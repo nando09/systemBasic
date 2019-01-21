@@ -11,13 +11,20 @@ a:hover{
 	color: #43484c;
 }
 
+.none{
+	display: none;
+}
+
+#novo-elemento{
+	clear: both;
+}
 
 .row{
 	width: 100%;
 }
 
 #body{
-	background: orange;
+	background: #e28b03;
 }
 
 
@@ -100,11 +107,11 @@ a:hover{
 }
 
 .list-group-item.disabled, .list-group-item:disabled {
-	background-color: #43474c;
+	background-color: #bbb;
 	color: #f8f9fa;
 }
 
-#conteudo{
+#primary{
 	margin-top: 1.4rem;
 }
 
@@ -119,4 +126,36 @@ a:hover{
 #footer{
 	margin-top: 1.4rem;
 	padding: 1.4rem;
+}
+
+.disabled.header{
+	padding: .1rem;
+	border-radius: .5rem .5rem 0 0;
+}
+
+.disabled.footer{
+	padding: .1rem;
+	border-radius: 0 0 .5rem .5rem;
+}
+
+.card{
+	border: 0;
+}
+
+.conteudo{
+	background: #f8f9fa;
+	height: 100%;
+	width: 100%;
+	padding: 1rem;
+}
+
+.title-pag{
+	float: left;
+	font-size: 20px;
+}
+
+.btn.btn-primary.btn-adicionar{
+	margin-bottom: 10px;
+	float: right;
+	cursor: pointer;
 }
