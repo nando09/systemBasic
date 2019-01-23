@@ -12,14 +12,17 @@
 							"<td>" . $key['nome'] . "</td><td>". $key['categoria'] ."</td>".
 							"<td>". $key['valor'] ."</td>".
 							"<td>". $key['descricao'] ."</td>".
-							"<td class='text-center'><a href='/System/systemBasic/Produtos/detalhamento/". $key['id'] ."'>".
-								"<i class='fas fa-info-circle'></i></a>".
+							"<td class='text-center'>".
+								"<i class='fas fa-info-circle detalhar'></i></a>".
 							"</td>".
-							"<td class='text-center'><a href='/System/systemBasic/Produtos/editar/". $key['id'] ."'>".
-								"<i class='far fa-edit'></i></a>".
+							"<td class='text-center'>".
+								"<i class='far fa-edit editar'></i></a>".
 							"</td>".
-							"<td class='text-center'><a href='/System/systemBasic/Produtos/excluir/". $key['id'] ."'>".
-								"<i class='far fa-trash-alt'></i></a>".
+							"<td class='text-center'>".
+								"<i class='far fa-trash-alt excluir'></i></a>".
+							"</td>".
+							"<td id='id' class='none'>".
+								"<span value=". $key['id'] .">". $key['id'] ."</span>".
 							"</td>".
 						"</tr>";
 

@@ -159,3 +159,7 @@ a:hover{
 	float: right;
 	cursor: pointer;
 }
+
+.modal-content{
+	padding: 20px;
+}
