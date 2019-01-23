@@ -2474,13 +2474,19 @@ INSERT INTO PRODUTO (NOME,ID_CATEGORIA,VALOR,DESCRICAO,MINIMO,QUANTIDADE) VALUES
 INSERT INTO PRODUTO (NOME,ID_CATEGORIA,VALOR,DESCRICAO,MINIMO,QUANTIDADE) VALUES ('TECIDO', 4, 20, 'TECIDO FINO CARA DE RICA', 10, 200);
 INSERT INTO PRODUTO (NOME,ID_CATEGORIA,VALOR,DESCRICAO,MINIMO,QUANTIDADE) VALUES ('CELULAR', 5, 2000, 'CELULAR TOP DE LINHA', 10, 30);
 
-SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor as valor, p.descricao as descricao FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id
+SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor as valor, p.descricao as descricao, p.minimo as minimo, p.quantidade as quantidade FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id
+
+UPDATE PRODUTO SET NOME = 'TESTE', ID_CATEGORIA = '4', VALOR = 1234, DESCRICAO = 'TESTE LOUCO', MINIMO = 10, QUANTIDADE = 300 WHERE ID = 2380
 
 DELETE FROM PRODUTO WHERE ID = 2369
 
 SELECT COUNT(*) FROM PRODUTO
 SELECT * FROM PRODUTO
+SELECT * FROM CATEGORIA
 SELECT ID FROM PRODUTO
+
+SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor as valor, p.descricao as descricao FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id WHERE p.nome = 'TECLADO' and c.id = 5 and p.valor = 100
+SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor as valor, p.descricao as descricao FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id WHERE p.nome = 'MOUSE' and c.id = 5 and p.valor = 200
 
 SELECT ID, NOME FROM categoria
 

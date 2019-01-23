@@ -41,6 +41,64 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal fade bd-example-modal-xl editar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl">
+		<div class="modal-content">
+			<h1 class="title-pag">Alterar Produto</h1>
+			<div id="novo-elemento">
+				<div class="row">
+					<input id="id_produto" name="id_produto" type="hidden">
+					<div class="form-group col-md-6">
+						<label>Nome</label>
+						<input id="nome-editar" name="nome" type="text" class="form-control">
+					</div>
+					<div class="form-group col-md-6" id="categoria">
+						<label>Categoria</label>
+						<select id="categoria-editar" name="categoria" class="form-control"></select>
+					</div>
+					<div class="form-group col-md-4">
+						<label>Valor</label>
+						<input id="valor-editar" name="valor" type="text" class="form-control">
+					</div>
+					<div class="form-group col-md-4">
+						<label>Quantidade</label>
+						<input id="quantidade-editar" name="valor" type="text" class="form-control">
+					</div>
+					<div class="form-group col-md-4">
+						<label>Quantidade Min.</label>
+						<input id="min-editar" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
+					</div>
+					<div class="form-group col-md-12">
+						<label>Descrição</label>
+						<textarea id="descricao-editar" name="descricao" class="form-control" rows="3"></textarea>
+					</div>
+					<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
+				</div>
+				<button id="alterar-produto" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade bd-example-modal-xl detalhamento" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl">
+		<div id="detalhamento" class="modal-content">
+			<div class="container">
+				<h1 class="title-pag">Detalhe do produto</h1>
+				<div class="row">
+					<div class="col-md-4 nome">nome</div>
+					<div class="col-md-4 categoria">categoria</div>
+					<div class="col-md-4 valor">valor</div>
+					<div class="col-md-4 quantidade">quantidade</div>
+					<div class="col-md-4 minimo">minimo</div>
+					<div class="col-md-4 descricao">descricao</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <table class="table table-hover">
 	<thead>
 		<tr>

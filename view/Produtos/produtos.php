@@ -9,14 +9,19 @@
 
 		foreach ($query as $key) {
 			$retorno .= "<tr>".
-							"<td>" . $key['nome'] . "</td><td>". $key['categoria'] ."</td>".
+							"<td>" . $key['nome'] . "</td>".
+							"<td>". $key['categoria'] ."</td>".
 							"<td>". $key['valor'] ."</td>".
 							"<td>". $key['descricao'] ."</td>".
 							"<td class='text-center'>".
-								"<i class='fas fa-info-circle detalhar'></i></a>".
+								"<div class='detalhar' data-toggle='modal' data-target='.detalhamento'>".
+									"<i class='fas fa-info-circle'></i></a>".
+								"</div>".
 							"</td>".
 							"<td class='text-center'>".
-								"<i class='far fa-edit editar'></i></a>".
+								"<div class='edita' data-toggle='modal' data-target='.editar'>".
+									"<i class='far fa-edit editar'></i></a>".
+								"</div>".
 							"</td>".
 							"<td class='text-center'>".
 								"<i class='far fa-trash-alt excluir'></i></a>".
