@@ -124,21 +124,33 @@ function preparaEditarProduto(){
 		var id = $("#id_produto").val();
 		selectCategoria();
 		editarProduto(id, 'alterar');
-		// alert(id);
-		$("tr").removeClass('editando');
 	});
 }
 
 function editarProduto(id_produto, vai){
+	if (vai == 'buscar') {
+		var posts = {
+			id: id_produto,
+			vai: 'buscar'
+		};
+	}else{
+		var posts = {
+			id: id_produto,
+			vai: 'alterar',
+			nome: $("#nome-editar").val(),
+			valor: $("#valor-editar").val(),
+			descricao: $("#descricao-editar").val(),
+			categoria: $("#categoria-editar").val(),
+			min: $("#min-editar").val(),
+			quantidade: $("#quantidade-editar").val()
+		}
+	}
+
 	$.ajax({
 		url: '/System/systemBasic/view/Produtos/editar.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		type: 'post',
-		data: {
-			id: id_produto,
-			vai: vai
-		},
-
+		data: posts,
 		success: function(dados) {
 			if (dados.retorno == "S" && dados.vai == 'buscar') {
 				$("#id_produto").val(dados.id_produto);
@@ -150,9 +162,25 @@ function editarProduto(id_produto, vai){
 				$("#quantidade-editar").val(dados.quantidade);
 			}else if (dados.retorno == "S"){
 				// $(".editando td").children().eq(1);
-				alert($(".editando td").children().eq(1));
+
+				$(".editando").children().eq(0).text(dados.nome);
+				$(".editando").children().eq(1).text(dados.categoria);
+				$(".editando").children().eq(2).text(dados.valor);
+				$(".editando").children().eq(3).text(dados.descricao);
+
+				$.bootstrapGrowl("Sucesso ao alterar o produto!", {
+					ele: 'body', // which element to append to
+					type: 'success', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+				$("tr").removeClass('editando');
 			}else{
-				$.bootstrapGrowl("Erro ao detalhar o produto!", {
+				$.bootstrapGrowl("Erro ao alterar o produto!", {
 					ele: 'body', // which element to append to
 					type: 'info', // (null, 'info', 'danger', 'success')
 					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -295,12 +323,14 @@ function excluirProduto(id_produto){
 
 
 function selectCategoria(){
+
 	$.ajax({
 		url: '/System/systemBasic/view/Produtos/categorias.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		processData: false,
 		contentType: false,
 		success: function(dados) {
+			$("#categoria select option").remove();
 			$("#categoria select").append(dados);
 		},
 		error: function(dados) {

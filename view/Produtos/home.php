@@ -75,7 +75,7 @@
 					</div>
 					<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
 				</div>
-				<button id="alterar-produto" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
+				<button id="alterar-produto" type="button" class="btn btn-primary" data-dismiss="editar">ALTERAR</button>
 			</div>
 		</div>
 	</div>

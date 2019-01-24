@@ -19,7 +19,7 @@
 		$quantidade = $_POST['quantidade'];
 		$min = $_POST['min'];
 
-		$query = "INSERT INTO PRODUTO (NOME,ID_CATEGORIA,VALOR,DESCRICAO,MINIMO,QUANTIDADE) VALUES ('". $nome ."', " . $categoria . ", ". $valor .", '". $descricao ."', ". $quantidade .", ". $min .")";
+		$query = "INSERT INTO PRODUTO (NOME,ID_CATEGORIA,VALOR,DESCRICAO,QUANTIDADE,MINIMO) VALUES ('". $nome ."', " . $categoria . ", ". $valor .", '". $descricao ."', ". $quantidade .", ". $min .")";
 
 		if ($db->query($query)) {
 			$query = "SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor as valor, p.descricao as descricao FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id WHERE p.nome = '" . $nome . "' and c.id = " . $categoria . " and p.valor = " . $valor;
@@ -33,14 +33,14 @@
 									"<td>". $key['valor'] ."</td>".
 									"<td>". $key['descricao'] ."</td>".
 									"<td class='text-center'>".
-										"<td class='text-center'>".
-											"<div class='detalhar' data-toggle='modal' data-target='.detalhamento'>".
-												"<i class='fas fa-info-circle'></i></a>".
-											"</div>".
-										"</td>".
+										"<div class='detalhar' data-toggle='modal' data-target='.detalhamento'>".
+											"<i class='fas fa-info-circle'></i></a>".
+										"</div>".
 									"</td>".
 									"<td class='text-center'>".
-										"<i class='far fa-edit editar'></i></a>".
+										"<div class='edita' data-toggle='modal' data-target='.editar'>".
+											"<i class='far fa-edit editar'></i></a>".
+										"</div>".
 									"</td>".
 									"<td class='text-center'>".
 										"<i class='far fa-trash-alt excluir'></i></a>".

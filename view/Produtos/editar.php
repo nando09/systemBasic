@@ -29,12 +29,18 @@ if ($vai == 'buscar') {
 }else{
 	try{
 		$id = $_POST['id'];
+		$nome = $_POST['nome'];
+		$valor = $_POST['valor'];
+		$descricao = $_POST['descricao'];
+		$categoria = $_POST['categoria'];
+		$min = $_POST['min'];
+		$quantidade = $_POST['quantidade'];
 
-		$query = $db->query("UPDATE PRODUTO SET NOME = 'TESTE', ID_CATEGORIA = '4', VALOR = 1234, DESCRICAO = 'TESTE LOUCO', MINIMO = 10, QUANTIDADE = 300 WHERE ID = " . $id);
+		$query = $db->query("UPDATE PRODUTO SET NOME = '". $nome ."', ID_CATEGORIA = ". $categoria .", VALOR = ". $valor .", DESCRICAO = '". $descricao ."', MINIMO = ". $min .", QUANTIDADE = ". $quantidade ." WHERE ID = " . $id);
 		// die()
 
 		if ($query) {
-			$query = "SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor as valor, p.descricao as descricao FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id WHERE p.nome = '" . $nome . "' and c.id = " . $categoria . " and p.valor = " . $valor;
+			$query = "SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor as valor, p.descricao as descricao FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id WHERE p.id = " . $id;
 
 			if ($campo = $db->query($query)) {
 				foreach ($campo as $key) {
@@ -42,7 +48,8 @@ if ($vai == 'buscar') {
 								'retorno' => 'S',
 								'nome' => $key['nome'],
 								'categoria' => $key['categoria'],
-								'descricao' => $key['descricao'],
+								'valor' => $key['valor'],
+								'descricao' => $key['descricao']
 					);
 				}
 			}
