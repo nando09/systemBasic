@@ -16,7 +16,7 @@
 					</div>
 					<div class="form-group col-md-6" id="categoria">
 						<label>Categoria</label>
-						<select id="categoria" name="categoria" class="form-control"></select>
+						<select id="categoria-novo" name="categoria" class="form-control"></select>
 					</div>
 					<div class="form-group col-md-4">
 						<label>Valor</label>
@@ -75,7 +75,7 @@
 					</div>
 					<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
 				</div>
-				<button id="alterar-produto" type="button" class="btn btn-primary" data-dismiss="editar">ALTERAR</button>
+				<button id="alterar-produto" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
 			</div>
 		</div>
 	</div>

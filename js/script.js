@@ -4,7 +4,7 @@ function popularProdutos(){
 	$('#salvar-produto').click(function(){
 		var nome = $("#nome").val();
 		// Para pegar um valor de Select em jquery tem que selecionar o option que foi escolhido
-		var categoria = $("#categoria option:selected").val();
+		var categoria = $("#categoria-novo").val();
 		var valor = $("#valor").val();
 		var descricao = $("#descricao").val();
 		var quantidade = $("#quantidade").val();
@@ -40,9 +40,9 @@ function popularProdutos(){
 					});
 
 					$("#produtos").append(dados.tr);
-					preparaExcluirProduto();
-					preparaDetalharProduto();
-					preparaEditarProduto();
+					// preparaExcluirProduto();
+					// preparaDetalharProduto();
+					// preparaEditarProduto();
 
 				}else if(dados == 'E'){
 					$.bootstrapGrowl("Erro ao inserir Produto!", {
@@ -92,9 +92,9 @@ function popularProdutos(){
 			}
 
 			$("#produtos").append(dados);
-			preparaExcluirProduto();
-			preparaDetalharProduto();
-			preparaEditarProduto();
+			// preparaExcluirProduto();
+			// preparaDetalharProduto();
+			// preparaEditarProduto();
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
@@ -108,22 +108,6 @@ function popularProdutos(){
 				stackup_spacing: 10 // spacing between consecutively stacked growls.
 			});
 		}
-	});
-}
-
-function preparaEditarProduto(){
-
-	$(".edita").on('click', function(){
-		var id = $(this).closest("td").nextAll("#id").text();
-		$(this).closest("tr").addClass('editando');
-		selectCategoria();
-		editarProduto(id, 'buscar');
-	});
-
-	$("#alterar-produto").on('click', function(){
-		var id = $("#id_produto").val();
-		selectCategoria();
-		editarProduto(id, 'alterar');
 	});
 }
 
@@ -207,13 +191,6 @@ function editarProduto(id_produto, vai){
 	});
 }
 
-function preparaDetalharProduto(){
-	$(".detalhar").on('click', function(){
-		var id = $(this).closest("td").nextAll("#id").text();
-		detalharProduto(id);
-	});
-}
-
 function detalharProduto(id_produto){
 	$.ajax({
 		url: '/System/systemBasic/view/Produtos/detalhamento.php', // Url do lado server que vai receber o arquivo
@@ -257,14 +234,6 @@ function detalharProduto(id_produto){
 				stackup_spacing: 10 // spacing between consecutively stacked growls.
 			});
 		}
-	});
-}
-
-function preparaExcluirProduto(){
-	$(".excluir").on('click', function(){
-		var id = $(this).closest("td").next("#id").text();
-		$(this).closest("tr").addClass('remover');
-		excluirProduto(id);
 	});
 }
 
@@ -321,9 +290,7 @@ function excluirProduto(id_produto){
 	});
 }
 
-
 function selectCategoria(){
-
 	$.ajax({
 		url: '/System/systemBasic/view/Produtos/categorias.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',

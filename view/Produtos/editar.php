@@ -9,7 +9,7 @@ if ($vai == 'buscar') {
 		$id = $_POST['id'];
 
 		$query = $db->query("SELECT id, nome, id_categoria, valor, descricao, minimo, quantidade FROM PRODUTO WHERE ID = " . $id);
-
+		// die($query);
 		foreach ($query as $key) {
 			$retorno = array(
 						'retorno' => 'S',
