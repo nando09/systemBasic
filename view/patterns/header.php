@@ -11,12 +11,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
 	<script src="/System/systemBasic/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-
 	<script src="/System/systemBasic/bootstrap/js2/bootstrap.min.js" type="text/javascript"></script>
-
 	<script src="/System/systemBasic/js/ajax.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/js/bootstrap-growl.js" type="text/javascript"></script>
-	<script src="/System/systemBasic/js/script.js" type="text/javascript"></script>
+<!-- 	<script src="/System/systemBasic/js/script.js" type="text/javascript"></script> -->
 </head>
 <body id="body">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">

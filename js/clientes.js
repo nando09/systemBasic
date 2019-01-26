@@ -1,32 +1,31 @@
-function popularProdutos(){
-	$('#salvar-produto').click(function(){
+function popularClientes(){
+	$('#salvar-cliente').click(function(){
 		var nome = $("#nome").val();
-		// Para pegar um valor de Select em jquery tem que selecionar o option que foi escolhido
-		var categoria = $("#categoria-novo").val();
-		var valor = $("#valor").val();
-		var descricao = $("#descricao").val();
-		var quantidade = $("#quantidade").val();
-		var min = $("#min").val();
+		var empresa = $("#empresa").val();
+		var cnpj = $("#cnpj").val();
+		var localidade = $("#localidade").val();
+		var email = $("#email").val();
+		var telefone = $("#telefone").val();
 
 
-		// console.log(nome + '<br>' + categoria + '<br>' + valor + '<br>' + descricao);
+		console.log(nome+ "//" +empresa+ "//" +cnpj+ "//" +localidade+ "//" +email+ "//" +telefone);
 
 		// var formDados  = $(this).serialize();
 		$.ajax({
-			url: '/System/systemBasic/view/Produtos/adiciona.php', // Url do lado server que vai receber o arquivo
+			url: '/System/systemBasic/view/clientes/adiciona.php', // Url do lado server que vai receber o arquivo
 			dataType: 'json',
 			data: {
 				nome: nome,
-				categoria: categoria,
-				valor: valor,
-				descricao: descricao,
-				quantidade: quantidade,
-				min: min
+				empresa: empresa,
+				cnpj: cnpj,
+				localidade: localidade,
+				email: email,
+				telefone: telefone
 			},
 			type: 'POST',
 			success: function(dados) {
 				if (dados.retorno == 'S'){
-					$.bootstrapGrowl("Produto adicionado com sucesso!", {
+					$.bootstrapGrowl("cliente adicionado com sucesso!", {
 						ele: 'body', // which element to append to
 						type: 'success', // (null, 'info', 'danger', 'success')
 						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -37,13 +36,13 @@ function popularProdutos(){
 						stackup_spacing: 10 // spacing between consecutively stacked growls.
 					});
 
-					$("#produtos").append(dados.tr);
-					// preparaExcluirProduto();
-					// preparaDetalharProduto();
-					// preparaEditarProduto();
+					$("#clientes").append(dados.tr);
+					// preparaExcluirClientes();
+					// preparaDetalharClientes();
+					// preparaEditarClientes();
 
-				}else if(dados == 'E'){
-					$.bootstrapGrowl("Erro ao inserir Produto!", {
+				}else if(dados.retorno == 'E'){
+					$.bootstrapGrowl("Erro ao inserir cliente!", {
 						ele: 'body', // which element to append to
 						type: 'info', // (null, 'info', 'danger', 'success')
 						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -71,7 +70,7 @@ function popularProdutos(){
 	});
 
 	$.ajax({
-		url: '/System/systemBasic/view/Produtos/produtos.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/Clientes/clientes.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		processData: false,
 		contentType: false,
@@ -89,10 +88,10 @@ function popularProdutos(){
 				});
 			}
 
-			$("#produtos").append(dados);
-			// preparaExcluirProduto();
-			// preparaDetalharProduto();
-			// preparaEditarProduto();
+			$("#clientes").append(dados);
+			// preparaExcluirClientes();
+			// preparaDetalharClientes();
+			// preparaEditarClientes();
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
@@ -109,48 +108,47 @@ function popularProdutos(){
 	});
 }
 
-function editarProduto(id_produto, vai){
+function editarClientes(id_clientes, vai){
 	if (vai == 'buscar') {
 		var posts = {
-			id: id_produto,
+			id: id_clientes,
 			vai: 'buscar'
 		};
 	}else{
 		var posts = {
-			id: id_produto,
+			id: id_clientes,
 			vai: 'alterar',
 			nome: $("#nome-editar").val(),
-			valor: $("#valor-editar").val(),
-			descricao: $("#descricao-editar").val(),
-			categoria: $("#categoria-editar").val(),
-			min: $("#min-editar").val(),
-			quantidade: $("#quantidade-editar").val()
+			empresa: $("#empresa-editar").val(),
+			cnpj: $("#cnpj-editar").val(),
+			localidade: $("#localidade-editar").val(),
+			email: $("#email-editar").val(),
+			telefone: $("#telefone-editar").val()
 		}
 	}
 
 	$.ajax({
-		url: '/System/systemBasic/view/Produtos/editar.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/clientes/editar.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		type: 'post',
 		data: posts,
 		success: function(dados) {
 			if (dados.retorno == "S" && dados.vai == 'buscar') {
-				$("#id_produto").val(dados.id_produto);
+				$("#id_cliente").val(dados.id_cliente);
 				$("#nome-editar").val(dados.nome);
-				$("#valor-editar").val(dados.valor);
-				$("#descricao-editar").val(dados.descricao);
-				$("#categoria-editar").val(dados.categoria);
-				$("#min-editar").val(dados.minimo);
-				$("#quantidade-editar").val(dados.quantidade);
+				$("#empresa-editar").val(dados.empresa);
+				$("#cnpj-editar").val(dados.cnpj);
+				$("#localidade-editar").val(dados.localidade);
+				$("#email-editar").val(dados.email);
+				$("#telefone-editar").val(dados.telefone);
 			}else if (dados.retorno == "S"){
 				// $(".editando td").children().eq(1);
 
-				$(".editando").children().eq(0).text(dados.nome);
-				$(".editando").children().eq(1).text(dados.categoria);
-				$(".editando").children().eq(2).text(dados.valor);
-				$(".editando").children().eq(3).text(dados.descricao);
+				$(".editando").children().eq(0).text(dados.empresa);
+				$(".editando").children().eq(1).text(dados.email);
+				$(".editando").children().eq(2).text(dados.telefone);
 
-				$.bootstrapGrowl("Sucesso ao alterar o produto!", {
+				$.bootstrapGrowl("Sucesso ao alterar o cliente!", {
 					ele: 'body', // which element to append to
 					type: 'success', // (null, 'info', 'danger', 'success')
 					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -160,9 +158,8 @@ function editarProduto(id_produto, vai){
 					allow_dismiss: true, // If true then will display a cross to close the popup.
 					stackup_spacing: 10 // spacing between consecutively stacked growls.
 				});
-				// $("tr").removeClass('editando');
 			}else{
-				$.bootstrapGrowl("Erro ao alterar o produto!", {
+				$.bootstrapGrowl("Erro ao alterar o cliente!", {
 					ele: 'body', // which element to append to
 					type: 'info', // (null, 'info', 'danger', 'success')
 					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -189,26 +186,26 @@ function editarProduto(id_produto, vai){
 	});
 }
 
-function detalharProduto(id_produto){
+function detalharClientes(id_clientes){
 	$.ajax({
-		url: '/System/systemBasic/view/Produtos/detalhamento.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/clientes/detalhamento.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		type: 'post',
 		data: {
-			id: id_produto
+			id: id_clientes
 		},
 		success: function(dados) {
 			if (dados.retorno == "S") {
 
 				$("#detalhamento .nome").text(dados.nome);
-				$("#detalhamento .categoria").text(dados.categoria);
-				$("#detalhamento .valor").text(dados.valor);
-				$("#detalhamento .quantidade").text(dados.descricao);
-				$("#detalhamento .minimo").text(dados.minimo);
-				$("#detalhamento .descricao").text(dados.quantidade);
+				$("#detalhamento .empresa").text(dados.empresa);
+				$("#detalhamento .cnpj").text(dados.cnpj);
+				$("#detalhamento .localidade").text(dados.localidade);
+				$("#detalhamento .email").text(dados.email);
+				$("#detalhamento .telefone").text(dados.telefone);
 
 			}else{
-				$.bootstrapGrowl("Erro ao detalhar o produto!", {
+				$.bootstrapGrowl("Erro ao detalhar o cliente!", {
 					ele: 'body', // which element to append to
 					type: 'info', // (null, 'info', 'danger', 'success')
 					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -235,18 +232,18 @@ function detalharProduto(id_produto){
 	});
 }
 
-function excluirProduto(id_produto){
-	// console.log(id_produto);
+function excluirClientes(id_clientes){
+	// console.log(id_clientes);
 	$.ajax({
-		url: '/System/systemBasic/view/Produtos/excluir.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/clientes/excluir.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		type: 'post',
 		data: {
-			id: id_produto
+			id: id_clientes
 		},
 		success: function(dados) {
 			if (dados == "S") {
-				$.bootstrapGrowl("Sucesso ao excluir produto!", {
+				$.bootstrapGrowl("Sucesso ao excluir cliente!", {
 					ele: 'body', // which element to append to
 					type: 'success', // (null, 'info', 'danger', 'success')
 					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -258,10 +255,9 @@ function excluirProduto(id_produto){
 				});
 
 				$("tr.remover").remove();
-				// popularProdutos();
 
 			}else{
-				$.bootstrapGrowl("Erro ao excluir o produto!", {
+				$.bootstrapGrowl("Erro ao excluir o cliente!", {
 					ele: 'body', // which element to append to
 					type: 'info', // (null, 'info', 'danger', 'success')
 					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -272,31 +268,6 @@ function excluirProduto(id_produto){
 					stackup_spacing: 10 // spacing between consecutively stacked growls.
 				});
 			}
-		},
-		error: function(dados) {
-			$.bootstrapGrowl("ERRO!", {
-				ele: 'body', // which element to append to
-				type: 'danger', // (null, 'info', 'danger', 'success')
-				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-				align: 'right', // ('left', 'right', or 'center')
-				width: 'auto', // (integer, or 'auto')
-				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-				allow_dismiss: true, // If true then will display a cross to close the popup.
-				stackup_spacing: 10 // spacing between consecutively stacked growls.
-			});
-		}
-	});
-}
-
-function selectCategoria(){
-	$.ajax({
-		url: '/System/systemBasic/view/Produtos/categorias.php', // Url do lado server que vai receber o arquivo
-		dataType: 'json',
-		processData: false,
-		contentType: false,
-		success: function(dados) {
-			$("#categoria select option").remove();
-			$("#categoria select").append(dados);
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
@@ -314,29 +285,28 @@ function selectCategoria(){
 }
 
 $(document).ready(function() {
-	selectCategoria();
-	popularProdutos();
+	popularClientes();
 
-	$("#produtos").click(function(event){
+	$("#clientes").click(function(event){
 		var alvoEvento = $(event.target);
 		if (alvoEvento.hasClass("editar")){
 			$("tr").removeClass('editando');
 			var id = alvoEvento.closest("td").nextAll("#id").text();
 			alvoEvento.closest("tr").addClass('editando');
-			editarProduto(id, 'buscar');
+			editarClientes(id, 'buscar');
 		}else if(alvoEvento.hasClass("excluir")){
 			var id = alvoEvento.closest("td").nextAll("#id").text();
 			alvoEvento.closest("tr").addClass('remover');
-			excluirProduto(id);
+			excluirClientes(id);
 		}else if(alvoEvento.hasClass("detalhar")){
 			var id = alvoEvento.closest("td").nextAll("#id").text();
-			detalharProduto(id);
+			detalharClientes(id);
 		}
 	});
 
-	$("#alterar-produto").on('click', function(){
-		var id = $("#id_produto").val();
+	$("#alterar-cliente").on('click', function(){
+		var id = $("#id_cliente").val();
 		// alert(id);
-		editarProduto(id, 'alterar');
+		editarClientes(id, 'alterar');
 	});
 });
