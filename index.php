@@ -7,7 +7,7 @@
 
 <!-- https://contaazul.com -->
 <!-- https://www.programanex.com.br/recursos/controle-de-estoque -->
-<!-- https://www.egestor.com.b -->
+<!-- https://www.egestor.com.br -->
 <!-- https://gestaoclick.com.br -->
 <!-- https://www.westoque.com.br/ -->
 <!-- https://app.westoque.com.br/olateste/index user: olateste; senha: teste123321 -->
@@ -23,6 +23,23 @@
 
 <!-- ************************************ SCRIPTS DE SISTEMA JÁ FEITOS:  ************************************ -->
 <!-- https://www.scriptbrasil.com.br/codigos/php/ -->
+
+<!-- ************************************ PHP CERTO! ************************************ -->
+<!-- https://www.getrevue.co/profile/asemanaphp -->
+<!-- http://br.phptherightway.com/#destaques_da_linguagem -->
+<!-- https://www.php-fig.org/ -->
+<!-- http://br.phptherightway.com/#destaques_da_linguagem -->
+<!-- https://tableless.com.br/psr-padrao-para-codigo-php/ -->
+<!-- https://www.meetup.com/pt-BR/php-sp/ -->
+<!-- PHPSP -->
+<!-- https://www.youtube.com/channel/UCPP3epC3ytrZgUQSLhpAD5w/videos -->
+<!-- https://www.youtube.com/watch?v=J_VD_GYwG1s -->
+<!-- https://www.youtube.com/watch?v=VTaYVuZZ-3E -->
+<!-- https://www.youtube.com/watch?v=KE2madXE5II -->
+
+<!-- ************************************ FRAMEWORK! ************************************ -->
+<!-- https://www.devmedia.com.br/forum/symfony-php/583571 -->
+
 <?php
 
 	include 'helper/autoLoad.php';
