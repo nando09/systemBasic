@@ -10,6 +10,10 @@ class Main{
 	private $params;
 	private $road;
 
+	public function getMain(){
+		return $this->main;
+	}
+
 	public function __construct(){
 		$this->setUrl();
 		$this->setExploder();
