@@ -163,3 +163,25 @@ a:hover{
 .modal-content{
 	padding: 20px;
 }
+
+.nav-tabs .nav-item {
+	padding: 0;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+.nav-tabs .nav-link {
+	padding: 0;
+	padding: 0 10px;
+	border-radius: 10px;
+}
+
+
+.nav-tabs {
+	border: none;
+}
+
+.nav-tabs .nav-link.active{
+	color: #f8f9fa;
+	background-color: #e28b03;
+}

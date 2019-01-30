@@ -78,7 +78,7 @@
 			<div class="col-md-2">
 				<div class="list-group">
 					<a class="list-group-item disabled header" aria-disabled="true"></a>
-					<a class="list-group-item" href="/System/systemBasic/"><i class="menu-icon fas fa-project-diagram"></i>Painel </a>
+					<a class="list-group-item" href="/System/systemBasic/Painel"><i class="menu-icon fas fa-project-diagram"></i>Painel </a>
 					<a class="list-group-item" href="/System/systemBasic/Noticias"><i class="menu-icon fas fa-bullhorn"></i>Notícias </a>
 					<a class="list-group-item" href="/System/systemBasic/Entrada"><i class="menu-icon fas fa-inbox"></i>Entrada </a>
 					<a class="list-group-item" href="/System/systemBasic/Projetos"><i class="menu-icon fas fa-tasks"></i>Projetos </a>
