@@ -14,6 +14,7 @@
 	<script src="/System/systemBasic/bootstrap/js2/bootstrap.min.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/js/ajax.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/js/bootstrap-growl.js" type="text/javascript"></script>
+	<script src="/System/systemBasic/sweetalert/docs/assets/sweetalert/sweetalert.min.js"></script>
 <!-- 	<script src="/System/systemBasic/js/script.js" type="text/javascript"></script> -->
 </head>
 <body id="body">

@@ -3,14 +3,24 @@
 	session_start();
 
 	if ($_POST) {
-		$errs = array();
-		// print_r($_POST); 
-		$user = mysqli_escape_string($db, $_POST['nome']);
-		$pass = mysqli_escape_string($db, $_POST['senha']);
+		$usuario = $_POST['nome'];
+		$senha = $_POST['senha'];
 
-		if (empty($user) || empty($pass)) :
-			$errs[] = "<h1>Campo Usuário/Senha precisa ser preenchido!</h1>";
-		endif;
+		$query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = '". $usuario ."' AND SENHA = MD5('". $senha ."')";
+		// $query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = '?' AND SENHA = MD5('?')";
+		// $query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = ':teste' AND SENHA = MD5(':senha')";
+		// $statement = $db->prepare($query);
+		// $statement->execute();
+
+
+		$stmt = $db->prepare($query);
+		// $stmt->bindParam(':teste', $usuario, PDO::PARAM_INT);
+		// $stmt->bindParam(':senha', $senha, PDO::PARAM_INT);
+		// $stmt->execute(array($usuario, $senha)); 
+		$stmt->execute(); 
+		$user = $stmt->fetch();
+
+		echo "<h1>" . $user['nome'] . "</h1>";
 	}
 ?>
 

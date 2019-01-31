@@ -237,53 +237,59 @@ function detalharProduto(id_produto){
 
 function excluirProduto(id_produto){
 	// console.log(id_produto);
-	$.ajax({
-		url: '/System/systemBasic/view/Produtos/excluir.php', // Url do lado server que vai receber o arquivo
-		dataType: 'json',
-		type: 'post',
-		data: {
-			id: id_produto
-		},
-		success: function(dados) {
-			if (dados == "S") {
-				$.bootstrapGrowl("Sucesso ao excluir produto!", {
-					ele: 'body', // which element to append to
-					type: 'success', // (null, 'info', 'danger', 'success')
-					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-					align: 'right', // ('left', 'right', or 'center')
-					width: 'auto', // (integer, or 'auto')
-					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-					allow_dismiss: true, // If true then will display a cross to close the popup.
-					stackup_spacing: 10 // spacing between consecutively stacked growls.
-				});
+	swal({
+		title: "Você tem certeza?",
+		text: "Uma vez deletado, você não poderá recuperar!",
+		icon: "warning",
+		buttons: true,
+		dangerMode: true,
+	})
+	.then((willDelete) => {
+		if (willDelete) {
+			$.ajax({
+				url: '/System/systemBasic/view/Produtos/excluir.php', // Url do lado server que vai receber o arquivo
+				dataType: 'json',
+				type: 'post',
+				data: {
+					id: id_produto
+				},
+				success: function(dados) {
+					if (dados == "S") {
+						swal("Poof! Seu produto foi excluído!", {
+							icon: "success",
+						});
 
-				$("tr.remover").remove();
-				// popularProdutos();
+						$("tr.remover").remove();
+						// popularProdutos();
 
-			}else{
-				$.bootstrapGrowl("Erro ao excluir o produto!", {
-					ele: 'body', // which element to append to
-					type: 'info', // (null, 'info', 'danger', 'success')
-					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-					align: 'right', // ('left', 'right', or 'center')
-					width: 'auto', // (integer, or 'auto')
-					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-					allow_dismiss: true, // If true then will display a cross to close the popup.
-					stackup_spacing: 10 // spacing between consecutively stacked growls.
-				});
-			}
-		},
-		error: function(dados) {
-			$.bootstrapGrowl("ERRO!", {
-				ele: 'body', // which element to append to
-				type: 'danger', // (null, 'info', 'danger', 'success')
-				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-				align: 'right', // ('left', 'right', or 'center')
-				width: 'auto', // (integer, or 'auto')
-				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-				allow_dismiss: true, // If true then will display a cross to close the popup.
-				stackup_spacing: 10 // spacing between consecutively stacked growls.
+					}else{
+						$.bootstrapGrowl("Erro ao excluir o produto!", {
+							ele: 'body', // which element to append to
+							type: 'info', // (null, 'info', 'danger', 'success')
+							offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+							align: 'right', // ('left', 'right', or 'center')
+							width: 'auto', // (integer, or 'auto')
+							delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+							allow_dismiss: true, // If true then will display a cross to close the popup.
+							stackup_spacing: 10 // spacing between consecutively stacked growls.
+						});
+					}
+				},
+				error: function(dados) {
+					$.bootstrapGrowl("ERRO!", {
+						ele: 'body', // which element to append to
+						type: 'danger', // (null, 'info', 'danger', 'success')
+						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+						align: 'right', // ('left', 'right', or 'center')
+						width: 'auto', // (integer, or 'auto')
+						delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+						allow_dismiss: true, // If true then will display a cross to close the popup.
+						stackup_spacing: 10 // spacing between consecutively stacked growls.
+					});
+				}
 			});
+		} else {
+			swal("Seu produto não foi deletado!");
 		}
 	});
 }

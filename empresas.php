@@ -130,6 +130,12 @@
 	https://www.youtube.com/watch?v=Yo0juAMFZIE
 	Login => 
 	https://www.youtube.com/watch?v=dVTwNJ9kR2g
+	sITE PROFISIONAL => 
+	https://www.youtube.com/watch?v=6X4CC0X_Nl0&index=6&list=PLwXQLZ3FdTVGbnuBYtOnkIIwdYKYRuhYt
+	Grafico PHP =>
+	https://www.youtube.com/watch?v=QnI5FlDP0rs
+	Grafico JS =>
+	https://www.youtube.com/watch?v=l0K95at8BVg
 
 	******************* PagSeguro *******************
 	=>	Principal
@@ -159,6 +165,25 @@
 	http://phpbrasil.com/scripts
 	https://www.meetup.com/pt-BR/php-sp/
 	http://softwarelivre.org/comunidades-brasileiras/php-brasil
+
+
+
+
+
+
+	************ DICAS PHP ************
+		=> Limpar cache
+			header("Pragma: no-cache");
+			header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+			header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+			header("Cache-Control: no-cache, cachehack=".time());
+			header("Cache-Control: no-store, must-revalidate");
+			header("Cache-Control: post-check=-1, pre-check=-1", false); 
+
+
+		=> HTTP para HTTPS
+			Se seu dominio esta seguro com SSL temos que trocar todos os elementos de chamando de arquivos de outro site para o nosso por "https://" assim por diante.
+
 
 
 
