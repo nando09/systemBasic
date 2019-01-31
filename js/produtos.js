@@ -203,9 +203,9 @@ function detalharProduto(id_produto){
 				$("#detalhamento .nome").text(dados.nome);
 				$("#detalhamento .categoria").text(dados.categoria);
 				$("#detalhamento .valor").text(dados.valor);
-				$("#detalhamento .quantidade").text(dados.descricao);
-				$("#detalhamento .minimo").text(dados.minimo);
-				$("#detalhamento .descricao").text(dados.quantidade);
+				$("#detalhamento .descricao").text(dados.descricao);
+				// $("#detalhamento .minimo").text(dados.minimo);
+				$("#detalhamento .quantidade").text(dados.quantidade);
 
 			}else{
 				$.bootstrapGrowl("Erro ao detalhar o produto!", {

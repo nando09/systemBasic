@@ -154,6 +154,10 @@ a:hover{
 	font-size: 20px;
 }
 
+.title-model{
+	font-size: 20px;
+}
+
 .btn.btn-primary.btn-adicionar{
 	margin-bottom: 10px;
 	float: right;

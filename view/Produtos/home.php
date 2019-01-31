@@ -16,7 +16,7 @@
 		<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl">
 				<div class="modal-content">
-					<h1 class="title-pag">Novo Produto</h1>
+					<h2 class="title-pag">Novo Produto</h2>
 					<div id="novo-elemento">
 						<div class="row">
 							<div class="form-group col-md-6">
@@ -54,7 +54,7 @@
 		<div class="modal fade bd-example-modal-xl editar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl">
 				<div class="modal-content">
-					<h1 class="title-pag">Alterar Produto</h1>
+					<h2 class="title-pag">Alterar Produto</h2>
 					<div id="novo-elemento">
 						<div class="row">
 							<input id="id_produto" name="id_produto" type="hidden">
@@ -94,14 +94,54 @@
 			<div class="modal-dialog modal-xl">
 				<div id="detalhamento" class="modal-content">
 					<div class="container">
-						<h1 class="title-pag">Detalhe do produto</h1>
+						<h2 class="title-pag">Detalhe do produto</h2>
 						<div class="row">
-							<div class="col-md-4 nome">nome</div>
-							<div class="col-md-4 categoria">categoria</div>
-							<div class="col-md-4 valor">valor</div>
-							<div class="col-md-4 quantidade">quantidade</div>
-							<div class="col-md-4 minimo">minimo</div>
-							<div class="col-md-4 descricao">descricao</div>
+							<div class="col-md-12">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th scope="col">Nome</th>
+											<th scope="col">Categoria</th>
+											<th scope="col">Valor</th>
+											<th scope="col">Quantidade</th>
+											<th scope="col">Descrição</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="nome">Mark</td>
+											<td class="categoria">Mark</td>
+											<td class="valor">Mark</td>
+											<td class="quantidade">Otto</td>
+											<td class="descricao">@mdo</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- Para a class row nao alinha tudo -->
+							<div class="col-md-12">
+								<hr class="my-4">
+							</div>
+
+							<div class="col-md-6">
+								<h2 class="title-model text-center">Quantidade de vendas</h2>
+							</div>
+							<div class="col-md-6">
+								<h2 class="title-model text-center">Clientes que já comprou!</h2>
+							</div>
+
+							<!-- Para a class row nao alinha tudo -->
+							<div class="col-md-12">
+								<hr class="my-4">
+							</div>
+
+							<div class="col-md-6">
+								<h2 class="title-model text-center">Lucro do produto</h2>
+							</div>
+							<div class="col-md-6">
+								<h2 class="title-model text-center">Fornecedores</h2>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -125,7 +165,7 @@
 		</table>		
 	</div>
 	<div class="tab-pane fade" id="relatorio" role="tabpanel" aria-labelledby="profile-tab">
-		<h1 class="title-pag">Relatorio dos Produtos</h1>
+		<h2 class="title-pag">Relatorio dos Produtos</h2>
 	</div>
 </div>
 <script src="/System/systemBasic/js/produtos.js" type="text/javascript"></script>
