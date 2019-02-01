@@ -7,6 +7,10 @@ body {
 	background-color: #e28b03;
 }
 
+.none{
+	display: none;
+}
+
 #container-login {
 	background-color: #43484c;
 	position: relative;

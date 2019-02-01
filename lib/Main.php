@@ -61,6 +61,10 @@ class Main{
 		}
 	}
 
+	public function setLogin(){
+		
+	}
+
 	public function run(){
 		extract($this->params, EXTR_PREFIX_ALL, 'view');
 		$this->setRoad();

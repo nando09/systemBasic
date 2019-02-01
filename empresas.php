@@ -136,6 +136,9 @@
 	https://www.youtube.com/watch?v=QnI5FlDP0rs
 	Grafico JS =>
 	https://www.youtube.com/watch?v=l0K95at8BVg
+	Filtros para formulario =>
+	https://www.youtube.com/watch?v=V4AnuYaSWO4&index=36&list=PLwXQLZ3FdTVEITn849NlfI9BGY-hk1wkq
+	https://www.youtube.com/watch?v=zBIQBOShTzU&list=PLwXQLZ3FdTVEITn849NlfI9BGY-hk1wkq&index=38
 
 	******************* PagSeguro *******************
 	=>	Principal
@@ -188,3 +191,8 @@
 
 	https://www.savepoint.blog.br/2018/04/02/sintaxe-no-postgresql-enum/
 
+
+
+
+	FILMES
+	Três regras do filme Poder Além da Vida

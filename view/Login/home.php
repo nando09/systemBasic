@@ -1,26 +1,26 @@
 <?php
 	include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
-	session_start();
 
 	if ($_POST) {
 		$usuario = $_POST['nome'];
 		$senha = $_POST['senha'];
-
-		$query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = '". $usuario ."' AND SENHA = MD5('". $senha ."')";
-		// $query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = '?' AND SENHA = MD5('?')";
-		// $query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = ':teste' AND SENHA = MD5(':senha')";
-		// $statement = $db->prepare($query);
-		// $statement->execute();
-
-
-		$stmt = $db->prepare($query);
-		// $stmt->bindParam(':teste', $usuario, PDO::PARAM_INT);
-		// $stmt->bindParam(':senha', $senha, PDO::PARAM_INT);
-		// $stmt->execute(array($usuario, $senha)); 
+		$query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = :teste AND SENHA = MD5(:senha)";
+		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+		$stmt->bindParam(':teste', $usuario, PDO::PARAM_INT);
+		$stmt->bindParam(':senha', $senha, PDO::PARAM_INT);
 		$stmt->execute(); 
 		$user = $stmt->fetch();
-
-		echo "<h1>" . $user['nome'] . "</h1>";
+		if ($stmt->rowCount() == 1) {
+			$_SESSION['logado'] = true;
+			$_SESSION['nome'] = $user['nome'];
+			header('Location: /System/systemBasic/Painel');
+		}else{
+			$msg_login = "
+				<br>
+				<div class='alert alert-secondary' role='alert'>
+					Senha/Usuário esta incorreto!
+				</div>";
+		}
 	}
 ?>
 
@@ -31,6 +31,7 @@
 	<meta name="description" content="Login - Sistema de estoque">
 	<meta name="author" content="Fernando Batista">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" href="/System/systemBasic/css/login.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -57,21 +58,10 @@
 			</div>
 
 			<div class="remember-me">
-				<input type="checkbox">
-				<span style="color: #DDD">Me lembre</span>
 			</div>
 
 			<input type="submit" value="Entrar" />
 		</form>
-		<div>
-			<?php
-				if (isset($errs)) :
-					foreach ($errs as $key):
-						echo $key;
-					endforeach;
-				endif;
-			?>
-		</div>
 		<div class="forgot-password">
 			<a href="#">Esqueceu sua senha?</a>
 		</div>
@@ -79,6 +69,11 @@
 			Não tem uma conta ainda?
 			<a href="register.html"><button id="register-link">Registre-se aqui</button></a>
 		</div>
+		<?php
+			if (isset($msg_login) && !empty($msg_login)) {
+				echo $msg_login;
+			}
+		?>
 	</div>
 </body>
 

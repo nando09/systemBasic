@@ -1,14 +1,15 @@
 <?php
-
-
 	include 'helper/autoLoad.php';
+	session_start();
 
 	use lib\Main;
-	// use controller\admin\Home;
 
 	$ini = new Main();
-	// if ($ini->getMain() == 'Site') {
+	if ($ini->getMain() == 'Site' || $ini->getMain() == 'Login' || $_SESSION['logado'] == true) {
 		$ini->run();
-	// }else{
-		
-	// }
+	}else{
+		// $ini->setLogin();
+		// $ini->run();
+		header('Location: /System/systemBasic/Login');
+	}
+

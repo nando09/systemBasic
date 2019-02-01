@@ -47,7 +47,7 @@
 									<a class="dropdown-item" href="#">Editar Perfil</a>
 									<a class="dropdown-item" href="#">Configuração</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Logout</a>
+									<a class="dropdown-item" href="/System/systemBasic/Login/logout">Logout</a>
 								</div>
 							</div>
 						</li>
@@ -65,7 +65,7 @@
 									<a class="dropdown-item" href="#">Editar Perfil</a>
 									<a class="dropdown-item" href="#">Configuração</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Logout</a>
+									<a class="dropdown-item" href="/System/systemBasic/Login/logout">Logout</a>
 								</div>
 							</div>
 						</li>
@@ -96,7 +96,7 @@
 				<div class="list-group nav-lateral">
 					<a class="list-group-item disabled header" aria-disabled="true"></a>
 					<a class="list-group-item"><i class="menu-icon fas fa-concierge-bell"></i>Serviços</a>
-					<a class="list-group-item"><i class="menu-icon fas fa-sign-out-alt"></i>Logout</a>
+					<a class="list-group-item" href="/System/systemBasic/Login/logout"><i class="menu-icon fas fa-sign-out-alt"></i>Logout</a>
 					<a class="list-group-item disabled footer" aria-disabled="true"></a>
 				</div>
 			</div>
