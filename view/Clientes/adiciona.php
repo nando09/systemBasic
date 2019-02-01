@@ -9,7 +9,7 @@
 	$tr = '';
 
 	// Primeiro em php.ini temos que descomentar line pdo_psql
-	try{
+	// try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
 		$nome = $_POST['nome'];
@@ -28,6 +28,10 @@
 
 			if ($campo = $db->query($query)) {
 				foreach ($campo as $key) {
+					$pedido = "INSERT INTO DETALHE_PEDIDO (ID_CLIENTE, VALOR, STATUS, DATA_ULTIMA_COMPRA) VALUES (". $key['id'] .", 0, 'SEM COMPRAS', NOW())";
+					$db->query($pedido);
+					// die($pedido);
+
 					$tr .= "<tr>".
 									"<td>". $key['empresa'] . "</td>".
 									"<td>". $key['email'] ."</td>".
@@ -60,10 +64,10 @@
 				);
 			}
 		}
-	}catch(Exception $e){
-		$retorno = array(
-			'retorno' => 'N'
-		);
-	}
+	// }catch(Exception $e){
+	// 	$retorno = array(
+	// 		'retorno' => 'N'
+	// 	);
+	// }
 
 	echo json_encode($retorno);

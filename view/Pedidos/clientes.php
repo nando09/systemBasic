@@ -5,10 +5,10 @@
 	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
-		$query = $db->query("SELECT ID, NOME FROM categoria");
+		$query = $db->query("SELECT ID, EMPRESA FROM CLIENTE");
 
 		foreach ($query as $key) {
-			$retorno .= "<option value='". $key['id'] ."'>". $key['nome'] ."</option>";
+			$retorno .= "<option value='". $key['id'] ."'>". $key['empresa'] ."</option>";
 
 			// $retorno .= "<tr>".
 			// 				"<td>" . $key['nome'] . "</td><td>". $key['categoria'] ."</td>".

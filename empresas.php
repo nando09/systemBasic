@@ -186,5 +186,5 @@
 
 
 
-
+	https://www.savepoint.blog.br/2018/04/02/sintaxe-no-postgresql-enum/
 

@@ -5,14 +5,14 @@
 	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
-		$query = $db->query("SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor as valor, p.descricao as descricao FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id");
+		$query = $db->query("SELECT D.ID AS ID, C.EMPRESA AS EMPRESA, D.VALOR AS VALOR, D.DATA_ULTIMA_COMPRA AS ULTIMA, D.STATUS AS STATUS FROM DETALHE_PEDIDO AS D INNER JOIN CLIENTE AS C ON D.ID_CLIENTE = C.ID");
 
 		foreach ($query as $key) {
 			$retorno .= "<tr>".
-							"<td>". $key['nome'] . "</td>".
-							"<td>". $key['categoria'] ."</td>".
-							"<td>". $key['valor'] ."</td>".
-							"<td>". $key['descricao'] ."</td>".
+							"<td>". $key['empresa'] . "</td>".
+							"<td>". $key['valor'] . "</td>".
+							"<td>". $key['ultima'] . "</td>".
+							"<td>". $key['status'] . "</td>".
 							"<td class='text-center'>".
 								"<div class='detalhar' data-toggle='modal' data-target='.detalhamento'>".
 									"<i class='fas fa-info-circle detalhar'></i>".
@@ -22,9 +22,6 @@
 								"<div class='edita' data-toggle='modal' data-target='.editar'>".
 									"<i class='far fa-edit editar'></i>".
 								"</div>".
-							"</td>".
-							"<td class='text-center'>".
-								"<i class='far fa-trash-alt excluir'></i>".
 							"</td>".
 							"<td id='id' class='none'>".
 								"<span value=". $key['id'] .">". $key['id'] ."</span>".
