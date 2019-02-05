@@ -87,12 +87,55 @@
 			<div class="container">
 				<h1 class="title-pag">Detalhe do pedido</h1>
 				<div class="row">
-					<div class="col-md-4 nome">nome</div>
-					<div class="col-md-4 cliente">cliente</div>
-					<div class="col-md-4 valor">valor</div>
-					<div class="col-md-4 quantidade">quantidade</div>
-					<div class="col-md-4 minimo">minimo</div>
-					<div class="col-md-4 descricao">descricao</div>
+					<div class="col-md-12">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th scope="col text-uppercase">empresa</th>
+									<th scope="col text-uppercase">valor</th>
+									<th scope="col text-uppercase">ultima</th>
+									<th scope="col text-uppercase">vencimento</th>
+									<th scope="col text-uppercase">tempo</th>
+									<th scope="col text-uppercase">status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="empresa">Mark</td>
+									<td class="valor">Mark</td>
+									<td class="ultima">Mark</td>
+									<td class="vencimento">Mark</td>
+									<td class="tempo">Otto</td>
+									<td class="status">@mdo</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!-- Para a class row nao alinha tudo -->
+					<div class="col-md-12">
+						<hr class="my-4">
+					</div>
+
+					<div class="col-md-6">
+						<h2 class="title-model text-center">Pedido</h2>
+						<canvas id="myChart"></canvas>
+					</div>
+					<div class="col-md-6">
+						<h2 class="title-model text-center">Produtos já comprado</h2>
+					</div>
+
+					<!-- Para a class row nao alinha tudo -->
+					<div class="col-md-12">
+						<hr class="my-4">
+					</div>
+
+					<div class="col-md-6">
+						<h2 class="title-model text-center"></h2>
+					</div>
+					<div class="col-md-6">
+						<h2 class="title-model text-center">Anotações</h2>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -114,4 +157,25 @@
 	</tbody>
 </table>
 <script src="/System/systemBasic/js/pedidos-entrada.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var chart = new Chart(ctx, {
+		// The type of chart we want to create
+		type: 'bar',
+
+		// The data for our dataset
+		data: {
+			labels: ["January", "February", "March", "April", "May", "June", "July"],
+			datasets: [{
+				label: "My First dataset",
+				backgroundColor: 'rgb(255, 99, 132)',
+				borderColor: 'rgb(255, 99, 132)',
+				data: [20, 10, 5, 2, 20, 30, 45],
+			}]
+		},
+
+		// Configuration options go here
+		options: {}
+	});
+</script>
 <?php include 'view/patterns/footer.php' ?>

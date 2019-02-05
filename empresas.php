@@ -72,6 +72,15 @@
 
 
 	***************** IDEIAS *****************
+	MENSAGEM PRINCIPAL
+			->	Mensagem, quando tiver o estoque no minimo
+			->	Quando um cliente ficar um tempo sem comprar de você
+			->	Data de entrega para estoque automatico (Fornecedor)
+			->	Data de entrega para estoque automatico (Cliente)
+			->	Quando um cliente faz um pedido pelo o sistema
+			->	Agenda
+			*	Aqui eu quero fazer o sistema melhorar com os elementos que não ira precisa ir a busca de produtos em estoque minimo, ou ficar atras de clientes que faz um pedidos pelo sistema. Então ao invez de fazer manual, fazer o pedido automatico e você so ver quem pediu o que ele pedio.
+
 	RELATORIO DO CLIENTE
 			->	Desde de quando cliente não compra mais!
 			->	Mandar um email para ele!

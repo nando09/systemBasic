@@ -18,7 +18,7 @@
 								"</div>".
 							"</td>".
 							"<td class='text-center'>".
-								"<div class='edita' data-toggle='modal' data-target='.editar'>".
+								"<div class='editar' data-toggle='modal' data-target='.editar'>".
 									"<i class='far fa-edit editar'></i>".
 								"</div>".
 							"</td>".

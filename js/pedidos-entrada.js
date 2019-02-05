@@ -200,12 +200,12 @@ function detalharpedido(id_pedido){
 		success: function(dados) {
 			if (dados.retorno == "S") {
 
-				$("#detalhamento .nome").text(dados.nome);
-				$("#detalhamento .cliente").text(dados.cliente);
+				$("#detalhamento .empresa").text(dados.empresa);
 				$("#detalhamento .valor").text(dados.valor);
-				$("#detalhamento .descricao").text(dados.descricao);
-				// $("#detalhamento .minimo").text(dados.minimo);
-				$("#detalhamento .quantidade").text(dados.quantidade);
+				$("#detalhamento .ultima").text(dados.ultima);
+				$("#detalhamento .vencimento").text(dados.vencimento);
+				// $("#detalhamento .tempo").text(dados.tempo);
+				$("#detalhamento .status").text(dados.status);
 
 			}else{
 				$.bootstrapGrowl("Erro ao detalhar o pedido!", {

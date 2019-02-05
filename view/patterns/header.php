@@ -15,6 +15,7 @@
 	<script src="/System/systemBasic/js/ajax.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/js/bootstrap-growl.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/sweetalert/docs/assets/sweetalert/sweetalert.min.js"></script>
+	<script src="/System/systemBasic/chart/chart.js/dist/Chart.min.js"></script>
 <!-- 	<script src="/System/systemBasic/js/script.js" type="text/javascript"></script> -->
 </head>
 <body id="body">
@@ -40,12 +41,15 @@
 						<li class="nav-item">
 							<div class="btn-group">
 								<div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<div class="msg-principal">
+										<p class="text-center">1</p>
+									</div>
 									<i class="fas fa-sms"></i>
 								</div>
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">Seu Perfil</a>
-									<a class="dropdown-item" href="#">Editar Perfil</a>
-									<a class="dropdown-item" href="#">Configuração</a>
+									<a class="dropdown-item" href="/System/systemBasic/Perfil">Seu Perfil</a>
+									<a class="dropdown-item" href="/System/systemBasic/Perfil/editar">Editar Perfil</a>
+									<a class="dropdown-item" href="/System/systemBasic/Perfil/configuracao">Configuração</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="/System/systemBasic/Login/logout">Logout</a>
 								</div>
@@ -61,9 +65,9 @@
 									<span class="sr-only">Toggle Dropdown</span>
 								</button>
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">Seu Perfil</a>
-									<a class="dropdown-item" href="#">Editar Perfil</a>
-									<a class="dropdown-item" href="#">Configuração</a>
+									<a class="dropdown-item" href="/System/systemBasic/Perfil">Seu Perfil</a>
+									<a class="dropdown-item" href="/System/systemBasic/Perfil/editar">Editar Perfil</a>
+									<a class="dropdown-item" href="/System/systemBasic/Perfil/configuracao">Configuração</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="/System/systemBasic/Login/logout">Logout</a>
 								</div>

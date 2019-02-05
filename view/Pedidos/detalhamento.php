@@ -6,19 +6,21 @@
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
 		$id = $_POST['id'];
+		$query = "SELECT D.ID as ID, C.EMPRESA AS EMPRESA, D.VALOR AS VALOR, D.DATA_ULTIMA_COMPRA AS ULTIMA, D.STATUS as STATUS, D.VENCIMENTO as VENCIMENTO, D.TEMPO AS TEMPO FROM DETALHE_PEDIDO AS D INNER JOIN CLIENTE AS C ON D.ID_CLIENTE = C.ID WHERE D.ID = " . $id;
+		// die($query);
 
-		$query = $db->query("SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor AS valor, p.descricao AS descricao, p.minimo AS minimo, p.quantidade AS quantidade FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id WHERE p.ID = " . $id);
+		$query = $db->query($query);
 
 		foreach ($query as $key) {
 			$retorno = array(
 						'retorno' => 'S',
-						'id_produto' => $key['id'],
-						'nome' => $key['nome'],
-						'categoria' => $key['categoria'],
+						'id' => $key['id'],
+						'empresa' => $key['empresa'],
 						'valor' => $key['valor'],
-						'descricao' => $key['descricao'],
-						'minimo' => $key['minimo'],
-						'quantidade' => $key['quantidade']
+						'ultima' => $key['ultima'],
+						'vencimento' => $key['vencimento'],
+						'tempo' => $key['tempo'],
+						'status' => $key['status']
 			);
 		}
 	}catch(Exception $e){
