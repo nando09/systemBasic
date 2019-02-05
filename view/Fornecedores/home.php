@@ -95,12 +95,54 @@
 					<div class="container">
 						<h1 class="title-pag">Detalhe do fornecedor</h1>
 						<div class="row">
-							<div class="col-md-4 nome">NOME</div>
-							<div class="col-md-4 empresa">EMPRESA</div>
-							<div class="col-md-4 cnpj">CNPJ</div>
-							<div class="col-md-4 localidade">LOCALIDADE</div>
-							<div class="col-md-4 email">EMAIL</div>
-							<div class="col-md-4 telefone">TELEFONE</div>
+							<div class="col-md-12">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th scope="col">NOME</th>
+											<th scope="col">EMPRESA</th>
+											<th scope="col">CNPJ</th>
+											<th scope="col">LOCALIDADE</th>
+											<th scope="col">EMAIL</th>
+											<th scope="col">TELEFONE</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="nome">Mark</td>
+											<td class="empresa">Mark</td>
+											<td class="cnpj">Mark</td>
+											<td class="localidade">Mark</td>
+											<td class="email">Otto</td>
+											<td class="telefone">@mdo</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- Para a class row nao alinha tudo -->
+							<div class="col-md-12">
+								<hr class="my-4">
+							</div>
+
+							<div class="col-md-6">
+								<h2 class="title-model text-center">Quantidade de compras</h2>
+							</div>
+							<div class="col-md-6">
+								<h2 class="title-model text-center">Valores dos produtos</h2>
+							</div>
+
+							<!-- Para a class row nao alinha tudo -->
+							<div class="col-md-12">
+								<hr class="my-4">
+							</div>
+
+							<div class="col-md-6">
+								<h2 class="title-model text-center">Produtos</h2>
+							</div>
+							<div class="col-md-6">
+								<h2 class="title-model text-center">Anotações</h2>
+							</div>
 						</div>
 					</div>
 				</div>

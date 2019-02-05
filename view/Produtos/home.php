@@ -128,7 +128,7 @@
 								<h2 class="title-model text-center">Quantidade de vendas</h2>
 							</div>
 							<div class="col-md-6">
-								<h2 class="title-model text-center">Clientes que já comprou!</h2>
+								<h2 class="title-model text-center">Clientes</h2>
 							</div>
 
 							<!-- Para a class row nao alinha tudo -->
