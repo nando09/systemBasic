@@ -14,85 +14,98 @@
 		<!-- Extra large modal -->
 		<button type="button" class="btn btn-primary btn-adicionar" data-toggle="modal" data-target=".bd-example-modal-xl">NOVO</button>
 
-		<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+		<div data-backdrop="static" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl">
 				<div class="modal-content">
-					<h1 class="title-pag">Novo fornecedor</h1>
-					<div id="novo-elemento">
-						<div class="row">
-							<div class="form-group col-md-6">
-								<label>NOME</label>
-								<input id="nome" type="text" class="form-control">
+					<div class="container">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h1 class="title-pag">Novo fornecedor</h1>
+						<div id="novo-elemento">
+							<div class="row">
+								<div class="form-group col-md-6">
+									<label>NOME</label>
+									<input id="nome" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-6" id="categoria">
+									<label>EMPRESA</label>
+									<input id="empresa" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>CNPJ</label>
+									<input id="cnpj" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>LOCALIDADE</label>
+									<input id="localidade" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>EMAIL</label>
+									<input id="email" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-12">
+									<label>TELEFONE</label>
+									<input id="telefone" class="form-control" rows="3">
+								</div>
 							</div>
-							<div class="form-group col-md-6" id="categoria">
-								<label>EMPRESA</label>
-								<input id="empresa" type="text" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label>CNPJ</label>
-								<input id="cnpj" type="text" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label>LOCALIDADE</label>
-								<input id="localidade" type="text" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label>EMAIL</label>
-								<input id="email" type="text" class="form-control">
-							</div>
-							<div class="form-group col-md-12">
-								<label>TELEFONE</label>
-								<input id="telefone" class="form-control" rows="3">
-							</div>
+							<button id="salvar-fornecedor" type="button" class="btn btn-primary" data-dismiss="modal">SALVAR</button>
 						</div>
-						<button id="salvar-fornecedor" type="button" class="btn btn-primary" data-dismiss="modal">SALVAR</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="modal fade bd-example-modal-xl editar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+		<div data-backdrop="static" class="modal fade bd-example-modal-xl editar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl">
 				<div class="modal-content">
-					<h1 class="title-pag">Alterar fornecedor</h1>
-					<div id="novo-elemento">
-						<div class="row">
-							<input id="id_fornecedor" type="hidden">
-							<div class="form-group col-md-6">
-								<label>NOME</label>
-								<input id="nome-editar" type="text" class="form-control">
+					<div class="container">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h1 class="title-pag">Alterar fornecedor</h1>
+						<div id="novo-elemento">
+							<div class="row">
+								<input id="id_fornecedor" type="hidden">
+								<div class="form-group col-md-6">
+									<label>NOME</label>
+									<input id="nome-editar" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-6" id="categoria">
+									<label>EMPRESA</label>
+									<input id="empresa-editar" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>CNPJ</label>
+									<input id="cnpj-editar" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>LOCALIDADE</label>
+									<input id="localidade-editar" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>EMAIL</label>
+									<input id="email-editar" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-12">
+									<label>TELEFONE</label>
+									<input id="telefone-editar" class="form-control" rows="3">
+								</div>
 							</div>
-							<div class="form-group col-md-6" id="categoria">
-								<label>EMPRESA</label>
-								<input id="empresa-editar" type="text" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label>CNPJ</label>
-								<input id="cnpj-editar" type="text" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label>LOCALIDADE</label>
-								<input id="localidade-editar" type="text" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label>EMAIL</label>
-								<input id="email-editar" type="text" class="form-control">
-							</div>
-							<div class="form-group col-md-12">
-								<label>TELEFONE</label>
-								<input id="telefone-editar" class="form-control" rows="3">
-							</div>
+							<button id="alterar-fornecedor" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
 						</div>
-						<button id="alterar-fornecedor" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="modal fade bd-example-modal-xl detalhamento" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+		<div data-backdrop="static" class="modal fade bd-example-modal-xl detalhamento" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl">
 				<div id="detalhamento" class="modal-content">
 					<div class="container">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
 						<h1 class="title-pag">Detalhe do fornecedor</h1>
 						<div class="row">
 							<div class="col-md-12">
@@ -127,9 +140,15 @@
 
 							<div class="col-md-6">
 								<h2 class="title-model text-center">Quantidade de compras</h2>
+								<div class="alert alert-primary text-center quantidade-venda" role="alert">
+									200 Produtos
+								</div>
 							</div>
 							<div class="col-md-6">
-								<h2 class="title-model text-center">Valores dos produtos</h2>
+								<h2 class="title-model text-center">Valores de todas compras</h2>
+								<div class="alert alert-primary text-center quantidade-venda" role="alert">
+									R$200,00
+								</div>
 							</div>
 
 							<!-- Para a class row nao alinha tudo -->
@@ -139,9 +158,69 @@
 
 							<div class="col-md-6">
 								<h2 class="title-model text-center">Produtos</h2>
+								<table class="table">
+									<thead>
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">First</th>
+											<th scope="col">Last</th>
+											<th scope="col">Handle</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>Mark</td>
+											<td>Otto</td>
+											<td>@mdo</td>
+										</tr>
+										<tr>
+											<th scope="row">2</th>
+											<td>Jacob</td>
+											<td>Thornton</td>
+											<td>@fat</td>
+										</tr>
+										<tr>
+											<th scope="row">3</th>
+											<td>Larry</td>
+											<td>the Bird</td>
+											<td>@twitter</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 							<div class="col-md-6">
 								<h2 class="title-model text-center">Anotações</h2>
+								<table class="table">
+									<thead>
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">First</th>
+											<th scope="col">Last</th>
+											<th scope="col">Handle</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">1</th>
+											<td>Mark</td>
+											<td>Otto</td>
+											<td>@mdo</td>
+										</tr>
+										<tr>
+											<th scope="row">2</th>
+											<td>Jacob</td>
+											<td>Thornton</td>
+											<td>@fat</td>
+										</tr>
+										<tr>
+											<th scope="row">3</th>
+											<td>Larry</td>
+											<td>the Bird</td>
+											<td>@twitter</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>

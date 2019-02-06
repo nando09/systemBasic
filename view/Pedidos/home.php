@@ -4,87 +4,100 @@
 <!-- Extra large modal -->
 <!-- <button type="button" class="btn btn-primary btn-adicionar" data-toggle="modal" data-target=".bd-example-modal-xl">GRAVAR PEDIDO</button>
  -->
-<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div data-backdrop="static" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-xl">
 		<div class="modal-content">
-			<h1 class="title-pag">Novo pedido</h1>
-			<div id="novo-elemento">
-				<div class="row">
-					<div class="form-group col-md-6">
-						<label>Nome</label>
-						<input id="nome" name="nome" type="text" class="form-control">
+			<div class="container">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h1 class="title-pag">Novo pedido</h1>
+				<div id="novo-elemento">
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label>Nome</label>
+							<input id="nome" name="nome" type="text" class="form-control">
+						</div>
+						<div class="form-group col-md-6" id="cliente">
+							<label>Cliente</label>
+							<select id="cliente-novo" name="cliente" class="form-control"></select>
+						</div>
+						<div class="form-group col-md-4">
+							<label>Valor</label>
+							<input id="valor" name="valor" type="text" class="form-control">
+						</div>
+						<div class="form-group col-md-4">
+							<label>Quantidade</label>
+							<input id="quantidade" name="valor" type="text" class="form-control">
+						</div>
+						<div class="form-group col-md-4">
+							<label>Quantidade Min.</label>
+							<input id="min" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
+						</div>
+						<div class="form-group col-md-12">
+							<label>Descrição</label>
+							<textarea id="descricao" name="descricao" class="form-control" rows="3"></textarea>
+						</div>
+						<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
 					</div>
-					<div class="form-group col-md-6" id="cliente">
-						<label>Cliente</label>
-						<select id="cliente-novo" name="cliente" class="form-control"></select>
-					</div>
-					<div class="form-group col-md-4">
-						<label>Valor</label>
-						<input id="valor" name="valor" type="text" class="form-control">
-					</div>
-					<div class="form-group col-md-4">
-						<label>Quantidade</label>
-						<input id="quantidade" name="valor" type="text" class="form-control">
-					</div>
-					<div class="form-group col-md-4">
-						<label>Quantidade Min.</label>
-						<input id="min" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
-					</div>
-					<div class="form-group col-md-12">
-						<label>Descrição</label>
-						<textarea id="descricao" name="descricao" class="form-control" rows="3"></textarea>
-					</div>
-					<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
+					<button id="salvar-pedido" type="button" class="btn btn-primary" data-dismiss="modal">SALVAR</button>
 				</div>
-				<button id="salvar-pedido" type="button" class="btn btn-primary" data-dismiss="modal">SALVAR</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="modal fade bd-example-modal-xl editar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div data-backdrop="static" class="modal fade bd-example-modal-xl editar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-xl">
 		<div class="modal-content">
-			<h1 class="title-pag">Alterar pedido</h1>
-			<div id="novo-elemento">
-				<div class="row">
-					<input id="id_pedido" name="id_pedido" type="hidden">
-					<div class="form-group col-md-6">
-						<label>Nome</label>
-						<input id="nome-editar" name="nome" type="text" class="form-control">
+			<div class="container">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h1 class="title-pag">Alterar pedido</h1>
+				<div id="novo-elemento">
+					<div class="row">
+						<input id="id_pedido" name="id_pedido" type="hidden">
+						<div class="form-group col-md-6">
+							<label>Nome</label>
+							<input id="nome-editar" name="nome" type="text" class="form-control">
+						</div>
+						<div class="form-group col-md-6" id="cliente">
+							<label>Cliente</label>
+							<select id="cliente-editar" name="cliente" class="form-control"></select>
+						</div>
+						<div class="form-group col-md-4">
+							<label>Valor</label>
+							<input id="valor-editar" name="valor" type="text" class="form-control">
+						</div>
+						<div class="form-group col-md-4">
+							<label>Quantidade</label>
+							<input id="quantidade-editar" name="valor" type="text" class="form-control">
+						</div>
+						<div class="form-group col-md-4">
+							<label>Quantidade Min.</label>
+							<input id="min-editar" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
+						</div>
+						<div class="form-group col-md-12">
+							<label>Descrição</label>
+							<textarea id="descricao-editar" name="descricao" class="form-control" rows="3"></textarea>
+						</div>
+						<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
 					</div>
-					<div class="form-group col-md-6" id="cliente">
-						<label>Cliente</label>
-						<select id="cliente-editar" name="cliente" class="form-control"></select>
-					</div>
-					<div class="form-group col-md-4">
-						<label>Valor</label>
-						<input id="valor-editar" name="valor" type="text" class="form-control">
-					</div>
-					<div class="form-group col-md-4">
-						<label>Quantidade</label>
-						<input id="quantidade-editar" name="valor" type="text" class="form-control">
-					</div>
-					<div class="form-group col-md-4">
-						<label>Quantidade Min.</label>
-						<input id="min-editar" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
-					</div>
-					<div class="form-group col-md-12">
-						<label>Descrição</label>
-						<textarea id="descricao-editar" name="descricao" class="form-control" rows="3"></textarea>
-					</div>
-					<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
+					<button id="alterar-pedido" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
 				</div>
-				<button id="alterar-pedido" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="modal fade bd-example-modal-xl detalhamento" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div data-backdrop="static" class="modal fade bd-example-modal-xl detalhamento" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-xl">
 		<div id="detalhamento" class="modal-content">
 			<div class="container">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
 				<h1 class="title-pag">Detalhe do pedido</h1>
 				<div class="row">
 					<div class="col-md-12">
@@ -119,10 +132,71 @@
 
 					<div class="col-md-6">
 						<h2 class="title-model text-center">Pedido</h2>
-						<canvas id="myChart"></canvas>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">First</th>
+									<th scope="col">Last</th>
+									<th scope="col">Handle</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mark</td>
+									<td>Otto</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Jacob</td>
+									<td>Thornton</td>
+									<td>@fat</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Larry</td>
+									<td>the Bird</td>
+									<td>@twitter</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- <canvas id="myChart"></canvas> -->
 					</div>
 					<div class="col-md-6">
 						<h2 class="title-model text-center">Produtos já comprado</h2>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">First</th>
+									<th scope="col">Last</th>
+									<th scope="col">Handle</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mark</td>
+									<td>Otto</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Jacob</td>
+									<td>Thornton</td>
+									<td>@fat</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Larry</td>
+									<td>the Bird</td>
+									<td>@twitter</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- <canvas id="myChart"></canvas> -->
 					</div>
 
 					<!-- Para a class row nao alinha tudo -->
@@ -131,10 +205,70 @@
 					</div>
 
 					<div class="col-md-6">
-						<h2 class="title-model text-center"></h2>
+						<h2 class="title-model text-center">Datas das compras</h2>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">First</th>
+									<th scope="col">Last</th>
+									<th scope="col">Handle</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mark</td>
+									<td>Otto</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Jacob</td>
+									<td>Thornton</td>
+									<td>@fat</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Larry</td>
+									<td>the Bird</td>
+									<td>@twitter</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 					<div class="col-md-6">
 						<h2 class="title-model text-center">Anotações</h2>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">First</th>
+									<th scope="col">Last</th>
+									<th scope="col">Handle</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Mark</td>
+									<td>Otto</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Jacob</td>
+									<td>Thornton</td>
+									<td>@fat</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Larry</td>
+									<td>the Bird</td>
+									<td>@twitter</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
