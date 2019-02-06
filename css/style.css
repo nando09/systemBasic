@@ -210,5 +210,18 @@ a:hover{
 	margin: 0 auto;
 }
 
+.card .btn:not(:disabled):not(.disabled) {
+	cursor: pointer !important;
+}
+
+.card .list-group-item:hover, .card .list-group-item a:hover, .card .list-group-item:hover a, .card  .list-group-item:hover i{
+	background-color: #f8f9fa;
+	text-decoration: none;
+	color: #43484c;
+	cursor: auto;
+}
+
+
+
 
 
