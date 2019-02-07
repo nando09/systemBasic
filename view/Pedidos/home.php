@@ -9,93 +9,6 @@
 </ul>
 <div class="tab-content" id="myTabContent">
 	<div class="tab-pane fade show active" id="lista" role="tabpanel" aria-labelledby="home-tab">
-		<div data-backdrop="static" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-xl">
-				<div class="modal-content">
-					<div class="container">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h1 class="title-pag">Novo pedido</h1>
-						<div id="novo-elemento">
-							<div class="row">
-								<div class="form-group col-md-6">
-									<label>Nome</label>
-									<input id="nome" name="nome" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-6" id="cliente">
-									<label>Cliente</label>
-									<select id="cliente-novo" name="cliente" class="form-control"></select>
-								</div>
-								<div class="form-group col-md-4">
-									<label>Valor</label>
-									<input id="valor" name="valor" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
-									<label>Quantidade</label>
-									<input id="quantidade" name="valor" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
-									<label>Quantidade Min.</label>
-									<input id="min" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
-								</div>
-								<div class="form-group col-md-12">
-									<label>Descrição</label>
-									<textarea id="descricao" name="descricao" class="form-control" rows="3"></textarea>
-								</div>
-								<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
-							</div>
-							<button id="salvar-pedido" type="button" class="btn btn-primary" data-dismiss="modal">SALVAR</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div data-backdrop="static" class="modal fade bd-example-modal-xl editar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-xl">
-				<div class="modal-content">
-					<div class="container">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h1 class="title-pag">Alterar pedido</h1>
-						<div id="novo-elemento">
-							<div class="row">
-								<input id="id_pedido" name="id_pedido" type="hidden">
-								<div class="form-group col-md-6">
-									<label>Nome</label>
-									<input id="nome-editar" name="nome" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-6" id="cliente">
-									<label>Cliente</label>
-									<select id="cliente-editar" name="cliente" class="form-control"></select>
-								</div>
-								<div class="form-group col-md-4">
-									<label>Valor</label>
-									<input id="valor-editar" name="valor" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
-									<label>Quantidade</label>
-									<input id="quantidade-editar" name="valor" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
-									<label>Quantidade Min.</label>
-									<input id="min-editar" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
-								</div>
-								<div class="form-group col-md-12">
-									<label>Descrição</label>
-									<textarea id="descricao-editar" name="descricao" class="form-control" rows="3"></textarea>
-								</div>
-								<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
-							</div>
-							<button id="alterar-pedido" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div data-backdrop="static" class="modal fade bd-example-modal-xl detalhamento" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl">
 				<div id="detalhamento" class="modal-content">
@@ -280,7 +193,6 @@
 				</div>
 			</div>
 		</div>
-
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -292,98 +204,11 @@
 					<th class="text-center" scope="col">FAZER PEDIDO</th>
 				</tr>
 			</thead>
-			<tbody id="pedidos">
+			<tbody id="pedidos-entrada">
 			</tbody>
 		</table>
 	</div>
 	<div class="tab-pane fade" id="relatorio" role="tabpanel" aria-labelledby="profile-tab">
-		<div data-backdrop="static" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-xl">
-				<div class="modal-content">
-					<div class="container">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h1 class="title-pag">Novo pedido</h1>
-						<div id="novo-elemento">
-							<div class="row">
-								<div class="form-group col-md-6">
-									<label>Nome</label>
-									<input id="nome" name="nome" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-6" id="cliente">
-									<label>Cliente</label>
-									<select id="cliente-novo" name="cliente" class="form-control"></select>
-								</div>
-								<div class="form-group col-md-4">
-									<label>Valor</label>
-									<input id="valor" name="valor" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
-									<label>Quantidade</label>
-									<input id="quantidade" name="valor" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
-									<label>Quantidade Min.</label>
-									<input id="min" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
-								</div>
-								<div class="form-group col-md-12">
-									<label>Descrição</label>
-									<textarea id="descricao" name="descricao" class="form-control" rows="3"></textarea>
-								</div>
-								<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
-							</div>
-							<button id="salvar-pedido" type="button" class="btn btn-primary" data-dismiss="modal">SALVAR</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div data-backdrop="static" class="modal fade bd-example-modal-xl editar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-xl">
-				<div class="modal-content">
-					<div class="container">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h1 class="title-pag">Alterar pedido</h1>
-						<div id="novo-elemento">
-							<div class="row">
-								<input id="id_pedido" name="id_pedido" type="hidden">
-								<div class="form-group col-md-6">
-									<label>Nome</label>
-									<input id="nome-editar" name="nome" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-6" id="cliente">
-									<label>Cliente</label>
-									<select id="cliente-editar" name="cliente" class="form-control"></select>
-								</div>
-								<div class="form-group col-md-4">
-									<label>Valor</label>
-									<input id="valor-editar" name="valor" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
-									<label>Quantidade</label>
-									<input id="quantidade-editar" name="valor" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
-									<label>Quantidade Min.</label>
-									<input id="min-editar" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
-								</div>
-								<div class="form-group col-md-12">
-									<label>Descrição</label>
-									<textarea id="descricao-editar" name="descricao" class="form-control" rows="3"></textarea>
-								</div>
-								<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
-							</div>
-							<button id="alterar-pedido" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div data-backdrop="static" class="modal fade bd-example-modal-xl detalhamento" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl">
 				<div id="detalhamento" class="modal-content">
@@ -580,7 +405,7 @@
 					<th class="text-center" scope="col">FAZER PEDIDO</th>
 				</tr>
 			</thead>
-			<tbody id="pedidos">
+			<tbody id="pedidos-saida">
 			</tbody>
 		</table>
 	</div>

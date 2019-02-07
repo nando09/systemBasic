@@ -37,7 +37,7 @@ function popularpedidos(){
 						stackup_spacing: 10 // spacing between consecutively stacked growls.
 					});
 
-					$("#pedidos").append(dados.tr);
+					$("#pedidos-entrada").append(dados.tr);
 					// preparaExcluirpedido();
 					// preparaDetalharpedido();
 					// preparaEditarpedido();
@@ -89,7 +89,7 @@ function popularpedidos(){
 				});
 			}
 
-			$("#pedidos").append(dados);
+			$("#pedidos-entrada").append(dados);
 			// preparaExcluirpedido();
 			// preparaDetalharpedido();
 			// preparaEditarpedido();
@@ -323,7 +323,7 @@ $(document).ready(function() {
 	selectCliente();
 	popularpedidos();
 
-	$("#pedidos").click(function(event){
+	$("#pedidos-entrada").click(function(event){
 		var alvoEvento = $(event.target);
 		if (alvoEvento.hasClass("editar")){
 			$("tr").removeClass('editando');
