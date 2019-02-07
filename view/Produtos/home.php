@@ -31,15 +31,19 @@
 									<label>Categoria</label>
 									<select id="categoria-novo" name="categoria" class="form-control"></select>
 								</div>
-								<div class="form-group col-md-4">
+								<div class="form-group col-md-3">
+									<label>Codigo interno</label>
+									<input id="nro" name="nro" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-3">
 									<label>Valor</label>
 									<input id="valor" name="valor" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-4">
+								<div class="form-group col-md-3">
 									<label>Quantidade</label>
 									<input id="quantidade" name="valor" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-4">
+								<div class="form-group col-md-3">
 									<label>Quantidade Min.</label>
 									<input id="min" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
 								</div>
@@ -75,15 +79,19 @@
 									<label>Categoria</label>
 									<select id="categoria-editar" name="categoria" class="form-control"></select>
 								</div>
-								<div class="form-group col-md-4">
+								<div class="form-group col-md-3">
+									<label>Codigo interno</label>
+									<input id="nro-editar" name="nro-editar" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-3">
 									<label>Valor</label>
 									<input id="valor-editar" name="valor" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-4">
+								<div class="form-group col-md-3">
 									<label>Quantidade</label>
 									<input id="quantidade-editar" name="valor" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-4">
+								<div class="form-group col-md-3">
 									<label>Quantidade Min.</label>
 									<input id="min-editar" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
 								</div>
@@ -118,6 +126,7 @@
 											<th scope="col">Valor</th>
 											<th scope="col">Quantidade</th>
 											<th scope="col">Descrição</th>
+											<th scope="col">Codigo</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -127,6 +136,7 @@
 											<td class="valor">Mark</td>
 											<td class="quantidade">Otto</td>
 											<td class="descricao">@mdo</td>
+											<td class="nro">@mdo</td>
 										</tr>
 									</tbody>
 								</table>

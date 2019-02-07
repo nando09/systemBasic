@@ -145,8 +145,7 @@ function editarFornecedores(id_fornecedores, vai){
 				// $(".editando td").children().eq(1);
 
 				$(".editando").children().eq(0).text(dados.empresa);
-				$(".editando").children().eq(1).text(dados.email);
-				$(".editando").children().eq(2).text(dados.telefone);
+				$(".editando").children().eq(1).text(dados.telefone);
 
 				$.bootstrapGrowl("Sucesso ao alterar o fornecedor!", {
 					ele: 'body', // which element to append to

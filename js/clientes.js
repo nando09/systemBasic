@@ -8,7 +8,7 @@ function popularClientes(){
 		var telefone = $("#telefone").val();
 
 
-		console.log(nome+ "//" +empresa+ "//" +cnpj+ "//" +localidade+ "//" +email+ "//" +telefone);
+		// console.log(nome+ "//" +empresa+ "//" +cnpj+ "//" +localidade+ "//" +email+ "//" +telefone);
 
 		// var formDados  = $(this).serialize();
 		$.ajax({
@@ -145,8 +145,7 @@ function editarClientes(id_clientes, vai){
 				// $(".editando td").children().eq(1);
 
 				$(".editando").children().eq(0).text(dados.empresa);
-				$(".editando").children().eq(1).text(dados.email);
-				$(".editando").children().eq(2).text(dados.telefone);
+				$(".editando").children().eq(1).text(dados.telefone);
 
 				$.bootstrapGrowl("Sucesso ao alterar o cliente!", {
 					ele: 'body', // which element to append to
@@ -203,6 +202,7 @@ function detalharClientes(id_clientes){
 				$("#detalhamento .localidade").text(dados.localidade);
 				$("#detalhamento .email").text(dados.email);
 				$("#detalhamento .telefone").text(dados.telefone);
+				$("#detalhamento .ultima").text(dados.data_ultima);
 
 			}else{
 				$.bootstrapGrowl("Erro ao detalhar o cliente!", {

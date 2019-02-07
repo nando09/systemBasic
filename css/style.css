@@ -222,6 +222,12 @@ a:hover{
 }
 
 
+.rounded-circle {
+    position: absolute;
+    right: 0;
+    height: 70px;
+    padding: 5px;
+}
 
 
 

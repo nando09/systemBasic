@@ -9,8 +9,8 @@
 					<div class="card">
 						<div class="card-body text-center">
 							<h5 class="card-title">Planos</h5>
-							<p class="card-text">Conheça todos os planos ...</p>
-							<a href="#" class="btn btn-primary">Click aqui!</a>
+							<p class="card-text">Conheças todos os planos que temos para melhor rendimento de sua empresa. Você tambem pode dar dicas de evolução também.</p>
+							<a href="http://fernandobatista.com.br/" target="_blank" class="btn btn-primary">Click aqui!</a>
 						</div>
 					</div>
 				</div>
@@ -18,9 +18,9 @@
 				<div class="col-md-4">
 					<div class="card">
 						<div class="card-body text-center">
-							<h5 class="card-title"></h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
+							<h5 class="card-title">O que você quer no sistema?</h5>
+							<p class="card-text">Fale o que você quer que o sistema faça para você, entre em contato e vamos deixar o sistema do jeito que sua empresa precisa.</p>
+							<a href="#" class="btn btn-primary">Aqui!</a>
 						</div>
 					</div>
 				</div>

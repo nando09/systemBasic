@@ -10,7 +10,6 @@
 		foreach ($query as $key) {
 			$retorno .= "<tr>".
 							"<td>". $key['empresa'] . "</td>".
-							"<td>". $key['email'] ."</td>".
 							"<td>". $key['telefone'] ."</td>".
 							"<td class='text-center'>".
 								"<div class='detalhar' data-toggle='modal' data-target='.detalhamento'>".
@@ -24,6 +23,11 @@
 							"</td>".
 							"<td class='text-center'>".
 								"<i class='far fa-trash-alt excluir'></i>".
+							"</td>".
+							"<td class='text-center'>".
+								"<a href='/System/systemBasic/FazerPedido/home/". $key['id'] ."' target='_blank'>".
+									"<i class='fas fa-store-alt'></i>".
+								"</a>".
 							"</td>".
 							"<td id='id' class='none'>".
 								"<span value=". $key['id'] .">". $key['id'] ."</span>".

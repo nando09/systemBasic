@@ -36,22 +36,17 @@
 				<div class="col-md-8">
 					<ul class="nav justify-content-end">
 						<li class="nav-item">
-							<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Suporte</a>
+							<a class="nav-link font-weight-bold" href="#" data-toggle="modal" data-target="#exampleModal" aria-disabled="true">Suporte</a>
 						</li>
 						<li class="nav-item">
 							<div class="btn-group">
-								<div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="nav-link">
 									<div class="msg-principal">
 										<p class="text-center">1</p>
 									</div>
-									<i class="fas fa-sms"></i>
-								</div>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="/System/systemBasic/Perfil">Seu Perfil</a>
-									<a class="dropdown-item" href="/System/systemBasic/Perfil/editar">Editar Perfil</a>
-									<a class="dropdown-item" href="/System/systemBasic/Perfil/configuracao">Configuração</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="/System/systemBasic/Login/logout">Logout</a>
+									<a href="/System/systemBasic/Mensagem">
+										<i class="fas fa-sms"></i>
+									</a>
 								</div>
 							</div>
 						</li>
@@ -94,15 +89,35 @@
 					<a class="list-group-item" href="/System/systemBasic/Produtos"><i class="menu-icon fab fa-dropbox"></i>Produtos </a>
 					<a class="list-group-item" href="/System/systemBasic/Clientes"><i class="menu-icon fas fa-address-book"></i>Clientes </a>
 					<a class="list-group-item" href="/System/systemBasic/Fornecedores"><i class="menu-icon fas fa-truck-loading"></i>Fornecedores </a>
-					<a class="list-group-item" href="/System/systemBasic/Pedidos"><i class="menu-icon fas fa-cart-arrow-down"></i>Pedidos </a>
+					<a class="list-group-item" href="/System/systemBasic/Pedidos/entrada"><i class="menu-icon fas fa-cart-arrow-down"></i>Entrada produtos</a>
+					<a class="list-group-item" href="/System/systemBasic/Pedidos"><i class="menu-icon fas fa-cart-arrow-down"></i>Saída produtos</a>
 					<a class="list-group-item disabled footer" aria-disabled="true"></a>
 				</div>
 				<div class="list-group nav-lateral">
 					<a class="list-group-item disabled header" aria-disabled="true"></a>
-					<a class="list-group-item"><i class="menu-icon fas fa-concierge-bell"></i>Serviços</a>
+					<a class="list-group-item" href="/System/systemBasic/Servicos"><i class="menu-icon fas fa-concierge-bell"></i>Serviços</a>
 					<a class="list-group-item" href="/System/systemBasic/Login/logout"><i class="menu-icon fas fa-sign-out-alt"></i>Logout</a>
 					<a class="list-group-item disabled footer" aria-disabled="true"></a>
 				</div>
 			</div>
 			<div class="col-md-10">
 				<div class="conteudo">
+					<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									...
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary">Save changes</button>
+								</div>
+							</div>
+						</div>
+					</div>

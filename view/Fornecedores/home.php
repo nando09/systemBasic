@@ -232,11 +232,11 @@
 			<thead>
 				<tr>
 					<th scope="col">EMPRESA</th>
-					<th scope="col">EMAIL</th>
 					<th scope="col">TELEFONE</th>
 					<th class="text-center" scope="col">DETALHAMENTO</th>
 					<th class="text-center" scope="col">EDITAR</th>
 					<th class="text-center" scope="col">EXCLUIR</th>
+					<th class="text-center" scope="col">LOJA</th>
 				</tr>
 			</thead>
 			<tbody id="fornecedores">

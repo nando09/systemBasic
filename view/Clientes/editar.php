@@ -47,7 +47,6 @@ if ($vai == 'buscar') {
 					$retorno = array(
 								'retorno' 	=> 	'S',
 								'empresa' 	=> 	$key['empresa'],
-								'email' 	=>	$key['email'],
 								'telefone'	=> 	$key['telefone'],
 					);
 				}

@@ -1,6 +1,6 @@
 <?php include 'view/patterns/header.php' ?>
 <div>
-	<h1 class="title-pag">Saída de produtos</h1>
+	<h1 class="title-pag">Entrada de produtos</h1>
 	<div data-backdrop="static" class="modal fade bd-example-modal-xl detalhamento" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-xl">
 			<div id="detalhamento" class="modal-content">

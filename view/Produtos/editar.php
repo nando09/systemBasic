@@ -8,13 +8,14 @@ if ($vai == 'buscar') {
 	try{
 		$id = $_POST['id'];
 
-		$query = $db->query("SELECT id, nome, id_categoria, valor, descricao, minimo, quantidade FROM PRODUTO WHERE ID = " . $id);
+		$query = $db->query("SELECT id, nro, nome, id_categoria, valor, descricao, minimo, quantidade FROM PRODUTO WHERE ID = " . $id);
 		// die($query);
 		foreach ($query as $key) {
 			$retorno = array(
 						'retorno' => 'S',
 						'vai' => $vai,
 						'id_produto' => $key['id'],
+						'nro' => $key['nro'],
 						'nome' => $key['nome'],
 						'valor' => $key['valor'],
 						'descricao' => $key['descricao'],
@@ -32,11 +33,12 @@ if ($vai == 'buscar') {
 		$nome = $_POST['nome'];
 		$valor = $_POST['valor'];
 		$descricao = $_POST['descricao'];
+		$nro = $_POST['nro'];
 		$categoria = $_POST['categoria'];
 		$min = $_POST['min'];
 		$quantidade = $_POST['quantidade'];
 
-		$query = $db->query("UPDATE PRODUTO SET NOME = '". $nome ."', ID_CATEGORIA = ". $categoria .", VALOR = ". $valor .", DESCRICAO = '". $descricao ."', MINIMO = ". $min .", QUANTIDADE = ". $quantidade ." WHERE ID = " . $id);
+		$query = $db->query("UPDATE PRODUTO SET NRO = '". $nro ."', NOME = '". $nome ."', ID_CATEGORIA = ". $categoria .", VALOR = ". $valor .", DESCRICAO = '". $descricao ."', MINIMO = ". $min .", QUANTIDADE = ". $quantidade ." WHERE ID = " . $id);
 		// die()
 
 		if ($query) {

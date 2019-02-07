@@ -7,6 +7,8 @@ function popularProdutos(){
 		var descricao = $("#descricao").val();
 		var quantidade = $("#quantidade").val();
 		var min = $("#min").val();
+		var nro = $("#nro").val();
+		// console.log(nro);
 
 
 		// console.log(nome + '<br>' + categoria + '<br>' + valor + '<br>' + descricao);
@@ -21,7 +23,8 @@ function popularProdutos(){
 				valor: valor,
 				descricao: descricao,
 				quantidade: quantidade,
-				min: min
+				min: min,
+				nro: nro
 			},
 			type: 'POST',
 			success: function(dados) {
@@ -38,6 +41,7 @@ function popularProdutos(){
 					});
 
 					$("#produtos").append(dados.tr);
+					console.log(dados.tr);
 					// preparaExcluirProduto();
 					// preparaDetalharProduto();
 					// preparaEditarProduto();
@@ -124,7 +128,8 @@ function editarProduto(id_produto, vai){
 			descricao: $("#descricao-editar").val(),
 			categoria: $("#categoria-editar").val(),
 			min: $("#min-editar").val(),
-			quantidade: $("#quantidade-editar").val()
+			quantidade: $("#quantidade-editar").val(),
+			nro: $("#nro-editar").val()
 		}
 	}
 
@@ -142,6 +147,8 @@ function editarProduto(id_produto, vai){
 				$("#categoria-editar").val(dados.categoria);
 				$("#min-editar").val(dados.minimo);
 				$("#quantidade-editar").val(dados.quantidade);
+				$("#nro-editar").val(dados.nro);
+
 			}else if (dados.retorno == "S"){
 				// $(".editando td").children().eq(1);
 
@@ -204,6 +211,7 @@ function detalharProduto(id_produto){
 				$("#detalhamento .categoria").text(dados.categoria);
 				$("#detalhamento .valor").text(dados.valor);
 				$("#detalhamento .descricao").text(dados.descricao);
+				$("#detalhamento .nro").text(dados.nro);
 				// $("#detalhamento .minimo").text(dados.minimo);
 				$("#detalhamento .quantidade").text(dados.quantidade);
 

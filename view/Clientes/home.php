@@ -118,6 +118,7 @@
 											<th scope="col">LOCALIDADE</th>
 											<th scope="col">EMAIL</th>
 											<th scope="col">TELEFONE</th>
+											<th scope="col">ULTIMA COMPRA</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -128,6 +129,7 @@
 											<td class="localidade">Mark</td>
 											<td class="email">Otto</td>
 											<td class="telefone">@mdo</td>
+											<td class="ultima">1234</td>
 										</tr>
 									</tbody>
 								</table>
@@ -233,11 +235,11 @@
 			<thead>
 				<tr>
 					<th scope="col">EMPRESA</th>
-					<th scope="col">EMAIL</th>
 					<th scope="col">TELEFONE</th>
 					<th class="text-center" scope="col">DETALHAMENTO</th>
 					<th class="text-center" scope="col">EDITAR</th>
 					<th class="text-center" scope="col">EXCLUIR</th>
+					<th class="text-center" scope="col">LOJA</th>
 				</tr>
 			</thead>
 			<tbody id="clientes">

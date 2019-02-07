@@ -116,6 +116,12 @@
 			->	Ira colocar os projetos que querem que seja atualizado na empresa
 			*	As vezes esquecemos de ideias boas e quando vamos lembra já poderiamos esta com os carros muito a frente.
 
+	CLIENTE & FORNECEDOR
+			->	Nos pedidos vamos mostrar somente os pedidos e status do pedido
+			->	Porem no cliente/fornecedor vamos mostrar des de quando o cliente/fornecedor nao comprou nada
+			->	Pedidos é feito no link do cliente/fornecedor
+			*	Normalizar pois os valores entre os dois estao aleatorios
+
 
 
 	***** NOME *****
@@ -206,3 +212,16 @@
 
 	FILMES
 	Três regras do filme Poder Além da Vida
+
+
+
+
+
+Fazer um pedido precisa do cliente -> ai ele escolhe um produto -> 
+
+
+TABLE => Logica para os pedidos
+	CLIENTE/PRODUTO & FONECEDOR/PRODUTO: Escolhe o produto, faz um pedido, que vai para
+	PEDINDO/FORNECENDO: Que ao finalizar compra pede o tempo que irá fazer a entrega que vai gravar e o status dessa compra que vai esta na tabela
+	DETALHE_SAIDA/DETALHE_ENTRADA: Que vai mostrar o dia da entraga, vai pegunta se já entregou, e o status do pagamento
+
