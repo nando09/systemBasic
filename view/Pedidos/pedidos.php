@@ -19,8 +19,8 @@
 								"</div>".
 							"</td>".
 							"<td class='text-center'>".
-								"<div class='editar' data-toggle='modal' data-target='.editar'>".
-									"<i class='far fa-edit editar'></i>".
+								"<div class='pedir' data-toggle='modal' data-target='.pedir'>".
+									"<i class='fas fa-sign-in-alt'></i>".
 								"</div>".
 							"</td>".
 							"<td id='id' class='none'>".
@@ -35,8 +35,8 @@
 			// 				"<td class='text-center'><a href='/System/systemBasic/Produtos/detalhamento/'". $key['id'] .">".
 			// 					"Detalhar</a>".
 			// 				"</td>".
-			// 				"<td class='text-center'><a href='/System/systemBasic/Produtos/editar/'". $key['id'] .">".
-			// 					"Editar</a>".
+			// 				"<td class='text-center'><a href='/System/systemBasic/Produtos/pedir/'". $key['id'] .">".
+			// 					"pedir</a>".
 			// 				"</td>".
 			// 				"<td class='text-center'><a href='/System/systemBasic/Produtos/excluir/'". $key['id'] .">".
 			// 					"Excluir</a>".
