@@ -25,7 +25,7 @@
 								"<i class='far fa-trash-alt excluir'></i>".
 							"</td>".
 							"<td class='text-center'>".
-								"<a href='/System/systemBasic/FazerPedido/home/". $key['id'] ."' target='_blank'>".
+								"<a href='/System/systemBasic/FazerPedido/fornecedor/". $key['id'] ."' target='_blank'>".
 									"<i class='fas fa-store-alt'></i>".
 								"</a>".
 							"</td>".
