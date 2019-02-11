@@ -15,12 +15,8 @@ a:hover{
 	display: none;
 }
 
-#novo-elemento{
+#novo-elemento, #detalhamento{
 	clear: both;
-}
-
-.row{
-	width: 100%;
 }
 
 #body{
@@ -29,9 +25,10 @@ a:hover{
 
 
 /*  NAVAGAÇÂO  */
-.navbar{
+.navbar-light{
 	border-bottom: 1px solid #bbb;
 	padding: 0;
+	width: 100%;
 }
 
 .search-primary, .btn-search-primary{
@@ -65,7 +62,7 @@ a:hover{
 	box-shadow: 0 0 0 0.2rem rgba(226, 104, 20, 0.25);
 }
 
-.admin-home, .admin-search{
+.admin-home{
 	margin-top: 15px;
 }
 

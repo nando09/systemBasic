@@ -17,11 +17,27 @@
 	<script src="/System/systemBasic/sweetalert/docs/assets/sweetalert/sweetalert.min.js"></script>
 	<script src="/System/systemBasic/chart/chart.js/dist/Chart.min.js"></script>
 <!-- 	<script src="/System/systemBasic/js/script.js" type="text/javascript"></script> -->
+	<style type="text/css">
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>
 </head>
 <body id="body">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
-			<div class="row">
 				<div class="col-md-1">
 					<p class="admin-home">System</p>
 				</div>
@@ -70,7 +86,6 @@
 						</li>
 					</ul>
 				</div>
-			</div>
 		</div>
 	</nav>
 	<div id="primary" class="container-fluid">
@@ -106,17 +121,29 @@
 						<div class="modal-dialog modal-lg" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+									<h5 class="modal-title" id="exampleModalLabel">Contato</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
 								<div class="modal-body">
-									...
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-primary">Save changes</button>
+									<form action="/System/systemBasic/Suporte" method="post">
+										<div class="form-group">
+											<label for="exampleInputEmail1">Sobre</label>
+											<select name="sobre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+												<option value="3">Dica</option>
+												<option value="2">Melhoria</option>
+												<option value="1">Erro</option>
+												<option value="4">Reclamação</option>
+												<option value="5">Agradecimento</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="exampleFormControlTextarea1">Descrever</label>
+											<textarea name="descricao" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+										</div>
+										<button type="submit" class="btn btn-primary">Enviar</button>
+									</form>
 								</div>
 							</div>
 						</div>

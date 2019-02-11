@@ -27,5 +27,15 @@
 			</div>
 		</div>
 	</footer>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".search-primary").on("keyup", function() {
+				var value = $(this).val().toLowerCase();
+				$(".table .tbody-primary tr").filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
+	</script>
 </body>
 </html>

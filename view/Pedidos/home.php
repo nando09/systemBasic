@@ -195,7 +195,7 @@
 				<th class="text-center" scope="col">EDITAR</th>
 			</tr>
 		</thead>
-		<tbody id="pedidos-entrada">
+		<tbody id="pedidos-entrada" class="tbody-primary">
 		</tbody>
 	</table>
 </div>

@@ -1,6 +1,6 @@
 <?php
 	$id = $view_dados[0];
-	$nome = 'Fernando';
+	$nome = $_SESSION['nome'];
 	$tipo = 'saida';
 ?>
 

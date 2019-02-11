@@ -110,125 +110,127 @@
 
 		<div data-backdrop="static" class="modal fade bd-example-modal-xl detalhamento" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-xl">
-				<div id="detalhamento" class="modal-content">
+				<div class="modal-content">
 					<div class="container">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 						<h2 class="title-pag">Detalhe do produto</h2>
-						<div class="row">
-							<div class="col-md-12">
-								<table class="table table-striped">
-									<thead>
-										<tr>
-											<th scope="col">Nome</th>
-											<th scope="col">Categoria</th>
-											<th scope="col">Valor</th>
-											<th scope="col">Quantidade</th>
-											<th scope="col">Descrição</th>
-											<th scope="col">Codigo</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td class="nome">Mark</td>
-											<td class="categoria">Mark</td>
-											<td class="valor">Mark</td>
-											<td class="quantidade">Otto</td>
-											<td class="descricao">@mdo</td>
-											<td class="nro">@mdo</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-
-							<!-- Para a class row nao alinha tudo -->
-							<div class="col-md-12">
-								<hr class="my-4">
-							</div>
-
-							<div class="col-md-6">
-								<h2 class="title-model text-center">Lucro do produto</h2>
-								<div class="alert alert-primary text-center quantidade-venda" role="alert">
-									R$200,00
+						<div id="detalhamento">
+							<div class="row">
+								<div class="col-md-12">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th scope="col">Nome</th>
+												<th scope="col">Categoria</th>
+												<th scope="col">Valor</th>
+												<th scope="col">Quantidade</th>
+												<th scope="col">Descrição</th>
+												<th scope="col">Codigo</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="nome">Mark</td>
+												<td class="categoria">Mark</td>
+												<td class="valor">Mark</td>
+												<td class="quantidade">Otto</td>
+												<td class="descricao">@mdo</td>
+												<td class="nro">@mdo</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-							</div>
-							<div class="col-md-6">
-								<h2 class="title-model text-center">Quantidade de vendas</h2>
-								<div class="alert alert-primary text-center quantidade-venda" role="alert">
-									200 Produtos
-								</div>
-							</div>
-							<!-- Para a class row nao alinha tudo -->
-							<div class="col-md-12">
-								<hr class="my-4">
-							</div>
-							<div class="col-md-6">
-								<h2 class="title-model text-center">Clientes</h2>
-								<table class="table">
-									<thead>
-										<tr>
-											<th scope="col">#</th>
-											<th scope="col">First</th>
-											<th scope="col">Last</th>
-											<th scope="col">Handle</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
-										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Larry</td>
-											<td>the Bird</td>
-											<td>@twitter</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
 
-							<div class="col-md-6">
-								<h2 class="title-model text-center">Fornecedores</h2>
-								<table class="table">
-									<thead>
-										<tr>
-											<th scope="col">#</th>
-											<th scope="col">First</th>
-											<th scope="col">Last</th>
-											<th scope="col">Handle</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
-										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Larry</td>
-											<td>the Bird</td>
-											<td>@twitter</td>
-										</tr>
-									</tbody>
-								</table>
+								<!-- Para a class row nao alinha tudo -->
+								<div class="col-md-12">
+									<hr class="my-4">
+								</div>
+
+								<div class="col-md-6">
+									<h2 class="title-model text-center">Lucro do produto</h2>
+									<div class="alert alert-primary text-center quantidade-venda" role="alert">
+										R$200,00
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h2 class="title-model text-center">Quantidade de vendas</h2>
+									<div class="alert alert-primary text-center quantidade-venda" role="alert">
+										200 Produtos
+									</div>
+								</div>
+								<!-- Para a class row nao alinha tudo -->
+								<div class="col-md-12">
+									<hr class="my-4">
+								</div>
+								<div class="col-md-6">
+									<h2 class="title-model text-center">Clientes</h2>
+									<table class="table">
+										<thead>
+											<tr>
+												<th scope="col">#</th>
+												<th scope="col">First</th>
+												<th scope="col">Last</th>
+												<th scope="col">Handle</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">1</th>
+												<td>Mark</td>
+												<td>Otto</td>
+												<td>@mdo</td>
+											</tr>
+											<tr>
+												<th scope="row">2</th>
+												<td>Jacob</td>
+												<td>Thornton</td>
+												<td>@fat</td>
+											</tr>
+											<tr>
+												<th scope="row">3</th>
+												<td>Larry</td>
+												<td>the Bird</td>
+												<td>@twitter</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="col-md-6">
+									<h2 class="title-model text-center">Fornecedores</h2>
+									<table class="table">
+										<thead>
+											<tr>
+												<th scope="col">#</th>
+												<th scope="col">First</th>
+												<th scope="col">Last</th>
+												<th scope="col">Handle</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">1</th>
+												<td>Mark</td>
+												<td>Otto</td>
+												<td>@mdo</td>
+											</tr>
+											<tr>
+												<th scope="row">2</th>
+												<td>Jacob</td>
+												<td>Thornton</td>
+												<td>@fat</td>
+											</tr>
+											<tr>
+												<th scope="row">3</th>
+												<td>Larry</td>
+												<td>the Bird</td>
+												<td>@twitter</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -248,7 +250,7 @@
 					<th class="text-center" scope="col">EXCLUIR</th>
 				</tr>
 			</thead>
-			<tbody id="produtos">
+			<tbody id="produtos" class="tbody-primary">
 			</tbody>
 		</table>		
 	</div>
