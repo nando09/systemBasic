@@ -1,6 +1,6 @@
 <?php
 	$id = $view_dados[0];
-	$nome = $_SESSION['nome'];
+	require_once 'C:/xampp/htdocs/System/systemBasic/view/FazerPedido/busca_cliente.php';
 	$tipo = 'saida';
 ?>
 

@@ -226,5 +226,7 @@ a:hover{
     padding: 5px;
 }
 
-
+#noticia{
+	clear: both;
+}
 
