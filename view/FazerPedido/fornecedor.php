@@ -1,20 +1,11 @@
-<?php
-	$id = $view_dados[0];
-	$nome = $_SESSION['nome'];
-	$tipo = 'entrada';
-?>
-
+<?php $tipo = 'fornecedor' ?>
 <?php include 'view/patterns/header1.php' ?>
 	<div class="container">
-		<h1 class="title-pag">Cliente: <?= $nome ?></h1>
-		<div class="row">
-			<div class="card" style="width: 18rem;">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					<a href="#" class="btn btn btn-warning"><i class="fas fa-plus-circle"></i></a>
-				</div>
+		<div id="produtos" class="row">
+			<div class="col-md-12">
+				<h1 class="title-pag">Fornecedor: <?= $nome ?></h1>
 			</div>
 		</div>
 	</div>
+	<script src="/System/systemBasic/js/saida-produtos.js" type="text/javascript"></script>
 <?php include 'view/patterns/footer1.php' ?>

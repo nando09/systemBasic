@@ -23,6 +23,26 @@ a:hover{
 	background: #e28b03;
 }
 
+#icon{
+	padding: 0;
+	/*width: 100%;*/
+}
+
+#icon > #mais, #icon > #menos{
+	padding: 1px;
+	background: green;
+	width: 25px;
+	height: 25px;
+}
+
+#icon > #menos{
+	background: red;
+}
+
+#quantidade{
+	width: 100%;
+	margin-bottom: 10px; 
+}
 
 /*  NAVAGAÇÂO  */
 .navbar-light{
@@ -220,10 +240,10 @@ a:hover{
 
 
 .rounded-circle {
-    position: absolute;
-    right: 0;
-    height: 70px;
-    padding: 5px;
+	position: absolute;
+	right: 0;
+	height: 70px;
+	padding: 5px;
 }
 
 #noticia{
