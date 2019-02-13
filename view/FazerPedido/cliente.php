@@ -4,6 +4,7 @@
 		<div id="produtos" class="row">
 			<div class="col-md-12">
 				<h1 class="title-pag">Cliente: <?= $nome ?></h1>
+				<span id="id_cf" class="none"><?= $id ?></span>
 			</div>
 		</div>
 	</div>
