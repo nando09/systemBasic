@@ -8,11 +8,11 @@
 		$tipo = $_POST['tipo'];
 
 		if ($tipo == 'Cliente') {
-			if ($db->query("INSERT INTO PEDINDO (ID_PRODUTO, ID_CLIENTE, QUANTIDADE) VALUES (". $id_produto .", ". $id_cf .", ". $quantidade .")")) {
+			if ($db->query("DELETE FROM PEDINDO WHERE ID_PRODUTO = ". $id_produto ." AND ID_CLIENTE = ". $id_cf)) {
 				$retorno = 'S';
 			}
 		}else{
-			if ($db->query("INSERT INTO FORNECENDO (ID_PRODUTO, ID_FORNECEDOR, QUANTIDADE) VALUES (". $id_produto .", ". $id_cf .", ". $quantidade .")")) {
+			if ($db->query("DELETE FROM FORNECENDO WHERE ID_PRODUTO = ". $id_produto ." AND ID_FORNECEDOR = ". $id_cf)) {
 				$retorno = 'S';
 			}
 		}

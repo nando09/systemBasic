@@ -9,7 +9,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cliente: <?= $nome ?></title>
+	<title><?= $cf .": ". $nome ?></title>
 	<link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/System/systemBasic/css/style.css">

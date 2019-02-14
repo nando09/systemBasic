@@ -1,10 +1,14 @@
 function popularProdutos(){
+	var tipo = $(".title-pag").text();
 
 	$.ajax({
-	url: '/System/systemBasic/view/FazerPedido/produtos.php', // Url do lado server que vai receber o arquivo
-	dataType: 'json',
-	processData: false,
-	contentType: false,
+		url: '/System/systemBasic/view/FazerPedido/produtos.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		data: {
+			id_cf: $("#id_cf").text(),
+			cf: tipo
+		},
+		type: 'post',
 		success: function(dados) {
 			if (dados == "") {
 				$.bootstrapGrowl("Não trouxe nenhum registro!", {
@@ -20,6 +24,9 @@ function popularProdutos(){
 			}
 
 			$("#produtos").append(dados);
+
+			var tipo = $(".title-pag").text();
+			nroProdutosCarrinho($("#id_cf").text(), tipo);
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
@@ -36,6 +43,11 @@ function popularProdutos(){
 	});
 }
 
+function tirarCarrinho(id_produto, id_cf, quantidade, tipo){
+
+}
+
+// function carrinho(){
 function carrinho(id_produto, id_cf, quantidade, tipo){
 	var posts = {
 		id_produto: id_produto,
@@ -44,11 +56,13 @@ function carrinho(id_produto, id_cf, quantidade, tipo){
 		tipo: tipo
 	}
 
+	// console.log(posts);
+
 	$.ajax({
-		url: '/System/systemBasic/view/FazerPedido/carrinho.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/FazerPedido/tirarCarrinho.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
-		type: 'post',
 		data: posts,
+		type: 'post',
 		success: function(dados) {
 			if (dados == "S") {
 				$.bootstrapGrowl("Produto adicionado no carrinho!", {
@@ -61,6 +75,35 @@ function carrinho(id_produto, id_cf, quantidade, tipo){
 					allow_dismiss: true, // If true then will display a cross to close the popup.
 					stackup_spacing: 10 // spacing between consecutively stacked growls.
 				});
+
+				var tipo = $(".title-pag").text();
+				nroProdutosCarrinho($("#id_cf").text(), tipo);
+			}
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+}
+
+function nroProdutosCarrinho(id_cf, tipo){
+	$.ajax({
+		url: '/System/systemBasic/view/FazerPedido/nroPrudutosCarrinho.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		data: { id_cf: id_cf, tipo: tipo },
+		type: 'post',
+		success: function(dados) {
+			if (dados.retorno == "S") {
+				$(".pedidos_feitos").text(dados.nro);
 			}
 		},
 		error: function(dados) {
@@ -85,7 +128,6 @@ $(document).ready(function() {
 		var alvoEvento = $(event.target);
 		var icon = alvoEvento.closest("#icon");
 
-
 		if (icon.hasClass("comprar")){
 			var tipo = $(".title-pag").text();
 			if (!tipo.indexOf('Cliente')){
@@ -94,14 +136,15 @@ $(document).ready(function() {
 				var menos = alvoEvento.closest("#produto").find('#icon > #menos');
 				var quantidade = alvoEvento.closest("#produto").find('#quantidade');
 				var id_cf = $("#id_cf").text();
-				tipo = 'Cliente';
+				var cf = 'Cliente';
 
 				if (mais.hasClass('none')) {
 					mais.removeClass('none');
 					menos.addClass('none');
 					quantidade.attr("disabled", false);
+					tirarCarrinho(id_produto, id_cf, quantidade.val(), cf);
 				}else{
-					// carrinho(id_produto, id_cf, quantidade, tipo);
+					carrinho(id_produto, id_cf, quantidade.val(), cf);
 					menos.removeClass('none');
 					mais.addClass('none');
 					quantidade.attr("disabled", true);
@@ -110,7 +153,27 @@ $(document).ready(function() {
 				// console.log(id);
 				// console.log(quantidade.val());
 			}else{
-				console.log(tipo);
+				var id_produto = alvoEvento.closest("#produto").find('#id').text();
+				var mais = alvoEvento.closest("#produto").find('#icon > #mais');
+				var menos = alvoEvento.closest("#produto").find('#icon > #menos');
+				var quantidade = alvoEvento.closest("#produto").find('#quantidade');
+				var id_cf = $("#id_cf").text();
+				var cf = 'Fornecedor';
+
+				if (mais.hasClass('none')) {
+					mais.removeClass('none');
+					menos.addClass('none');
+					quantidade.attr("disabled", false);
+					tirarCarrinho(id_produto, id_cf, quantidade.val(), cf);
+				}else{
+					carrinho(id_produto, id_cf, quantidade.val(), cf);
+					menos.removeClass('none');
+					mais.addClass('none');
+					quantidade.attr("disabled", true);
+				}
+
+				// console.log(id);
+				// console.log(quantidade.val());
 			}
 		}
 	});

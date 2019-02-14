@@ -1,4 +1,7 @@
-<?php $tipo = 'saida' ?>
+<?php
+	$tipo = 'saida';
+	$cf = 'Cliente';
+?>
 <?php include 'view/patterns/header1.php' ?>
 	<div class="container">
 		<div id="produtos" class="row">
