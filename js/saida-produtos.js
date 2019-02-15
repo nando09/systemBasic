@@ -43,8 +43,49 @@ function popularProdutos(){
 	});
 }
 
-function tirarCarrinho(id_produto, id_cf, quantidade, tipo){
+function tirarCarrinho(id_produto, id_cf, tipo){
+	var posts = {
+		id_produto: id_produto,
+		id_cf: id_cf,
+		tipo: tipo
+	}
 
+	$.ajax({
+		url: '/System/systemBasic/view/FazerPedido/tirarCarrinho.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		data: posts,
+		type: 'post',
+		success: function(dados) {
+			if (dados == "S") {
+				$.bootstrapGrowl("Produto removido no carrinho!", {
+					ele: 'body', // which element to append to
+					type: 'success', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+
+				var tipo = $(".title-pag").text();
+
+				nroProdutosCarrinho($("#id_cf").text(), tipo);
+			}
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
 }
 
 // function carrinho(){
@@ -59,7 +100,7 @@ function carrinho(id_produto, id_cf, quantidade, tipo){
 	// console.log(posts);
 
 	$.ajax({
-		url: '/System/systemBasic/view/FazerPedido/tirarCarrinho.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/FazerPedido/carrinho.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		data: posts,
 		type: 'post',
@@ -121,6 +162,47 @@ function nroProdutosCarrinho(id_cf, tipo){
 	});
 }
 
+function finalizar(id_cf, cf, vencimento, status){
+	// console.log('ID: ' + id_cf + '<br>TIPO: ' + cf + '<br>VENCIMENTO: ' + vencimento + '<br>STATUS: ' + status);
+	$.ajax({
+		url: '/System/systemBasic/view/FazerPedido/finalizar.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		data: {
+				id_cf: id_cf,
+				tipo: cf,
+				vencimento: vencimento,
+				status: status
+		},
+		type: 'post',
+		success: function(dados) {
+			if (dados.retorno == "S") {
+				$.bootstrapGrowl("Pedido Finalizado!", {
+					ele: 'body', // which element to append to
+					type: 'success', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+			}
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+}
+
 $(document).ready(function() {
 	popularProdutos();
 
@@ -142,7 +224,7 @@ $(document).ready(function() {
 					mais.removeClass('none');
 					menos.addClass('none');
 					quantidade.attr("disabled", false);
-					tirarCarrinho(id_produto, id_cf, quantidade.val(), cf);
+					tirarCarrinho(id_produto, id_cf, cf);
 				}else{
 					carrinho(id_produto, id_cf, quantidade.val(), cf);
 					menos.removeClass('none');
@@ -176,5 +258,20 @@ $(document).ready(function() {
 				// console.log(quantidade.val());
 			}
 		}
+	});
+
+	$("#finalizar").click(function(){
+		var tipo = $(".title-pag").text();
+		var vencimento = $("#data-finalizar").val();
+		var status = $("#status").val();
+		if (!tipo.indexOf('Cliente')){
+			var id_cf = $("#id_cf").text();
+			var cf = 'Cliente';
+		}else{
+			var id_cf = $("#id_cf").text();
+			var cf = 'Fornecedor';
+		}
+
+		finalizar(id_cf, cf, vencimento, status);
 	});
 });

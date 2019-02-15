@@ -4,7 +4,6 @@
 	try{
 		$id_produto = $_POST['id_produto'];
 		$id_cf = $_POST['id_cf'];
-		$quantidade = $_POST['quantidade'];
 		$tipo = $_POST['tipo'];
 
 		if ($tipo == 'Cliente') {

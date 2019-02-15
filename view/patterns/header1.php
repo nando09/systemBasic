@@ -59,7 +59,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-item nav-link font-weight-bold" href="/System/systemBasic/FazerPedido/">Finalizar pedido</a>
+						<a data-toggle="modal" data-target="#finaliza" class="nav-item nav-link font-weight-bold">Finalizar pedido</a>
 					</li>
 				</ul>
 			</div>
