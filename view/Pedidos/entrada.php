@@ -199,5 +199,5 @@
 		</tbody>
 	</table>
 </div>
-<script src="/System/systemBasic/js/pedidos-saida.js" type="text/javascript"></script>
+<script src="/System/systemBasic/js/pedidos-entrada.js" type="text/javascript"></script>
 <?php include 'view/patterns/footer.php' ?>

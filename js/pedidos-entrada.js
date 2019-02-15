@@ -1,6 +1,6 @@
 function popularpedidos(){
 	$.ajax({
-		url: '/System/systemBasic/view/pedidos/pedidos-saida.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/pedidos/pedidos-entrada.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		processData: false,
 		contentType: false,
