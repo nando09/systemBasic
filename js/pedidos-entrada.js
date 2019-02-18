@@ -40,7 +40,7 @@ function popularpedidos(){
 
 function detalharpedido(id_pedido){
 	$.ajax({
-		url: '/System/systemBasic/view/pedidos/detalhamento-saida.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/pedidos/detalhamento-entrada.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		type: 'post',
 		data: {
@@ -96,7 +96,7 @@ function excluirpedido(id_pedido){
 	.then((willDelete) => {
 		if (willDelete) {
 			$.ajax({
-				url: '/System/systemBasic/view/pedidos/excluir-saida.php', // Url do lado server que vai receber o arquivo
+				url: '/System/systemBasic/view/pedidos/excluir-entrada.php', // Url do lado server que vai receber o arquivo
 				dataType: 'json',
 				type: 'post',
 				data: {

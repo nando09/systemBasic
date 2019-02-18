@@ -22,7 +22,6 @@
 	<script src="/System/systemBasic/js/bootstrap-growl.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/sweetalert/docs/assets/sweetalert/sweetalert.min.js"></script>
 	<script src="/System/systemBasic/chart/chart.js/dist/Chart.min.js"></script>
-<!-- 	<script src="/System/systemBasic/js/script.js" type="text/javascript"></script> -->
 	<style type="text/css">
 		.title-pag{
 			margin-top: 10px;
@@ -53,7 +52,7 @@
 						<a class="nav-item nav-link" href="/System/systemBasic/">Entre em contado</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-item nav-link" href="/System/systemBasic/FazerPedido/<?= $tipo ?>">
+						<a class="nav-item nav-link" href="/System/systemBasic/FazerPedido/<?= $tipo ?>/<?= $id ?>">
 							<i class="fas fa-cart-plus"></i>
 							<span class="pedidos_feitos badge badge-light"></span>
 						</a>

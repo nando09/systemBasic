@@ -51,10 +51,10 @@ function detalharpedido(id_pedido){
 
 				$("#detalhamento .empresa").text(dados.empresa);
 				$("#detalhamento .valor").text(dados.valor);
-				$("#detalhamento .ultima").text(dados.ultima);
 				$("#detalhamento .vencimento").text(dados.vencimento);
-				// $("#detalhamento .tempo").text(dados.tempo);
+				$("#detalhamento .ultima").text(dados.ultima);
 				$("#detalhamento .status").text(dados.status);
+
 
 			}else{
 				$.bootstrapGrowl("Erro ao detalhar o pedido!", {

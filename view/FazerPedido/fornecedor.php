@@ -7,6 +7,7 @@
 		<div id="produtos" class="row">
 			<div class="col-md-12">
 				<h1 class="title-pag">Fornecedor: <?= $nome ?></h1>
+				<p id="rs">Total: R$<span id="valores"> 0,00</span></p>
 				<span id="id_cf" class="none"><?= $id ?></span>
 			</div>
 		</div>
