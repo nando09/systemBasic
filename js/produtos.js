@@ -327,6 +327,128 @@ function selectCategoria(){
 	});
 }
 
+function maisVendido(){
+	$.ajax({
+		url: '/System/systemBasic/view/Produtos/maisVendido.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		processData: false,
+		contentType: false,
+		success: function(dados) {
+			var labels = dados.labels;
+			// var labels = ["Red","Blue","Yellow","Green","Purple","Orange"];
+			var datas = dados.datas;
+			// var datas = [12,19,3,5,2,3];
+
+			// console.log(labels);
+			// console.log(datas);
+
+			var ctx = document.getElementById("maisVendido").getContext('2d');
+			var maisVendido = new Chart(ctx, {
+				type: 'pie',
+				data: {
+					// labels: ["Red","Blue","Yellow","Green","Purple","Orange"],
+					// datasets: [{
+					// label: '# of Votes',
+					// data: [12,19,3,5,2,3],
+					labels: labels,
+					datasets: [{
+					label: '# of Votes',
+					data: datas,
+						backgroundColor: [
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(54, 162, 235, 0.2)',
+							'rgba(255, 206, 86, 0.2)',
+							'rgba(75, 192, 192, 0.2)',
+							'rgba(153, 102, 255, 0.2)',
+							'rgba(255, 159, 64, 0.2)'
+						],
+						borderColor: [
+							'rgba(255,99,132,1)',
+							'rgba(54, 162, 235, 1)',
+							'rgba(255, 206, 86, 1)',
+							'rgba(75, 192, 192, 1)',
+							'rgba(153, 102, 255, 1)',
+							'rgba(255, 159, 64, 1)'
+						],
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero:true
+							}
+						}]
+					}
+				}
+			});
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+}
+
+function lucroMes(){
+	$.ajax({
+		url: '/System/systemBasic/view/Produtos/lucroMes.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		processData: false,
+		contentType: false,
+		success: function(dados) {
+			$("#categoria select option").remove();
+			$("#categoria select").append(dados);
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+}
+
+function maisLucro(){
+	$.ajax({
+		url: '/System/systemBasic/view/Produtos/maisLucro.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		processData: false,
+		contentType: false,
+		success: function(dados) {
+			$("#categoria select option").remove();
+			$("#categoria select").append(dados);
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+}
+
 $(document).ready(function() {
 	selectCategoria();
 	popularProdutos();

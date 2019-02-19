@@ -5,7 +5,7 @@
 	// Primeiro em php.ini temos que descomentar line pdo_psql
 	$id = $_POST['id'];
 
-	$query = $db->query("SELECT F.ID AS ID, PR.NOME AS NOME, PR.VALOR AS VALOR, PR.DESCRICAO AS DESCRICAO, F.QUANTIDADE AS TEM FROM FORNECENDO AS F INNER JOIN PRODUTO AS PR ON PR.ID = F.ID_PRODUTO WHERE F.ID_FORNECEDOR = " . $id);
+	$query = $db->query("SELECT PR.ID AS ID, PR.NOME AS NOME, PR.VALOR AS VALOR, PR.DESCRICAO AS DESCRICAO, F.QUANTIDADE AS TEM FROM FORNECENDO AS F INNER JOIN PRODUTO AS PR ON PR.ID = F.ID_PRODUTO WHERE F.ID_FORNECEDOR = " . $id);
 
 	foreach ($query as $key) {
 		$tem = ($key['tem'] > 0)? 'disabled' : '';

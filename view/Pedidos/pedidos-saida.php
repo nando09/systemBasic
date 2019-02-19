@@ -5,7 +5,7 @@
 	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
-		$query = $db->query("SELECT D.ID AS ID, C.EMPRESA AS EMPRESA, D.VALOR AS VALOR, C.DATA_ULTIMA_COMPRA AS ULTIMA, D.STATUS AS STATUS FROM DETALHE_PEDIDO AS D INNER JOIN CLIENTE AS C ON D.ID_CLIENTE = C.ID");
+		$query = $db->query("SELECT D.ID AS ID, C.EMPRESA AS EMPRESA, D.ID_CLIENTE AS ID_CLIENTE, D.VALOR AS VALOR, C.DATA_ULTIMA_COMPRA AS ULTIMA, D.STATUS AS STATUS FROM DETALHE_PEDIDO AS D INNER JOIN CLIENTE AS C ON D.ID_CLIENTE = C.ID");
 
 		foreach ($query as $key) {
 			$retorno .= "<tr>".
@@ -18,9 +18,9 @@
 								"</div>".
 							"</td>".
 							"<td class='text-center'>".
-								"<div class='editar' data-toggle='modal' data-target='.editar'>".
+								"<a href='/System/systemBasic/FazerPedido/saida/". $key['id_cliente'] ."'>".
 									"<i class='far fa-edit editar'></i>".
-								"</div>".
+								"</a>".
 							"</td>".
 							"<td id='id' class='none'>".
 								"<span value=". $key['id'] .">". $key['id'] ."</span>".
