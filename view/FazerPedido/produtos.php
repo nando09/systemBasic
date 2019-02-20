@@ -10,6 +10,7 @@
 		$query = $db->query("SELECT p.id AS id, p.nome AS nome, c.nome AS categoria, p.valor as valor, p.descricao as descricao, 
 							(SELECT QUANTIDADE FROM PEDINDO AS pe WHERE pe.ID_CLIENTE = ". $id ." AND p.ID = pe.ID_PRODUTO) as tem
 								FROM PRODUTO AS p INNER JOIN categoria AS c ON p.id_categoria = c.id");
+		// die($query);
 
 		foreach ($query as $key) {
 			$tem = ($key['tem'] > 0)? 'disabled' : '';
