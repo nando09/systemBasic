@@ -264,3 +264,7 @@ a:hover{
 .relatorio{
 	clear: both;
 }
+
+.relatorio-title{
+	font-size: 14px;
+}

@@ -99,7 +99,7 @@
 			->	Lucro da data informada
 			->	Fornecedores que vedem o produto
 			->	Clientes que compraram
-			*	Mostrando os produtos que não estão saindo o usuario poderar dar uma oferta ao seus clientes que já compraram e informar que o produto esta com desconto ou algo que preferir 
+			*	Mostrando os produtos que não estão saindo o usuario poderar dar uma oferta ao seus clientes que já compraram e informar que o produto esta com desconto ou algo que preferir
 
 	NOTICIA
 			->	Mostra todos os planos que estão chegando e aprimorando

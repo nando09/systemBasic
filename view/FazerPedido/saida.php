@@ -3,6 +3,7 @@
 	$cf = 'Cliente';
 ?>
 <?php include 'view/patterns/header1.php' ?>
+	<button onclick='history.go(-1);'>Voltar</button>;
 	<div class="container">
 		<div id="produtos" class="row">
 			<div class="col-md-12">

@@ -406,8 +406,51 @@ function lucroMes(){
 		processData: false,
 		contentType: false,
 		success: function(dados) {
-			$("#categoria select option").remove();
-			$("#categoria select").append(dados);
+			var labels = dados.labels;
+			// var labels = ["Red","Blue","Yellow","Green","Purple","Orange"];
+			var datas = dados.datas;
+			// var datas = [12,19,3,5,2,3];
+
+			// console.log(labels);
+			// console.log(datas);
+
+			var mes = document.getElementById("lucroMes").getContext('2d');
+			var lucroMes = new Chart(mes, {
+				type: 'line',
+				data: {
+					labels: labels,
+					datasets: [{
+						label: '# of Votes',
+						data: datas,
+						backgroundColor: [
+							// 'rgba(255, 99, 132, 0.2)',
+							// 'rgba(54, 162, 235, 0.2)',
+							// 'rgba(255, 206, 86, 0.2)',
+							// 'rgba(75, 192, 192, 0.2)',
+							// 'rgba(153, 102, 255, 0.2)',
+							'rgba(255, 159, 64, 0.2)'
+						],
+						borderColor: [
+							// 'rgba(255,99,132,1)',
+							// 'rgba(54, 162, 235, 1)',
+							// 'rgba(255, 206, 86, 1)',
+							// 'rgba(75, 192, 192, 1)',
+							// 'rgba(153, 102, 255, 1)',
+							'rgba(255, 159, 64, 1)'
+						],
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero:true
+							}
+						}]
+					}
+				}
+			});
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
@@ -424,15 +467,53 @@ function lucroMes(){
 	});
 }
 
-function maisLucro(){
+function menosVendido(){
 	$.ajax({
-		url: '/System/systemBasic/view/Produtos/maisLucro.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/Produtos/menosVendido.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		processData: false,
 		contentType: false,
 		success: function(dados) {
-			$("#categoria select option").remove();
-			$("#categoria select").append(dados);
+			var labels = dados.labels;
+			var datas = dados.datas;
+
+			var lucro = document.getElementById("menosVendido").getContext('2d');
+			var menosVendido = new Chart(lucro, {
+				type: 'bar',
+				data: {
+					labels: labels,
+					datasets: [{
+						label: '# of Votes',
+						data: datas,
+						backgroundColor: [
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(54, 162, 235, 0.2)',
+							'rgba(255, 206, 86, 0.2)',
+							'rgba(75, 192, 192, 0.2)',
+							'rgba(153, 102, 255, 0.2)',
+							'rgba(255, 159, 64, 0.2)'
+						],
+						borderColor: [
+							'rgba(255,99,132,1)',
+							'rgba(54, 162, 235, 1)',
+							'rgba(255, 206, 86, 1)',
+							'rgba(75, 192, 192, 1)',
+							'rgba(153, 102, 255, 1)',
+							'rgba(255, 159, 64, 1)'
+						],
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero:true
+							}
+						}]
+					}
+				}
+			});
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
@@ -452,6 +533,9 @@ function maisLucro(){
 $(document).ready(function() {
 	selectCategoria();
 	popularProdutos();
+	maisVendido();
+	lucroMes();
+	menosVendido();
 
 	$("#produtos").click(function(event){
 		var alvoEvento = $(event.target);
