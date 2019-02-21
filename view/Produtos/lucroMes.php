@@ -13,8 +13,7 @@
 								INNER JOIN PRODUTO AS PR ON P.ID_PRODUTO = PR.ID
 								WHERE EXTRACT(YEAR FROM D.VENCIMENTO) = 2019
 								GROUP BY extract(MONTH from D.VENCIMENTO)
-								ORDER BY VENCIMENTO
-								");
+								ORDER BY VENCIMENTO");
 
 		foreach ($query as $key) {
 			$mes = mes($key['vencimento']);

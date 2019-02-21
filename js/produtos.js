@@ -215,6 +215,8 @@ function detalharProduto(id_produto){
 				// $("#detalhamento .minimo").text(dados.minimo);
 				$("#detalhamento .quantidade").text(dados.quantidade);
 
+				
+
 			}else{
 				$.bootstrapGrowl("Erro ao detalhar o produto!", {
 					ele: 'body', // which element to append to
