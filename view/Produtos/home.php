@@ -126,6 +126,7 @@
 												<th scope="col">Categoria</th>
 												<th scope="col">Valor</th>
 												<th scope="col">Quantidade</th>
+												<th scope="col">Minimo</th>
 												<th scope="col">Descrição</th>
 												<th scope="col">Codigo</th>
 											</tr>
@@ -136,6 +137,7 @@
 												<td class="categoria">Mark</td>
 												<td class="valor">Mark</td>
 												<td class="quantidade">Otto</td>
+												<td class="minimo">Otto</td>
 												<td class="descricao">@mdo</td>
 												<td class="nro">@mdo</td>
 											</tr>
@@ -169,31 +171,11 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">First</th>
-												<th scope="col">Last</th>
-												<th scope="col">Handle</th>
+												<th scope="col">EMPRESA</th>
+												<th scope="col">EMAIL</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>@twitter</td>
-											</tr>
+										<tbody id="clientes">
 										</tbody>
 									</table>
 								</div>
@@ -203,31 +185,11 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">First</th>
-												<th scope="col">Last</th>
-												<th scope="col">Handle</th>
+												<th scope="col">EMPRESA</th>
+												<th scope="col">EMAIL</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>@twitter</td>
-											</tr>
+										<tbody id="fornecedores">
 										</tbody>
 									</table>
 								</div>

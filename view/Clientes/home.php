@@ -250,6 +250,22 @@
 	</div>
 	<div class="tab-pane fade" id="relatorio" role="tabpanel" aria-labelledby="profile-tab">
 		<h1 class="title-pag">Relatorio dos Clientes</h1>
+		<div class="container relatorio">
+			<div class="row text-center">
+				<div class="col-md-4">
+					<h3 class="relatorio-title">5 clientes que mais compra</h3>
+					<canvas id="maisCompra" width="400" height="400"></canvas>
+				</div>
+				<div class="col-md-4">
+					<h3 class="relatorio-title">Clientes novos por mês</h3>
+					<canvas id="novosClientes" width="400" height="400"></canvas>
+				</div>
+				<div class="col-md-4">
+					<h3 class="relatorio-title">5 clientes que menos compra</h3>
+					<canvas id="menosCompra" width="400" height="400"></canvas>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 <script src="/System/systemBasic/js/clientes.js" type="text/javascript"></script>
