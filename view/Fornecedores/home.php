@@ -162,31 +162,11 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">First</th>
-												<th scope="col">Last</th>
-												<th scope="col">Handle</th>
+												<th scope="col">NOME</th>
+												<th scope="col">VALOR</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>@twitter</td>
-											</tr>
+										<tbody id="produto">
 										</tbody>
 									</table>
 								</div>
@@ -195,31 +175,10 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">First</th>
-												<th scope="col">Last</th>
-												<th scope="col">Handle</th>
+												<th scope="col">Mensagem</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>@twitter</td>
-											</tr>
+										<tbody id="mensagem">
 										</tbody>
 									</table>
 								</div>
@@ -247,6 +206,22 @@
 	</div>
 	<div class="tab-pane fade" id="relatorio" role="tabpanel" aria-labelledby="profile-tab">
 		<h1 class="title-pag">Relatorio dos Fornecedores</h1>
+		<div class="container relatorio">
+			<div class="row text-center">
+				<div class="col-md-4">
+					<h3 class="relatorio-title">5 fornecedor que eu mais compro</h3>
+					<canvas id="maisCompro" width="400" height="400"></canvas>
+				</div>
+				<div class="col-md-4">
+					<h3 class="relatorio-title">Novo fornecedor</h3>
+					<canvas id="novosFornecedores" width="400" height="400"></canvas>
+				</div>
+				<div class="col-md-4">
+					<h3 class="relatorio-title">5 fornecedor que eu menos compro</h3>
+					<canvas id="menosCompro" width="400" height="400"></canvas>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 <script src="/System/systemBasic/js/fornecedores.js" type="text/javascript"></script>

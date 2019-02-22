@@ -7,7 +7,22 @@
 
 		$id = $_POST['id'];
 
-		$query = $db->query("SELECT DATA_ULTIMA_COMPRA, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE FROM CLIENTE WHERE ID = " . $id);
+		$query = $db->query("SELECT
+								SUM(P.QUANTIDADE * PR.VALOR) AS VALOR,
+								SUM(P.QUANTIDADE) AS QUANTIDADE,
+								C.ID AS ID,
+								C.DATA_ULTIMA_COMPRA AS DATA_ULTIMA_COMPRA,
+								C.NOME AS NOME,
+								C.EMPRESA AS EMPRESA,
+								C.CNPJ AS CNPJ,
+								C.LOCALIDADE AS LOCALIDADE,
+								C.EMAIL AS EMAIL,
+								C.TELEFONE AS TELEFONE
+							FROM CLIENTE AS C
+							LEFT JOIN PEDINDO AS P ON P.ID_CLIENTE = C.ID
+							FULL OUTER JOIN PRODUTO AS PR ON PR.ID = P.ID_PRODUTO
+							WHERE C.ID = ". $id ."
+							GROUP BY C.ID, C.DATA_ULTIMA_COMPRA, C.NOME, C.EMPRESA, C.CNPJ, C.LOCALIDADE, C.EMAIL, C.TELEFONE");
 
 		foreach ($query as $key) {
 			$retorno = array(
@@ -18,7 +33,9 @@
 						'cnpj' => $key['cnpj'],
 						'localidade' => $key['localidade'],
 						'email' => $key['email'],
-						'telefone' => $key['telefone']
+						'telefone' => $key['telefone'],
+						'lucro' => $key['valor'],
+						'quantidade' => $key['quantidade']
 			);
 		}
 	}catch(Exception $e){

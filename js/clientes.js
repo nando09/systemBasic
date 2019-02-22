@@ -204,6 +204,14 @@ function detalharClientes(id_clientes){
 				$("#detalhamento .telefone").text(dados.telefone);
 				$("#detalhamento .ultima").text(dados.data_ultima);
 
+				if (dados.quantidade > 0) {
+					$("#lucro-compra").text("R$ " + dados.lucro);
+					$("#quantidade-compras").text(dados.quantidade);
+				}else{
+					$("#lucro-compra").text("R$ 0");
+					$("#quantidade-compras").text("0");
+				}
+
 			}else{
 				$.bootstrapGrowl("Erro ao detalhar o cliente!", {
 					ele: 'body', // which element to append to
@@ -230,11 +238,101 @@ function detalharClientes(id_clientes){
 			});
 		}
 	});
+
+	comunicado(id_clientes);
+	produtos(id_clientes);
 }
+
+function comunicado(id_cliente){
+	// $.ajax({
+	// 	url: '/System/systemBasic/view/Clientes/comunicado_clientes.php', // Url do lado server que vai receber o arquivo
+	// 	dataType: 'json',
+	// 	type: 'post',
+	// 	data: {
+	// 		id: id_cliente
+	// 	},
+	// 	success: function(dados) {
+	// 		if (dados == "") {
+	// 			$.bootstrapGrowl("Não trouxe nenhum registro de clientes desse produto!", {
+	// 				ele: 'body', // which element to append to
+	// 				type: 'info', // (null, 'info', 'danger', 'success')
+	// 				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+	// 				align: 'right', // ('left', 'right', or 'center')
+	// 				width: 'auto', // (integer, or 'auto')
+	// 				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+	// 				allow_dismiss: true, // If true then will display a cross to close the popup.
+	// 				stackup_spacing: 10 // spacing between consecutively stacked growls.
+	// 			});
+	// 		}
+
+	//		$("#mensagem tr").remove();
+	// 		$("#mensagem").append(dados);
+	// 		// preparaExcluirClientes();
+	// 		// preparaDetalharClientes();
+	// 		// preparaEditarClientes();
+	// 	},
+	// 	error: function(dados) {
+	// 		$.bootstrapGrowl("ERRO ao execultar Clientes!", {
+	// 			ele: 'body', // which element to append to
+	// 			type: 'danger', // (null, 'info', 'danger', 'success')
+	// 			offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+	// 			align: 'right', // ('left', 'right', or 'center')
+	// 			width: 'auto', // (integer, or 'auto')
+	// 			delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+	// 			allow_dismiss: true, // If true then will display a cross to close the popup.
+	// 			stackup_spacing: 10 // spacing between consecutively stacked growls.
+	// 		});
+	// 	}
+	// });
+}
+
+function produtos(id_cliente){
+	$.ajax({
+		url: '/System/systemBasic/view/Clientes/cliente_produtos.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		type: 'post',
+		data: {
+			id: id_cliente
+		},
+		success: function(dados) {
+			if (dados == "") {
+				$.bootstrapGrowl("Não trouxe nenhum registro de clientes desse produto!", {
+					ele: 'body', // which element to append to
+					type: 'info', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+			}
+
+			$("#produtos tr").remove();
+			$("#produtos").append(dados);
+			// preparaExcluirClientes();
+			// preparaDetalharClientes();
+			// preparaEditarClientes();
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO ao trazar produtos!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+}
+
 
 function excluirClientes(id_clientes){
 
-	// console.log(id_produto);
+	// console.log(id_clientes);
 	swal({
 		title: "Você tem certeza?",
 		text: "Uma vez deletado, você não poderá recuperar!",

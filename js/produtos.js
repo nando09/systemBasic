@@ -214,8 +214,15 @@ function detalharProduto(id_produto){
 				$("#detalhamento .nro").text(dados.nro);
 				$("#detalhamento .minimo").text(dados.minimo);
 				$("#detalhamento .quantidade").text(dados.quantidade);
-				$("#detalhamento #lucro-produto").text("R$ " +dados.lucro);
-				$("#detalhamento #quantidade-produto").text(dados.vendido);
+
+				if (dados.vendido > 0) {
+					$("#detalhamento #lucro-produto").text("R$ " +dados.lucro);
+					$("#detalhamento #quantidade-produto").text(dados.vendido);
+				}else{
+					$("#detalhamento #lucro-produto").text("R$ 0");
+					$("#detalhamento #quantidade-produto").text("0");
+				}
+
 
 			}else{
 				$.bootstrapGrowl("Erro ao detalhar o produto!", {
@@ -258,19 +265,7 @@ function cliente(id_produto){
 			id: id_produto
 		},
 		success: function(dados) {
-			if (dados == "") {
-				$.bootstrapGrowl("Não trouxe nenhum registro de clientes desse produto!", {
-					ele: 'body', // which element to append to
-					type: 'info', // (null, 'info', 'danger', 'success')
-					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-					align: 'right', // ('left', 'right', or 'center')
-					width: 'auto', // (integer, or 'auto')
-					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-					allow_dismiss: true, // If true then will display a cross to close the popup.
-					stackup_spacing: 10 // spacing between consecutively stacked growls.
-				});
-			}
-
+			$("#clientes tr").remove();
 			$("#clientes").append(dados);
 			// preparaExcluirClientes();
 			// preparaDetalharClientes();
@@ -301,19 +296,7 @@ function fornecedor(id_produto){
 			id: id_produto
 		},
 		success: function(dados) {
-			if (dados == "") {
-				$.bootstrapGrowl("Não trouxe nenhum registro de fornecedores desse produto!", {
-					ele: 'body', // which element to append to
-					type: 'info', // (null, 'info', 'danger', 'success')
-					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-					align: 'right', // ('left', 'right', or 'center')
-					width: 'auto', // (integer, or 'auto')
-					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-					allow_dismiss: true, // If true then will display a cross to close the popup.
-					stackup_spacing: 10 // spacing between consecutively stacked growls.
-				});
-			}
-
+			$("#fornecedores tr").remove();
 			$("#fornecedores").append(dados);
 			// preparaExcluirClientes();
 			// preparaDetalharClientes();

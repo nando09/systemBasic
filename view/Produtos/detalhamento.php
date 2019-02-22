@@ -19,7 +19,7 @@
 	p.minimo AS minimo,
 	p.quantidade AS quantidade FROM PRODUTO AS p
 INNER JOIN categoria AS c ON p.id_categoria = c.id
-INNER JOIN pedindo AS PE ON PE.ID_PRODUTO = P.ID 
+LEFT JOIN pedindo AS PE ON PE.ID_PRODUTO = P.ID 
 WHERE p.ID = " . $id . "
 GROUP BY P.ID, NRO, C.NOME, CATEGORIA, VALOR, DESCRICAO, MINIMO, P.QUANTIDADE");
 

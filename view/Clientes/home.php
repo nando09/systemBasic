@@ -142,15 +142,15 @@
 								</div>
 
 								<div class="col-md-6">
-									<h2 class="title-model text-center">Quantidade de compras</h2>
-									<div class="alert alert-primary text-center quantidade-venda" role="alert">
-										200 Produtos
+									<h2 class="title-model text-center">Lucro do compras</h2>
+									<div id="lucro-compra" class="alert alert-primary text-center quantidade-venda" role="alert">
+										R$ 0,00
 									</div>
 								</div>
 								<div class="col-md-6">
-									<h2 class="title-model text-center">Valores de compras</h2>
+									<h2 class="title-model text-center">Quantidade de compras</h2>
 									<div class="alert alert-primary text-center quantidade-venda" role="alert">
-										R$200,00
+										<span id="quantidade-compras">0</span>  Produtos
 									</div>
 								</div>
 
@@ -165,31 +165,10 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">First</th>
-												<th scope="col">Last</th>
-												<th scope="col">Handle</th>
+												<th scope="col">MENSAGEM</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>@twitter</td>
-											</tr>
+										<tbody id="mensagem">
 										</tbody>
 									</table>
 								</div>
@@ -198,31 +177,11 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th scope="col">#</th>
-												<th scope="col">First</th>
-												<th scope="col">Last</th>
-												<th scope="col">Handle</th>
+												<th scope="col">NOME</th>
+												<th scope="col">VALOR</th>
 											</tr>
 										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">1</th>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<th scope="row">2</th>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<th scope="row">3</th>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>@twitter</td>
-											</tr>
+										<tbody id="produtos">
 										</tbody>
 									</table>
 								</div>

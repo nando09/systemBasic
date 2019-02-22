@@ -153,13 +153,13 @@
 								<div class="col-md-6">
 									<h2 class="title-model text-center">Lucro do produto</h2>
 									<div id="lucro-produto" class="alert alert-primary text-center quantidade-venda" role="alert">
-										R$200,00
+										R$ 0,00
 									</div>
 								</div>
 								<div class="col-md-6">
 									<h2 class="title-model text-center">Quantidade de vendas</h2>
 									<div class="alert alert-primary text-center quantidade-venda" role="alert">
-										<span id="quantidade-produto">200</span>  Produtos
+										<span id="quantidade-produto">0</span>  Produtos
 									</div>
 								</div>
 								<!-- Para a class row nao alinha tudo -->
