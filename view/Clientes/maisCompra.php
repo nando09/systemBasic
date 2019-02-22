@@ -10,7 +10,7 @@
 		// $query = $db->query("SELECT ID, NOME FROM categoria");
 		$query = $db->query("SELECT C.NOME AS PRODUTO, SUM(PE.QUANTIDADE) AS QUANTIDADE
 								FROM PEDINDO AS PE
-								INNER JOIN CLIENTE AS C ON C.ID = PE.ID_PRODUTO
+								INNER JOIN CLIENTE AS C ON C.ID = PE.ID_CLIENTE
 								GROUP BY C.NOME  ORDER BY SUM(PE.QUANTIDADE) DESC LIMIT 5");
 
 		foreach ($query as $key) {

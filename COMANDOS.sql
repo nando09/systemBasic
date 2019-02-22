@@ -1,0 +1,40 @@
+﻿SELECT C.NOME AS PRODUTO, SUM(PE.QUANTIDADE) AS QUANTIDADE
+								FROM PEDINDO AS PE
+								INNER JOIN CLIENTE AS C ON C.ID = PE.ID_PRODUTO
+								GROUP BY C.NOME  ORDER BY SUM(PE.QUANTIDADE) DESC LIMIT 5
+
+
+SELECT C.ID AS ID, C.NOME AS NOME, SUM(P.QUANTIDADE) AS QUANTIDADE FROM PEDINDO AS P INNER JOIN CLIENTE AS C ON C.ID = P.ID_CLIENTE GROUP BY C.NOME, C.ID
+
+SELECT 
+	p.id AS ID,
+	SUM(P.VALOR * PE.QUANTIDADE) AS LUCRO,
+	SUM(PE.QUANTIDADE) AS VENDIDO,
+	p.nome as NOME,
+	p.nro AS NRO,
+	c.nome AS categoria,
+	p.valor AS valor,
+	p.descricao AS descricao,
+	p.minimo AS minimo,
+	p.quantidade AS quantidade FROM PRODUTO AS p
+INNER JOIN categoria AS c ON p.id_categoria = c.id
+INNER JOIN pedindo AS PE ON PE.ID_PRODUTO = P.ID 
+WHERE p.ID = " . $id . "
+GROUP BY P.ID, NRO, C.NOME, CATEGORIA, VALOR, DESCRICAO, MINIMO, P.QUANTIDADE
+
+
+SELECT 
+	p.id AS ID,
+	SUM(P.VALOR * PE.QUANTIDADE) AS LUCRO,
+	SUM(PE.QUANTIDADE) AS VENDIDO,
+	p.nome as NOME,
+	p.nro AS NRO,
+	c.nome AS categoria,
+	p.valor AS valor,
+	p.descricao AS descricao,
+	p.minimo AS minimo,
+	p.quantidade AS quantidade FROM PRODUTO AS p
+INNER JOIN categoria AS c ON p.id_categoria = c.id
+INNER JOIN pedindo AS PE ON PE.ID_PRODUTO = P.ID 
+WHERE p.ID = 1
+GROUP BY P.ID, NRO, C.NOME, CATEGORIA, VALOR, DESCRICAO, MINIMO, P.QUANTIDADE
