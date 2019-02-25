@@ -13,6 +13,8 @@
 		if ($stmt->rowCount() == 1) {
 			$_SESSION['logado'] = true;
 			$_SESSION['nome'] = $user['nome'];
+			$_SESSION['usuario'] = $user['usuario'];
+
 			header('Location: /System/systemBasic/Painel');
 		}else{
 			$msg_login = "
