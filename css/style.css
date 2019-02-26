@@ -26,10 +26,6 @@ a:hover{
 	position: absolute;
 }
 
-#novo-elemento, #detalhamento{
-	clear: both;
-}
-
 #body{
 	background: #e28b03;
 }
@@ -257,18 +253,10 @@ a:hover{
 	padding: 5px;
 }
 
-#noticia{
-	clear: both;
-}
-
-.relatorio{
-	clear: both;
-}
-
 .relatorio-title{
 	font-size: 14px;
 }
 
-.editar-perfil{
+#novo-elemento, #detalhamento, #noticia, .relatorio, .editar-perfil, #card{
 	clear: both;
 }
