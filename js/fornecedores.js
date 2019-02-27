@@ -203,6 +203,14 @@ function detalharFornecedores(id_fornecedores){
 				$("#detalhamento .email").text(dados.email);
 				$("#detalhamento .telefone").text(dados.telefone);
 
+				if (dados.valor > 0) {
+					$("#detalhamento .quantidade-compra").text(dados.quantidade + " Produtos");
+					$("#detalhamento .valor-compra").text("R$ " + dados.valor);
+				}else{
+					$("#detalhamento .quantidade-compra").text('Nenhum produto');
+					$("#detalhamento .valor-compra").text('R$ 0,00');
+				}
+
 			}else{
 				$.bootstrapGrowl("Erro ao detalhar o fornecedor!", {
 					ele: 'body', // which element to append to
@@ -218,6 +226,79 @@ function detalharFornecedores(id_fornecedores){
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+
+	comunicado(id_fornecedores);
+	produtos(id_fornecedores);
+}
+
+function comunicado(id_fornecedore){
+	// $.ajax({
+	// 	url: '/System/systemBasic/view/Fornecedores/comunicado_Fornecedores.php', // Url do lado server que vai receber o arquivo
+	// 	dataType: 'json',
+	// 	type: 'post',
+	// 	data: {
+	// 		id: id_fornecedore
+	// 	},
+	// 	success: function(dados) {
+	// 		if (dados == "") {
+	// 			$.bootstrapGrowl("Não trouxe nenhum registro de Fornecedores desse produto!", {
+	// 				ele: 'body', // which element to append to
+	// 				type: 'info', // (null, 'info', 'danger', 'success')
+	// 				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+	// 				align: 'right', // ('left', 'right', or 'center')
+	// 				width: 'auto', // (integer, or 'auto')
+	// 				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+	// 				allow_dismiss: true, // If true then will display a cross to close the popup.
+	// 				stackup_spacing: 10 // spacing between consecutively stacked growls.
+	// 			});
+	// 		}
+
+	//		$("#mensagem tr").remove();
+	// 		$("#mensagem").append(dados);
+	// 		// preparaExcluirFornecedores();
+	// 		// preparaDetalharFornecedores();
+	// 		// preparaEditarFornecedores();
+	// 	},
+	// 	error: function(dados) {
+	// 		$.bootstrapGrowl("ERRO ao execultar Fornecedores!", {
+	// 			ele: 'body', // which element to append to
+	// 			type: 'danger', // (null, 'info', 'danger', 'success')
+	// 			offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+	// 			align: 'right', // ('left', 'right', or 'center')
+	// 			width: 'auto', // (integer, or 'auto')
+	// 			delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+	// 			allow_dismiss: true, // If true then will display a cross to close the popup.
+	// 			stackup_spacing: 10 // spacing between consecutively stacked growls.
+	// 		});
+	// 	}
+	// });
+}
+
+function produtos(id_fornecedore){
+	$.ajax({
+		url: '/System/systemBasic/view/Fornecedores/fornecedor_produtos.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		type: 'post',
+		data: {
+			id: id_fornecedore
+		},
+		success: function(dados) {
+			$("#produtos tr").remove();
+			$("#produtos").append(dados);
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO ao trazar produtos!", {
 				ele: 'body', // which element to append to
 				type: 'danger', // (null, 'info', 'danger', 'success')
 				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'

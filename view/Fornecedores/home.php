@@ -141,13 +141,13 @@
 
 								<div class="col-md-6">
 									<h2 class="title-model text-center">Quantidade de compras</h2>
-									<div class="alert alert-primary text-center quantidade-venda" role="alert">
+									<div class="alert alert-primary text-center quantidade-compra" role="alert">
 										200 Produtos
 									</div>
 								</div>
 								<div class="col-md-6">
 									<h2 class="title-model text-center">Valores de todas compras</h2>
-									<div class="alert alert-primary text-center quantidade-venda" role="alert">
+									<div class="alert alert-primary text-center valor-compra" role="alert">
 										R$200,00
 									</div>
 								</div>
@@ -166,7 +166,7 @@
 												<th scope="col">VALOR</th>
 											</tr>
 										</thead>
-										<tbody id="produto">
+										<tbody id="produtos">
 										</tbody>
 									</table>
 								</div>

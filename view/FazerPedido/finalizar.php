@@ -19,10 +19,14 @@
 			$insert = "INSERT INTO DETALHE_PEDIDO (ID_CLIENTE, VALOR, DATA_COMPRA, VENCIMENTO, STATUS) VALUES ( ". $id_cf .", ". $valor .", NOW(), '". $vencimento ."', '". $status ."')";
 			// print_r($insert);
 			// exit();
+
 			$retorno = $db->prepare($insert, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+
+
 
 			if ($retorno->execute()) {
 				$retorno = 'S';
+				$db->query("UPDATE PEDINDO SET FINALIZADO = 'SIM' WHERE ID_CLIENTE = " . $id_cf);
 			}
 		}else{
 			$query = "SELECT SUM(P.VALOR * F.QUANTIDADE) AS VALOR FROM FORNECENDO AS F INNER JOIN PRODUTO AS P ON P.ID = F.ID_PRODUTO WHERE F.ID_FORNECEDOR = " . $id_cf;
@@ -40,6 +44,7 @@
 
 			if ($retorno->execute()) {
 				$retorno = 'S';
+				$db->query("UPDATE FORNECENDO SET FINALIZADO = 'SIM' WHERE ID_FORNECEDOR = " . $id_cf);
 			}
 		}
 
