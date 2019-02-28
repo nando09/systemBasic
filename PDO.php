@@ -6,7 +6,6 @@
 	$user = $stmt->fetch();
 	echo $user['empresa'];
 
-
 	// Aqui vamos chamar varios retornos que vem do banco
 	$query = "SELECT * FROM FORNECEDOR";
 	$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));

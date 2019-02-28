@@ -29,7 +29,7 @@ function popularPerfil(){
 			$("#estado").val('SP');
 			$("#Cidade").val('Teste');
 			$("#Bairro").val('teste one');
-			$("#Rua").val('two teste');
+			$("#Rua").val(dados.ENDERECO);
 			$("#Numero").val('17');
 			$("#Fantasia").val(dados.FANTASIA);
 			$("#Usuario").val(dados.TIPO);

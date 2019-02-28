@@ -214,19 +214,29 @@ a:hover{
 	background-color: #e28b03;
 }
 
-.msg-principal{
+.msg-principal, .msg-entrada{
 	position: absolute;
 	top: 0;
 	left: 24px;
 	width: 18px;
 }
 
-.msg-principal > p{
+.msg-principal > p, .msg-entrada > p{
 	background: #e28b04;
 	padding: 2px;
 	color: white;
 	font-size: 10px;
 	border-radius: 100%;
+}
+
+.msg-entrada {
+    top: 10px;
+    left: unset;
+    right: 4px;
+}
+
+.msg-noticia > p{
+	background: #007aff;
 }
 
 .quantidade-venda{
@@ -259,4 +269,8 @@ a:hover{
 
 #novo-elemento, #detalhamento, #noticia, .relatorio, .editar-perfil, #card{
 	clear: both;
+}
+
+#para-trocar{
+	color: gray;
 }

@@ -1,0 +1,36 @@
+***** Fazer no sistema *****
+[OK]Tem que fazer o sistema reconhecer o pedido certo. Pois se o mesmo cliente fazer dois pedidos, o sistema na hora de detalhar vai mostrar como se fosse um
+	*Produtos mais comprados pelos clientes, deve mostrar "Quantidade, valor e produto => TOTAL" de cada produto
+	*Ao inserir ou apresentar o endereço, temos que fazer a separação por uma explode e implode
+	*Mensagem no topo do sistema com numero de não lido conforme o dia de pagamento e de entrega
+	*Mensagem Entrada do sistema conforme suporte ou cliente ou outros usuarios
+	*Mensagem para o suporte enviar e retorno para a entrada de mensagem do sistema
+	*Logo do sistema no canto superio esquerdo com link para o site
+	*Serviços é o que o sistema pode oferecer, vai ter uma ajuda para melhor rendimento do usuario com sistema
+	*Noticia é sobre o sistema que esta sendo atualizado ou algum cliente que esta chegando
+
+	*Fazer uma parte minha para controlar o sistema, usuarios, planos e valores, mandar Boleto e tudo mais
+	*Cada cliente vai ter uma pasta principal para acessar o banco certo
+	*Projetos deixar o usuario fazer projetos para o longo do ano e apresentar o projeto na mensagem
+
+***** Plano *****
+	Conquistar 10	Clientes modelo Baixo	Até final de Maio		Valor total: R$ 249,90
+	Conquistar 5	Clientes modelo Medio	Até final de Junho		Valor total: R$ 199,50
+	Conquistar 2	Clientes Modelo Alto	Até final de Agosto		Valor total: R$ 99,80
+
+	Total de cliente: 17
+	Total Valor: R$ 549,20
+
+
+
+
+***** Modelos *****
+	Baixo	=	24.90
+	Medio	=	39,90
+	Alto	=	49,90
+
+	Baixo	=>	Basico
+	Medio	=>	Podendo mandar mensagem para o cliente pelo sistema, então o email vai padrão para o cliente e tambem podendo enviar um boleto
+	Alto	=>	Aqui o sistema oferece o cliente do usuario acessar os sistema e para fazer o pedido ou orçamentos
+
+

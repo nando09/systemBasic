@@ -8,7 +8,7 @@
 		$status = $_POST['status'];
 
 		if ($tipo == 'Cliente') {
-			$query = "SELECT SUM(P.VALOR * PE.QUANTIDADE) AS VALOR FROM PEDINDO AS PE INNER JOIN PRODUTO AS P ON P.ID = PE.ID_PRODUTO WHERE PE.ID_CLIENTE = " . $id_cf;
+			$query = "SELECT SUM(P.VALOR * PE.QUANTIDADE) AS VALOR FROM PEDINDO AS PE INNER JOIN PRODUTO AS P ON P.ID = PE.ID_PRODUTO WHERE PE.FINALIZADO = 'NAO' AND PE.ID_CLIENTE = " . $id_cf;
 			$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 			$stmt->execute();
 			$sum = $stmt->fetch();
@@ -25,11 +25,19 @@
 
 
 			if ($retorno->execute()) {
-				$retorno = 'S';
-				$db->query("UPDATE PEDINDO SET FINALIZADO = 'SIM' WHERE ID_CLIENTE = " . $id_cf);
+				$retorno = 'C';
+				$query = "SELECT ID FROM DETALHE_PEDIDO WHERE ID_CLIENTE = $id_cf AND VALOR = $valor AND VENCIMENTO = '$vencimento' AND STATUS = '$status'";
+				$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+				$stmt->execute();
+				$sum = $stmt->fetch();
+				$id_detalhe = $sum['id'];
+
+				$updade_pedido = "UPDATE PEDINDO SET FINALIZADO = 'SIM', ID_DETALHE = ". $id_detalhe ." WHERE ID_CLIENTE = " . $id_cf;
+				$up = $db->prepare($updade_pedido, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+				$up->execute();
 			}
 		}else{
-			$query = "SELECT SUM(P.VALOR * F.QUANTIDADE) AS VALOR FROM FORNECENDO AS F INNER JOIN PRODUTO AS P ON P.ID = F.ID_PRODUTO WHERE F.ID_FORNECEDOR = " . $id_cf;
+			$query = "SELECT SUM(P.VALOR * F.QUANTIDADE) AS VALOR FROM FORNECENDO AS F INNER JOIN PRODUTO AS P ON P.ID = F.ID_PRODUTO WHERE F.FINALIZADO = 'NAO' AND F.ID_FORNECEDOR = " . $id_cf;
 			$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 			$stmt->execute();
 			$sum = $stmt->fetch();
@@ -43,8 +51,14 @@
 			$retorno = $db->prepare($insert, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 
 			if ($retorno->execute()) {
-				$retorno = 'S';
-				$db->query("UPDATE FORNECENDO SET FINALIZADO = 'SIM' WHERE ID_FORNECEDOR = " . $id_cf);
+				$retorno = 'F';
+				$query = "SELECT ID FROM DETALHE_FORNECEDOR WHERE ID_FORNECEDOR = $id_cf AND VALOR = $valor AND VENCIMENTO = '$vencimento' AND STATUS = '$status'";
+				$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+				$stmt->execute();
+				$sum = $stmt->fetch();
+				$id_detalhe = $sum['id'];
+
+				$db->query("UPDATE FORNECENDO SET FINALIZADO = 'SIM', ID_DETALHE = ". $id_detalhe ." WHERE ID_FORNECEDOR = " . $id_cf);
 			}
 		}
 

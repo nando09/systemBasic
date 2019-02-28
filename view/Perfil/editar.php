@@ -3,35 +3,36 @@
 <h1 class="title-pag">Editar</h1>
 <div class="editar-perfil">
 	<span class="none" id="id_usr"><?= $usuario ?></span>
-	<form method="post">
+	<form method="post" action="/System/systemBasic/view/Perfil/salva-perfil.php">
+		<input type="hidden" readonly class="form-control-plaintext" name="id_usr" id="id_usr" value="<?= $usuario ?>">
 		<div class="form-group row">
 			<label for="inputPassword" class="col-sm-2 col-form-label">Nome: </label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="Nome" placeholder="Nome">
+				<input type="text" class="form-control" name="Nome" id="Nome" placeholder="Nome">
 			</div>
 		</div>
 		<div class="form-group row">
 			<label for="inputPassword" class="col-sm-2 col-form-label">Email: </label>
 			<div class="col-sm-10">
-				<input type="email" class="form-control" id="Email" placeholder="Email">
+				<input type="email" class="form-control" name="Email" id="Email" placeholder="Email">
 			</div>
 		</div>
 		<div class="form-group row">
 			<label for="inputPassword" class="col-sm-2 col-form-label">Login: </label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="Login" placeholder="Login">
+				<input type="text" class="form-control" name="Login" id="Login" placeholder="Login">
 			</div>
 		</div>
 		<div class="form-group row">
 			<label for="inputPassword" class="col-sm-2 col-form-label">Senha: </label>
 			<div class="col-sm-10">
-				<input type="password" class="form-control" id="Senha" placeholder="Senha">
+				<input type="password" class="form-control" name="Senha" id="Senha" placeholder="Senha">
 			</div>
 		</div>
 		<div class="form-group row">
 			<label for="inputPassword" class="col-sm-2 col-form-label">Estado: </label>
 			<div class="col-sm-2">
-				<select id="estado" class="form-control">
+				<select name="estado" id="estado" class="form-control">
 					<option value="AC">AC</option>
 					<option value="AL">AL</option>
 					<option value="AP">AP</option>
@@ -62,27 +63,27 @@
 			</div>
 			<label for="inputPassword" class="col-sm-1 col-form-label">Cidade: </label>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" id="Cidade" placeholder="Cidade">
+				<input type="text" class="form-control" name="Cidade" id="Cidade" placeholder="Cidade">
 			</div>
 			<label for="inputPassword" class="col-sm-1 col-form-label">Bairro: </label>
 			<div class="col-sm-3">
-				<input type="text" class="form-control" id="Bairro" placeholder="Bairro">
+				<input type="text" class="form-control" name="Bairro" id="Bairro" placeholder="Bairro">
 			</div>
 		</div>
 		<div class="form-group row">
 			<label for="inputPassword" class="col-sm-2 col-form-label">Rua: </label>
 			<div class="col-sm-7">
-				<input type="text" class="form-control" id="Rua" placeholder="Rua">
+				<input type="text" class="form-control" name="Rua" id="Rua" placeholder="Rua">
 			</div>
 			<label for="inputPassword" class="col-sm-1 col-form-label">Numero: </label>
 			<div class="col-sm-2">
-				<input type="text" class="form-control" id="Numero" placeholder="N°">
+				<input type="text" class="form-control" name="Numero" id="Numero" placeholder="N°">
 			</div>
 		</div>
 		<div class="form-group row">
 			<label for="inputPassword" class="col-sm-2 col-form-label">Nome Fantasia: </label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="Fantasia" placeholder="Fantasia">
+				<input type="text" class="form-control" name="Fantasia" id="Fantasia" placeholder="Fantasia">
 			</div>
 		</div>
 		<div class="form-group row">
@@ -93,8 +94,11 @@
 		</div>
 		<div class="form-group row">
 			<label for="staticEmail" class="col-sm-2 col-form-label">Plano: </label>
-			<div class="col-sm-10">
+			<div class="col-sm-2">
 				<input type="text" readonly class="form-control-plaintext" id="Plano" value="Plano">
+			</div>
+			<div class="col-sm-8">
+				<input type="text" readonly class="form-control-plaintext" id="para-trocar" value="Para trocar de plano entre com contato com o suporte.">
 			</div>
 		</div>
 		<button class="btn btn-primary" type="submit">Atualizar</button>

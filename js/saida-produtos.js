@@ -178,7 +178,7 @@ function finalizar(id_cf, cf, vencimento, status){
 		},
 		type: 'post',
 		success: function(dados) {
-			if (dados.retorno == "S") {
+			if (dados == "C" || dados == "F") {
 				$.bootstrapGrowl("Pedido Finalizado!", {
 					ele: 'body', // which element to append to
 					type: 'success', // (null, 'info', 'danger', 'success')
@@ -189,6 +189,13 @@ function finalizar(id_cf, cf, vencimento, status){
 					allow_dismiss: true, // If true then will display a cross to close the popup.
 					stackup_spacing: 10 // spacing between consecutively stacked growls.
 				});
+
+				if (dados == "C") {
+					// window.location.replace(history.go(-1));
+					window.location.replace("http://localhost/System/systemBasic/Pedidos");
+				}else{
+					window.location.replace("http://localhost/System/systemBasic/Pedidos/entrada");
+				}
 			}
 		},
 		error: function(dados) {
