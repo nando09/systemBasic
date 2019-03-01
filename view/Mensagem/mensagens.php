@@ -5,11 +5,11 @@
 	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
-		$query = $db->query("SELECT ID, ASSUNTO, DESCRICAO, to_char(DATA_MSG, 'DD/MM/YYYY') as DATA_MSG, ID_DE FROM MENSAGEM");
+		$query = $db->query("SELECT ID, DE, ASSUNTO, DESCRICAO, to_char(DATA_MSG, 'DD/MM/YYYY') as DATA_MSG, ID_DE FROM MENSAGEM");
 
 		foreach ($query as $key) {
 			$retorno .= "<tr>".
-							"<td>". $key['id_de'] ."</td>".
+							"<td>". $key['de'] ."</td>".
 							"<td>". $key['assunto'] . "</td>".
 							"<td>". $key['descricao'] ."</td>".
 							"<td>". $key['data_msg'] ."</td>".

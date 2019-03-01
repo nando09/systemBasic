@@ -26,11 +26,13 @@ function popularPerfil(){
 			$("#Email").val(dados.EMAIL);
 			$("#Login").val(dados.USUARIO);
 			$("#Senha").val("**************");
-			$("#estado").val('SP');
-			$("#Cidade").val('Teste');
-			$("#Bairro").val('teste one');
-			$("#Rua").val(dados.ENDERECO);
-			$("#Numero").val('17');
+
+			$("#estado").val(dados.Estado);
+			$("#Cidade").val(dados.Cidade);
+			$("#Bairro").val(dados.Bairro);
+			$("#Rua").val(dados.Rua);
+			$("#Numero").val(dados.Numero);
+
 			$("#Fantasia").val(dados.FANTASIA);
 			$("#Usuario").val(dados.TIPO);
 			$("#Valor").val(dados.VALOR);

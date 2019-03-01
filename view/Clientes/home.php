@@ -178,7 +178,9 @@
 										<thead>
 											<tr>
 												<th scope="col">NOME</th>
-												<th scope="col">VALOR</th>
+												<th scope="col">VALOR (UNI)</th>
+												<th scope="col">QUANTIDADE</th>
+												<th scope="col">VALOR TOTAL</th>
 											</tr>
 										</thead>
 										<tbody id="produtos">

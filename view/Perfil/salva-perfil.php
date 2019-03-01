@@ -21,7 +21,7 @@
 
 			$Fantasia = $_POST['Fantasia'];
 
-			$endereco = "Rua: $Rua, Bairro: $Bairro, Cidade: $Cidade, Estado: $estado";
+			$endereco = $Rua . "&&END" . $Numero . "&&END" . $Bairro . "&&END" . $Cidade . "&&END" . $estado;
 
 			$query = "UPDATE USUARIO SET NOME = :Nome, EMAIL = :Email, USUARIO = :Login, SENHA = :Senha, ENDERECO = :endereco, FANTASIA = :Fantasia WHERE USUARIO = :usuario";
 			$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));

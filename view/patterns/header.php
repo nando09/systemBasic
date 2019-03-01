@@ -38,54 +38,54 @@
 <body id="body">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
-				<div class="col-md-1">
-					<p class="admin-home">System</p>
-				</div>
-				<div class="col-md-3 admin-search">
-					<div class="input-group">
-						<input type="text" class="form-control search-primary" placeholder="Pesquisar" aria-label="Recipient's username" aria-describedby="button-addon2">
-						<div class="input-group-append">
-							<button class="btn btn-outline-secondary btn-search-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-						</div>
+			<div class="col-md-1">
+				<p class="admin-home">System</p>
+			</div>
+			<div class="col-md-3 admin-search">
+				<div class="input-group">
+					<input type="text" class="form-control search-primary" placeholder="Pesquisar" aria-label="Recipient's username" aria-describedby="button-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary btn-search-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
 					</div>
 				</div>
-				<div class="col-md-8">
-					<ul class="nav justify-content-end">
-						<li class="nav-item">
-							<a class="nav-link font-weight-bold" href="#" data-toggle="modal" data-target="#exampleModal" aria-disabled="true">Suporte</a>
-						</li>
-						<li class="nav-item">
-							<div class="btn-group">
-								<div class="nav-link">
-									<div class="msg-principal">
-										<p class="text-center">1</p>
-									</div>
-									<a href="/System/systemBasic/Mensagem">
-										<i class="fas fa-sms"></i>
-									</a>
+			</div>
+			<div class="col-md-8">
+				<ul class="nav justify-content-end">
+					<li class="nav-item">
+						<a class="nav-link font-weight-bold" href="#" data-toggle="modal" data-target="#exampleModal" aria-disabled="true">Suporte</a>
+					</li>
+					<li class="nav-item">
+						<div class="btn-group">
+							<div class="nav-link">
+								<div class="msg-principal">
+									<p id="msg-top" class="text-center none">0</p>
 								</div>
+								<a href="/System/systemBasic/Mensagem">
+									<i class="fas fa-sms"></i>
+								</a>
 							</div>
-						</li>
-						<li class="nav-item">
-							<!-- Example split danger button -->
-							<div class="btn-group">
-								<div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<i class="fas fa-female"></i>
-								</div>
-								<button class="btn btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<span class="sr-only">Toggle Dropdown</span>
-								</button>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="/System/systemBasic/Perfil">Seu Perfil</a>
-									<a class="dropdown-item" href="/System/systemBasic/Perfil/editar">Editar Perfil</a>
-									<a class="dropdown-item" href="/System/systemBasic/Perfil/configuracao">Configuração</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="/System/systemBasic/Login/logout">Logout</a>
-								</div>
+						</div>
+					</li>
+					<li class="nav-item">
+						<!-- Example split danger button -->
+						<div class="btn-group">
+							<div class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fas fa-female"></i>
 							</div>
-						</li>
-					</ul>
-				</div>
+							<button class="btn btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="/System/systemBasic/Perfil">Seu Perfil</a>
+								<a class="dropdown-item" href="/System/systemBasic/Perfil/editar">Editar Perfil</a>
+								<a class="dropdown-item" href="/System/systemBasic/Perfil/configuracao">Configuração</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/System/systemBasic/Login/logout">Logout</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 	<div id="primary" class="container-fluid">
