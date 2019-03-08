@@ -3,12 +3,14 @@
 [OK]Produtos mais comprados pelos clientes, deve mostrar "Quantidade, valor e produto => TOTAL" de cada produto
 [OK]Ao inserir ou apresentar o endereço, temos que fazer a separação por uma explode e implode
 [OK]Mostra quantas mensagem nao lida
-	*Adiciona mensagem no topo quando preciso
-		-> o dia de pagamento
-		-> e entrega
-		-> estoque baixo
+[OK]Adiciona mensagem no topo quando preciso
+	[ok] o dia de pagamento
+	[ok] e entrega
+	[ok] estoque baixo
 
 	*Mensagem Entrada do sistema conforme suporte ou cliente ou outros usuarios
+		*Mensagem suporte tem que ir para a entrada de suporte com o cliente e usuario
+		*Ao responder a mensagem tem que ir exatamente para o usuario que entrou em contato
 	*Mensagem para o suporte enviar e retorno para a entrada de mensagem do sistema
 	*Logo do sistema no canto superio esquerdo com link para o site
 	*Serviços é o que o sistema pode oferecer, vai ter uma ajuda para melhor rendimento do usuario com sistema
@@ -20,6 +22,7 @@
 	*Cada cliente vai ter uma pasta principal para acessar o banco certo
 	*Projetos deixar o usuario fazer projetos para o longo do ano e apresentar o projeto na mensagem
 	*Produção de produtos com componentes, ligados ao estoque
+	*Ligar ultima compra com o cliente comprador
 
 	##    Melhorias    ##
 	=>	Procurar por CEP

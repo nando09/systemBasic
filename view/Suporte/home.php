@@ -1,3 +1,18 @@
+<?php
+	include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
+
+	if ($_POST){
+		$sobre		=	$_POST['sobre'];
+		$usuario		=	$_POST['usuario'];
+		$descricao	=	$_POST['descricao'];
+
+		$query = "INSERT INTO SUPORTE (MENSAGEM, USUARIO, ASSUNTO) VALUES ('$descricao', '$usuario', $sobre)";
+
+		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+		$stmt->execute();
+
+		if ($stmt->fetchAll()){
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,18 +41,18 @@
 		}
 	</style>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			swal("Enviado com sucesso!", "Obrigado!", "success").then((willDelete) => {
-				if (willDelete) {
+			$(document).ready(function() {
+				swal("Enviado com sucesso!", "Obrigado!", "success").then((willDelete) => {
 					javascript:history.back(-1)
-				} else {
-					javascript:history.back(-1)
-				}
+				});
 			});
-		});
 	</script>
 </head>
 <body id="body">
 
 </body>
 </html>
+<?php
+		}
+	}
+?>

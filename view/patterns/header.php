@@ -135,6 +135,7 @@
 								</div>
 								<div class="modal-body">
 									<form action="/System/systemBasic/Suporte" method="post">
+										<input type="hidden" name="usuario" value="<?= $_SESSION['usuario'] ?>">
 										<div class="form-group">
 											<label for="exampleInputEmail1">Sobre</label>
 											<select name="sobre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
