@@ -456,7 +456,7 @@ function novosFornecedores(){
 
 			var ctx = document.getElementById("novosFornecedores").getContext('2d');
 			var novosFornecedores = new Chart(ctx, {
-				type: 'bar',
+				type: 'line',
 				data: {
 					// labels: ["Red","Blue","Yellow","Green","Purple","Orange"],
 					// datasets: [{

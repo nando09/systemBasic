@@ -158,12 +158,14 @@
 								</div>
 
 								<div class="col-md-6">
-									<h2 class="title-model text-center">Produtos</h2>
+									<h2 class="title-model text-center">Produtos mais comprados</h2>
 									<table class="table">
 										<thead>
 											<tr>
 												<th scope="col">NOME</th>
-												<th scope="col">VALOR</th>
+												<th scope="col">VALOR (UNI)</th>
+												<th scope="col">QUANTIDADE</th>
+												<th scope="col">VALOR TOTAL</th>
 											</tr>
 										</thead>
 										<tbody id="produtos">
@@ -213,7 +215,7 @@
 					<canvas id="maisCompro" width="400" height="400"></canvas>
 				</div>
 				<div class="col-md-4">
-					<h3 class="relatorio-title">Novo fornecedor</h3>
+					<h3 class="relatorio-title">Mais tempo que não compro</h3>
 					<canvas id="novosFornecedores" width="400" height="400"></canvas>
 				</div>
 				<div class="col-md-4">
