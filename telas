@@ -1,0 +1,79 @@
+****** FAZER ******
+
+	## PRODUTOS ##
+		=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
+		=>	Arrumar valores da pagina, e data
+		=>	Validar formularios
+
+	## CLIENTES ##
+		=>	Relatorio clientes pode mes, esta trazendo errado.
+		=>	Mensagem para o cliente, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc.
+		=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
+		=>	Arrumar valores da pagina, e data
+		=>	Validar formularios
+
+	## FORNECEDORES ##
+		=>	Relatorio fornecedores pode mes, esta trazendo errado.
+		=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
+		=>	Detalhamento dos fornecedores deixar com produtos quantidades e valores do venda de cada produto comprado.
+		=>	Arrumar valores da pagina, e data
+		=>	Validar formularios
+		=>	Mensagem para o cliente, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc.
+
+	## Entrada de produtos ##
+		=>	Arrumar valores da pagina, e data
+		=>	Arrumar detalhamento
+		=>	Arrumar edição
+
+	## Saída de produtos ##
+		=>	Arrumar valores da pagina, e data
+		=>	Arrumar detalhamento
+		=>	Arrumar edição
+
+
+
+
+	## PROJETOS ##
+		=>	O master do sistema, pode dar projetos para seus usuarios do sistema.
+		=>	O usuario vai receber esse projeto para fazer e mandar quando tiver concluido
+		[PLANEJAR]
+		=>	Como vai ser o transferencia de dados, e o banco de dados tem que fazer
+
+	## NOTICIA ##
+		=>	Todos as noticias sobre o sistema.
+		[FAZER PLANEJAR]
+		=>	Banco de dados e de onde vai vir que todos os clientes possam ter acesso.
+
+	## ENTRADA ##
+		=>	Conversa entra usuarios
+		[FAZER PLANEJAR]
+		=>	Como ser o envios de mensagem e como vai ser os retornos.
+
+	## MENSAGEM ##
+		=>	Mensagem sobre o assunto de estoque, pagamento e saida e entrada de produtos
+		[FAZER PLANEJAR]
+
+
+
+
+
+
+	## EDITAR ##
+		=>	Dando erro
+
+	## PERFIL ##
+		=>	Dando erro
+
+	## CONFIGURAÇÃO ##
+		=>	Dando erro
+		=>	Aqui vai poder gerenciar os usuarios que tem em sua rede de sistema, e como eles podem ser ageis sobre o sistema
+
+	## SERVIÇO ##
+		=>	Vai encontrar os usuarios em suas redes e seus projetos, mensagens e PLANEJAR MELHOR!
+		[FAZER PLANEJAR]
+
+
+
+
+
+
