@@ -8,24 +8,32 @@
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
 		// $query = $db->query("SELECT ID, NOME FROM categoria");
-		$query = $db->query("SELECT SUM(P.QUANTIDADE) AS QUANTIDADE, F.EMPRESA AS EMPRESA FROM FORNECEDOR AS F FULL OUTER JOIN FORNECENDO AS P ON P.ID_FORNECEDOR = F.ID GROUP BY F.EMPRESA, F.DATA_ULTIMA_COMPRA ORDER BY F.DATA_ULTIMA_COMPRA LIMIT 5");
+		$query = $db->query("SELECT EMPRESA, DATA_ULTIMA_COMPRA FROM FORNECEDOR AS C ORDER BY DATA_ULTIMA_COMPRA LIMIT 5");
 
 		foreach ($query as $key) {
+			// $data1 = new DateTime();
+			// $data2 = new DateTime($key['DATA_ULTIMA_COMPRA']);
+
+			// $data1 = new DateTime( '2013-12-11' );
+			// $data2 = new DateTime( '1994-04-17' );
+
+			$database = date_create($key['data_ultima_compra']);
+			$datadehoje = date_create();
+			$resultado = date_diff($database, $datadehoje);
+			$dias = date_interval_format($resultado, '%a');
+
+			// $data1 = new DateTime( '2013-12-11' );
+			// $data2 = new DateTime($key['data_ultima_compra']);
+
+			// $intervalo = $data1->diff( $data2 );
+			// $dias = $intervalo->d;
+
+			// echo "Intervalo é de {$intervalo->y} anos, {$intervalo->m} meses e {$intervalo->d} dias";
+
 			array_push($labels, $key['empresa']);
-			array_push($datas, $key['quantidade']);
-			// $labels .= '"' . $key['produto'] . '",';
-			// $datas .= $key['quantidade'] . ",";
+			array_push($datas, $dias);
+			// array_push($datas, $key['data_ultima_compra']);
 		}
-
-		// $labels .= "]";
-		// $datas .= "]";
-
-		// $labels = str_replace(",]", "]", $labels);
-		// $datas = str_replace(",]", "]", $datas);
-
-		// print_r($labels);
-		// print_r($datas);
-		// exit();
 
 		$retorno = array(
 			'labels' => $labels,

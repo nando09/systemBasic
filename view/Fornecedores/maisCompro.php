@@ -8,13 +8,13 @@
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
 		// $query = $db->query("SELECT ID, NOME FROM categoria");
-		$query = $db->query("SELECT C.NOME AS PRODUTO, SUM(PE.QUANTIDADE) AS QUANTIDADE
+		$query = $db->query("SELECT F.EMPRESA AS EMPRESA, SUM(PE.QUANTIDADE) AS QUANTIDADE
 								FROM FORNECENDO AS PE
-								INNER JOIN FORNECEDOR AS C ON C.ID = PE.ID_FORNECEDOR
-								GROUP BY C.NOME  ORDER BY SUM(PE.QUANTIDADE) DESC LIMIT 5");
+								INNER JOIN FORNECEDOR AS F ON F.ID = PE.ID_FORNECEDOR
+								GROUP BY F.EMPRESA  ORDER BY SUM(PE.QUANTIDADE) DESC LIMIT 5");
 
 		foreach ($query as $key) {
-			array_push($labels, $key['produto']);
+			array_push($labels, $key['empresa']);
 			array_push($datas, $key['quantidade']);
 			// $labels .= '"' . $key['produto'] . '",';
 			// $datas .= $key['quantidade'] . ",";

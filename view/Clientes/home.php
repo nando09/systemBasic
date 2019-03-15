@@ -161,18 +161,6 @@
 								</div>
 
 								<div class="col-md-6">
-									<h2 class="title-model text-center">Comunicado</h2>
-									<table class="table">
-										<thead>
-											<tr>
-												<th scope="col">MENSAGEM</th>
-											</tr>
-										</thead>
-										<tbody id="mensagem">
-										</tbody>
-									</table>
-								</div>
-								<div class="col-md-6">
 									<h2 class="title-model text-center">Produtos mais comprados</h2>
 									<table class="table">
 										<thead>
@@ -184,6 +172,18 @@
 											</tr>
 										</thead>
 										<tbody id="produtos">
+										</tbody>
+									</table>
+								</div>
+								<div class="col-md-6">
+									<h2 class="title-model text-center">Anotações</h2>
+									<table class="table">
+										<thead>
+											<tr>
+												<th scope="col">MENSAGEM</th>
+											</tr>
+										</thead>
+										<tbody id="mensagem">
 										</tbody>
 									</table>
 								</div>
@@ -218,7 +218,7 @@
 					<canvas id="maisCompra" width="400" height="400"></canvas>
 				</div>
 				<div class="col-md-4">
-					<h3 class="relatorio-title">Clientes novos por mês</h3>
+					<h3 class="relatorio-title">Mais tempo que não compra</h3>
 					<canvas id="novosClientes" width="400" height="400"></canvas>
 				</div>
 				<div class="col-md-4">

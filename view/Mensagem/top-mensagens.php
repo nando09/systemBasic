@@ -2,7 +2,7 @@
 
 	$retorno = "";
 	// Primeiro em php.ini temos que descomentar line pdo_psql
-	// try{
+	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 		$count = 0;
 		$msg = '';
@@ -93,9 +93,9 @@
 		}
 
 		$retorno = $count;
-	// }catch(Exception $e){
-	// 	$retorno = 'N';
-	// }
+	}catch(Exception $e){
+		$retorno = 'N';
+	}
 
 	echo json_encode($retorno);
 ?>
