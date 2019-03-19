@@ -177,7 +177,8 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th scope="col">Mensagem</th>
+												<th scope="col">MENSAGEM</th>
+												<th scope="col">DATA</th>
 											</tr>
 										</thead>
 										<tbody id="mensagem">

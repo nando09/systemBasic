@@ -1,4 +1,10 @@
 ****** FAZER ******
+	## SQL ##
+		=>	Criação da tabela para informações sobre o cliente/fornecedor detalhamento "comunicado"
+		=>	Criação da tabela "Noticia"
+		=>	Criação da tabela "Entrada"
+		=>	Criação da tabela "Projetos"
+		=>	Criação de campos no usuario tabela "Usuarios"
 
 	## PRODUTOS ##
 		=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
@@ -6,19 +12,21 @@
 		=>	Validar formularios
 
 	## CLIENTES ##
-		=>	Relatorio clientes pode mes, esta trazendo errado.
-		=>	Mensagem para o cliente, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc.
+[OK]	=>	Relatorio clientes pode mes, esta trazendo errado.
+[OK]	=>	Mensagem para o cliente, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc. *SQL
+		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas 
 		=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
 		=>	Arrumar valores da pagina, e data
 		=>	Validar formularios
 
 	## FORNECEDORES ##
-		=>	Relatorio fornecedores pode mes, esta trazendo errado.
+[OK]	=>	Relatorio fornecedores pode mes, esta trazendo errado.
+[OK]	=>	Detalhamento dos fornecedores deixar com produtos quantidades e valores do venda de cada produto comprado.
+[OK]	=>	Mensagem para o fornecedores, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc. *SQL 
+		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas 
 		=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
-		=>	Detalhamento dos fornecedores deixar com produtos quantidades e valores do venda de cada produto comprado.
 		=>	Arrumar valores da pagina, e data
 		=>	Validar formularios
-		=>	Mensagem para o cliente, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc.
 
 	## Entrada de produtos ##
 		=>	Arrumar valores da pagina, e data

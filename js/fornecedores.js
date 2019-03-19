@@ -243,46 +243,30 @@ function detalharFornecedores(id_fornecedores){
 }
 
 function comunicado(id_fornecedore){
-	// $.ajax({
-	// 	url: '/System/systemBasic/view/Fornecedores/comunicado_Fornecedores.php', // Url do lado server que vai receber o arquivo
-	// 	dataType: 'json',
-	// 	type: 'post',
-	// 	data: {
-	// 		id: id_fornecedore
-	// 	},
-	// 	success: function(dados) {
-	// 		if (dados == "") {
-	// 			$.bootstrapGrowl("Não trouxe nenhum registro de Fornecedores desse produto!", {
-	// 				ele: 'body', // which element to append to
-	// 				type: 'info', // (null, 'info', 'danger', 'success')
-	// 				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-	// 				align: 'right', // ('left', 'right', or 'center')
-	// 				width: 'auto', // (integer, or 'auto')
-	// 				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-	// 				allow_dismiss: true, // If true then will display a cross to close the popup.
-	// 				stackup_spacing: 10 // spacing between consecutively stacked growls.
-	// 			});
-	// 		}
-
-	//		$("#mensagem tr").remove();
-	// 		$("#mensagem").append(dados);
-	// 		// preparaExcluirFornecedores();
-	// 		// preparaDetalharFornecedores();
-	// 		// preparaEditarFornecedores();
-	// 	},
-	// 	error: function(dados) {
-	// 		$.bootstrapGrowl("ERRO ao execultar Fornecedores!", {
-	// 			ele: 'body', // which element to append to
-	// 			type: 'danger', // (null, 'info', 'danger', 'success')
-	// 			offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-	// 			align: 'right', // ('left', 'right', or 'center')
-	// 			width: 'auto', // (integer, or 'auto')
-	// 			delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-	// 			allow_dismiss: true, // If true then will display a cross to close the popup.
-	// 			stackup_spacing: 10 // spacing between consecutively stacked growls.
-	// 		});
-	// 	}
-	// });
+	$.ajax({
+		url: '/System/systemBasic/view/Fornecedores/comunicado_fornecedor.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		type: 'post',
+		data: {
+			id: id_fornecedore
+		},
+		success: function(dados) {
+			$("#mensagem tr").remove();
+			$("#mensagem").append(dados);
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO trazer anotações Clientes!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
 }
 
 function produtos(id_fornecedore){

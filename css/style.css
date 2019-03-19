@@ -230,9 +230,9 @@ a:hover{
 }
 
 .msg-entrada {
-    top: 10px;
-    left: unset;
-    right: 4px;
+	top: 10px;
+	left: unset;
+	right: 4px;
 }
 
 .msg-noticia > p{
@@ -273,4 +273,11 @@ a:hover{
 
 #para-trocar{
 	color: gray;
+}
+
+td.big-text{
+	max-width: 35ch;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
