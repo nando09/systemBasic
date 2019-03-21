@@ -23,7 +23,7 @@
 
 			$endereco = $Rua . "&&END" . $Numero . "&&END" . $Bairro . "&&END" . $Cidade . "&&END" . $estado;
 
-			$query = "UPDATE USUARIO SET NOME = :Nome, EMAIL = :Email, USUARIO = :Login, SENHA = :Senha, ENDERECO = :endereco, FANTASIA = :Fantasia WHERE USUARIO = :usuario";
+			$query = "UPDATE USUARIO SET NOME = :Nome, EMAIL = :Email, USUARIO = :Login, SENHA = md5(:Senha), ENDERECO = :endereco, FANTASIA = :Fantasia WHERE USUARIO = :usuario";
 			$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 			$stmt->execute(array(
 				':usuario'	=> $id_usr,

@@ -4,7 +4,7 @@
 	if ($_POST) {
 		$usuario = $_POST['nome'];
 		$senha = $_POST['senha'];
-		$query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = :teste AND SENHA = MD5(:senha)";
+		$query = "SELECT ID, NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = :teste AND SENHA = MD5(:senha)";
 		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		$stmt->bindParam(':teste', $usuario, PDO::PARAM_INT);
 		$stmt->bindParam(':senha', $senha, PDO::PARAM_INT);
@@ -14,6 +14,7 @@
 			$_SESSION['logado'] = true;
 			$_SESSION['nome'] = $user['nome'];
 			$_SESSION['usuario'] = $user['usuario'];
+			$_SESSION['id_usuario'] = $user['id'];
 
 			header('Location: /System/systemBasic/Painel');
 		}else{

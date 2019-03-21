@@ -1,4 +1,4 @@
-<?php $usuario = $_SESSION['usuario'] ?>
+<?php $usuario = $_SESSION['id_usuario'] ?>
 <?php include 'view/patterns/header.php' ?>
 <h1 class="title-pag">Configuração</h1>
 <div id="card">

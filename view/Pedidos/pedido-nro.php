@@ -12,8 +12,8 @@
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
 		$query = $db->query("SELECT PR.NOME AS NOME, PR.VALOR AS VALOR, SUM(P.QUANTIDADE) AS QUANTIDADE, SUM(PR.VALOR * P.QUANTIDADE) AS VALOR_TOTAL FROM $table AS P INNER JOIN $inner AS D ON P.$campo = D.ID INNER JOIN PRODUTO AS PR ON P.ID_PRODUTO = PR.ID WHERE D.ID = $id GROUP BY PR.NOME, PR.VALOR");
-		print_r($query);
-		exit();
+		// print_r($query);
+		// exit();
 
 		// $query = $db->query("SELECT PR.NOME AS NOME, PR.VALOR AS VALOR, SUM(P.QUANTIDADE) AS QUANTIDADE, SUM(PR.VALOR * P.QUANTIDADE) AS VALOR_TOTAL FROM $table AS P INNER JOIN $inner AS D ON P.$campo = D.ID INNER JOIN PRODUTO AS PR ON P.ID_PRODUTO = PR.ID WHERE D.ID = 46 GROUP BY PR.NOME, PR.VALOR");
 

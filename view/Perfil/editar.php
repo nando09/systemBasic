@@ -1,4 +1,4 @@
-<?php $usuario = $_SESSION['usuario'] ?>
+<?php $usuario = $_SESSION['id_usuario'] ?>
 <?php include 'view/patterns/header.php' ?>
 <h1 class="title-pag">Editar</h1>
 <div class="editar-perfil">
