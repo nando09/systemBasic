@@ -15,11 +15,11 @@
 								<table class="table table-striped">
 									<thead>
 										<tr>
-											<th scope="col text-uppercase">empresa</th>
-											<th scope="col text-uppercase">valor</th>
-											<th scope="col text-uppercase">ultima</th>
-											<th scope="col text-uppercase">vencimento</th>
-											<th scope="col text-uppercase">status</th>
+											<th scope="col text-uppercase">Empresa</th>
+											<th scope="col text-uppercase">Valor</th>
+											<th scope="col text-uppercase">Ultima</th>
+											<th scope="col text-uppercase">Vencimento</th>
+											<th scope="col text-uppercase">Status</th>
 										</tr>
 									</thead>
 									<tbody>

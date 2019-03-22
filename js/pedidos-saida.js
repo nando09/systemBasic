@@ -99,7 +99,8 @@ function pedidos(id){
 			campo: 'ID_DETALHE'
 		},
 		success: function(dados) {
-			$("#produtos-detalhes").text(dados);
+			$("#produtos-detalhes > tr").remove();
+			$("#produtos-detalhes").append(dados);
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {

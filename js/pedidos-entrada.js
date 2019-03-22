@@ -95,10 +95,11 @@ function pedidos(id){
 			id: id,
 			table: 'FORNECENDO',
 			inner: 'DETALHE_FORNECEDOR',
-			campo: 'ID_FORNECEDOR'
+			campo: 'ID_DETALHE'
 		},
 		success: function(dados) {
-			$("#produtos-detalhes").text(dados);
+			$("#produtos-detalhes > tr").remove();
+			$("#produtos-detalhes").append(dados);
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
