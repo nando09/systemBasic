@@ -20,6 +20,7 @@ https://pagseguro.uol.com.br/para-seu-negocio/taxas-e-tarifas
 
 ********** SEO **********
 https://neilpatel.com/br/blog/tags-htm/
+https://blog.azzagencia.com.br/guia-como-aparecer-nas-pesquisas-google/
 
 ********** PHP **********
 https://blog.umbler.com/br/php-7-mudancas-na-linguagem/
@@ -38,4 +39,22 @@ Av. Eng. Armando de Arruda Pereira, 2937
 R. Orense, 41 - Centro, Diadema
 R. José Versolato, 101
 
+
+********** CODIGOS **********
+#js
+	window.open("link da pagina", "_blank", "height=400,width=650,left=200,top=200,status=yes,toolbar=no,menubar=yes,location=no,scrollbars=yes,resizable=yes");
+		=>	Abre essa pagina em uma navegação externa!
+	window.opener
+		=>	Pode mexer na navegação na qual foi aberta essa pagina!
+	window.close()
+		=>	Fecha a pagina!
+
+
+
+********** EMAIL PARA EMPRESAS **********
+daniel.setton@queroquitar.com.br 
+
+
+********** TITULO **********
+stockys.com.br
 
