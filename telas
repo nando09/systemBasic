@@ -7,9 +7,11 @@
 		=>	Criação de campos no usuario tabela "Usuarios"
 
 	## PRODUTOS ##
-		=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
-		=>	Arrumar valores da pagina, e data
+[OK]	=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
+[OK]	=>	Arrumar valores da pagina, e data
 		=>	Validar formularios
+		=>	Codigo interno não pode ter iguais
+		=>	Adicionar categoria
 
 	## CLIENTES ##
 [OK]	=>	Relatorio clientes pode mes, esta trazendo errado.
@@ -68,13 +70,13 @@
 
 
 	## EDITAR ##
-		=>	Dando erro
+[OK]	=>	Dando erro
 
 	## PERFIL ##
-		=>	Dando erro
+[OK]	=>	Dando erro
 
 	## CONFIGURAÇÃO ##
-		=>	Dando erro
+[OK]	=>	Dando erro
 		=>	Aqui vai poder gerenciar os usuarios que tem em sua rede de sistema, e como eles podem ser ageis sobre o sistema
 
 	## SERVIÇO ##

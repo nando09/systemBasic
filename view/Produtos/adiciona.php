@@ -30,11 +30,12 @@
 
 			if ($campo = $db->query($query)) {
 				foreach ($campo as $key) {
+					$valor = 'R$ ' . number_format($key['valor'], 2, ',', ' ');
 					$tr .= "<tr>".
-									"<td>". $key['nome'] . "</td>".
-									"<td>". $key['categoria'] ."</td>".
-									"<td>". $key['valor'] ."</td>".
-									"<td>". $key['descricao'] ."</td>".
+									"<td class='text-uppercase'>". $key['nome'] . "</td>".
+									"<td class='text-uppercase'>". $key['categoria'] ."</td>".
+									"<td class='text-uppercase'>". $valor ."</td>".
+									"<td class='text-uppercase'>". $key['descricao'] ."</td>".
 									"<td class='text-center'>".
 										"<div class='detalhar' data-toggle='modal' data-target='.detalhamento'>".
 											"<i class='fas fa-info-circle detalhar'></i>".

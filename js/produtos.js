@@ -41,7 +41,9 @@ function popularProdutos(){
 					});
 
 					$("#produtos").append(dados.tr);
-					console.log(dados.tr);
+
+					limparCampo();
+
 					// preparaExcluirProduto();
 					// preparaDetalharProduto();
 					// preparaEditarProduto();
@@ -216,10 +218,10 @@ function detalharProduto(id_produto){
 				$("#detalhamento .quantidade").text(dados.quantidade);
 
 				if (dados.vendido > 0) {
-					$("#detalhamento #lucro-produto").text("R$ " +dados.lucro);
+					$("#detalhamento #lucro-produto").text(dados.lucro);
 					$("#detalhamento #quantidade-produto").text(dados.vendido);
 				}else{
-					$("#detalhamento #lucro-produto").text("R$ 0");
+					$("#detalhamento #lucro-produto").text("0");
 					$("#detalhamento #quantidade-produto").text("0");
 				}
 
@@ -602,6 +604,17 @@ function menosVendido(){
 			});
 		}
 	});
+}
+
+function limparCampo(){
+	$("#id_produto").val('');
+	$("#nome").val('');
+	$("#valor").val('');
+	$("#descricao").val('');
+	$("#categoria-novo").val('');
+	$("#min").val('');
+	$("#quantidade").val('');
+	$("#nro").val('');
 }
 
 $(document).ready(function() {

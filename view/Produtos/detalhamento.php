@@ -24,17 +24,20 @@ WHERE p.ID = " . $id . "
 GROUP BY P.ID, NRO, C.NOME, CATEGORIA, VALOR, DESCRICAO, MINIMO, P.QUANTIDADE");
 
 		foreach ($query as $key) {
+			$valor = 'R$ ' . number_format($key['valor'], 2, ',', ' ');
+			$lucro = 'R$ ' . number_format($key['lucro'], 2, ',', ' ');
+
 			$retorno = array(
 						'retorno' => 'S',
 						'id_produto' => $key['id'],
 						'nome' => $key['nome'],
 						'nro' => $key['nro'],
 						'categoria' => $key['categoria'],
-						'valor' => $key['valor'],
+						'valor' => $valor,
 						'descricao' => $key['descricao'],
 						'minimo' => $key['minimo'],
 						'quantidade' => $key['quantidade'],
-						'lucro' => $key['lucro'],
+						'lucro' => $lucro,
 						'vendido' => $key['vendido']
 			);
 		}
