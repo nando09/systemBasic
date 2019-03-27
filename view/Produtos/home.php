@@ -24,11 +24,11 @@
 						<div id="novo-elemento">
 							<div class="row">
 								<div class="form-group col-md-6">
-									<label>Nome</label>
+									<label>Nome <span class="obrigatorio"> *</span></label>
 									<input id="nome" name="nome" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-6" id="categoria">
-									<label>Categoria</label>
+									<label>Categoria <span class="obrigatorio"> *</span></label>
 									<select id="categoria-novo" name="categoria" class="form-control"></select>
 								</div>
 								<div class="form-group col-md-3">
@@ -36,11 +36,11 @@
 									<input id="nro" name="nro" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-3">
-									<label>Valor</label>
+									<label>Valor <span class="obrigatorio"> *</span></label>
 									<input id="valor" name="valor" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-3">
-									<label>Quantidade</label>
+									<label>Quantidade <span class="obrigatorio"> *</span></label>
 									<input id="quantidade" name="valor" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-3">
@@ -48,12 +48,13 @@
 									<input id="min" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
 								</div>
 								<div class="form-group col-md-12">
-									<label>Descrição</label>
+									<label>Descrição <span class="obrigatorio"> *</span></label>
 									<textarea id="descricao" name="descricao" class="form-control" rows="3"></textarea>
 								</div>
 								<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
 							</div>
-							<button id="salvar-produto" type="button" class="btn btn-primary" data-dismiss="modal">SALVAR</button>
+							<!-- <button id="salvar-produto" type="button" class="btn btn-primary" data-dismiss="modal">SALVAR</button> -->
+							<button id="salvar-produto" type="button" class="btn btn-primary">SALVAR</button>
 						</div>
 					</div>
 				</div>
@@ -72,11 +73,11 @@
 							<div class="row">
 								<input id="id_produto" name="id_produto" type="hidden">
 								<div class="form-group col-md-6">
-									<label>Nome</label>
+									<label>Nome <span class="obrigatorio"> *</span></label>
 									<input id="nome-editar" name="nome" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-6" id="categoria">
-									<label>Categoria</label>
+									<label>Categoria <span class="obrigatorio"> *</span></label>
 									<select id="categoria-editar" name="categoria" class="form-control"></select>
 								</div>
 								<div class="form-group col-md-3">
@@ -84,11 +85,11 @@
 									<input id="nro-editar" name="nro-editar" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-3">
-									<label>Valor</label>
+									<label>Valor <span class="obrigatorio"> *</span></label>
 									<input id="valor-editar" name="valor" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-3">
-									<label>Quantidade</label>
+									<label>Quantidade <span class="obrigatorio"> *</span></label>
 									<input id="quantidade-editar" name="valor" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-3">
@@ -96,12 +97,12 @@
 									<input id="min-editar" name="valor" type="text" class="form-control" placeholder="Quantidade minima é para um alerta de estoque...">
 								</div>
 								<div class="form-group col-md-12">
-									<label>Descrição</label>
+									<label>Descrição <span class="obrigatorio"> *</span></label>
 									<textarea id="descricao-editar" name="descricao" class="form-control" rows="3"></textarea>
 								</div>
 								<!-- <button id="salvar" class="btn btn-primary btn-adicionar"></button> -->
 							</div>
-							<button id="alterar-produto" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
+							<button id="alterar-produto" type="button" class="btn btn-primary">ALTERAR</button>
 						</div>
 					</div>
 				</div>

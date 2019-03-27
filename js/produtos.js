@@ -1,57 +1,62 @@
 function popularProdutos(){
 	$('#salvar-produto').click(function(){
-		var nome = $("#nome").val();
-		// Para pegar um valor de Select em jquery tem que selecionar o option que foi escolhido
-		var categoria = $("#categoria-novo").val();
-		var valor = $("#valor").val();
-		var descricao = $("#descricao").val();
-		var quantidade = $("#quantidade").val();
-		var min = $("#min").val();
-		var nro = $("#nro").val();
-		// console.log(nro);
+		if(validaForm('novo')){
+			var nome = $("#nome").val();
+			var categoria = $("#categoria-novo").val();
+			var valor = $("#valor").val();
+			var descricao = $("#descricao").val();
+			var quantidade = $("#quantidade").val();
+			var min = $("#min").val();
+			var nro = $("#nro").val();
 
+			$.ajax({
+				url: '/System/systemBasic/view/Produtos/adiciona.php', // Url do lado server que vai receber o arquivo
+				dataType: 'json',
+				data: {
+					nome: nome,
+					categoria: categoria,
+					valor: valor,
+					descricao: descricao,
+					quantidade: quantidade,
+					min: min,
+					nro: nro
+				},
+				type: 'POST',
+				success: function(dados) {
+					if (dados.retorno == 'S'){
+						$.bootstrapGrowl("Produto adicionado com sucesso!", {
+							ele: 'body', // which element to append to
+							type: 'success', // (null, 'info', 'danger', 'success')
+							offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+							align: 'right', // ('left', 'right', or 'center')
+							width: 'auto', // (integer, or 'auto')
+							delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+							allow_dismiss: true, // If true then will display a cross to close the popup.
+							stackup_spacing: 10 // spacing between consecutively stacked growls.
+						});
 
-		// console.log(nome + '<br>' + categoria + '<br>' + valor + '<br>' + descricao);
+						$("#produtos").append(dados.tr);
 
-		// var formDados  = $(this).serialize();
-		$.ajax({
-			url: '/System/systemBasic/view/Produtos/adiciona.php', // Url do lado server que vai receber o arquivo
-			dataType: 'json',
-			data: {
-				nome: nome,
-				categoria: categoria,
-				valor: valor,
-				descricao: descricao,
-				quantidade: quantidade,
-				min: min,
-				nro: nro
-			},
-			type: 'POST',
-			success: function(dados) {
-				if (dados.retorno == 'S'){
-					$.bootstrapGrowl("Produto adicionado com sucesso!", {
+						limparCampo();
+						$('.modal').modal('hide');
+
+					}else if(dados == 'E'){
+						$.bootstrapGrowl("Erro ao inserir Produto!", {
+							ele: 'body', // which element to append to
+							type: 'info', // (null, 'info', 'danger', 'success')
+							offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+							align: 'right', // ('left', 'right', or 'center')
+							width: 'auto', // (integer, or 'auto')
+							delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+							allow_dismiss: true, // If true then will display a cross to close the popup.
+							stackup_spacing: 10 // spacing between consecutively stacked growls.
+						});
+					}
+				},
+				error: function(dados) {
+					$.bootstrapGrowl("ERRO no arquivo!", {
 						ele: 'body', // which element to append to
-						type: 'success', // (null, 'info', 'danger', 'success')
-						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-						align: 'right', // ('left', 'right', or 'center')
-						width: 'auto', // (integer, or 'auto')
-						delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-						allow_dismiss: true, // If true then will display a cross to close the popup.
-						stackup_spacing: 10 // spacing between consecutively stacked growls.
-					});
-
-					$("#produtos").append(dados.tr);
-
-					limparCampo();
-
-					// preparaExcluirProduto();
-					// preparaDetalharProduto();
-					// preparaEditarProduto();
-
-				}else if(dados == 'E'){
-					$.bootstrapGrowl("Erro ao inserir Produto!", {
-						ele: 'body', // which element to append to
-						type: 'info', // (null, 'info', 'danger', 'success')
+						type: 'danger', // (null, 'info', 'danger', 'success')
 						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
 						align: 'right', // ('left', 'right', or 'center')
 						width: 'auto', // (integer, or 'auto')
@@ -60,20 +65,8 @@ function popularProdutos(){
 						stackup_spacing: 10 // spacing between consecutively stacked growls.
 					});
 				}
-			},
-			error: function(dados) {
-				$.bootstrapGrowl("ERRO no arquivo!", {
-					ele: 'body', // which element to append to
-					type: 'danger', // (null, 'info', 'danger', 'success')
-					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-					align: 'right', // ('left', 'right', or 'center')
-					width: 'auto', // (integer, or 'auto')
-					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-					allow_dismiss: true, // If true then will display a cross to close the popup.
-					stackup_spacing: 10 // spacing between consecutively stacked growls.
-				});
-			}
-		});
+			});
+		}
 	});
 
 	$.ajax({
@@ -158,6 +151,8 @@ function editarProduto(id_produto, vai){
 				$(".editando").children().eq(1).text(dados.categoria);
 				$(".editando").children().eq(2).text(dados.valor);
 				$(".editando").children().eq(3).text(dados.descricao);
+
+				$('.modal').modal('hide');
 
 				$.bootstrapGrowl("Sucesso ao alterar o produto!", {
 					ele: 'body', // which element to append to
@@ -617,6 +612,73 @@ function limparCampo(){
 	$("#nro").val('');
 }
 
+function validaForm(tipo){
+	if (tipo == 'novo') {
+		var nome		= 		$("#nome").val();
+		var valor		= 		$("#valor").val();
+		var descricao	= 		$("#descricao").val();
+		var categoria	= 		$("#categoria-novo").val();
+		var quantidade	= 		$("#quantidade").val();
+
+		if(nome == ''){
+			messageVazio('nome');
+			$("#nome").focus();
+		}else if(categoria == ''){
+			messageVazio('categoria');
+			$("#categoria").focus();
+		}else if(valor == ''){
+			messageVazio('valor');
+			$("#valor").focus();
+		}else if(quantidade == ''){
+			messageVazio('quantidade');
+			$("#quantidade").focus();
+		}else if(descricao == ''){
+			messageVazio('descrição');
+			$("#descricao").focus();
+		}else{
+			return true;
+		}
+	}else{
+		var nome		= 		$("#nome-editar").val();
+		var categoria	= 		$("#categoria-editar").val();
+		var valor		= 		$("#valor-editar").val();
+		var quantidade	= 		$("#quantidade-editar").val();
+		var descricao	= 		$("#descricao-editar").val();
+
+		if(nome == ''){
+			messageVazio('nome');
+			$("#nome-editar").focus();
+		}else if(categoria == ''){
+			messageVazio('categoria');
+			$("#categoria-editar").focus();
+		}else if(valor == ''){
+			messageVazio('valor');
+			$("#valor-editar").focus();
+		}else if(quantidade == ''){
+			messageVazio('quantidade');
+			$("#quantidade-editar").focus();
+		}else if(descricao == ''){
+			messageVazio('descrição');
+			$("#descricao-editar").focus();
+		}else{
+			return true;
+		}
+	}
+}
+
+function messageVazio(texto){
+	$.bootstrapGrowl("Campo "+ texto +" não esta preenchido!", {
+		ele: 'body', // which element to append to
+		type: 'danger', // (null, 'info', 'danger', 'success')
+		offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+		align: 'right', // ('left', 'right', or 'center')
+		width: 'auto', // (integer, or 'auto')
+		delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+		allow_dismiss: true, // If true then will display a cross to close the popup.
+		stackup_spacing: 10 // spacing between consecutively stacked growls.
+	});
+}
+
 $(document).ready(function() {
 	selectCategoria();
 	popularProdutos();
@@ -644,6 +706,8 @@ $(document).ready(function() {
 	$("#alterar-produto").on('click', function(){
 		var id = $("#id_produto").val();
 		// alert(id);
-		editarProduto(id, 'alterar');
+		if (validaForm('editar')) {
+			editarProduto(id, 'alterar');
+		}
 	});
 });
