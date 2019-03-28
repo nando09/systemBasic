@@ -10,9 +10,9 @@
 [OK]	=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
 [OK]	=>	Arrumar valores da pagina, e data
 [OK]	=>	Validar formularios
+[OK]	=>	Mascaras para valores
 		=>	Codigo interno não pode ter iguais
 		=>	Adicionar categoria
-		=>	Mascaras para valores
 
 	## CLIENTES ##
 [OK]	=>	Relatorio clientes pode mes, esta trazendo errado.

@@ -3,7 +3,7 @@ function popularProdutos(){
 		if(validaForm('novo')){
 			var nome = $("#nome").val();
 			var categoria = $("#categoria-novo").val();
-			var valor = $("#valor").val();
+			var valor = preparaValor($("#valor").val());
 			var descricao = $("#descricao").val();
 			var quantidade = $("#quantidade").val();
 			var min = $("#min").val();
@@ -115,11 +115,12 @@ function editarProduto(id_produto, vai){
 			vai: 'buscar'
 		};
 	}else{
+		var valor = preparaValor($("#valor-editar").val());
 		var posts = {
 			id: id_produto,
 			vai: 'alterar',
 			nome: $("#nome-editar").val(),
-			valor: $("#valor-editar").val(),
+			valor: valor,
 			descricao: $("#descricao-editar").val(),
 			categoria: $("#categoria-editar").val(),
 			min: $("#min-editar").val(),
@@ -679,12 +680,28 @@ function messageVazio(texto){
 	});
 }
 
+function preparaValor(valor){
+	valor = valor.replace(',','.');
+	if (valor.length > 7) {
+		valor = valor.replace('.','');
+	}
+
+	return valor;
+}
+
+function campoMask(){
+	$("#valor").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+	$("#valor-editar").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
+}
+
 $(document).ready(function() {
 	selectCategoria();
 	popularProdutos();
 	maisVendido();
 	lucroMes();
 	menosVendido();
+	campoMask();
+
 
 	$("#produtos").click(function(event){
 		var alvoEvento = $(event.target);

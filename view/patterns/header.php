@@ -16,6 +16,7 @@
 	<script src="/System/systemBasic/js/bootstrap-growl.js" type="text/javascript"></script>
 	<script src="/System/systemBasic/sweetalert/docs/assets/sweetalert/sweetalert.min.js"></script>
 	<script src="/System/systemBasic/chart/chart.js/dist/Chart.min.js"></script>
+	<script src="/System/systemBasic/js/money.js" type="text/javascript"></script>
 <!-- 	<script src="/System/systemBasic/js/script.js" type="text/javascript"></script> -->
 	<style type="text/css">
 		table {
