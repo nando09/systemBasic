@@ -48,7 +48,7 @@
 				<div class="input-addon">
 					<i class="material-icons">face</i>
 				</div>
-				<input name="nome" id="username" placeholder="Usuário" type="text" class="validate" autocomplete="off">
+				<input name="nome" id="username" placeholder="Usuário" type="text" class="validate">
 			</div>
 
 			<div class="clearfix"></div>
@@ -57,7 +57,7 @@
 				<div class="input-addon">
 					<i class="material-icons">vpn_key</i>
 				</div>
-				<input name="senha" id="password" placeholder="Senha" type="password" class="validate" autocomplete="off">
+				<input name="senha" id="password" placeholder="Senha" type="password" class="validate">
 			</div>
 
 			<div class="remember-me">

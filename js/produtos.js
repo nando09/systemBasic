@@ -40,8 +40,19 @@ function popularProdutos(){
 						limparCampo();
 						$('.modal').modal('hide');
 
-					}else if(dados == 'E'){
+					}else if(dados.retorno == 'N'){
 						$.bootstrapGrowl("Erro ao inserir Produto!", {
+							ele: 'body', // which element to append to
+							type: 'info', // (null, 'info', 'danger', 'success')
+							offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+							align: 'right', // ('left', 'right', or 'center')
+							width: 'auto', // (integer, or 'auto')
+							delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+							allow_dismiss: true, // If true then will display a cross to close the popup.
+							stackup_spacing: 10 // spacing between consecutively stacked growls.
+						});
+					}else if (dados.retorno == 'E') {
+						$.bootstrapGrowl("Codigo interno já existe em outro produto!", {
 							ele: 'body', // which element to append to
 							type: 'info', // (null, 'info', 'danger', 'success')
 							offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'

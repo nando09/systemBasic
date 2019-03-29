@@ -20,6 +20,21 @@
 		$min = $_POST['min'];
 		$nro = $_POST['nro'];
 
+		$query = "SELECT * FROM PRODUTO WHERE NRO = " . $nro;
+
+		$del = $db->prepare($query);
+		$del->execute();
+		$count = $del->rowCount();
+
+		if ($count > 0) {
+			$retorno = array(
+				'retorno' => 'E'
+			);
+
+			echo json_encode($retorno);
+			exit();
+		}
+
 		$query = "INSERT INTO PRODUTO (NRO, NOME,ID_CATEGORIA,VALOR,DESCRICAO,QUANTIDADE,MINIMO) VALUES ('". $nro ."', '". $nome ."', " . $categoria . ", ". $valor .", '". $descricao ."', ". $quantidade .", ". $min .")";
 		// die($query);
 
