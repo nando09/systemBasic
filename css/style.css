@@ -286,11 +286,20 @@ td.big-text{
 	color: red;
 }
 
-.add-categoria{
+#add-categoria{
 	cursor: pointer;
 	float: right;
 	border: 0px;
 	color: red;
 	text-decoration: underline;
 	background: transparent;
+}
+
+#add-categoria:visited, #add-categoria:focus{
+	border: 0px;
+	outline: none;
+}
+
+#salvar-categoria{
+	cursor: pointer;
 }

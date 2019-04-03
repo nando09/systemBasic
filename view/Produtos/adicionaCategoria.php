@@ -6,16 +6,18 @@
 		'retorno' => ''
 	);
 
+	$tr = '';
+
 	// Primeiro em php.ini temos que descomentar line pdo_psql
 	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
+
 		$categoria = $_POST['categoria'];
 
-		$query = "SELECT * FROM CATEGORIA WHERE NOME = '$categoria'";
-
-		$del = $db->prepare($query);
-		$del->execute();
-		$count = $del->rowCount();
+		$query = "SELECT * FROM CATEGORIA WHERE NOME = :categoria";
+		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+		$stmt->execute(array(':categoria' => $categoria)); 
+		$count = $stmt->rowCount();
 
 		if ($count > 0) {
 			$retorno = array(
@@ -26,10 +28,13 @@
 			exit();
 		}
 
-		// $query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = :teste AND SENHA = MD5(:senha)";
-		$query = "INSERT INTO CATEGORIA (NOME) VALUES (:categoria)";
+		$query = "INSERT INTO CATEGORIA (NOME) VALUES (:categoria);";
 		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-		$stmt->execute(array(':categoria' => $categoria));
+		$stmt->execute(array(':categoria' => $categoria)); 
+
+		$retorno = array(
+			'retorno' => 'S'
+		);
 
 	}catch(Exception $e){
 		$retorno = array(

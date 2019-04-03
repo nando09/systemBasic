@@ -721,6 +721,89 @@ function campoMask(){
 	$("#valor-editar").maskMoney({prefix:'R$ ', allowNegative: true, thousands:'.', decimal:',', affixesStay: false});
 }
 
+function salvarCategoria(){
+	var categoria = $("#categoria-nova").val();
+
+	if (categoria == '') {
+		$.bootstrapGrowl("Campo categoria não preenchido!", {
+			ele: 'body', // which element to append to
+			type: 'danger', // (null, 'info', 'danger', 'success')
+			offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+			align: 'right', // ('left', 'right', or 'center')
+			width: 'auto', // (integer, or 'auto')
+			delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+			allow_dismiss: true, // If true then will display a cross to close the popup.
+			stackup_spacing: 10 // spacing between consecutively stacked growls.
+		});
+	}else{
+		$.ajax({
+			url: '/System/systemBasic/view/Produtos/adicionaCategoria.php', // Url do lado server que vai receber o arquivo
+			dataType: 'json',
+			data: {
+				categoria: $("#categoria-nova").val()
+			},
+			type: 'POST',
+			success: function(dados) {
+				if (dados.retorno == 'S'){
+					$.bootstrapGrowl("Categoria adicionada com sucesso!", {
+						ele: 'body', // which element to append to
+						type: 'success', // (null, 'info', 'danger', 'success')
+						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+						align: 'right', // ('left', 'right', or 'center')
+						width: 'auto', // (integer, or 'auto')
+						delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+						allow_dismiss: true, // If true then will display a cross to close the popup.
+						stackup_spacing: 10 // spacing between consecutively stacked growls.
+					});
+
+					selectCategoria();
+					$("#categoria-novo").removeClass('none');
+					$("#text-categoria").addClass('none');
+					$("#add-categoria").text('Adicionar nova categoria');
+
+				}else if(dados.retorno == 'N'){
+					$.bootstrapGrowl("Erro ao inserir Produto!", {
+						ele: 'body', // which element to append to
+						type: 'info', // (null, 'info', 'danger', 'success')
+						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+						align: 'right', // ('left', 'right', or 'center')
+						width: 'auto', // (integer, or 'auto')
+						delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+						allow_dismiss: true, // If true then will display a cross to close the popup.
+						stackup_spacing: 10 // spacing between consecutively stacked growls.
+					});
+				}else if (dados.retorno == 'E') {
+					$.bootstrapGrowl("Categoria já existe!", {
+						ele: 'body', // which element to append to
+						type: 'info', // (null, 'info', 'danger', 'success')
+						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+						align: 'right', // ('left', 'right', or 'center')
+						width: 'auto', // (integer, or 'auto')
+						delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+						allow_dismiss: true, // If true then will display a cross to close the popup.
+						stackup_spacing: 10 // spacing between consecutively stacked growls.
+					});
+
+					$("#categoria-nova").focus();
+				}
+			},
+			error: function(dados) {
+				$.bootstrapGrowl("ERRO no arquivo!", {
+					ele: 'body', // which element to append to
+					type: 'danger', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+			}
+		});
+	}
+
+}
+
 $(document).ready(function() {
 	selectCategoria();
 	popularProdutos();
@@ -728,7 +811,6 @@ $(document).ready(function() {
 	lucroMes();
 	menosVendido();
 	campoMask();
-
 
 	$("#produtos").click(function(event){
 		var alvoEvento = $(event.target);
@@ -745,6 +827,22 @@ $(document).ready(function() {
 			var id = alvoEvento.closest("td").nextAll("#id").text();
 			detalharProduto(id);
 		}
+	});
+
+	$("#add-categoria").click(function(event){
+		if ($("#text-categoria").hasClass('none')) {
+			$("#text-categoria").removeClass('none');
+			$("#categoria-novo").addClass('none');
+			$("#add-categoria").text('Voltar');
+		}else{
+			$("#categoria-novo").removeClass('none');
+			$("#text-categoria").addClass('none');
+			$("#add-categoria").text('Adicionar nova categoria');
+		}
+	});
+
+	$("#salvar-categoria").on('click', function(){
+		salvarCategoria();		
 	});
 
 	$("#alterar-produto").on('click', function(){
