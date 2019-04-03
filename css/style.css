@@ -285,3 +285,12 @@ td.big-text{
 .obrigatorio{
 	color: red;
 }
+
+.add-categoria{
+	cursor: pointer;
+	float: right;
+	border: 0px;
+	color: red;
+	text-decoration: underline;
+	background: transparent;
+}

@@ -11,7 +11,7 @@
 [OK]	=>	Arrumar valores da pagina, e data
 [OK]	=>	Validar formularios
 [OK]	=>	Mascaras para valores
-		=>	Codigo interno não pode ter iguais
+[OK]	=>	Codigo interno não pode ter iguais
 		=>	Adicionar categoria
 
 	## CLIENTES ##

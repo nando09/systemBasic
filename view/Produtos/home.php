@@ -29,6 +29,7 @@
 								</div>
 								<div class="form-group col-md-6" id="categoria">
 									<label>Categoria <span class="obrigatorio"> *</span></label>
+									<button class="add-categoria">Adicionar nova categoria</button>
 									<select id="categoria-novo" name="categoria" class="form-control"></select>
 								</div>
 								<div class="form-group col-md-3">

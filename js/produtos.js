@@ -1,6 +1,6 @@
 function popularProdutos(){
 	$('#salvar-produto').click(function(){
-		if(validaForm('novo') && validaNro(0, $("#nro").val())) {
+		if(validaForm('novo')){
 			var nome = $("#nome").val();
 			var categoria = $("#categoria-novo").val();
 			var valor = preparaValor($("#valor").val());
@@ -62,6 +62,8 @@ function popularProdutos(){
 							allow_dismiss: true, // If true then will display a cross to close the popup.
 							stackup_spacing: 10 // spacing between consecutively stacked growls.
 						});
+
+						$("#nro").focus();
 					}
 				},
 				error: function(dados) {
@@ -177,6 +179,20 @@ function editarProduto(id_produto, vai){
 					stackup_spacing: 10 // spacing between consecutively stacked growls.
 				});
 				// $("tr").removeClass('editando');
+			}else if (dados.retorno == 'E') {
+				$.bootstrapGrowl("Codigo interno já existe em outro produto!", {
+					ele: 'body', // which element to append to
+					type: 'info', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+
+				$("#nro-editar").focus();
+
 			}else{
 				$.bootstrapGrowl("Erro ao alterar o produto!", {
 					ele: 'body', // which element to append to
@@ -624,54 +640,6 @@ function limparCampo(){
 	$("#nro").val('');
 }
 
-function validaNro(id, nro) {
-	$.ajax({
-		url: '/System/systemBasic/view/Produtos/existeNro.php', // Url do lado server que vai receber o arquivo
-		dataType: 'json',
-		type: 'post',
-		data: {
-			id: id,
-			nro: nro
-		},
-		success: function(dados) {
-
-			if (dados == 1) {
-				$.bootstrapGrowl("Já existe esse codigo em outro produto!", {
-					ele: 'body', // which element to append to
-					type: 'danger', // (null, 'info', 'danger', 'success')
-					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-					align: 'right', // ('left', 'right', or 'center')
-					width: 'auto', // (integer, or 'auto')
-					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-					allow_dismiss: true, // If true then will display a cross to close the popup.
-					stackup_spacing: 10 // spacing between consecutively stacked growls.
-				});
-
-				callback(dados);
-				// return false;
-			}else{
-				callback(dados);
-				// return true;
-			}
-		},
-		error: function(dados) {
-			$.bootstrapGrowl("ERRO!", {
-				ele: 'body', // which element to append to
-				type: 'danger', // (null, 'info', 'danger', 'success')
-				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-				align: 'right', // ('left', 'right', or 'center')
-				width: 'auto', // (integer, or 'auto')
-				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-				allow_dismiss: true, // If true then will display a cross to close the popup.
-				stackup_spacing: 10 // spacing between consecutively stacked growls.
-			});
-
-			callback(dados);
-			// return false;
-		}
-	});
-}
-
 function validaForm(tipo){
 	if (tipo == 'novo') {
 		var nome		= 		$("#nome").val();
@@ -781,10 +749,8 @@ $(document).ready(function() {
 
 	$("#alterar-produto").on('click', function(){
 		var id = $("#id_produto").val();
-		// alert(id);
-		console.log(validaNro(id, $("#nro-editar").val()));
-		// if (validaForm('editar') && validaNro(id, $("#nro-editar").val())) {
-		// 	editarProduto(id, 'alterar');
-		// }
+		if (validaForm('editar')) {
+			editarProduto(id, 'alterar');
+		}
 	});
 });

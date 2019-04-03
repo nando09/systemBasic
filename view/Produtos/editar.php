@@ -38,6 +38,21 @@ if ($vai == 'buscar') {
 		$min = $_POST['min'];
 		$quantidade = $_POST['quantidade'];
 
+		$query = "SELECT * FROM PRODUTO WHERE ID <> $id AND NRO = '$nro'";
+
+		$del = $db->prepare($query);
+		$del->execute();
+		$count = $del->rowCount();
+
+		if ($count > 0) {
+			$retorno = array(
+				'retorno' => 'E'
+			);
+
+			echo json_encode($retorno);
+			exit();
+		}
+
 		$query = $db->query("UPDATE PRODUTO SET NRO = '". $nro ."', NOME = '". $nome ."', ID_CATEGORIA = ". $categoria .", VALOR = ". $valor .", DESCRICAO = '". $descricao ."', MINIMO = ". $min .", QUANTIDADE = ". $quantidade ." WHERE ID = " . $id);
 		// die()
 

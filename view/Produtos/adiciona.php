@@ -20,7 +20,9 @@
 		$min = $_POST['min'];
 		$nro = $_POST['nro'];
 
-		$query = "SELECT * FROM PRODUTO WHERE NRO = " . $nro;
+
+
+		$query = "SELECT * FROM PRODUTO WHERE ID <> 0 AND NRO = '$nro'";
 
 		$del = $db->prepare($query);
 		$del->execute();
