@@ -14,16 +14,20 @@
 [OK]	=>	Codigo interno não pode ter iguais
 [OK]	=>	Adicionar categoria
 [OK]	=>	Ao adicionar categoria tem que add com letras minusculas
-		=>	Ao apresentar categoria tem que mostrar letra maiusculas
-		=>	Codigo interno mostrar maiuscula e insert minuscula ao verificar tem que pesquisar por minusculas
+[OK]	=>	Ao editar, temos que por o valor com R$
+[OK]	=>	Ao apresentar categoria tem que mostrar letra maiusculas
+[OK]	=>	Erro ao inserir arquivo sem minimo, campo do banco de dados é int e o valor vem como string quando campo vazio
+[OK]	=>	Codigo interno mostrar maiuscula e insert minuscula ao verificar tem que pesquisar por minusculas
 
 	## CLIENTES ##
 [OK]	=>	Relatorio clientes pode mes, esta trazendo errado.
 [OK]	=>	Mensagem para o cliente, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc. *SQL
-		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas 
-		=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
+[OK]	=>	Validar formularios
+[OK]	=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
+		=>	regex para Telefone, campo no banco é INT
+		=>	Localidade de cliente tem que ser exata, já tem no editar perfil
+		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas
 		=>	Arrumar valores da pagina, e data
-		=>	Validar formularios
 
 	## FORNECEDORES ##
 [OK]	=>	Relatorio fornecedores pode mes, esta trazendo errado.

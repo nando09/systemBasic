@@ -33,9 +33,9 @@ if ($vai == 'buscar') {
 		$nome = $_POST['nome'];
 		$valor = $_POST['valor'];
 		$descricao = $_POST['descricao'];
-		$nro = $_POST['nro'];
+		$nro = strtolower($_POST['nro']);
 		$categoria = $_POST['categoria'];
-		$min = $_POST['min'];
+		$min = (empty($_POST['min'])) ? 0 : $_POST['min'];
 		$quantidade = $_POST['quantidade'];
 
 		$query = "SELECT * FROM PRODUTO WHERE ID <> $id AND NRO = '$nro'";
@@ -44,7 +44,7 @@ if ($vai == 'buscar') {
 		$del->execute();
 		$count = $del->rowCount();
 
-		if ($count > 0) {
+		if ($count > 0 && !empty($nro)) {
 			$retorno = array(
 				'retorno' => 'E'
 			);
@@ -61,11 +61,12 @@ if ($vai == 'buscar') {
 
 			if ($campo = $db->query($query)) {
 				foreach ($campo as $key) {
+					$valor = 'R$ ' . number_format($key['valor'], 2, ',', ' ');
 					$retorno = array(
 								'retorno' => 'S',
 								'nome' => $key['nome'],
 								'categoria' => $key['categoria'],
-								'valor' => $key['valor'],
+								'valor' => $valor,
 								'descricao' => $key['descricao']
 					);
 				}

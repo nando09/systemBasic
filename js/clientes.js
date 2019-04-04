@@ -1,50 +1,64 @@
 function popularClientes(){
 	$('#salvar-cliente').click(function(){
-		var nome = $("#nome").val();
-		var empresa = $("#empresa").val();
-		var cnpj = $("#cnpj").val();
-		var localidade = $("#localidade").val();
-		var email = $("#email").val();
-		var telefone = $("#telefone").val();
+		if (validarForm('novo')) {
+			var nome = $("#nome").val();
+			var empresa = $("#empresa").val();
+			var cnpj = $("#cnpj").val();
+			var localidade = $("#localidade").val();
+			var email = $("#email").val();
+			var telefone = $("#telefone").val();
 
 
-		// console.log(nome+ "//" +empresa+ "//" +cnpj+ "//" +localidade+ "//" +email+ "//" +telefone);
+			// console.log(nome+ "//" +empresa+ "//" +cnpj+ "//" +localidade+ "//" +email+ "//" +telefone);
 
-		// var formDados  = $(this).serialize();
-		$.ajax({
-			url: '/System/systemBasic/view/clientes/adiciona.php', // Url do lado server que vai receber o arquivo
-			dataType: 'json',
-			data: {
-				nome: nome,
-				empresa: empresa,
-				cnpj: cnpj,
-				localidade: localidade,
-				email: email,
-				telefone: telefone
-			},
-			type: 'POST',
-			success: function(dados) {
-				if (dados.retorno == 'S'){
-					$.bootstrapGrowl("cliente adicionado com sucesso!", {
+			// var formDados  = $(this).serialize();
+			$.ajax({
+				url: '/System/systemBasic/view/clientes/adiciona.php', // Url do lado server que vai receber o arquivo
+				dataType: 'json',
+				data: {
+					nome: nome,
+					empresa: empresa,
+					cnpj: cnpj,
+					localidade: localidade,
+					email: email,
+					telefone: telefone
+				},
+				type: 'POST',
+				success: function(dados) {
+					if (dados.retorno == 'S'){
+						$.bootstrapGrowl("cliente adicionado com sucesso!", {
+							ele: 'body', // which element to append to
+							type: 'success', // (null, 'info', 'danger', 'success')
+							offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+							align: 'right', // ('left', 'right', or 'center')
+							width: 'auto', // (integer, or 'auto')
+							delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+							allow_dismiss: true, // If true then will display a cross to close the popup.
+							stackup_spacing: 10 // spacing between consecutively stacked growls.
+						});
+
+						$("#clientes").append(dados.tr);
+
+						limparCampo();
+						$('.modal').modal('hide');
+
+					}else if(dados.retorno == 'E'){
+						$.bootstrapGrowl("Erro ao inserir cliente!", {
+							ele: 'body', // which element to append to
+							type: 'info', // (null, 'info', 'danger', 'success')
+							offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+							align: 'right', // ('left', 'right', or 'center')
+							width: 'auto', // (integer, or 'auto')
+							delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+							allow_dismiss: true, // If true then will display a cross to close the popup.
+							stackup_spacing: 10 // spacing between consecutively stacked growls.
+						});
+					}
+				},
+				error: function(dados) {
+					$.bootstrapGrowl("ERRO no arquivo!", {
 						ele: 'body', // which element to append to
-						type: 'success', // (null, 'info', 'danger', 'success')
-						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-						align: 'right', // ('left', 'right', or 'center')
-						width: 'auto', // (integer, or 'auto')
-						delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-						allow_dismiss: true, // If true then will display a cross to close the popup.
-						stackup_spacing: 10 // spacing between consecutively stacked growls.
-					});
-
-					$("#clientes").append(dados.tr);
-					// preparaExcluirClientes();
-					// preparaDetalharClientes();
-					// preparaEditarClientes();
-
-				}else if(dados.retorno == 'E'){
-					$.bootstrapGrowl("Erro ao inserir cliente!", {
-						ele: 'body', // which element to append to
-						type: 'info', // (null, 'info', 'danger', 'success')
+						type: 'danger', // (null, 'info', 'danger', 'success')
 						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
 						align: 'right', // ('left', 'right', or 'center')
 						width: 'auto', // (integer, or 'auto')
@@ -53,20 +67,8 @@ function popularClientes(){
 						stackup_spacing: 10 // spacing between consecutively stacked growls.
 					});
 				}
-			},
-			error: function(dados) {
-				$.bootstrapGrowl("ERRO no arquivo!", {
-					ele: 'body', // which element to append to
-					type: 'danger', // (null, 'info', 'danger', 'success')
-					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-					align: 'right', // ('left', 'right', or 'center')
-					width: 'auto', // (integer, or 'auto')
-					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-					allow_dismiss: true, // If true then will display a cross to close the popup.
-					stackup_spacing: 10 // spacing between consecutively stacked growls.
-				});
-			}
-		});
+			});
+		}
 	});
 
 	$.ajax({
@@ -146,6 +148,8 @@ function editarClientes(id_clientes, vai){
 
 				$(".editando").children().eq(0).text(dados.empresa);
 				$(".editando").children().eq(1).text(dados.telefone);
+
+				$('.modal').modal('hide');
 
 				$.bootstrapGrowl("Sucesso ao alterar o cliente!", {
 					ele: 'body', // which element to append to
@@ -567,11 +571,82 @@ function menosCompra(){
 	});
 }
 
+function validarForm(tipo){
+	if (tipo == 'novo') {
+		var nome		= 		$("#nome").val();
+		var telefone	= 		$("#telefone").val();
+
+		if(nome == ''){
+			messageVazio('nome');
+			$("#nome").focus();
+		}else if(telefone == ''){
+			messageVazio('telefone');
+			$("#telefone").focus();
+		}else{
+			return true;
+		}
+	}else{
+		var nome		= 		$("#nome-editar").val();
+		var telefone	= 		$("#telefone-editar").val();
+
+		if(nome == ''){
+			messageVazio('nome');
+			$("#nome-editar").focus();
+		}else if(telefone == ''){
+			messageVazio('telefone');
+			$("#telefone-editar").focus();
+		}else{
+			return true;
+		}
+	}
+}
+
+function messageVazio(texto){
+	$.bootstrapGrowl("Campo "+ texto +" não esta preenchido!", {
+		ele: 'body', // which element to append to
+		type: 'danger', // (null, 'info', 'danger', 'success')
+		offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+		align: 'right', // ('left', 'right', or 'center')
+		width: 'auto', // (integer, or 'auto')
+		delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+		allow_dismiss: true, // If true then will display a cross to close the popup.
+		stackup_spacing: 10 // spacing between consecutively stacked growls.
+	});
+}
+
+function limparCampo(){
+	$("#nome").val('');
+	$("#empresa").val('');
+	$("#cnpj").val('');
+	$("#localidade").val('');
+	$("#email").val('');
+	$("#telefone").val('');
+}
+
+function maskTelefone(telefone){
+	if (telefone.length == 8) {
+		telefone.mask("9999-9999");
+	} else if (telefone.length == 9) {
+		telefone.mask("99999-9999");
+	} else if (telefone.length == 10) {
+		telefone.mask("(99) 9999-9999");
+	} else if (telefone.length == 11) {
+		telefone.mask("(99) 99999-9999");
+	} else if (telefone.length == 12) {
+		telefone.mask("+99 (99) 9999-9999");
+	} else if (telefone.length >= 13) {
+		telefone.mask("+99 (99) 99999-9999");
+	}
+}
+
 $(document).ready(function() {
 	popularClientes();
 	maisCompra();
 	novosClientes();
 	menosCompra();
+
+	maskTelefone($("#telefone").val());
+	maskTelefone($("#telefone-editar").val());
 
 	$("#clientes").click(function(event){
 		var alvoEvento = $(event.target);
@@ -592,7 +667,8 @@ $(document).ready(function() {
 
 	$("#alterar-cliente").on('click', function(){
 		var id = $("#id_cliente").val();
-		// alert(id);
-		editarClientes(id, 'alterar');
+		if (validarForm('editar')) {
+			editarClientes(id, 'alterar');
+		}
 	});
 });

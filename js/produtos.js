@@ -762,7 +762,7 @@ function salvarCategoria(){
 					$("#add-categoria").text('Adicionar nova categoria');
 
 				}else if(dados.retorno == 'N'){
-					$.bootstrapGrowl("Erro ao inserir Produto!", {
+					$.bootstrapGrowl("Erro ao inserir Categoria!", {
 						ele: 'body', // which element to append to
 						type: 'info', // (null, 'info', 'danger', 'success')
 						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'

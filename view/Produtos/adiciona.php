@@ -17,8 +17,8 @@
 		$valor = $_POST['valor'];
 		$descricao = $_POST['descricao'];
 		$quantidade = $_POST['quantidade'];
-		$min = $_POST['min'];
-		$nro = $_POST['nro'];
+		$min = (empty($_POST['min'])) ? 0 : $_POST['min'];
+		$nro = strtolower($_POST['nro']);
 
 
 
@@ -28,7 +28,7 @@
 		$del->execute();
 		$count = $del->rowCount();
 
-		if ($count > 0) {
+		if ($count > 0 && !empty($nro)) {
 			$retorno = array(
 				'retorno' => 'E'
 			);

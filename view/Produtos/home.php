@@ -139,13 +139,13 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td class="nome">Mark</td>
-												<td class="categoria">Mark</td>
+												<td class="nome text-uppercase">Mark</td>
+												<td class="categoria text-uppercase">Mark</td>
 												<td class="valor">Mark</td>
 												<td class="quantidade">Otto</td>
 												<td class="minimo">Otto</td>
-												<td class="descricao">@mdo</td>
-												<td class="nro">@mdo</td>
+												<td class="descricao text-uppercase">@mdo</td>
+												<td class="nro text-uppercase">@mdo</td>
 											</tr>
 										</tbody>
 									</table>

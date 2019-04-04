@@ -25,7 +25,7 @@
 						<div id="novo-elemento">
 							<div class="row">
 								<div class="form-group col-md-6">
-									<label>NOME</label>
+									<label>NOME <span class="obrigatorio"> *</span></label>
 									<input id="nome" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-6" id="categoria">
@@ -45,11 +45,11 @@
 									<input id="email" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-12">
-									<label>TELEFONE</label>
-									<input id="telefone" class="form-control" rows="3">
+									<label>TELEFONE <span class="obrigatorio"> *</span></label>
+									<input id="telefone" class="form-control" rows="3" maxlength="13">
 								</div>
 							</div>
-							<button id="salvar-cliente" type="button" class="btn btn-primary" data-dismiss="modal">SALVAR</button>
+							<button id="salvar-cliente" type="button" class="btn btn-primary">SALVAR</button>
 						</div>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 							<div class="row">
 								<input id="id_cliente" type="hidden">
 								<div class="form-group col-md-6">
-									<label>NOME</label>
+									<label>NOME <span class="obrigatorio"> *</span></label>
 									<input id="nome-editar" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-6" id="categoria">
@@ -88,11 +88,11 @@
 									<input id="email-editar" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-12">
-									<label>TELEFONE</label>
-									<input id="telefone-editar" class="form-control" rows="3">
+									<label>TELEFONE <span class="obrigatorio"> *</span></label>
+									<input id="telefone-editar" class="form-control" rows="3" maxlength="13">
 								</div>
 							</div>
-							<button id="alterar-cliente" type="button" class="btn btn-primary" data-dismiss="modal">ALTERAR</button>
+							<button id="alterar-cliente" type="button" class="btn btn-primary">ALTERAR</button>
 						</div>
 					</div>
 				</div>
