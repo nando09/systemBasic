@@ -13,8 +13,9 @@
 [OK]	=>	Mascaras para valores
 [OK]	=>	Codigo interno não pode ter iguais
 [OK]	=>	Adicionar categoria
-		=>	Ao adicionar tem que add com letras minusculas
+[OK]	=>	Ao adicionar categoria tem que add com letras minusculas
 		=>	Ao apresentar categoria tem que mostrar letra maiusculas
+		=>	Codigo interno mostrar maiuscula e insert minuscula ao verificar tem que pesquisar por minusculas
 
 	## CLIENTES ##
 [OK]	=>	Relatorio clientes pode mes, esta trazendo errado.

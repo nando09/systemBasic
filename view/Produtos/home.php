@@ -30,7 +30,7 @@
 								<div class="form-group col-md-6" id="categoria">
 									<label>Categoria <span class="obrigatorio"> *</span></label>
 									<button id="add-categoria">Adicionar nova categoria</button>
-									<select id="categoria-novo" name="categoria" class="form-control"></select>
+									<select id="categoria-novo" name="categoria" class="form-control text-uppercase"></select>
 									<div id="text-categoria" class="none row justify-content-around">
 										<input id="categoria-nova" class="form-control col-md-8" type="text" name="add-categoria" placeholder="Adicionar nova categoria">
 										<button type="button" id="salvar-categoria" class="btn btn-success col-md-2 align-self-end">Nova</button>
