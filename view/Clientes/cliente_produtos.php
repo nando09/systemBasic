@@ -18,11 +18,13 @@
 								GROUP BY PR.NOME, PR.VALOR, PR.ID");
 
 		foreach ($query as $key) {
+			$valor = 'R$ ' . number_format($key['valor'], 2, ',', ' ');
+			$valor_total = 'R$ ' . number_format($key['valor_total'], 2, ',', ' ');
 			$retorno .= "<tr>".
 							"<td>". $key['nome'] . "</td>".
-							"<td>". $key['valor'] ."</td>".
+							"<td>". $valor ."</td>".
 							"<td>". $key['quantidade'] ."</td>".
-							"<td>". $key['valor_total'] ."</td>".
+							"<td>". $valor_total ."</td>".
 						"</tr>";
 		}
 	}catch(Exception $e){

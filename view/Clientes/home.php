@@ -24,29 +24,72 @@
 						<h1 class="title-pag">Novo cliente</h1>
 						<div id="novo-elemento">
 							<div class="row">
-								<div class="form-group col-md-6">
+								<div class="form-group col-md-4">
 									<label>NOME <span class="obrigatorio"> *</span></label>
 									<input id="nome" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-6" id="categoria">
+								<div class="form-group col-md-4" id="categoria">
 									<label>EMPRESA</label>
 									<input id="empresa" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>TELEFONE <span class="obrigatorio"> *</span></label>
+									<input id="telefone" class="form-control" rows="3">
 								</div>
 								<div class="form-group col-md-4">
 									<label>CNPJ</label>
 									<input id="cnpj" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-4">
-									<label>LOCALIDADE</label>
-									<input id="localidade" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
+								<div class="form-group col-md-8">
 									<label>EMAIL</label>
 									<input id="email" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-12">
-									<label>TELEFONE <span class="obrigatorio"> *</span></label>
-									<input id="telefone" class="form-control" rows="3" maxlength="13">
+								<div class="form-group col-sm-2">
+									<label>Estado: </label>
+									<select name="estado" id="estado" class="form-control">
+										<option value="AC">AC</option>
+										<option value="AL">AL</option>
+										<option value="AP">AP</option>
+										<option value="AM">AM</option>
+										<option value="BA">BA</option>
+										<option value="CE">CE</option>
+										<option value="DF">DF</option>
+										<option value="ES">ES</option>
+										<option value="GO">GO</option>
+										<option value="MA">MA</option>
+										<option value="MT">MT</option>
+										<option value="MS">MS</option>
+										<option value="MG">MG</option>
+										<option value="PA">PA</option>
+										<option value="PB">PB</option>
+										<option value="PR">PR</option>
+										<option value="PE">PE</option>
+										<option value="PI">PI</option>
+										<option value="RJ">RJ</option>
+										<option value="RN">RN</option>
+										<option value="RS">RS</option>
+										<option value="RO">RO</option>
+										<option value="RR">RR</option>
+										<option value="SC">SC</option>
+										<option value="SP">SP</option>
+										<option value="SE">SE</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-5">
+									<label>Cidade: </label>
+									<input type="text" class="form-control" name="Cidade" id="Cidade" placeholder="Cidade">
+								</div>
+								<div class="form-group col-sm-5">
+									<label>Bairro: </label>
+									<input type="text" class="form-control" name="Bairro" id="Bairro" placeholder="Bairro">
+								</div>
+								<div class="form-group col-sm-10">
+									<label>Rua: </label>
+									<input type="text" class="form-control" name="Rua" id="Rua" placeholder="Rua">
+								</div>
+								<div class="form-group col-sm-2">
+									<label>Numero: </label>
+									<input type="text" class="form-control" name="Numero" id="Numero" placeholder="N°">
 								</div>
 							</div>
 							<button id="salvar-cliente" type="button" class="btn btn-primary">SALVAR</button>
@@ -67,29 +110,72 @@
 						<div id="novo-elemento">
 							<div class="row">
 								<input id="id_cliente" type="hidden">
-								<div class="form-group col-md-6">
+								<div class="form-group col-md-4">
 									<label>NOME <span class="obrigatorio"> *</span></label>
 									<input id="nome-editar" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-6" id="categoria">
+								<div class="form-group col-md-4" id="categoria">
 									<label>EMPRESA</label>
 									<input id="empresa-editar" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>TELEFONE <span class="obrigatorio"> *</span></label>
+									<input id="telefone-editar" class="form-control" rows="3" maxlength="13">
 								</div>
 								<div class="form-group col-md-4">
 									<label>CNPJ</label>
 									<input id="cnpj-editar" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-4">
-									<label>LOCALIDADE</label>
-									<input id="localidade-editar" type="text" class="form-control">
-								</div>
-								<div class="form-group col-md-4">
+								<div class="form-group col-md-8">
 									<label>EMAIL</label>
 									<input id="email-editar" type="text" class="form-control">
 								</div>
-								<div class="form-group col-md-12">
-									<label>TELEFONE <span class="obrigatorio"> *</span></label>
-									<input id="telefone-editar" class="form-control" rows="3" maxlength="13">
+								<div class="form-group col-sm-2">
+									<label>Estado: </label>
+									<select name="estado" id="estado" class="form-control">
+										<option value="AC">AC</option>
+										<option value="AL">AL</option>
+										<option value="AP">AP</option>
+										<option value="AM">AM</option>
+										<option value="BA">BA</option>
+										<option value="CE">CE</option>
+										<option value="DF">DF</option>
+										<option value="ES">ES</option>
+										<option value="GO">GO</option>
+										<option value="MA">MA</option>
+										<option value="MT">MT</option>
+										<option value="MS">MS</option>
+										<option value="MG">MG</option>
+										<option value="PA">PA</option>
+										<option value="PB">PB</option>
+										<option value="PR">PR</option>
+										<option value="PE">PE</option>
+										<option value="PI">PI</option>
+										<option value="RJ">RJ</option>
+										<option value="RN">RN</option>
+										<option value="RS">RS</option>
+										<option value="RO">RO</option>
+										<option value="RR">RR</option>
+										<option value="SC">SC</option>
+										<option value="SP">SP</option>
+										<option value="SE">SE</option>
+									</select>
+								</div>
+								<div class="form-group col-sm-5">
+									<label>Cidade: </label>
+									<input type="text" class="form-control" name="Cidade" id="Cidade" placeholder="Cidade">
+								</div>
+								<div class="form-group col-sm-5">
+									<label>Bairro: </label>
+									<input type="text" class="form-control" name="Bairro" id="Bairro" placeholder="Bairro">
+								</div>
+								<div class="form-group col-sm-10">
+									<label>Rua: </label>
+									<input type="text" class="form-control" name="Rua" id="Rua" placeholder="Rua">
+								</div>
+								<div class="form-group col-sm-2">
+									<label>Numero: </label>
+									<input type="text" class="form-control" name="Numero" id="Numero" placeholder="N°">
 								</div>
 							</div>
 							<button id="alterar-cliente" type="button" class="btn btn-primary">ALTERAR</button>

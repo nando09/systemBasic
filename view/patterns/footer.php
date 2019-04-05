@@ -27,8 +27,8 @@
 			</div>
 		</div>
 	</footer>
-	<script type="text/javascript" src="/System/systemBasic/js/inputmask.js"></script>
-	<script type="text/javascript" src="/System/systemBasic/js/jquery.inputmask.js"></script>
+	<!-- <script type="text/javascript" src="/System/systemBasic/js/inputmask.js"></script> -->
+	<!-- <script type="text/javascript" src="/System/systemBasic/js/jquery.inputmask.js"></script> -->
 	<script type='text/javascript' src="/System/systemBasic/js/jquery.maskedinput.js"></script>
 
 	<script src="/System/systemBasic/js/patterns.js" type="text/javascript"></script>

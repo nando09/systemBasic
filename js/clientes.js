@@ -623,20 +623,28 @@ function limparCampo(){
 	$("#telefone").val('');
 }
 
-function maskTelefone(telefone){
-	if (telefone.length == 8) {
-		telefone.mask("9999-9999");
-	} else if (telefone.length == 9) {
-		telefone.mask("99999-9999");
-	} else if (telefone.length == 10) {
-		telefone.mask("(99) 9999-9999");
-	} else if (telefone.length == 11) {
-		telefone.mask("(99) 99999-9999");
-	} else if (telefone.length == 12) {
-		telefone.mask("+99 (99) 9999-9999");
-	} else if (telefone.length >= 13) {
-		telefone.mask("+99 (99) 99999-9999");
-	}
+function maskTelefone(campo){
+	var valor = campo.val().replace(/\D+/g, '');
+
+	// if (valor.length <= 8) {
+	// 	campo.mask("9999-9999");
+	// 	console.log(valor.length);
+	// } else if (valor.length == 9) {
+	// 	campo.mask("99999-9999");
+	// 	console.log(valor.length);
+	// } else if (valor.length == 10) {
+	// 	campo.mask("(99) 9999-9999");
+	// 	console.log(valor.length);
+	// } else if (valor.length == 11) {
+		campo.mask("(99) 99999-9999");
+	// 	console.log(valor.length);
+	// } else if (valor.length == 12) {
+	// 	campo.mask("+99 (99) 9999-9999");
+	// 	console.log(valor.length);
+	// } else if (valor.length >= 13) {
+	// 	campo.mask("+99 (99) 99999-9999");
+	// 	console.log(valor.length);
+	// }
 }
 
 $(document).ready(function() {
@@ -645,8 +653,13 @@ $(document).ready(function() {
 	novosClientes();
 	menosCompra();
 
-	maskTelefone($("#telefone").val());
-	maskTelefone($("#telefone-editar").val());
+	// $("#telefone").keypress(function(){
+		maskTelefone($("#telefone"));
+	// });
+
+	// $("#telefone-editar").keypress(function(){
+		maskTelefone($("#telefone-editar"));
+	// });
 
 	$("#clientes").click(function(event){
 		var alvoEvento = $(event.target);

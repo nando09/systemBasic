@@ -24,10 +24,10 @@
 [OK]	=>	Mensagem para o cliente, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc. *SQL
 [OK]	=>	Validar formularios
 [OK]	=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
-		=>	regex para Telefone, campo no banco é INT
+[OK]	=>	Arrumar valores da pagina, e data
 		=>	Localidade de cliente tem que ser exata, já tem no editar perfil
+		=>	regex para Telefone, campo no banco é INT
 		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas
-		=>	Arrumar valores da pagina, e data
 
 	## FORNECEDORES ##
 [OK]	=>	Relatorio fornecedores pode mes, esta trazendo errado.
