@@ -10,41 +10,52 @@ function popularFornecedores(){
 
 		console.log(nome+ "//" +empresa+ "//" +cnpj+ "//" +localidade+ "//" +email+ "//" +telefone);
 
-		// var formDados  = $(this).serialize();
-		$.ajax({
-			url: '/System/systemBasic/view/fornecedores/adiciona.php', // Url do lado server que vai receber o arquivo
-			dataType: 'json',
-			data: {
-				nome: nome,
-				empresa: empresa,
-				cnpj: cnpj,
-				localidade: localidade,
-				email: email,
-				telefone: telefone
-			},
-			type: 'POST',
-			success: function(dados) {
-				if (dados.retorno == 'S'){
-					$.bootstrapGrowl("Fornecedor adicionado com sucesso!", {
-						ele: 'body', // which element to append to
-						type: 'success', // (null, 'info', 'danger', 'success')
-						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-						align: 'right', // ('left', 'right', or 'center')
-						width: 'auto', // (integer, or 'auto')
-						delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-						allow_dismiss: true, // If true then will display a cross to close the popup.
-						stackup_spacing: 10 // spacing between consecutively stacked growls.
-					});
+		if (validaForm('novo')) {
+			$.ajax({
+				url: '/System/systemBasic/view/fornecedores/adiciona.php', // Url do lado server que vai receber o arquivo
+				dataType: 'json',
+				data: {
+					nome: nome,
+					empresa: empresa,
+					cnpj: cnpj,
+					localidade: localidade,
+					email: email,
+					telefone: telefone
+				},
+				type: 'POST',
+				success: function(dados) {
+					if (dados.retorno == 'S'){
+						$.bootstrapGrowl("Fornecedor adicionado com sucesso!", {
+							ele: 'body', // which element to append to
+							type: 'success', // (null, 'info', 'danger', 'success')
+							offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+							align: 'right', // ('left', 'right', or 'center')
+							width: 'auto', // (integer, or 'auto')
+							delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+							allow_dismiss: true, // If true then will display a cross to close the popup.
+							stackup_spacing: 10 // spacing between consecutively stacked growls.
+						});
 
-					$("#fornecedores").append(dados.tr);
-					// preparaExcluirFornecedores();
-					// preparaDetalharFornecedores();
-					// preparaEditarFornecedores();
+						$("#fornecedores").append(dados.tr);
+						$('.modal').modal('hide');
 
-				}else if(dados.retorno == 'E'){
-					$.bootstrapGrowl("Erro ao inserir fornecedor!", {
+					}else if(dados.retorno == 'E'){
+						$.bootstrapGrowl("Erro ao inserir fornecedor!", {
+							ele: 'body', // which element to append to
+							type: 'info', // (null, 'info', 'danger', 'success')
+							offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+							align: 'right', // ('left', 'right', or 'center')
+							width: 'auto', // (integer, or 'auto')
+							delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+							allow_dismiss: true, // If true then will display a cross to close the popup.
+							stackup_spacing: 10 // spacing between consecutively stacked growls.
+						});
+					}
+				},
+				error: function(dados) {
+					$.bootstrapGrowl("ERRO no arquivo!", {
 						ele: 'body', // which element to append to
-						type: 'info', // (null, 'info', 'danger', 'success')
+						type: 'danger', // (null, 'info', 'danger', 'success')
 						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
 						align: 'right', // ('left', 'right', or 'center')
 						width: 'auto', // (integer, or 'auto')
@@ -53,20 +64,8 @@ function popularFornecedores(){
 						stackup_spacing: 10 // spacing between consecutively stacked growls.
 					});
 				}
-			},
-			error: function(dados) {
-				$.bootstrapGrowl("ERRO no arquivo!", {
-					ele: 'body', // which element to append to
-					type: 'danger', // (null, 'info', 'danger', 'success')
-					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
-					align: 'right', // ('left', 'right', or 'center')
-					width: 'auto', // (integer, or 'auto')
-					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
-					allow_dismiss: true, // If true then will display a cross to close the popup.
-					stackup_spacing: 10 // spacing between consecutively stacked growls.
-				});
-			}
-		});
+			});
+		}
 	});
 
 	$.ajax({
@@ -146,6 +145,8 @@ function editarFornecedores(id_fornecedores, vai){
 
 				$(".editando").children().eq(0).text(dados.empresa);
 				$(".editando").children().eq(1).text(dados.telefone);
+
+				$('.modal').modal('hide');
 
 				$.bootstrapGrowl("Sucesso ao alterar o fornecedor!", {
 					ele: 'body', // which element to append to
@@ -562,6 +563,49 @@ function menosCompro(){
 	});
 }
 
+function messageVazio(texto){
+	$.bootstrapGrowl("Campo "+ texto +" não esta preenchido!", {
+		ele: 'body', // which element to append to
+		type: 'danger', // (null, 'info', 'danger', 'success')
+		offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+		align: 'right', // ('left', 'right', or 'center')
+		width: 'auto', // (integer, or 'auto')
+		delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+		allow_dismiss: true, // If true then will display a cross to close the popup.
+		stackup_spacing: 10 // spacing between consecutively stacked growls.
+	});
+}
+
+function validaForm(tipo){
+	if (tipo == 'novo') {
+		var nome		= 		$("#nome").val();
+		var telefone	= 		$("#telefone").val();
+
+		if(nome == ''){
+			messageVazio('nome');
+			$("#nome").focus();
+		}else if(telefone == ''){
+			messageVazio('telefone');
+			$("#telefone").focus();
+		}else{
+			return true;
+		}
+	}else{
+		var nome		= 		$("#nome-editar").val();
+		var telefone	= 		$("#telefone-editar").val();
+
+		if(nome == ''){
+			messageVazio('nome');
+			$("#nome-editar").focus();
+		}else if(telefone == ''){
+			messageVazio('telefone');
+			$("#telefone-editar").focus();
+		}else{
+			return true;
+		}
+	}
+}
+
 $(document).ready(function() {
 	popularFornecedores();
 	maisCompro();
@@ -588,6 +632,8 @@ $(document).ready(function() {
 	$("#alterar-fornecedor").on('click', function(){
 		var id = $("#id_fornecedor").val();
 		// alert(id);
-		editarFornecedores(id, 'alterar');
+		if (validaForm('editar')) {
+			editarFornecedores(id, 'alterar');
+		}
 	});
 });

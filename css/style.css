@@ -282,6 +282,10 @@ td.big-text{
 	white-space: nowrap;
 }
 
+#detalhamento td.big-text{
+	max-width: 20ch;
+}
+
 .obrigatorio{
 	color: red;
 }

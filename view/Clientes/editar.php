@@ -11,17 +11,41 @@ if ($vai == 'buscar') {
 		$query = $db->query("SELECT ID, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE FROM CLIENTE WHERE ID = " . $id);
 		// die($query);
 		foreach ($query as $key) {
-			$retorno = array(
-						'retorno' => 'S',
-						'vai' => $vai,
-						'id_cliente' => $key['id'],
-						'nome' => $key['nome'],
-						'empresa' => $key['empresa'],
-						'cnpj' => $key['cnpj'],
-						'localidade' => $key['localidade'],
-						'email' => $key['email'],
-						'telefone' => $key['telefone']
-			);
+			if (empty($key['localidade'])) {
+				$retorno = array(
+							'retorno'		=>	'S',
+							'vai'			=>	$vai,
+							'id_cliente'	=>	$key['id'],
+							'nome'			=>	$key['nome'],
+							'empresa'		=>	$key['empresa'],
+							'cnpj'			=>	$key['cnpj'],
+							'Rua'			=>	'',
+							'Numero'		=>	'',
+							'Bairro'		=>	'',
+							'Cidade'		=>	'',
+							'Estado'		=>	'',
+							'email'			=>	$key['email'],
+							'telefone'		=>	$key['telefone']
+				);
+			}else{
+				$end = explode("&&END", $key['localidade']);
+
+				$retorno = array(
+							'retorno'		=>	'S',
+							'vai'			=>	$vai,
+							'id_cliente'	=>	$key['id'],
+							'nome'			=>	$key['nome'],
+							'empresa'		=>	$key['empresa'],
+							'cnpj'			=>	$key['cnpj'],
+							'Rua'			=>	$end[0],
+							'Numero'		=>	$end[1],
+							'Bairro'		=>	$end[2],
+							'Cidade'		=>	$end[3],
+							'Estado'		=>	$end[4],
+							'email'			=>	$key['email'],
+							'telefone'		=>	$key['telefone']
+				);
+			}
 		}
 	}catch(Exception $e){
 			$retorno = array('retorno' => 'N');
@@ -32,11 +56,19 @@ if ($vai == 'buscar') {
 		$nome = $_POST['nome'];
 		$empresa = $_POST['empresa'];
 		$cnpj = $_POST['cnpj'];
-		$localidade = $_POST['localidade'];
 		$email = $_POST['email'];
 		$telefone = $_POST['telefone'];
 
-		$query = $db->query("UPDATE CLIENTE SET NOME = '". $nome ."',  EMPRESA = '". $empresa ."', CNPJ = ". $cnpj .", LOCALIDADE = '". $localidade ."', EMAIL = '". $email ."', TELEFONE = '". $telefone ."' WHERE ID = " . $id);
+		$estado = $_POST['estado'];
+		$Cidade = $_POST['cidade'];
+		$Bairro = $_POST['bairro'];
+		$Rua = $_POST['rua'];
+		$Numero = $_POST['numero'];
+
+
+		$endereco = $Rua . "&&END" . $Numero . "&&END" . $Bairro . "&&END" . $Cidade . "&&END" . $estado;
+
+		$query = $db->query("UPDATE CLIENTE SET NOME = '". $nome ."',  EMPRESA = '". $empresa ."', CNPJ = ". $cnpj .", LOCALIDADE = '". $endereco ."', EMAIL = '". $email ."', TELEFONE = '". $telefone ."' WHERE ID = " . $id);
 		// die()
 
 		if ($query) {

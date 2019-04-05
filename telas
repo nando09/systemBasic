@@ -25,8 +25,8 @@
 [OK]	=>	Validar formularios
 [OK]	=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
 [OK]	=>	Arrumar valores da pagina, e data
-		=>	Localidade de cliente tem que ser exata, já tem no editar perfil
-		=>	regex para Telefone, campo no banco é INT
+[OK]	=>	regex para Telefone, campo no banco é INT (CAMPO MUDADO PARA VARCHAR)
+[OK]	=>	Localidade de cliente tem que ser exata, já tem no editar perfil
 		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas
 
 	## FORNECEDORES ##

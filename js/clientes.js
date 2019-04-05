@@ -4,9 +4,14 @@ function popularClientes(){
 			var nome = $("#nome").val();
 			var empresa = $("#empresa").val();
 			var cnpj = $("#cnpj").val();
-			var localidade = $("#localidade").val();
 			var email = $("#email").val();
 			var telefone = $("#telefone").val();
+
+			var estado 	=	$("#estado").val();
+			var cidade 	=	$("#cidade").val();
+			var bairro 	=	$("#bairro").val();
+			var rua 	=	$("#rua").val();
+			var numero 	=	$("#numero").val();
 
 
 			// console.log(nome+ "//" +empresa+ "//" +cnpj+ "//" +localidade+ "//" +email+ "//" +telefone);
@@ -16,12 +21,16 @@ function popularClientes(){
 				url: '/System/systemBasic/view/clientes/adiciona.php', // Url do lado server que vai receber o arquivo
 				dataType: 'json',
 				data: {
-					nome: nome,
-					empresa: empresa,
-					cnpj: cnpj,
-					localidade: localidade,
-					email: email,
-					telefone: telefone
+					nome:		nome,
+					empresa:	empresa,
+					cnpj:		cnpj,
+					estado:		estado,
+					cidade:		cidade,
+					bairro:		bairro,
+					rua:		rua,
+					numero:		numero,
+					email:		email,
+					telefone:	telefone
 				},
 				type: 'POST',
 				success: function(dados) {
@@ -118,14 +127,18 @@ function editarClientes(id_clientes, vai){
 		};
 	}else{
 		var posts = {
-			id: id_clientes,
-			vai: 'alterar',
-			nome: $("#nome-editar").val(),
-			empresa: $("#empresa-editar").val(),
-			cnpj: $("#cnpj-editar").val(),
-			localidade: $("#localidade-editar").val(),
-			email: $("#email-editar").val(),
-			telefone: $("#telefone-editar").val()
+			id:			id_clientes,
+			vai:		'alterar',
+			nome:		$("#nome-editar").val(),
+			empresa:	$("#empresa-editar").val(),
+			cnpj:		$("#cnpj-editar").val(),
+			estado:		$("#estado-editar").val(),
+			cidade:		$("#cidade-editar").val(),
+			bairro:		$("#bairro-editar").val(),
+			rua:		$("#rua-editar").val(),
+			numero:		$("#numero-editar").val(),
+			email:		$("#email-editar").val(),
+			telefone:	$("#telefone-editar").val()
 		}
 	}
 
@@ -140,7 +153,11 @@ function editarClientes(id_clientes, vai){
 				$("#nome-editar").val(dados.nome);
 				$("#empresa-editar").val(dados.empresa);
 				$("#cnpj-editar").val(dados.cnpj);
-				$("#localidade-editar").val(dados.localidade);
+				$("#estado-editar").val(dados.Estado),
+				$("#cidade-editar").val(dados.Cidade),
+				$("#bairro-editar").val(dados.Bairro),
+				$("#rua-editar").val(dados.Rua),
+				$("#numero-editar").val(dados.Numero),
 				$("#email-editar").val(dados.email);
 				$("#telefone-editar").val(dados.telefone);
 			}else if (dados.retorno == "S"){
@@ -204,6 +221,7 @@ function detalharClientes(id_clientes){
 				$("#detalhamento .empresa").text(dados.empresa);
 				$("#detalhamento .cnpj").text(dados.cnpj);
 				$("#detalhamento .localidade").text(dados.localidade);
+				$("#detalhamento .localidade").attr('title', dados.localidade)
 				$("#detalhamento .email").text(dados.email);
 				$("#detalhamento .telefone").text(dados.telefone);
 				$("#detalhamento .ultima").text(dados.data_ultima);
@@ -618,33 +636,15 @@ function limparCampo(){
 	$("#nome").val('');
 	$("#empresa").val('');
 	$("#cnpj").val('');
-	$("#localidade").val('');
+
+	$("#estado").val('');
+	$("#cidade").val('');
+	$("#bairro").val('');
+	$("#rua").val('');
+	$("#numero").val('');
+
 	$("#email").val('');
 	$("#telefone").val('');
-}
-
-function maskTelefone(campo){
-	var valor = campo.val().replace(/\D+/g, '');
-
-	// if (valor.length <= 8) {
-	// 	campo.mask("9999-9999");
-	// 	console.log(valor.length);
-	// } else if (valor.length == 9) {
-	// 	campo.mask("99999-9999");
-	// 	console.log(valor.length);
-	// } else if (valor.length == 10) {
-	// 	campo.mask("(99) 9999-9999");
-	// 	console.log(valor.length);
-	// } else if (valor.length == 11) {
-		campo.mask("(99) 99999-9999");
-	// 	console.log(valor.length);
-	// } else if (valor.length == 12) {
-	// 	campo.mask("+99 (99) 9999-9999");
-	// 	console.log(valor.length);
-	// } else if (valor.length >= 13) {
-	// 	campo.mask("+99 (99) 99999-9999");
-	// 	console.log(valor.length);
-	// }
 }
 
 $(document).ready(function() {
@@ -652,14 +652,6 @@ $(document).ready(function() {
 	maisCompra();
 	novosClientes();
 	menosCompra();
-
-	// $("#telefone").keypress(function(){
-		maskTelefone($("#telefone"));
-	// });
-
-	// $("#telefone-editar").keypress(function(){
-		maskTelefone($("#telefone-editar"));
-	// });
 
 	$("#clientes").click(function(event){
 		var alvoEvento = $(event.target);

@@ -15,11 +15,19 @@
 		$nome = $_POST['nome'];
 		$empresa = $_POST['empresa'];
 		$cnpj = $_POST['cnpj'];
-		$localidade = $_POST['localidade'];
 		$email = $_POST['email'];
 		$telefone = $_POST['telefone'];
 
-		$query = "INSERT INTO CLIENTE (DATA_ULTIMA_COMPRA, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE) VALUES (NOW(), '". $nome ."', '". $empresa ."', ". $cnpj .", '". $localidade ."', '". $email ."', ". $telefone .")";
+		$estado = $_POST['estado'];
+		$Cidade = $_POST['cidade'];
+		$Bairro = $_POST['bairro'];
+		$Rua = $_POST['rua'];
+		$Numero = $_POST['numero'];
+
+
+		$endereco = $Rua . "&&END" . $Numero . "&&END" . $Bairro . "&&END" . $Cidade . "&&END" . $estado;
+
+		$query = "INSERT INTO CLIENTE (DATA_ULTIMA_COMPRA, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE) VALUES (NOW(), '". $nome ."', '". $empresa ."', ". $cnpj .", '". $endereco ."', '". $email ."', ". $telefone .")";
 		// die($query);
 		if ($db->query($query)) {
 			$query = "SELECT ID, EMPRESA, EMAIL, TELEFONE FROM CLIENTE WHERE NOME = '". $nome ."' AND EMPRESA = '". $empresa ."' AND CNPJ = ". $cnpj ;

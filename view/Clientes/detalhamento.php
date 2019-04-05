@@ -24,19 +24,39 @@
 							WHERE C.ID = ". $id ."
 							GROUP BY C.ID, C.DATA_ULTIMA_COMPRA, C.NOME, C.EMPRESA, C.CNPJ, C.LOCALIDADE, C.EMAIL, C.TELEFONE");
 
+
 		foreach ($query as $key) {
-			$retorno = array(
-						'retorno' => 'S',
-						'nome' => $key['nome'],
-						'data_ultima' => $key['data_ultima_compra'],
-						'empresa' => $key['empresa'],
-						'cnpj' => $key['cnpj'],
-						'localidade' => $key['localidade'],
-						'email' => $key['email'],
-						'telefone' => $key['telefone'],
-						'lucro' => $key['valor'],
-						'quantidade' => $key['quantidade']
-			);
+			if (empty($key['localidade'])) {
+				$retorno = array(
+							'retorno' => 'S',
+							'nome' => $key['nome'],
+							'data_ultima' => $key['data_ultima_compra'],
+							'empresa' => $key['empresa'],
+							'cnpj' => $key['cnpj'],
+							'localidade' => '',
+							'email' => $key['email'],
+							'telefone' => $key['telefone'],
+							'lucro' => $key['valor'],
+							'quantidade' => $key['quantidade']
+				);
+			}else{
+				$end = explode("&&END", $key['localidade']);
+				$endereco = "Rua: ". $end[0] .", N°". $end[1] ."; Bairro: ". $end[2] ."; Cidade: ". $end[3] ."; Estado: ". $end[4];
+
+				$retorno = array(
+							'retorno' => 'S',
+							'nome' => $key['nome'],
+							'data_ultima' => $key['data_ultima_compra'],
+							'empresa' => $key['empresa'],
+							'cnpj' => $key['cnpj'],
+							'localidade' => $endereco,
+							'email' => $key['email'],
+							'telefone' => $key['telefone'],
+							'lucro' => $key['valor'],
+							'quantidade' => $key['quantidade']
+				);
+			}
+
 		}
 	}catch(Exception $e){
 			$retorno = array('retorno' => 'N');

@@ -33,12 +33,12 @@
 									<input id="empresa" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-4">
-									<label>TELEFONE <span class="obrigatorio"> *</span></label>
-									<input id="telefone" class="form-control" rows="3">
-								</div>
-								<div class="form-group col-md-4">
 									<label>CNPJ</label>
 									<input id="cnpj" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>TELEFONE <span class="obrigatorio"> *</span></label>
+									<input id="telefone" class="form-control" rows="3" maxlength="20">
 								</div>
 								<div class="form-group col-md-8">
 									<label>EMAIL</label>
@@ -77,19 +77,19 @@
 								</div>
 								<div class="form-group col-sm-5">
 									<label>Cidade: </label>
-									<input type="text" class="form-control" name="Cidade" id="Cidade" placeholder="Cidade">
+									<input type="text" class="form-control" name="Cidade" id="cidade" placeholder="Cidade">
 								</div>
 								<div class="form-group col-sm-5">
 									<label>Bairro: </label>
-									<input type="text" class="form-control" name="Bairro" id="Bairro" placeholder="Bairro">
+									<input type="text" class="form-control" name="Bairro" id="bairro" placeholder="Bairro">
 								</div>
 								<div class="form-group col-sm-10">
 									<label>Rua: </label>
-									<input type="text" class="form-control" name="Rua" id="Rua" placeholder="Rua">
+									<input type="text" class="form-control" name="Rua" id="rua" placeholder="Rua">
 								</div>
 								<div class="form-group col-sm-2">
 									<label>Numero: </label>
-									<input type="text" class="form-control" name="Numero" id="Numero" placeholder="N°">
+									<input type="text" class="form-control" name="Numero" id="numero" placeholder="N°">
 								</div>
 							</div>
 							<button id="salvar-cliente" type="button" class="btn btn-primary">SALVAR</button>
@@ -119,12 +119,12 @@
 									<input id="empresa-editar" type="text" class="form-control">
 								</div>
 								<div class="form-group col-md-4">
-									<label>TELEFONE <span class="obrigatorio"> *</span></label>
-									<input id="telefone-editar" class="form-control" rows="3" maxlength="13">
-								</div>
-								<div class="form-group col-md-4">
 									<label>CNPJ</label>
 									<input id="cnpj-editar" type="text" class="form-control">
+								</div>
+								<div class="form-group col-md-4">
+									<label>TELEFONE <span class="obrigatorio"> *</span></label>
+									<input id="telefone-editar" class="form-control" rows="3" maxlength="13" maxlength="20">
 								</div>
 								<div class="form-group col-md-8">
 									<label>EMAIL</label>
@@ -132,7 +132,7 @@
 								</div>
 								<div class="form-group col-sm-2">
 									<label>Estado: </label>
-									<select name="estado" id="estado" class="form-control">
+									<select name="estado-editar" id="estado-editar" class="form-control">
 										<option value="AC">AC</option>
 										<option value="AL">AL</option>
 										<option value="AP">AP</option>
@@ -163,19 +163,19 @@
 								</div>
 								<div class="form-group col-sm-5">
 									<label>Cidade: </label>
-									<input type="text" class="form-control" name="Cidade" id="Cidade" placeholder="Cidade">
+									<input type="text" class="form-control" name="cidade-editar" id="cidade-editar" placeholder="Cidade">
 								</div>
 								<div class="form-group col-sm-5">
 									<label>Bairro: </label>
-									<input type="text" class="form-control" name="Bairro" id="Bairro" placeholder="Bairro">
+									<input type="text" class="form-control" name="Bairro" id="bairro-editar" placeholder="Bairro">
 								</div>
 								<div class="form-group col-sm-10">
 									<label>Rua: </label>
-									<input type="text" class="form-control" name="Rua" id="Rua" placeholder="Rua">
+									<input type="text" class="form-control" name="Rua" id="rua-editar" placeholder="Rua">
 								</div>
 								<div class="form-group col-sm-2">
 									<label>Numero: </label>
-									<input type="text" class="form-control" name="Numero" id="Numero" placeholder="N°">
+									<input type="text" class="form-control" name="Numero" id="numero-editar" placeholder="N°">
 								</div>
 							</div>
 							<button id="alterar-cliente" type="button" class="btn btn-primary">ALTERAR</button>
@@ -213,7 +213,7 @@
 												<td class="nome">Mark</td>
 												<td class="empresa">Mark</td>
 												<td class="cnpj">Mark</td>
-												<td class="localidade">Mark</td>
+												<td class="localidade big-text">Mark</td>
 												<td class="email">Otto</td>
 												<td class="telefone">@mdo</td>
 												<td class="ultima">1234</td>
