@@ -27,17 +27,45 @@ GROUP BY F.ID, F.DATA_ULTIMA_COMPRA, F.NOME, F.EMPRESA, F.CNPJ, F.LOCALIDADE, F.
 		// $query = $db->query("SELECT NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE FROM FORNECEDOR WHERE ID = " . $id);
 
 		foreach ($query as $key) {
-			$retorno = array(
-						'retorno' => 'S',
-						'nome' => $key['nome'],
-						'empresa' => $key['empresa'],
-						'cnpj' => $key['cnpj'],
-						'localidade' => $key['localidade'],
-						'email' => $key['email'],
-						'telefone' => $key['telefone'],
-						'valor' => $key['valor'],
-						'quantidade' => $key['quantidade']
-			);
+			if (empty($key['localidade'])) {
+				$retorno = array(
+							'retorno' => 'S',
+							'nome' => $key['nome'],
+							'empresa' => $key['empresa'],
+							'cnpj' => $key['cnpj'],
+							'localidade' => '',
+							'email' => $key['email'],
+							'telefone' => $key['telefone'],
+							'valor' => $key['valor'],
+							'quantidade' => $key['quantidade']
+				);
+			}else{
+				$end = explode("&&END", $key['localidade']);
+				$endereco = "Rua: ". $end[0] .", N°". $end[1] ."; Bairro: ". $end[2] ."; Cidade: ". $end[3] ."; Estado: ". $end[4];
+
+				$retorno = array(
+							'retorno' => 'S',
+							'nome' => $key['nome'],
+							'empresa' => $key['empresa'],
+							'cnpj' => $key['cnpj'],
+							'localidade' => $endereco,
+							'email' => $key['email'],
+							'telefone' => $key['telefone'],
+							'valor' => $key['valor'],
+							'quantidade' => $key['quantidade']
+				);
+			}
+			// $retorno = array(
+			// 			'retorno' => 'S',
+			// 			'nome' => $key['nome'],
+			// 			'empresa' => $key['empresa'],
+			// 			'cnpj' => $key['cnpj'],
+			// 			'localidade' => $key['localidade'],
+			// 			'email' => $key['email'],
+			// 			'telefone' => $key['telefone'],
+			// 			'valor' => $key['valor'],
+			// 			'quantidade' => $key['quantidade']
+			// );
 		}
 	}catch(Exception $e){
 			$retorno = array('retorno' => 'N');

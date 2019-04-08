@@ -132,7 +132,7 @@
 								</div>
 								<div class="form-group col-sm-2">
 									<label>Estado: </label>
-									<select name="estado" id="estado" class="form-control">
+									<select name="estado" id="estado-editar" class="form-control">
 										<option value="AC">AC</option>
 										<option value="AL">AL</option>
 										<option value="AP">AP</option>
@@ -163,19 +163,19 @@
 								</div>
 								<div class="form-group col-sm-5">
 									<label>Cidade: </label>
-									<input type="text" class="form-control" name="Cidade" id="cidade" placeholder="Cidade">
+									<input type="text" class="form-control" name="Cidade" id="cidade-editar" placeholder="Cidade">
 								</div>
 								<div class="form-group col-sm-5">
 									<label>Bairro: </label>
-									<input type="text" class="form-control" name="Bairro" id="bairro" placeholder="Bairro">
+									<input type="text" class="form-control" name="Bairro" id="bairro-editar" placeholder="Bairro">
 								</div>
 								<div class="form-group col-sm-10">
 									<label>Rua: </label>
-									<input type="text" class="form-control" name="Rua" id="rua" placeholder="Rua">
+									<input type="text" class="form-control" name="Rua" id="rua-editar" placeholder="Rua">
 								</div>
 								<div class="form-group col-sm-2">
 									<label>Numero: </label>
-									<input type="text" class="form-control" name="Numero" id="numero" placeholder="N°">
+									<input type="text" class="form-control" name="Numero" id="numero-editar" placeholder="N°">
 								</div>
 							</div>
 							<button id="alterar-fornecedor" type="button" class="btn btn-primary">ALTERAR</button>
@@ -212,7 +212,7 @@
 												<td class="nome">Mark</td>
 												<td class="empresa">Mark</td>
 												<td class="cnpj">Mark</td>
-												<td class="localidade">Mark</td>
+												<td class="localidade big-text">Mark</td>
 												<td class="email">Otto</td>
 												<td class="telefone">@mdo</td>
 											</tr>

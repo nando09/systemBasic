@@ -56,7 +56,6 @@
 							'quantidade' => $key['quantidade']
 				);
 			}
-
 		}
 	}catch(Exception $e){
 			$retorno = array('retorno' => 'N');

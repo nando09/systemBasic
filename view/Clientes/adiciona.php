@@ -9,7 +9,7 @@
 	$tr = '';
 
 	// Primeiro em php.ini temos que descomentar line pdo_psql
-	// try{
+	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
 		$nome = $_POST['nome'];
@@ -53,7 +53,7 @@
 										"<i class='far fa-trash-alt excluir'></i>".
 									"</td>".
 									"<td class='text-center'>".
-										"<a href='/System/systemBasic/FazerPedido/home/". $key['id'] ."' target='_blank'>".
+										"<a href='/System/systemBasic/FazerPedido/cliente/". $key['id'] ."' target='_blank'>".
 											"<i class='fas fa-store-alt'></i>".
 										"</a>".
 									"</td>".
@@ -72,10 +72,10 @@
 				);
 			}
 		}
-	// }catch(Exception $e){
-	// 	$retorno = array(
-	// 		'retorno' => 'N'
-	// 	);
-	// }
+	}catch(Exception $e){
+		$retorno = array(
+			'retorno' => 'N'
+		);
+	}
 
 	echo json_encode($retorno);

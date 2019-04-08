@@ -3,12 +3,14 @@ function popularFornecedores(){
 		var nome = $("#nome").val();
 		var empresa = $("#empresa").val();
 		var cnpj = $("#cnpj").val();
-		var localidade = $("#localidade").val();
 		var email = $("#email").val();
 		var telefone = $("#telefone").val();
 
-
-		console.log(nome+ "//" +empresa+ "//" +cnpj+ "//" +localidade+ "//" +email+ "//" +telefone);
+		var estado 	=	$("#estado").val();
+		var cidade 	=	$("#cidade").val();
+		var bairro 	=	$("#bairro").val();
+		var rua 	=	$("#rua").val();
+		var numero 	=	$("#numero").val();
 
 		if (validaForm('novo')) {
 			$.ajax({
@@ -18,7 +20,11 @@ function popularFornecedores(){
 					nome: nome,
 					empresa: empresa,
 					cnpj: cnpj,
-					localidade: localidade,
+					estado:		estado,
+					cidade:		cidade,
+					bairro:		bairro,
+					rua:		rua,
+					numero:		numero,
 					email: email,
 					telefone: telefone
 				},
@@ -38,6 +44,7 @@ function popularFornecedores(){
 
 						$("#fornecedores").append(dados.tr);
 						$('.modal').modal('hide');
+						limparCampo();
 
 					}else if(dados.retorno == 'E'){
 						$.bootstrapGrowl("Erro ao inserir fornecedor!", {
@@ -88,9 +95,6 @@ function popularFornecedores(){
 			}
 
 			$("#fornecedores").append(dados);
-			// preparaExcluirFornecedores();
-			// preparaDetalharFornecedores();
-			// preparaEditarFornecedores();
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
@@ -115,14 +119,18 @@ function editarFornecedores(id_fornecedores, vai){
 		};
 	}else{
 		var posts = {
-			id: id_fornecedores,
-			vai: 'alterar',
-			nome: $("#nome-editar").val(),
-			empresa: $("#empresa-editar").val(),
-			cnpj: $("#cnpj-editar").val(),
-			localidade: $("#localidade-editar").val(),
-			email: $("#email-editar").val(),
-			telefone: $("#telefone-editar").val()
+			id:			id_fornecedores,
+			vai:		'alterar',
+			nome:		$("#nome-editar").val(),
+			empresa:	$("#empresa-editar").val(),
+			cnpj:		$("#cnpj-editar").val(),
+			estado:		$("#estado-editar").val(),
+			cidade:		$("#cidade-editar").val(),
+			bairro:		$("#bairro-editar").val(),
+			rua:		$("#rua-editar").val(),
+			numero:		$("#numero-editar").val(),
+			email:		$("#email-editar").val(),
+			telefone:	$("#telefone-editar").val()
 		}
 	}
 
@@ -137,7 +145,11 @@ function editarFornecedores(id_fornecedores, vai){
 				$("#nome-editar").val(dados.nome);
 				$("#empresa-editar").val(dados.empresa);
 				$("#cnpj-editar").val(dados.cnpj);
-				$("#localidade-editar").val(dados.localidade);
+				$("#estado-editar").val(dados.Estado),
+				$("#cidade-editar").val(dados.Cidade),
+				$("#bairro-editar").val(dados.Bairro),
+				$("#rua-editar").val(dados.Rua),
+				$("#numero-editar").val(dados.Numero),
 				$("#email-editar").val(dados.email);
 				$("#telefone-editar").val(dados.telefone);
 			}else if (dados.retorno == "S"){
@@ -201,10 +213,11 @@ function detalharFornecedores(id_fornecedores){
 				$("#detalhamento .empresa").text(dados.empresa);
 				$("#detalhamento .cnpj").text(dados.cnpj);
 				$("#detalhamento .localidade").text(dados.localidade);
+				$("#detalhamento .localidade").attr('title', dados.localidade)
 				$("#detalhamento .email").text(dados.email);
 				$("#detalhamento .telefone").text(dados.telefone);
 
-				if (dados.valor > 0) {
+				if (dados.quantidade > 0) {
 					$("#detalhamento .quantidade-compra").text(dados.quantidade + " Produtos");
 					$("#detalhamento .valor-compra").text("R$ " + dados.valor);
 				}else{
@@ -574,6 +587,21 @@ function messageVazio(texto){
 		allow_dismiss: true, // If true then will display a cross to close the popup.
 		stackup_spacing: 10 // spacing between consecutively stacked growls.
 	});
+}
+
+function limparCampo(){
+	$("#nome").val('');
+	$("#empresa").val('');
+	$("#cnpj").val('');
+
+	$("#estado").val('');
+	$("#cidade").val('');
+	$("#bairro").val('');
+	$("#rua").val('');
+	$("#numero").val('');
+
+	$("#email").val('');
+	$("#telefone").val('');
 }
 
 function validaForm(tipo){

@@ -27,16 +27,20 @@
 [OK]	=>	Arrumar valores da pagina, e data
 [OK]	=>	regex para Telefone, campo no banco é INT (CAMPO MUDADO PARA VARCHAR)
 [OK]	=>	Localidade de cliente tem que ser exata, já tem no editar perfil
+		=>	Mask CNPJ
+		=>	CEP automatico
 		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas
 
 	## FORNECEDORES ##
 [OK]	=>	Relatorio fornecedores pode mes, esta trazendo errado.
 [OK]	=>	Detalhamento dos fornecedores deixar com produtos quantidades e valores do venda de cada produto comprado.
 [OK]	=>	Mensagem para o fornecedores, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc. *SQL 
+[OK]	=>	Validar formularios
+[OK]	=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
+		=>	Mask CNPJ
+		=>	CEP automatico
 		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas 
-		=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
 		=>	Arrumar valores da pagina, e data
-		=>	Validar formularios
 
 	## Entrada de produtos ##
 		=>	Arrumar valores da pagina, e data

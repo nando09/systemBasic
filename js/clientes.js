@@ -13,10 +13,6 @@ function popularClientes(){
 			var rua 	=	$("#rua").val();
 			var numero 	=	$("#numero").val();
 
-
-			// console.log(nome+ "//" +empresa+ "//" +cnpj+ "//" +localidade+ "//" +email+ "//" +telefone);
-
-			// var formDados  = $(this).serialize();
 			$.ajax({
 				url: '/System/systemBasic/view/clientes/adiciona.php', // Url do lado server que vai receber o arquivo
 				dataType: 'json',
