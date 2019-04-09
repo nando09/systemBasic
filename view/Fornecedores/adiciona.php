@@ -14,7 +14,10 @@
 
 		$nome = $_POST['nome'];
 		$empresa = $_POST['empresa'];
-		$cnpj = $_POST['cnpj'];
+
+		$vowels = array(".", "/", "-", " ");
+		$cnpj = str_replace($vowels, '', $_POST['cnpj']);
+
 		$email = $_POST['email'];
 		$telefone = $_POST['telefone'];
 

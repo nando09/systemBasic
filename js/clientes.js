@@ -643,11 +643,17 @@ function limparCampo(){
 	$("#telefone").val('');
 }
 
+function masks(){
+	$("#cnpj").mask('99.999.999/9999-99');
+	$("#cnpj-editar").mask('99.999.999/9999-99');
+}
+
 $(document).ready(function() {
 	popularClientes();
 	maisCompra();
 	novosClientes();
 	menosCompra();
+	masks();
 
 	$("#clientes").click(function(event){
 		var alvoEvento = $(event.target);

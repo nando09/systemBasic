@@ -37,10 +37,10 @@
 [OK]	=>	Mensagem para o fornecedores, caso de atraso em pagamento, ou peça que não foram enviadas ainda etc. *SQL 
 [OK]	=>	Validar formularios
 [OK]	=>	Sempre que acrescentar o mesmo, os campos tem que estar vazios
+[OK]	=>	Arrumar valores da pagina, e data
 		=>	Mask CNPJ
 		=>	CEP automatico
 		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas 
-		=>	Arrumar valores da pagina, e data
 
 	## Entrada de produtos ##
 		=>	Arrumar valores da pagina, e data

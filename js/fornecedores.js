@@ -634,11 +634,17 @@ function validaForm(tipo){
 	}
 }
 
+function masks(){
+	$("#cnpj").mask('99.999.999/9999-99');
+	$("#cnpj-editar").mask('99.999.999/9999-99');
+}
+
 $(document).ready(function() {
 	popularFornecedores();
 	maisCompro();
 	novosFornecedores();
 	menosCompro();
+	masks();
 
 	$("#fornecedores").click(function(event){
 		var alvoEvento = $(event.target);
