@@ -14,9 +14,10 @@
 
 		$nome = $_POST['nome'];
 		$empresa = $_POST['empresa'];
+		$cnpj = $_POST['cnpj'];
 
-		$vowels = array(".", "/", "-", " ");
-		$cnpj = str_replace($vowels, '', $_POST['cnpj']);
+		// $vowels = array(".", "/", "-", " ");
+		// $cnpj = str_replace($vowels, '', $_POST['cnpj']);
 
 		$email = $_POST['email'];
 		$telefone = $_POST['telefone'];
@@ -30,7 +31,7 @@
 
 		$endereco = $Rua . "&&END" . $Numero . "&&END" . $Bairro . "&&END" . $Cidade . "&&END" . $estado;
 
-		$query = "INSERT INTO FORNECEDOR (NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE) VALUES ('". $nome ."', '". $empresa ."', ". $cnpj .", '". $endereco ."', '". $email ."', ". $telefone .")";
+		$query = "INSERT INTO FORNECEDOR (NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE) VALUES ('". $nome ."', '". $empresa ."', '". $cnpj ."', '". $endereco ."', '". $email ."', '". $telefone ."')";
 		// die($query);
 		if ($db->query($query)) {
 			$query = "SELECT ID, EMPRESA, EMAIL, TELEFONE FROM FORNECEDOR WHERE NOME = '". $nome ."' AND EMPRESA = '". $empresa ."' AND CNPJ = ". $cnpj ;

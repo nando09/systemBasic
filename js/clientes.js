@@ -127,7 +127,7 @@ function editarClientes(id_clientes, vai){
 			vai:		'alterar',
 			nome:		$("#nome-editar").val(),
 			empresa:	$("#empresa-editar").val(),
-			cnpj:		$("#cnpj-editar").val(),
+			cnpj: 		$("#cnpj-editar").val(),
 			estado:		$("#estado-editar").val(),
 			cidade:		$("#cidade-editar").val(),
 			bairro:		$("#bairro-editar").val(),
@@ -589,6 +589,8 @@ function validarForm(tipo){
 	if (tipo == 'novo') {
 		var nome		= 		$("#nome").val();
 		var telefone	= 		$("#telefone").val();
+		var cnpj		= 		$("#cnpj").val().replace(/[._/-]/g, '');
+		var control		=		true;
 
 		if(nome == ''){
 			messageVazio('nome');
@@ -596,12 +598,66 @@ function validarForm(tipo){
 		}else if(telefone == ''){
 			messageVazio('telefone');
 			$("#telefone").focus();
+		}else if (cnpj != '') {
+			if (cnpj.length != 14)
+				control = false;
+
+			// Elimina CNPJs invalidos conhecidos
+			if (cnpj == "00000000000000" || 
+				cnpj == "11111111111111" || 
+				cnpj == "22222222222222" || 
+				cnpj == "33333333333333" || 
+				cnpj == "44444444444444" || 
+				cnpj == "55555555555555" || 
+				cnpj == "66666666666666" || 
+				cnpj == "77777777777777" || 
+				cnpj == "88888888888888" || 
+				cnpj == "99999999999999")
+				control = false;
+
+			// Valida DVs
+			tamanho = cnpj.length - 2
+			numeros = cnpj.substring(0,tamanho);
+			digitos = cnpj.substring(tamanho);
+			soma = 0;
+			pos = tamanho - 7;
+			for (i = tamanho; i >= 1; i--) {
+			  soma += numeros.charAt(tamanho - i) * pos--;
+			  if (pos < 2)
+					pos = 9;
+			}
+
+			resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+			if (resultado != digitos.charAt(0))
+				control = false;
+
+			tamanho = tamanho + 1;
+			numeros = cnpj.substring(0,tamanho);
+			soma = 0;
+			pos = tamanho - 7;
+			for (i = tamanho; i >= 1; i--) {
+			  soma += numeros.charAt(tamanho - i) * pos--;
+			  if (pos < 2)
+					pos = 9;
+			}
+
+			resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+			if (resultado != digitos.charAt(1))
+				  control = false;
+
+			if(!control){
+				messageMalPreenchido('CNPJ');
+			}else{
+				return true;
+			}
 		}else{
 			return true;
 		}
 	}else{
 		var nome		= 		$("#nome-editar").val();
 		var telefone	= 		$("#telefone-editar").val();
+		var cnpj		= 		$("#cnpj-editar").val().replace(/[._/-]/g, '');
+		var control		=		true;
 
 		if(nome == ''){
 			messageVazio('nome');
@@ -609,6 +665,58 @@ function validarForm(tipo){
 		}else if(telefone == ''){
 			messageVazio('telefone');
 			$("#telefone-editar").focus();
+		}else if (cnpj != '') {
+			if (cnpj.length != 14)
+				control = false;
+
+			// Elimina CNPJs invalidos conhecidos
+			if (cnpj == "00000000000000" || 
+				cnpj == "11111111111111" || 
+				cnpj == "22222222222222" || 
+				cnpj == "33333333333333" || 
+				cnpj == "44444444444444" || 
+				cnpj == "55555555555555" || 
+				cnpj == "66666666666666" || 
+				cnpj == "77777777777777" || 
+				cnpj == "88888888888888" || 
+				cnpj == "99999999999999")
+				control = false;
+
+			// Valida DVs
+			tamanho = cnpj.length - 2
+			numeros = cnpj.substring(0,tamanho);
+			digitos = cnpj.substring(tamanho);
+			soma = 0;
+			pos = tamanho - 7;
+			for (i = tamanho; i >= 1; i--) {
+			  soma += numeros.charAt(tamanho - i) * pos--;
+			  if (pos < 2)
+					pos = 9;
+			}
+
+			resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+			if (resultado != digitos.charAt(0))
+				control = false;
+
+			tamanho = tamanho + 1;
+			numeros = cnpj.substring(0,tamanho);
+			soma = 0;
+			pos = tamanho - 7;
+			for (i = tamanho; i >= 1; i--) {
+			  soma += numeros.charAt(tamanho - i) * pos--;
+			  if (pos < 2)
+					pos = 9;
+			}
+
+			resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+			if (resultado != digitos.charAt(1))
+				  control = false;
+
+			if(!control){
+				messageMalPreenchido('CNPJ');
+			}else{
+				return true;
+			}
 		}else{
 			return true;
 		}
@@ -617,6 +725,19 @@ function validarForm(tipo){
 
 function messageVazio(texto){
 	$.bootstrapGrowl("Campo "+ texto +" não esta preenchido!", {
+		ele: 'body', // which element to append to
+		type: 'danger', // (null, 'info', 'danger', 'success')
+		offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+		align: 'right', // ('left', 'right', or 'center')
+		width: 'auto', // (integer, or 'auto')
+		delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+		allow_dismiss: true, // If true then will display a cross to close the popup.
+		stackup_spacing: 10 // spacing between consecutively stacked growls.
+	});
+}
+
+function messageMalPreenchido(texto){
+	$.bootstrapGrowl("Campo "+ texto +" não esta preenchido corretamente!", {
 		ele: 'body', // which element to append to
 		type: 'danger', // (null, 'info', 'danger', 'success')
 		offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -646,6 +767,8 @@ function limparCampo(){
 function masks(){
 	$("#cnpj").mask('99.999.999/9999-99');
 	$("#cnpj-editar").mask('99.999.999/9999-99');
+	$("#telefone").mask('(99) 99999-9999');
+	$("#telefone-editar").mask('(99) 99999-9999');
 }
 
 $(document).ready(function() {

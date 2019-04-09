@@ -55,9 +55,10 @@ if ($vai == 'buscar') {
 		$id = $_POST['id'];
 		$nome = $_POST['nome'];
 		$empresa = $_POST['empresa'];
+		$cnpj = $_POST['cnpj'];
 
-		$vowels = array(".", "/", "-", " ");
-		$cnpj = str_replace($vowels, '', $_POST['cnpj']);
+		// $vowels = array(".", "/", "-", " ", "_");
+		// $cnpj = str_replace($vowels, '', $_POST['cnpj']);
 
 		$email = $_POST['email'];
 		$telefone = $_POST['telefone'];
@@ -71,7 +72,7 @@ if ($vai == 'buscar') {
 
 		$endereco = $Rua . "&&END" . $Numero . "&&END" . $Bairro . "&&END" . $Cidade . "&&END" . $estado;
 
-		$query = $db->query("UPDATE FORNECEDOR SET NOME = '". $nome ."',  EMPRESA = '". $empresa ."', CNPJ = ". $cnpj .", LOCALIDADE = '". $endereco ."', EMAIL = '". $email ."', TELEFONE = '". $telefone ."' WHERE ID = " . $id);
+		$query = $db->query("UPDATE FORNECEDOR SET NOME = '". $nome ."',  EMPRESA = '". $empresa ."', CNPJ = '". $cnpj ."', LOCALIDADE = '". $endereco ."', EMAIL = '". $email ."', TELEFONE = '". $telefone ."' WHERE ID = " . $id);
 
 		if ($query) {
 			$query = "SELECT ID, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE FROM FORNECEDOR WHERE ID = " . $id;
