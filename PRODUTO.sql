@@ -508,7 +508,8 @@ ALTER TABLE FORNECEDOR ALTER COLUMN CNPJ TYPE varchar(18);
 ALTER TABLE CLIENTE add COLUMN TELEFONE varchar(20);
 ALTER TABLE FORNECEDOR add COLUMN TELEFONE varchar(20);
 
-
+update cliente set localidade = ''
+update fornecedor set localidade = ''
 
 SELECT * FROM PEDINDO;
 SELECT * FROM cliente;

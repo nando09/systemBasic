@@ -47,6 +47,7 @@
 								<div class="form-group col-sm-2">
 									<label>Estado: </label>
 									<select name="estado" id="estado" class="form-control">
+										<option value="">--</option>
 										<option value="AC">AC</option>
 										<option value="AL">AL</option>
 										<option value="AP">AP</option>
@@ -133,6 +134,7 @@
 								<div class="form-group col-sm-2">
 									<label>Estado: </label>
 									<select name="estado" id="estado-editar" class="form-control">
+										<option value="">--</option>
 										<option value="AC">AC</option>
 										<option value="AL">AL</option>
 										<option value="AP">AP</option>
