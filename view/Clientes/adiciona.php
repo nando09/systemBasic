@@ -9,7 +9,7 @@
 	$tr = '';
 
 	// Primeiro em php.ini temos que descomentar line pdo_psql
-	try{
+	// try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
 		$nome = $_POST['nome'];
@@ -22,6 +22,7 @@
 		$email = $_POST['email'];
 		$telefone = $_POST['telefone'];
 
+		$cep = $_POST['cep'];
 		$estado = $_POST['estado'];
 		$Cidade = $_POST['cidade'];
 		$Bairro = $_POST['bairro'];
@@ -31,10 +32,10 @@
 
 		$endereco = $Rua . "&&END" . $Numero . "&&END" . $Bairro . "&&END" . $Cidade . "&&END" . $estado;
 
-		$query = "INSERT INTO CLIENTE (DATA_ULTIMA_COMPRA, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE) VALUES (NOW(), '". $nome ."', '". $empresa ."', '". $cnpj ."', '". $endereco ."', '". $email ."', '". $telefone ."')";
+		$query = "INSERT INTO CLIENTE (DATA_ULTIMA_COMPRA, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE, CEP) VALUES (NOW(), '". $nome ."', '". $empresa ."', '". $cnpj ."', '". $endereco ."', '". $email ."', '". $telefone ."', '". $cep ."')";
 		// die($query);
 		if ($db->query($query)) {
-			$query = "SELECT ID, EMPRESA, EMAIL, TELEFONE FROM CLIENTE WHERE NOME = '". $nome ."' AND EMPRESA = '". $empresa ."' AND CNPJ = ". $cnpj ;
+			$query = "SELECT ID, EMPRESA, EMAIL, TELEFONE FROM CLIENTE WHERE NOME = '". $nome ."' AND EMPRESA = '". $empresa ."' AND CNPJ = '". $cnpj . "'";
 			// die($query);
 
 
@@ -76,10 +77,10 @@
 				);
 			}
 		}
-	}catch(Exception $e){
-		$retorno = array(
-			'retorno' => 'N'
-		);
-	}
+	// }catch(Exception $e){
+	// 	$retorno = array(
+	// 		'retorno' => 'N'
+	// 	);
+	// }
 
 	echo json_encode($retorno);

@@ -8,7 +8,7 @@ if ($vai == 'buscar') {
 	try{
 		$id = $_POST['id'];
 
-		$query = $db->query("SELECT ID, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE FROM CLIENTE WHERE ID = " . $id);
+		$query = $db->query("SELECT ID, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE, CEP FROM CLIENTE WHERE ID = " . $id);
 		// die($query);
 		foreach ($query as $key) {
 			if (empty($key['localidade'])) {
@@ -19,6 +19,7 @@ if ($vai == 'buscar') {
 							'nome'			=>	$key['nome'],
 							'empresa'		=>	$key['empresa'],
 							'cnpj'			=>	$key['cnpj'],
+							'cep'			=>	'',
 							'Rua'			=>	'',
 							'Numero'		=>	'',
 							'Bairro'		=>	'',
@@ -37,6 +38,7 @@ if ($vai == 'buscar') {
 							'nome'			=>	$key['nome'],
 							'empresa'		=>	$key['empresa'],
 							'cnpj'			=>	$key['cnpj'],
+							'cep'			=>	$key['cep'],
 							'Rua'			=>	$end[0],
 							'Numero'		=>	$end[1],
 							'Bairro'		=>	$end[2],
@@ -62,7 +64,7 @@ if ($vai == 'buscar') {
 
 		$email = $_POST['email'];
 		$telefone = $_POST['telefone'];
-
+		$cep = $_POST['cep'];
 		$estado = $_POST['estado'];
 		$Cidade = $_POST['cidade'];
 		$Bairro = $_POST['bairro'];
@@ -72,7 +74,7 @@ if ($vai == 'buscar') {
 
 		$endereco = $Rua . "&&END" . $Numero . "&&END" . $Bairro . "&&END" . $Cidade . "&&END" . $estado;
 
-		$query = $db->query("UPDATE CLIENTE SET NOME = '". $nome ."',  EMPRESA = '". $empresa ."', CNPJ = '". $cnpj ."', LOCALIDADE = '". $endereco ."', EMAIL = '". $email ."', TELEFONE = '". $telefone ."' WHERE ID = " . $id);
+		$query = $db->query("UPDATE CLIENTE SET CEP = '". $cep ."', NOME = '". $nome ."',  EMPRESA = '". $empresa ."', CNPJ = '". $cnpj ."', LOCALIDADE = '". $endereco ."', EMAIL = '". $email ."', TELEFONE = '". $telefone ."' WHERE ID = " . $id);
 		// die()
 
 		if ($query) {

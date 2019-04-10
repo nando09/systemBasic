@@ -34,7 +34,7 @@
 		$query = "INSERT INTO FORNECEDOR (NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE) VALUES ('". $nome ."', '". $empresa ."', '". $cnpj ."', '". $endereco ."', '". $email ."', '". $telefone ."')";
 		// die($query);
 		if ($db->query($query)) {
-			$query = "SELECT ID, EMPRESA, EMAIL, TELEFONE FROM FORNECEDOR WHERE NOME = '". $nome ."' AND EMPRESA = '". $empresa ."' AND CNPJ = ". $cnpj ;
+			$query = "SELECT ID, EMPRESA, EMAIL, TELEFONE FROM FORNECEDOR WHERE NOME = '". $nome ."' AND EMPRESA = '". $empresa ."' AND CNPJ = '". $cnpj ."'";
 			// die($query);
 
 

@@ -44,6 +44,10 @@
 									<label>EMAIL</label>
 									<input id="email" type="text" class="form-control">
 								</div>
+								<div id="cep-busca" class="form-group col-md-2">
+									<label>CEP</label>
+									<input id="cep" class="form-control" type="text" name="cep" placeholder="Buscar por CEP">
+								</div>
 								<div class="form-group col-sm-2">
 									<label>Estado: </label>
 									<select name="estado" id="estado" class="form-control">
@@ -76,11 +80,11 @@
 										<option value="SE">SE</option>
 									</select>
 								</div>
-								<div class="form-group col-sm-5">
+								<div class="form-group col-sm-4">
 									<label>Cidade: </label>
 									<input type="text" class="form-control" name="Cidade" id="cidade" placeholder="Cidade">
 								</div>
-								<div class="form-group col-sm-5">
+								<div class="form-group col-sm-4">
 									<label>Bairro: </label>
 									<input type="text" class="form-control" name="Bairro" id="bairro" placeholder="Bairro">
 								</div>
@@ -131,9 +135,13 @@
 									<label>EMAIL</label>
 									<input id="email-editar" type="text" class="form-control">
 								</div>
+								<div id="cep-busca" class="form-group col-md-2">
+									<label>CEP</label>
+									<input id="cep-editar" class="form-control" type="text" name="cep" placeholder="Buscar por CEP">
+								</div>
 								<div class="form-group col-sm-2">
 									<label>Estado: </label>
-									<select name="estado" id="estado-editar" class="form-control">
+									<select name="estado-editar" id="estado-editar" class="form-control">
 										<option value="">--</option>
 										<option value="AC">AC</option>
 										<option value="AL">AL</option>
@@ -163,11 +171,11 @@
 										<option value="SE">SE</option>
 									</select>
 								</div>
-								<div class="form-group col-sm-5">
+								<div class="form-group col-sm-4">
 									<label>Cidade: </label>
-									<input type="text" class="form-control" name="Cidade" id="cidade-editar" placeholder="Cidade">
+									<input type="text" class="form-control" name="cidade-editar" id="cidade-editar" placeholder="Cidade">
 								</div>
-								<div class="form-group col-sm-5">
+								<div class="form-group col-sm-4">
 									<label>Bairro: </label>
 									<input type="text" class="form-control" name="Bairro" id="bairro-editar" placeholder="Bairro">
 								</div>

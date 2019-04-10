@@ -505,8 +505,8 @@ ALTER TABLE FORNECEDOR ALTER COLUMN TELEFONE TYPE varchar(15);
 ALTER TABLE CLIENTE ALTER COLUMN CNPJ TYPE varchar(18);
 ALTER TABLE FORNECEDOR ALTER COLUMN CNPJ TYPE varchar(18);
 
-ALTER TABLE CLIENTE add COLUMN TELEFONE varchar(20);
-ALTER TABLE FORNECEDOR add COLUMN TELEFONE varchar(20);
+ALTER TABLE CLIENTE ADD COLUMN CEP varchar(9);
+ALTER TABLE FORNECEDOR ADD COLUMN CEP varchar(9);
 
 update cliente set localidade = ''
 update fornecedor set localidade = ''
@@ -518,9 +518,13 @@ SELECT * FROM FORNECENDO;
 SELECT * FROM DETALHE_FORNECEDOR;
 SELECT * FROM DETALHE_PEDIDO;
 
+INSERT INTO CLIENTE (DATA_ULTIMA_COMPRA, NOME, EMPRESA, CNPJ, LOCALIDADE, EMAIL, TELEFONE, CEP) VALUES (NOW(), 'Água', 'Gatorade', '33.381.286/0023-67', 'Avenida Brigadeiro Faria Lima&&END291&&ENDCentro&&ENDSão Bernardo do Campo&&ENDSP', '', '(11) 92154-6479', '09720-971')
+delete from cliente where id = 27
 update cliente set localidade = ''
-
 update fornecedor set localidade = ''
+
+SELECT valor, data_compra, vencimento, status FROM DETALHE_PEDIDO as p inner join cliente as c on c.id = p.id_cliente where p.id_cliente = 10;
+
 
 SELECT
 	COUNT(*) as NUMERO, SUM(P.VALOR * PE.QUANTIDADE) AS VALOR
