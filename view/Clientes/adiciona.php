@@ -9,7 +9,7 @@
 	$tr = '';
 
 	// Primeiro em php.ini temos que descomentar line pdo_psql
-	// try{
+	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
 		$nome = $_POST['nome'];
@@ -77,10 +77,10 @@
 				);
 			}
 		}
-	// }catch(Exception $e){
-	// 	$retorno = array(
-	// 		'retorno' => 'N'
-	// 	);
-	// }
+	}catch(Exception $e){
+		$retorno = array(
+			'retorno' => 'N'
+		);
+	}
 
 	echo json_encode($retorno);

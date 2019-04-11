@@ -724,3 +724,23 @@ SELECT COUNT(*) AS EXISTE FROM PRODUTO WHERE ID <> 2 AND NRO = '123456789'
 SELECT COUNT(*) FROM PRODUTO WHERE NRO <> '' AND NRO = '123'
 
 select * from categoria where NOME = 'TUBO'
+
+SELECT * FROM DETALHE_PEDIDO
+
+SELECT
+	f.id,
+	valor,
+	to_char(data_compra, 'DD/MM/YYYY') as data_compra,
+	to_char(vencimento, 'DD/MM/YYYY') as vencimento,
+	(vencimento <= NOW()) as venceu,
+	status
+FROM
+	DETALHE_FORNECEDOR as p
+INNER JOIN
+	fornecedor as f
+ON
+	f.id = p.id_fornecedor
+WHERE
+	p.id_fornecedor = 10
+
+update detalhe_pedido set status = 'PAGO' where id_cliente = '11'

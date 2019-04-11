@@ -307,3 +307,22 @@ td.big-text{
 #salvar-categoria{
 	cursor: pointer;
 }
+
+.amarelo{
+	background: yellow;
+}
+
+.vermelho{
+	background: red;
+	color: white;
+}
+
+.verde{
+	background: green;
+	color: white;
+}
+
+.laranja{
+	background: orange;
+	color: white;
+}

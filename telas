@@ -30,7 +30,12 @@
 [OK]	=>	Mask CNPJ
 [OK]	=>	validar CNPJ
 [OK]	=>	CEP automatico
-		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas
+[OK]	=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas
+			*Pago e entregue			=>	verde
+			*Pago e não entregue		=>	amarelo
+			*Nao pago e entregue		=>	laranja
+			*Nao pago e nao entregue	=>	vermelho
+			*data normal e nao pago		=>	Nada
 
 	## FORNECEDORES ##
 [OK]	=>	Relatorio fornecedores pode mes, esta trazendo errado.
@@ -42,7 +47,12 @@
 [OK]	=>	Mask CNPJ
 [OK]	=>	validar CNPJ
 [OK]	=>	CEP automatico
-		=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas
+[OK]	=>	Mensagem trazer informações do pagamento, peças que nao foram envias alem de mensagem adicionadas
+			*Pago e entregue			=>	verde
+			*Pago e não entregue		=>	amarelo
+			*Nao pago e entregue		=>	laranja
+			*Nao pago e nao entregue	=>	vermelho
+			*data normal e nao pago		=>	Nada
 
 	## Entrada de produtos ##
 		=>	Arrumar valores da pagina, e data
