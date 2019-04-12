@@ -4,8 +4,13 @@
 	$retorno = "";
 	// Primeiro em php.ini temos que descomentar line pdo_psql
 	$id = $_POST['id'];
+	$finalizado = $_POST['id_finalizado'];
 
-	$query = $db->query("SELECT PR.ID AS ID, PR.NOME AS NOME, PR.VALOR AS VALOR, PR.DESCRICAO AS DESCRICAO, P.QUANTIDADE AS TEM FROM PEDINDO AS P INNER JOIN PRODUTO AS PR ON PR.ID = P.ID_PRODUTO WHERE  P.FINALIZADO = 'NAO' AND P.ID_CLIENTE = " . $id);
+	if (empty($finalizado)) {
+		$query = $db->query("SELECT PR.ID AS ID, PR.NOME AS NOME, PR.VALOR AS VALOR, PR.DESCRICAO AS DESCRICAO, P.QUANTIDADE AS TEM FROM PEDINDO AS P INNER JOIN PRODUTO AS PR ON PR.ID = P.ID_PRODUTO WHERE P.FINALIZADO = 'NAO' AND P.ID_CLIENTE = " . $id );
+	}else{
+		$query = $db->query("SELECT PR.ID AS ID, PR.NOME AS NOME, PR.VALOR AS VALOR, PR.DESCRICAO AS DESCRICAO, P.QUANTIDADE AS TEM FROM PEDINDO AS P INNER JOIN PRODUTO AS PR ON PR.ID = P.ID_PRODUTO WHERE P.FINALIZADO = 'SIM' AND P.ID_DETALHE = " . $finalizado );
+	}
 
 	foreach ($query as $key) {
 		$tem = ($key['tem'] > 0)? 'disabled' : '';

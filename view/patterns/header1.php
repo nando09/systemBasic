@@ -1,5 +1,9 @@
 <?php
 	$id = $view_dados[0];
+	$id_detalhe = $view_dados[1] ?? '';
+
+	// print_r($view_dados);
+	// exit();
 	require_once 'C:/xampp/htdocs/System/systemBasic/view/FazerPedido/busca_cliente.php';
 ?>
 

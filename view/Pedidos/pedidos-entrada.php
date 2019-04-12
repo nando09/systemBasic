@@ -8,9 +8,11 @@
 		$query = $db->query("SELECT D.ID AS ID, D.ID_FORNECEDOR AS ID_FORNECEDOR, F.EMPRESA AS EMPRESA, D.VALOR AS VALOR, F.DATA_ULTIMA_COMPRA AS ULTIMA, D.STATUS AS STATUS FROM DETALHE_FORNECEDOR AS D INNER JOIN FORNECEDOR AS F ON D.ID_FORNECEDOR = F.ID");
 
 		foreach ($query as $key) {
+			$valor = 'R$ ' . number_format($key['valor'], 2, ',', ' ');
+
 			$retorno .= "<tr>".
 							"<td>". $key['empresa'] . "</td>".
-							"<td>". $key['valor'] . "</td>".
+							"<td>". $valor . "</td>".
 							"<td>". $key['status'] . "</td>".
 							"<td class='text-center'>".
 								"<div class='detalhar' data-toggle='modal' data-target='.detalhamento'>".
@@ -18,7 +20,7 @@
 								"</div>".
 							"</td>".
 							"<td class='text-center'>".
-								"<a href='/System/systemBasic/FazerPedido/entrada/". $key['id_fornecedor'] ."'>".
+								"<a href='/System/systemBasic/FazerPedido/entrada/". $key['id_fornecedor'] . "|" . $key['id'] ."'>".
 									"<i class='far fa-edit editar'></i>".
 								"</a>".
 							"</td>".

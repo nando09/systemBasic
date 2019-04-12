@@ -185,7 +185,7 @@ $(document).ready(function() {
 			$("tr").removeClass('editando');
 			var id = alvoEvento.closest("td").nextAll("#id").text();
 			alvoEvento.closest("tr").addClass('editando');
-			editarpedido(id, 'buscar');
+			// editarpedido(id, 'buscar');
 		}else if(alvoEvento.hasClass("excluir")){
 			var id = alvoEvento.closest("td").nextAll("#id").text();
 			alvoEvento.closest("tr").addClass('remover');
@@ -199,6 +199,6 @@ $(document).ready(function() {
 	$("#alterar-pedido").on('click', function(){
 		var id = $("#id_pedido").val();
 		// alert(id);
-		editarpedido(id, 'alterar');
+		// editarpedido(id, 'alterar');
 	});
 });

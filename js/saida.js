@@ -1,5 +1,6 @@
 function popularpedidos(){
 	var id = $("#id_cf").text();
+	var id_finalizado = $("#id_finalizado").text();
 	// console.log(id);
 
 	$.ajax({
@@ -7,11 +8,12 @@ function popularpedidos(){
 		dataType: 'json',
 		type: 'post',
 		data: {
-			id: id
+			id: id,
+			id_finalizado: id_finalizado
 		},
 		success: function(dados) {
 			$("#produtos").append(dados);
-			nroProdutosCarrinho(id, 'Cliente')
+			nroProdutosCarrinho(id, 'Fornecedor', id_finalizado);
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
@@ -28,11 +30,11 @@ function popularpedidos(){
 	});
 }
 
-function nroProdutosCarrinho(id_cf, tipo){
+function nroProdutosCarrinho(id_cf, tipo, finalizado){
 	$.ajax({
 		url: '/System/systemBasic/view/FazerPedido/nroPrudutosCarrinho.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
-		data: { id_cf: id_cf, tipo: tipo },
+		data: { id_cf: id_cf, tipo: tipo, finalizado: finalizado },
 		type: 'post',
 		success: function(dados) {
 			if (dados.retorno == "S") {

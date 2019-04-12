@@ -39,7 +39,7 @@
 								<hr class="my-4">
 							</div>
 
-							<div class="col-md-6">
+							<div class="col-md-12">
 								<h2 class="title-model text-center">Produtos</h2>
 								<table class="table">
 									<thead>
@@ -54,21 +54,6 @@
 									</tbody>
 								</table>
 								<!-- <canvas id="myChart"></canvas> -->
-							</div>
-							<div class="col-md-6">
-								<h2 class="title-model text-center">Anotações</h2>
-								<table class="table">
-									<thead>
-										<tr>
-											<th scope="col">#</th>
-											<th scope="col">First</th>
-											<th scope="col">Last</th>
-											<th scope="col">Handle</th>
-										</tr>
-									</thead>
-									<tbody>
-									</tbody>
-								</table>
 							</div>
 						</div>
 					</div>

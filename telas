@@ -55,13 +55,13 @@
 			*data normal e nao pago		=>	Nada
 
 	## Entrada de produtos ##
-		=>	Arrumar valores da pagina, e data
-		=>	Arrumar detalhamento
+[OK]	=>	Arrumar valores da pagina, e data
+[OK]	=>	Arrumar detalhamento
 		=>	Arrumar edição
 
 	## Saída de produtos ##
-		=>	Arrumar valores da pagina, e data
-		=>	Arrumar detalhamento
+[OK]	=>	Arrumar valores da pagina, e data
+[OK]	=>	Arrumar detalhamento
 		=>	Arrumar edição
 
 

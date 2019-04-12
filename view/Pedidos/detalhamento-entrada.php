@@ -12,11 +12,13 @@
 		$pedido = $db->query($query);
 
 		foreach ($pedido as $key) {
+			$valor = 'R$ ' . number_format($key['valor'], 2, ',', ' ');
+
 			$retorno = array(
 						'retorno' => 'S',
 						'id' => $key['id'],
 						'empresa' => $key['empresa'],
-						'valor' => $key['valor'],
+						'valor' => $valor,
 						'ultima' => $key['ultima'],
 						'vencimento' => $key['vencimento'],
 						'status' => $key['status']
