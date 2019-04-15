@@ -4,7 +4,7 @@
 	try{
 		$id_cf = $_POST['id_cf'];
 		$tipo = $_POST['tipo'];
-		$finalizado = $_POST['finalizado'];
+		$finalizado = $_POST['finalizado'] ?? '';
 
 		if (strpos($tipo, 'liente')) {
 			if (empty($finalizado)) {
@@ -29,6 +29,8 @@
 			}else{
 				$select = "SELECT COUNT(*) as NUMERO, SUM(P.VALOR * F.QUANTIDADE) AS VALOR FROM FORNECENDO AS F INNER JOIN PRODUTO AS P ON P.ID = F.ID_PRODUTO WHERE F.FINALIZADO = 'SIM' AND F.ID_DETALHE = " . $finalizado;
 			}
+
+			// die($select);
 
 			if ($query = $db->query($select)) {
 				foreach ($query as $key) {

@@ -13,7 +13,7 @@ function popularpedidos(){
 		},
 		success: function(dados) {
 			$("#produtos").append(dados);
-			nroProdutosCarrinho(id, 'Fornecedor', id_finalizado)
+			nroProdutosCarrinho(id, 'Fornecedor')
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {
@@ -30,7 +30,9 @@ function popularpedidos(){
 	});
 }
 
-function nroProdutosCarrinho(id_cf, tipo, finalizado){
+function nroProdutosCarrinho(id_cf, tipo){
+	var finalizado = $("#id_finalizado").text();
+
 	$.ajax({
 		url: '/System/systemBasic/view/FazerPedido/nroPrudutosCarrinho.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
