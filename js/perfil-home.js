@@ -25,12 +25,7 @@ function popularPerfil(){
 			$("#Nome").text(dados.NOME);
 			$("#Email").text(dados.EMAIL);
 			$("#Login").text(dados.USUARIO);
-			$("#Senha").text(dados.SENHA);
-			$("#Local").text(dados.ENDERECO);
-			$("#Fantasia").text(dados.FANTASIA);
 			$("#Usuario").text(dados.TIPO);
-			$("#Valor").text(dados.VALOR);
-			$("#Plano").text(dados.PLANO);
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {

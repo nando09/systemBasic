@@ -13,14 +13,9 @@
 		<li class="list-group-item font-weight-bold">Nome: <span class="font-weight-normal" id="Nome">Fernando</span></li>
 		<li class="list-group-item font-weight-bold">Email: <span class="font-weight-normal" id="Email">nando@hotmail.com</span></li>
 		<li class="list-group-item font-weight-bold">Login: <span class="font-weight-normal" id="Login">Fernando</span></li>
-		<li class="list-group-item font-weight-bold">Senha: <span class="font-weight-normal" id="Senha">********</span></li>
 	</ul>
 	<ul class="list-group list-group-flush">
-		<li class="list-group-item font-weight-bold">Local: <span class="font-weight-normal" id="Local">Rua Piratininga, 234, serraria Diadema, SP</span></li>
-		<li class="list-group-item font-weight-bold">Nome Fantasia: <span class="font-weight-normal" id="Fantasia">FBO - Sistemas</span></li>
 		<li class="list-group-item font-weight-bold">Usuario: <span class="font-weight-normal" id="Usuario">Master</span></li>
-		<li class="list-group-item font-weight-bold">Plano: <span class="font-weight-normal" id="Plano">Basico</span></li>
-		<li class="list-group-item font-weight-bold">Valor: <span class="font-weight-normal" id="Valor">Valor</span></li>
 	</ul>
 	<div class="card-body" class="botao">
 		<a href="/System/systemBasic/Perfil/editar" class="card-link btn btn-info">Editar</a>

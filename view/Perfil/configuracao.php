@@ -3,12 +3,8 @@
 <h1 class="title-pag">Configuração</h1>
 <div id="card">
 	<span class="none" id="id_usr"><?= $usuario ?></span>
-	<div class="card" style="width: 18rem;">
-		<img class="rounded-circle" src="/System/systemBasic/images/user.png"alt="Usuario">
-		<div class="card-body">
-			<h5 class="usuario"></h5>
-			<p class="tipo"></p>
-			<a href="/System/systemBasic/Perfil/editar" class="btn btn-primary">Editar</a>
+	<div class="container">
+		<div class="row" id="usuarios">
 		</div>
 	</div>
 </div>

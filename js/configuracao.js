@@ -1,11 +1,9 @@
 function popularPerfil(){
-	var id = $("#id_usr").text();
-
 	$.ajax({
 		url: '/System/systemBasic/view/Perfil/usuario.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		data: {
-			id: id
+			id: ''
 		},
 		type: 'POST',
 		success: function(dados) {
@@ -22,8 +20,7 @@ function popularPerfil(){
 				});
 			}
 
-			$(".usuario").text(dados.USUARIO);
-			$(".tipo").text(dados.TIPO);
+			$("#usuarios").append(dados.HTML);
 		},
 		error: function(dados) {
 			$.bootstrapGrowl("ERRO!", {

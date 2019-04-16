@@ -2,46 +2,60 @@
 
 	// $retorno = "";
 	// Primeiro em php.ini temos que descomentar line pdo_psql
-	// try{
+	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 		$id = $_POST['id'];
-		// $end = array();
 
-		$query = "SELECT NOME, EMAIL, USUARIO, ENDERECO, FANTASIA, TIPO, VALOR, PLANO FROM USUARIO WHERE ID = :usuario";
-		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-		$stmt->execute(array(':usuario' => $id)); 
-		$user = $stmt->fetch();
+		if (empty($id)) {
+			$query = "SELECT U.ID AS ID, U.NOME AS NOME, U.EMAIL, U.USUARIO, T.NOME AS TIPO FROM USUARIO AS U INNER JOIN TIPOS AS T ON T.ID = U.ID_TIPOS";
+			$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+			$stmt->execute();
+			$user = $stmt->fetchAll();
+			$html = '';
 
-		$end = explode("&&END", $user['endereco']);
-		// echo "<pre>";
-		// print_r($end);
-		// echo "</pre>";
+			foreach ($user as $key) {
+				$html .= "
+					<div class='col-md-4 top-margin'>
+						<div class='card'>
+							<div class='card-body'>
+								<h5>". $key['nome'] ."</h5>
+								<p>". $key['tipo'] ."</p>
+								<a href='/System/systemBasic/Perfil/editar/". $key['id'] ."' class='btn btn-primary'>Editar</a>
+							</div>
+						</div>
+					</div>
+				";
+			}
+					// <div class='card col-md-4' style='width: 18rem;'>
+					// 	<div class='card-body'>
+					// 		<h5>". $key['nome'] ."</h5>
+					// 		<p>". $key['tipo'] ."</p>
+					// 		<a href='/System/systemBasic/Perfil/editar/". $key['id'] ."' class='btn btn-primary'>Editar</a>
+					// 	</div>
+					// </div>
 
-		// echo "<pre>";
-		// print_r($user['endereco']);
-		// echo "</pre>";
+			$retorno = array(
+				'HTML' 	=>	$html
+			);
+		}else{
+			$query = "SELECT NOME AS NOME, EMAIL AS EMAIL, USUARIO AS USUARIO, ID_TIPOS, SENHA AS SENHA FROM USUARIO WHERE ID = :usuario";
+			$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+			$stmt->execute(array(':usuario' => $id)); 
+			$user = $stmt->fetch();
 
-		$endereco = "Rua: ". $end[0] .", N°". $end[1] ."; Bairro: ". $end[2] ."; Cidade: ". $end[3] ."; Estado: ". $end[4];
+			$retorno = array(
+				'NOME' 		=>		$user['nome'],
+				'EMAIL' 	=>		$user['email'],
+				'USUARIO' 	=>		$user['usuario'],
+				'TIPO'		=>		$user['id_tipos'],
+				'SENHA'		=>		$user['senha']
+			);
 
-		$retorno = array(
-			'NOME' 		=>		$user['nome'],
-			'EMAIL' 	=>		$user['email'],
-			'USUARIO' 	=>		$user['usuario'],
-			'ENDERECO' 	=>		$endereco,
-			'Rua' 		=>		$end[0],
-			'Numero'	=>		$end[1],
-			'Bairro' 	=>		$end[2],
-			'Cidade' 	=>		$end[3],
-			'Estado' 	=>		$end[4],
-			'FANTASIA'	=>		$user['fantasia'],
-			'TIPO'		=>		$user['tipo'],
-			'VALOR'		=>		$user['valor'],
-			'PLANO'		=>		$user['plano']
-		);
-		// $retorno = $user['nome'];
-	// }catch(Exception $e){
-	// 	$retorno = 'N';
-	// }
+		}
+
+	}catch(Exception $e){
+		$retorno = 'N';
+	}
 
 	echo json_encode($retorno);
 ?>
