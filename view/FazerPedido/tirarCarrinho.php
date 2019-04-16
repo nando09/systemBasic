@@ -7,11 +7,11 @@
 		$tipo = $_POST['tipo'];
 
 		if ($tipo == 'Cliente') {
-			if ($db->query("DELETE FROM PEDINDO WHERE ID_PRODUTO = ". $id_produto ." AND ID_CLIENTE = ". $id_cf)) {
+			if ($db->query("DELETE FROM PEDINDO WHERE ID_PRODUTO = ". $id_produto ." AND ID_CLIENTE = ". $id_cf . " AND FINALIZADO = 'NAO'")) {
 				$retorno = 'S';
 			}
 		}else{
-			if ($db->query("DELETE FROM FORNECENDO WHERE ID_PRODUTO = ". $id_produto ." AND ID_FORNECEDOR = ". $id_cf)) {
+			if ($db->query("DELETE FROM FORNECENDO WHERE ID_PRODUTO = ". $id_produto ." AND ID_FORNECEDOR = ". $id_cf . " AND FINALIZADO = 'NAO'")) {
 				$retorno = 'S';
 			}
 		}
