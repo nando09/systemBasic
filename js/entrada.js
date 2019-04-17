@@ -69,6 +69,7 @@ function tirarCarrinho(id_produto, id_cf, tipo){
 		id_produto: id_produto,
 		id_cf: id_cf,
 		tipo: tipo
+		
 	}
 
 	$.ajax({

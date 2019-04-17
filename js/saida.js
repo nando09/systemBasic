@@ -64,11 +64,12 @@ function nroProdutosCarrinho(id_cf, tipo){
 }
 
 
-function tirarCarrinho(id_produto, id_cf, tipo){
+function tirarCarrinho(id_produto, id_cf, tipo, id_finalizado){
 	var posts = {
 		id_produto: id_produto,
 		id_cf: id_cf,
-		tipo: tipo
+		tipo: tipo,
+		finalizado: id_finalizado
 	}
 
 	$.ajax({
@@ -215,13 +216,14 @@ $(document).ready(function() {
 				var menos = alvoEvento.closest("#produto").find('#icon > #menos');
 				var quantidade = alvoEvento.closest("#produto").find('#quantidade');
 				var id_cf = $("#id_cf").text();
+				var id_finalizado = $("#id_finalizado").text();
 				var cf = 'Cliente';
 
 				if (mais.hasClass('none')) {
 					mais.removeClass('none');
 					menos.addClass('none');
 					quantidade.attr("disabled", false);
-					tirarCarrinho(id_produto, id_cf, cf);
+					tirarCarrinho(id_produto, id_cf, cf, id_finalizado);
 				}else{
 					carrinho(id_produto, id_cf, quantidade.val(), cf);
 					menos.removeClass('none');
