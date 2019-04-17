@@ -14,11 +14,14 @@
 			}
 
 			if ($query = $db->query($select)) {
+
 				foreach ($query as $key) {
+					$valor = 'R$ ' . number_format($key['valor'], 2, ',', ' ');
 					$retorno = array(
 								'retorno' => 'S',
 								'nro' => $key['numero'],
-								'valor' => $key['valor']
+								'valor' => $key['valor'],
+								'rsValor' => $valor
 					);
 				}
 			}
@@ -33,11 +36,14 @@
 			// die($select);
 
 			if ($query = $db->query($select)) {
+
 				foreach ($query as $key) {
+					$valor = 'R$ ' . number_format($key['valor'], 2, ',', ' ');
 					$retorno = array(
 								'retorno' => 'S',
 								'nro' => $key['numero'],
-								'valor' => $key['valor']
+								'valor' => $key['valor'],
+								'rsValor' => $valor
 					);
 				}
 			}

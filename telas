@@ -57,12 +57,12 @@
 	## Entrada de produtos ##
 [OK]	=>	Arrumar valores da pagina, e data
 [OK]	=>	Arrumar detalhamento
-		=>	Arrumar edição
+[OK]	=>	Arrumar edição
 
 	## Saída de produtos ##
 [OK]	=>	Arrumar valores da pagina, e data
 [OK]	=>	Arrumar detalhamento
-		=>	Arrumar edição
+[OK]	=>	Arrumar edição
 
 
 

@@ -146,7 +146,7 @@ function nroProdutosCarrinho(id_cf, tipo){
 			if (dados.retorno == "S") {
 				$(".pedidos_feitos").text(dados.nro);
 				if (dados.valor > 0) {
-					$("#valores").text(dados.valor);
+					$("#valores").text(dados.rsValor);
 				}
 			}
 		},

@@ -42,7 +42,7 @@ function nroProdutosCarrinho(id_cf, tipo){
 			if (dados.retorno == "S") {
 				$(".pedidos_feitos").text(dados.nro);
 				if (dados.valor > 0) {
-					$("#valores").text(dados.valor);
+					$("#valores").text(dados.rsValor);
 				}else{
 					$("#valores").text(' 0,00');
 				}
@@ -64,12 +64,12 @@ function nroProdutosCarrinho(id_cf, tipo){
 }
 
 
-function tirarCarrinho(id_produto, id_cf, tipo){
+function tirarCarrinho(id_produto, id_cf, tipo, id_finalizado){
 	var posts = {
 		id_produto: id_produto,
 		id_cf: id_cf,
-		tipo: tipo
-		
+		tipo: tipo,
+		finalizado: id_finalizado		
 	}
 
 	$.ajax({
@@ -171,7 +171,7 @@ function finalizar(id_cf, cf, vencimento, status){
 		},
 		type: 'post',
 		success: function(dados) {
-			if (dados == "S") {
+			if (dados == "C" || dados == "F") {
 				$.bootstrapGrowl("Pedido Finalizado!", {
 					ele: 'body', // which element to append to
 					type: 'success', // (null, 'info', 'danger', 'success')
@@ -183,7 +183,12 @@ function finalizar(id_cf, cf, vencimento, status){
 					stackup_spacing: 10 // spacing between consecutively stacked growls.
 				});
 
-				window.location.replace(history.go(-1));
+				if (dados == "C") {
+					// window.location.replace(history.go(-1));
+					window.location.replace("http://localhost/System/systemBasic/Pedidos");
+				}else{
+					window.location.replace("http://localhost/System/systemBasic/Pedidos/entrada");
+				}
 			}
 		},
 		error: function(dados) {
@@ -216,13 +221,14 @@ $(document).ready(function() {
 				var menos = alvoEvento.closest("#produto").find('#icon > #menos');
 				var quantidade = alvoEvento.closest("#produto").find('#quantidade');
 				var id_cf = $("#id_cf").text();
+				var id_finalizado = $("#id_finalizado").text();
 				var cf = 'Fornecedor';
 
 				if (mais.hasClass('none')) {
 					mais.removeClass('none');
 					menos.addClass('none');
 					quantidade.attr("disabled", false);
-					tirarCarrinho(id_produto, id_cf, cf);
+					tirarCarrinho(id_produto, id_cf, cf, id_finalizado);
 				}else{
 					carrinho(id_produto, id_cf, quantidade.val(), cf);
 					menos.removeClass('none');
