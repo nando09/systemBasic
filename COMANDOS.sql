@@ -60,6 +60,14 @@ DELETE FROM PRODUTO AS a INNER JOIN PRODUTO AS b ON a.nome=b.nome WHERE a.id < b
 SELECT * FROM PRODUTO AS a INNER JOIN PRODUTO AS b ON a.nome=b.nome WHERE a.id < b.id
 SELECT * FROM PRODUTO ORDER BY NOME
 
+truncate pedindo;
+truncate FORNECENDO;
+truncate detalhe_fornecedor;
+truncate detalhe_pedido;
+
+select * from FORNECENDO
+
+
 DELETE FROM PRODUTO WHERE ID NOT IN (418,80,411,78,416,417,419,34,7,415,143)
 
 
