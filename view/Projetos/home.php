@@ -13,7 +13,7 @@
 				<div id="novo-elemento" class="row">
 					<div class="form-group col-md-6">
 						<label>Nome </label>
-						<input id="nome" name="nome" type="text" class="form-control">
+						<select id="nome" name="nome" type="text" class="form-control"></select>
 					</div>
 					<div class="form-group col-md-6">
 						<label>Data </label>
@@ -21,8 +21,7 @@
 					</div>
 					<div class="form-group col-md-12">
 						<label>Descrição </label>
-						<textarea id="descricao" name="descricao" type="text" class="form-control">
-						</textarea>
+						<textarea id="descricao" name="descricao" type="text" class="form-control"></textarea>
 					</div>
 				</div>
 				<button id="salvar-projeto" type="button" class="btn btn-primary">SALVAR</button>

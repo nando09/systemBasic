@@ -1,6 +1,6 @@
-function popularProjetos(){
+function popularEntrada(){
 	$.ajax({
-		url: '/System/systemBasic/view/Projetos/projetos.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/Entrada/mensagem.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		processData: false,
 		contentType: false,
@@ -18,8 +18,8 @@ function popularProjetos(){
 				});
 			}
 
-			$("#projetos tr").remove();
-			$("#projetos").append(dados);
+			$("#entrada tr").remove();
+			$("#entrada").append(dados);
 			// preparaExcluirClientes();
 			// preparaDetalharClientes();
 			// preparaEditarClientes();
@@ -41,7 +41,7 @@ function popularProjetos(){
 
 function usuariosSelect(){
 	$.ajax({
-		url: '/System/systemBasic/view/Projetos/usuarios.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/Entrada/usuarios.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		processData: false,
 		contentType: false,
@@ -74,7 +74,7 @@ function adicionaProjetos(){
 	}
 
 	$.ajax({
-		url: '/System/systemBasic/view/Projetos/adiciona.php', // Url do lado server que vai receber o arquivo
+		url: '/System/systemBasic/view/Entrada/adiciona.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		type: 'post',
 		data: post,
@@ -91,7 +91,7 @@ function adicionaProjetos(){
 					stackup_spacing: 10 // spacing between consecutively stacked growls.
 				});
 
-				popularProjetos();
+				popularEntrada();
 				limparCampos();
 				$('.modal').modal('hide');
 			}
@@ -119,7 +119,7 @@ function limparCampos(){
 
 $(document).ready(function() {
 	usuariosSelect();
-	popularProjetos();
+	popularEntrada();
 
 	$("#salvar-projeto").on('click', function(){
 		adicionaProjetos();

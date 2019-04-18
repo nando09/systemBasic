@@ -72,10 +72,8 @@
 
 
 	## PROJETOS ##
-		=>	O master do sistema, pode dar projetos para seus usuarios do sistema.
+[OK]	=>	O master do sistema, pode dar projetos para seus usuarios do sistema.
 		=>	O usuario vai receber esse projeto para fazer e mandar quando tiver concluido
-		[PLANEJAR]
-		=>	Como vai ser o transferencia de dados, e o banco de dados tem que fazer
 
 	## NOTICIA ##
 		=>	Todos as noticias sobre o sistema.
