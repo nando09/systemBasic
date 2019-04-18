@@ -40,5 +40,15 @@ function popularProjetos(){
 
 $(document).ready(function() {
 	popularProjetos();
+
+	$("#salvar-projeto").on('click', function(){
+		var post = {
+			nome		:	$("#nome").val(),
+			data		:	$("#data").val(),
+			descricao	:	$("#descricao").val()
+		}
+
+		console.log(post);
+	});
 });
 
