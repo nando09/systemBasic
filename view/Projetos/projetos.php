@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	$id = $_SESSION['id_usuario'];
 
 	function situacaoCor($situacao){
 		if ($situacao) {
@@ -13,19 +15,45 @@
 	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
-		$query = "SELECT
-					P.ID AS ID,
-					U.NOME AS NOME,
-					P.DESCRICAO AS DESCRICAO,
-					to_char(P.DETERMINADO, 'DD/MM/YYYY') AS DETERMINADO,
-					P.FEITO AS FEITO,
-					(P.DETERMINADO <= NOW()) as situacao
-				FROM
-					PROJETOS AS P
-				INNER JOIN
-					USUARIO AS U
-				ON
-					P.ID_USER = U.ID";
+		$query = "SELECT T.ACESSO AS ACESSO FROM USUARIO AS U INNER JOIN TIPOS AS T ON T.ID = U.ID_TIPOS WHERE U.ID = " . $id;
+		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+		$stmt->execute();
+		$user = $stmt->fetch();
+		$acesso = $user['acesso'];
+
+
+		if ($acesso == 0) {
+			$query = "SELECT
+						P.ID AS ID,
+						U.NOME AS NOME,
+						P.DESCRICAO AS DESCRICAO,
+						to_char(P.DETERMINADO, 'DD/MM/YYYY') AS DETERMINADO,
+						P.FEITO AS FEITO,
+						(P.DETERMINADO <= NOW()) as situacao
+					FROM
+						PROJETOS AS P
+					INNER JOIN
+						USUARIO AS U
+					ON
+						P.ID_USER = U.ID";
+		}else{
+			$query = "SELECT
+						P.ID AS ID,
+						U.NOME AS NOME,
+						P.DESCRICAO AS DESCRICAO,
+						to_char(P.DETERMINADO, 'DD/MM/YYYY') AS DETERMINADO,
+						P.FEITO AS FEITO,
+						(P.DETERMINADO <= NOW()) as situacao
+					FROM
+						PROJETOS AS P
+					INNER JOIN
+						USUARIO AS U
+					ON
+						P.ID_USER = U.ID
+					WHERE
+						U.ID = " . $id;
+		}
+
 		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		$stmt->execute();
 		$user = $stmt->fetchAll();
