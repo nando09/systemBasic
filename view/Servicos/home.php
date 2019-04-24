@@ -74,9 +74,50 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h1 class="title-pag">Novo acessos</h1>
+				<h1 class="title-pag">Acessos</h1>
 				<div id="novo-elemento">
-					<button id="salvar-cliente" type="button" class="btn btn-primary">SALVAR</button>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-check border-gray">
+								<input class="form-check-input position-static margin-zero" type="checkbox" id="Usuarios" value="1" aria-label="...">
+								<label>Usuarios</label>
+								<span class="float-right">(Vai poder mexer nas configurações de usuarios)</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-check border-gray">
+								<input class="form-check-input position-static margin-zero" type="checkbox" id="Projetos" value="2" aria-label="...">
+								<label>Projetos</label>
+								<span class="float-right">(Vai poder ver todos os projetos e adicionar novo)</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-check border-gray">
+								<input class="form-check-input position-static margin-zero" type="checkbox" id="Relatorios" value="3" aria-label="...">
+								<label>Relatorios</label>
+								<span class="float-right">(Pode ver todos os relatorios clientes, produtos e fornecedores)</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-check border-gray">
+								<input class="form-check-input position-static margin-zero" type="checkbox" id="Mensagens" value="4" aria-label="...">
+								<label>Mensagens</label>
+								<span class="float-right">(Ver todos as mensagens mandadas pelo sistema)</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-check border-gray">
+								<input class="form-check-input position-static margin-zero" type="checkbox" id="Fornecedores" value="5" aria-label="...">
+								<label>Fornecedores/Clientes/Produtos</label>
+								<span class="float-right">(Poderar mexer em todas as funções)</span>
+							</div>
+						</div>
+						<div class="form-group col-md-12">
+							<label>Nome acesso<span class="obrigatorio"> *</span></label>
+							<input id="nome-acesso" type="text" class="form-control">
+						</div>
+					</div>
+					<button id="salvar-usuario" type="button" class="btn btn-primary">SALVAR</button>
 				</div>
 			</div>
 		</div>

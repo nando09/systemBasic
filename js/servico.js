@@ -85,12 +85,67 @@ function salvarUsuario(){
 	});
 }
 
+function salvarAcesso(){
+	var posts = {
+		Usuarios		:	$('#Usuarios').is(':checked'),
+		Projetos		:	$('#Projetos').is(':checked'),
+		Relatorios		:	$('#Relatorios').is(':checked'),
+		Mensagens		:	$('#Mensagens').is(':checked'),
+		Fornecedores	:	$('#Fornecedores').is(':checked'),
+		nome			:	$('#nome').val()
+	}
+
+	$.ajax({
+		url: '/System/systemBasic/view/Servicos/salvarAcesso.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		type: 'post',
+		data: posts,
+		success: function(dados) {
+			if (dados == 'S') {
+				$.bootstrapGrowl("Acesso novo cadastrado!", {
+					ele: 'body', // which element to append to
+					type: 'success', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+
+				$('.modal').modal('hide');
+				limparCampo();
+			}
+
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+}
+
 function limparCampo(){
 	$('#nome').val('');
 	$('#email').val('');
 	$('#Login').val('');
 	$('#senha').val('');
 	$('#tipos').val('');
+
+	$('#Usuarios').prop('checked', false);
+	$('#Projetos').prop('checked', false);
+	$('#Relatorios').prop('checked', false);
+	$('#Mensagens').prop('checked', false);
+	$('#Fornecedores').prop('checked', false);
+	$('#nome').val('');
 }
 
 $(document).ready(function() {
@@ -101,5 +156,8 @@ $(document).ready(function() {
 		salvarUsuario();
 	});
 
+	$('#salvar-usuario').click(function(){
+		salvarAcesso();
+	});
 });
 

@@ -1,4 +1,5 @@
 <?php
+	
 
 	// $retorno = "";
 	// Primeiro em php.ini temos que descomentar line pdo_psql
