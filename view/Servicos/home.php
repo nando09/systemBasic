@@ -77,6 +77,10 @@
 				<h1 class="title-pag">Acessos</h1>
 				<div id="novo-elemento">
 					<div class="row">
+						<div class="form-group col-md-12">
+							<label>Nome acesso<span class="obrigatorio"> *</span></label>
+							<input id="nome-acesso" type="text" class="form-control">
+						</div>
 						<div class="col-md-12">
 							<div class="form-check border-gray">
 								<input class="form-check-input position-static margin-zero" type="checkbox" id="Usuarios" value="1" aria-label="...">
@@ -112,12 +116,8 @@
 								<span class="float-right">(Poderar mexer em todas as funções)</span>
 							</div>
 						</div>
-						<div class="form-group col-md-12">
-							<label>Nome acesso<span class="obrigatorio"> *</span></label>
-							<input id="nome-acesso" type="text" class="form-control">
-						</div>
 					</div>
-					<button id="salvar-usuario" type="button" class="btn btn-primary">SALVAR</button>
+					<button id="salvar-acesso" type="button" class="btn btn-primary">SALVAR</button>
 				</div>
 			</div>
 		</div>
@@ -131,7 +131,20 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h1 class="title-pag">Novo projetos</h1>
+				<h1 class="title-pag">Projetos</h1>
+				<div id="novo-elemento">
+					<div class="row">
+						<thead class="table table-hover">
+							<tr>
+								<th class="text-uppercase" scope="col">Nome</th>
+								<th class="text-uppercase" scope="col">Descrição</th>
+								<th class="text-uppercase" scope="col">Editar</th>
+							</tr>
+						</thead>
+						<tbody id="projetos" class="tbody-primary">
+						</tbody>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -7,25 +7,19 @@
 
 
 		if ($_POST) {
-			$Usuarios			=	($_POST['Usuarios'] == true)		? 	1	:	'';
-			$Projetos			=	($_POST['Projetos'] == true)		? 	2	:	'';
-			$Relatorios			=	($_POST['Relatorios'] == true)		? 	3	:	'';
-			$Mensagens			=	($_POST['Mensagens'] == true)		? 	4	:	'';
-			$Fornecedores		=	($_POST['Fornecedores'] == true)	? 	5	:	'';
+			$Usuarios			=	($_POST['Usuarios'] == 'true') 		?	'/1'	:	''	;
+			$Projetos			=	($_POST['Projetos'] == 'true') 		?	'/2'	:	''	;
+			$Relatorios			=	($_POST['Relatorios'] == 'true') 	?	'/3'	:	''	;
+			$Mensagens			=	($_POST['Mensagens'] == 'true') 	?	'/4'	:	''	;
+			$Fornecedores		=	($_POST['Fornecedores'] == 'true') 	?	'/5'	:	''	;
 			$nome				=	$_POST['nome'];
 
-			print_r(
-				$Usuarios . "/" .
-				$Projetos . "/" .
-				$Relatorios . "/" .
-				$Mensagens . "/" .
-				$Fornecedores . "/" .
-				$nome . "/" .
-			);
+			$acessos = $Usuarios . $Projetos . $Relatorios . $Mensagens . $Fornecedores . '/';
 
-			exit();
 
-			$acessos	=	;
+			// exit();
+
+			// $acessos	=	;
 
 			$query = "INSERT INTO TIPOS (NOME, ACESSO) VALUES (:nome, :acessos)";
 

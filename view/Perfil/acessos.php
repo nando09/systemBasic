@@ -14,7 +14,7 @@
 
 		foreach ($user as $key) {
 			$html .= "
-				<option value='". $key['id'] ."'>". $key['nome'] ."</option>
+				<option class='text-uppercase' value='". $key['id'] ."'>". $key['nome'] ."</option>
 			";
 		}
 				// <div class='card col-md-4' style='width: 18rem;'>
