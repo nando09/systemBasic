@@ -21,8 +21,14 @@
 		$user = $stmt->fetch();
 		$acesso = $user['acesso'];
 
+		// if ($acesso == '0') {
+		// 	print_r('Passando!');
+		// }
+		// print_r($acesso);
+		// exit();
 
-		if ($acesso == 0) {
+
+		if ($acesso == '0') {
 			$query = "SELECT
 						P.ID AS ID,
 						U.NOME AS NOME,

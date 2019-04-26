@@ -85,7 +85,7 @@
 							<div class="form-check border-gray">
 								<input class="form-check-input position-static margin-zero" type="checkbox" id="Usuarios" value="1" aria-label="...">
 								<label>Usuarios</label>
-								<span class="float-right">(Vai poder mexer nas configurações de usuarios)</span>
+								<span class="float-right">(Vai poder mexer nas configurações de usuarios e serviços)</span>
 							</div>
 						</div>
 						<div class="col-md-12">

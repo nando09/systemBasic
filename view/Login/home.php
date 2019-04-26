@@ -4,9 +4,10 @@
 	if ($_POST) {
 		$usuario = $_POST['nome'];
 		$senha = $_POST['senha'];
-		$query = "SELECT ID, NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = :teste AND SENHA = MD5(:senha)";
+		
+		$query = "SELECT U.ID AS ID, U.NOME AS NOME, U.USUARIO AS USUARIO, T.ACESSO AS TIPO FROM USUARIO U INNER JOIN TIPOS AS T ON T.ID = U.ID_TIPOS WHERE U.USUARIO = :usuario AND U.SENHA = MD5(:senha)";
 		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-		$stmt->bindParam(':teste', $usuario, PDO::PARAM_INT);
+		$stmt->bindParam(':usuario', $usuario, PDO::PARAM_INT);
 		$stmt->bindParam(':senha', $senha, PDO::PARAM_INT);
 		$stmt->execute(); 
 		$user = $stmt->fetch();
@@ -14,6 +15,7 @@
 			$_SESSION['logado'] = true;
 			$_SESSION['nome'] = $user['nome'];
 			$_SESSION['usuario'] = $user['usuario'];
+			$_SESSION['acessos'] = $user['tipo'];
 			$_SESSION['id_usuario'] = $user['id'];
 
 			header('Location: /System/systemBasic/Painel');
