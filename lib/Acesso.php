@@ -16,21 +16,22 @@ class Acesso{
 		// $pagina É o arquivo atal que o usuario esta acessando
 
 		if ($pagina == 'Perfil' || $pagina == 'Servicos') {
-			in_array('1', $this->arrays);
+			$this->acesso = in_array('1', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
 		}else if ($pagina == 'Projetos') {
-			in_array('2', $this->arrays);
+			$this->acesso = in_array('2', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
 		}else if ($pagina == 'Mensagem') {
-			in_array('4', $this->arrays);
+			$this->acesso = in_array('4', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
 		}else if ($pagina == 'Fornecedores' || $pagina == 'Clientes' || $pagina == 'Produtos') {
-			in_array('5', $this->arrays);
+			$this->acesso = in_array('5', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
 		}else{
 			// Liberado
+			$this->acesso = true;
 		}
 
-		exit();
+		// // exit();
 
 		// if ($this->acessos == '0' || $this->acessos == null) {
-			$this->acesso = true;
+		// 	$this->acesso = true;
 		// }
 
 		return $this->acesso;

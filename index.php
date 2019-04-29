@@ -16,6 +16,8 @@
 	$acesso->setTipos();
 
 	if ($ini->getMain() == 'Site' || $ini->getMain() == 'Login' || $_SESSION['logado'] == true) {
+		// print_r($acesso->acesso($ini->getMain()));
+		// exit();
 		if ($acesso->acesso($ini->getMain()) || $ini->getMain() == 'Error') {
 			$ini->run();
 		}else{
