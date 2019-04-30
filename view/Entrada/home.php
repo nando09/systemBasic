@@ -1,5 +1,5 @@
 <?php include 'view/patterns/header.php' ?>
-<h1 class="title-pag">Projetos</h1>
+<h1 class="title-pag">Mensagem</h1>
 <!-- <a href="/System/systemBasic/" class="btn btn-primary btn-adicionar">NOVO</a> -->
 <button type="button" class="btn btn-primary btn-adicionar" data-toggle="modal" data-target=".bd-example-modal-xl">NOVO</button>
 <div data-backdrop="static" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
@@ -9,7 +9,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h2 class="title-pag">Novo Projeto</h2>
+				<h2 class="title-pag">Nova mensagem</h2>
 				<div id="novo-elemento" class="row">
 					<div class="form-group col-md-6">
 						<label>Para </label>
@@ -17,7 +17,7 @@
 					</div>
 					<div class="form-group col-md-6">
 						<label>Assunto </label>
-						<input id="data" name="data" type="date" class="form-control">
+						<input id="data" name="data" type="text" class="form-control">
 					</div>
 					<div class="form-group col-md-12">
 						<label>Mensagem </label>

@@ -1,11 +1,17 @@
 <?php include 'view/patterns/header.php' ?>
 <h1 class="title-pag">Projetos</h1>
 <!-- <a href="/System/systemBasic/" class="btn btn-primary btn-adicionar">NOVO</a> -->
-<button type="button" class="btn btn-primary btn-adicionar" data-toggle="modal" data-target=".bd-example-modal-xl">NOVO</button>
+<button type="button" id="novo-projeto" class="btn btn-primary btn-adicionar" data-toggle="modal" data-target=".bd-example-modal-xl">NOVO</button>
 <div data-backdrop="static" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-xl">
-		<div class="modal-content">
-			<div class="container">
+		<div class="modal-content novo-projeto">
+			<div class="container semAcesso">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h2 class="text-center">Não tem acesso</h2>
+			</div>		
+			<div class="container comAcesso">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -35,7 +41,7 @@
 			<th scope="col">NOME</th>
 			<th scope="col">DESCRIÇÃO</th>
 			<th scope="col">DETERMINADO</th>
-			<th scope="col" class="text-center">FEITO</th>
+			<th scope="col" class="text-center">FEITO<span class="none">Teste</span></th>
 		</tr>
 	</thead>
 	<tbody id="projetos" class="tbody-primary">

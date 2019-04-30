@@ -1,15 +1,12 @@
 function popularProjetos(){
-	var post = {
-		id		:	$("#nome").val()
-	}
+	$('[data-toggle="tooltip"]').tooltip();
 
 	$.ajax({
 		url: '/System/systemBasic/view/Projetos/projetos.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',
 		type: 'post',
-		data: post,
 		success: function(dados) {
-			if (dados == "") {
+			if (dados.retorno == "") {
 				$.bootstrapGrowl("Não trouxe nenhum registro!", {
 					ele: 'body', // which element to append to
 					type: 'info', // (null, 'info', 'danger', 'success')
@@ -23,7 +20,9 @@ function popularProjetos(){
 			}
 
 			$("#projetos tr").remove();
-			$("#projetos").append(dados);
+			$("#projetos").append(dados.retorno);
+
+			verificaAcesso(dados.acesso);
 			// preparaExcluirClientes();
 			// preparaDetalharClientes();
 			// preparaEditarClientes();
@@ -156,6 +155,98 @@ function limparCampos(){
 	$("#descricao").val('');
 }
 
+function naoFeitoProjeto(id){
+	var post = {
+		id: id
+	}
+
+	$.ajax({
+		url: '/System/systemBasic/view/Projetos/naoFeitoProjeto.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		type: 'post',
+		data: post,
+		success: function(dados) {
+			if (dados == 'S') {
+				$.bootstrapGrowl("Projeto não feito!", {
+					ele: 'body', // which element to append to
+					type: 'info', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+
+				popularProjetos();
+			}
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+
+}
+
+function verificaAcesso(id){
+	if (id) {
+		$(".novo-projeto .semAcesso").remove();
+	}else{
+		$(".novo-projeto .comAcesso").remove();
+	}
+}
+
+function feitoProjeto(id){
+	var post = {
+		id: id
+	}
+
+	$.ajax({
+		url: '/System/systemBasic/view/Projetos/feitoProjeto.php', // Url do lado server que vai receber o arquivo
+		dataType: 'json',
+		type: 'post',
+		data: post,
+		success: function(dados) {
+			if (dados == 'S') {
+				$.bootstrapGrowl("Projeto feito!", {
+					ele: 'body', // which element to append to
+					type: 'success', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+
+				popularProjetos();
+			}
+		},
+		error: function(dados) {
+			$.bootstrapGrowl("ERRO!", {
+				ele: 'body', // which element to append to
+				type: 'danger', // (null, 'info', 'danger', 'success')
+				offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+				align: 'right', // ('left', 'right', or 'center')
+				width: 'auto', // (integer, or 'auto')
+				delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+				allow_dismiss: true, // If true then will display a cross to close the popup.
+				stackup_spacing: 10 // spacing between consecutively stacked growls.
+			});
+		}
+	});
+
+}
+
 $(document).ready(function() {
 	usuariosSelect();
 	popularProjetos();
@@ -163,6 +254,17 @@ $(document).ready(function() {
 	$("#salvar-projeto").on('click', function(){
 		if (validaProjeto()) {
 			adicionaProjetos();
+		}
+	});
+
+	$("#projetos").dblclick(function(event){
+		var alvoEvento = $(event.target);
+		if ((alvoEvento.hasClass("azul") || alvoEvento.hasClass("vermelho")) && alvoEvento.text() == 'NÃO'){
+			var id = alvoEvento.closest("td").nextAll("#id").text();
+			feitoProjeto(id);
+		}else{
+			var id = alvoEvento.closest("td").nextAll("#id").text();
+			naoFeitoProjeto(id);
 		}
 	});
 });

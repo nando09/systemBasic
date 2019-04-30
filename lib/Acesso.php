@@ -17,8 +17,6 @@ class Acesso{
 
 		if ($pagina == 'Perfil' || $pagina == 'Servicos') {
 			$this->acesso = in_array('1', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
-		}else if ($pagina == 'Projetos') {
-			$this->acesso = in_array('2', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
 		}else if ($pagina == 'Mensagem') {
 			$this->acesso = in_array('4', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
 		}else if ($pagina == 'Fornecedores' || $pagina == 'Clientes' || $pagina == 'Produtos') {

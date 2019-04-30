@@ -68,12 +68,12 @@
 
 
 	## USUARIOS ##
-		=>	Adicionar como por usar.
+[OK]	=>	Adicionar como pode usar.
 
 
 	## PROJETOS ##
 [OK]	=>	O master do sistema, pode dar projetos para seus usuarios do sistema.
-		=>	O usuario vai receber esse projeto para fazer e mandar quando tiver concluido
+[OK]	=>	O usuario vai receber esse projeto para fazer e mandar quando tiver concluido
 
 	## NOTICIA ##
 		=>	Todos as noticias sobre o sistema.
