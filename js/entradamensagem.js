@@ -18,6 +18,7 @@ function popularEntrada(){
 				});
 			}
 
+
 			$("#entrada tr").remove();
 			$("#entrada").append(dados);
 			// preparaExcluirClientes();
@@ -69,7 +70,7 @@ function usuariosSelect(){
 function adicionaProjetos(){
 	var post = {
 		nome		:	$("#nome").val(),
-		data		:	$("#data").val(),
+		assunto		:	$("#assunto").val(),
 		descricao	:	$("#descricao").val()
 	}
 
@@ -79,8 +80,8 @@ function adicionaProjetos(){
 		type: 'post',
 		data: post,
 		success: function(dados) {
-			if (dados == 'S') {
-				$.bootstrapGrowl("Projeto adicionado com sucesso!", {
+			if (dados.retorno == 'S') {
+				$.bootstrapGrowl("Mensagem enviada!", {
 					ele: 'body', // which element to append to
 					type: 'success', // (null, 'info', 'danger', 'success')
 					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
@@ -111,15 +112,64 @@ function adicionaProjetos(){
 	});
 }
 
+function chamaMensagem(){
+	$("#entrada").click(function(){
+		var alvoEvento = $(event.target);
+		var id = alvoEvento.nextAll("#id").text();
+
+		var post = {
+			id	:	id
+		}
+
+		$.ajax({
+			url: '/System/systemBasic/view/Entrada/conversas.php', // Url do lado server que vai receber o arquivo
+			dataType: 'json',
+			type: 'post',
+			data: post,
+			success: function(dados) {
+				if (dados.retorno == 'S') {
+					$.bootstrapGrowl("Mensagem enviada!", {
+						ele: 'body', // which element to append to
+						type: 'success', // (null, 'info', 'danger', 'success')
+						offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+						align: 'right', // ('left', 'right', or 'center')
+						width: 'auto', // (integer, or 'auto')
+						delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+						allow_dismiss: true, // If true then will display a cross to close the popup.
+						stackup_spacing: 10 // spacing between consecutively stacked growls.
+					});
+
+					popularEntrada();
+					limparCampos();
+					$('.modal').modal('hide');
+				}
+			},
+			error: function(dados) {
+				$.bootstrapGrowl("ERRO!", {
+					ele: 'body', // which element to append to
+					type: 'danger', // (null, 'info', 'danger', 'success')
+					offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+					align: 'right', // ('left', 'right', or 'center')
+					width: 'auto', // (integer, or 'auto')
+					delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+					allow_dismiss: true, // If true then will display a cross to close the popup.
+					stackup_spacing: 10 // spacing between consecutively stacked growls.
+				});
+			}
+		});
+	});
+}
+
 function limparCampos(){
 	$("#nome").val('');
-	$("#data").val('');
+	$("#assunto").val('');
 	$("#descricao").val('');
 }
 
 $(document).ready(function() {
 	usuariosSelect();
 	popularEntrada();
+	chamaMensagem();
 
 	$("#salvar-projeto").on('click', function(){
 		adicionaProjetos();

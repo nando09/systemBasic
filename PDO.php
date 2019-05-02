@@ -20,7 +20,7 @@
 	$senha = $_POST['senha'];
 	$query = "SELECT NOME,USUARIO,SENHA FROM USUARIO WHERE USUARIO = :teste AND SENHA = MD5(:senha)";
 	$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-	$stmt->execute(array(':teste' => $usuario, ':senha' => $senha)); 
+	$stmt->execute(array(':teste' => $usuario, ':senha' => $senha));
 	$user = $stmt->fetch();
 	echo "<h1>" . $user['nome'] . "</h1>";
 

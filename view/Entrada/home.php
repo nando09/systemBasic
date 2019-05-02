@@ -17,14 +17,31 @@
 					</div>
 					<div class="form-group col-md-6">
 						<label>Assunto </label>
-						<input id="data" name="data" type="text" class="form-control">
+						<input id="assunto" name="assunto" type="text" class="form-control">
 					</div>
 					<div class="form-group col-md-12">
 						<label>Mensagem </label>
 						<textarea id="descricao" name="descricao" type="text" class="form-control"></textarea>
 					</div>
 				</div>
-				<button id="salvar-projeto" type="button" class="btn btn-primary">SALVAR</button>
+				<button id="salvar-projeto" type="button" class="btn btn-primary">Salvar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div data-backdrop="static" class="modal fade modal-mensagem" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-xl">
+		<div class="modal-content">
+			<div class="container">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h2 class="title-pag">Mensagem</h2>
+				<div id="conversas" class="row">
+					<p class="left">Teste one</p>
+					<p class="right">One two</p>
+				</div>
+				<button id="enviar-conversa" type="button" class="btn btn-primary">Enviar</button>
 			</div>
 		</div>
 	</div>

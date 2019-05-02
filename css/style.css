@@ -351,5 +351,17 @@ td.big-text{
 	margin: 0 !important;
 }
 
+#conversas{
+	clear: both;
+	margin: 20px 0;
+}
+
+.left{
+	text-align: left;
+}
+
+.right{
+	text-align: right;
+}
 
 
