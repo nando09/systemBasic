@@ -37,17 +37,17 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 				<h2 class="title-pag">Conversa</h2>
-				<div class="form-group col-md-12">
-					<div class="input-group">
-						<input type="hidden" id="id-msg">
-						<textarea id="descricao-msg" name="descricao" type="text" class="form-control"></textarea>
-						<div class="input-group-append" id="button-addon4">
-							<button id="salvar-msg" class="btn btn-primary" type="button">Enviar</button>
-							<button id="limpar-msg" class="btn btn-danger" type="button">Limpar</button>
+				<div id="conversas" class="row">
+					<div class="form-group col-md-12">
+						<div class="input-group">
+							<input type="hidden" id="id-msg">
+							<textarea id="descricao-msg" name="descricao" type="text" class="form-control"></textarea>
+							<div class="input-group-append" id="button-addon4">
+								<button id="salvar-msg" class="btn btn-primary" type="button">Enviar</button>
+								<button id="limpar-msg" class="btn btn-danger" type="button">Limpar</button>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div id="conversas" class="row">
 					<div class="col-md-12 msg-conversas">
 					</div>
 				</div>
