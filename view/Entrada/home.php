@@ -32,16 +32,25 @@
 <div data-backdrop="static" class="modal fade modal-mensagem" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-xl">
 		<div class="modal-content">
-			<div class="container">
+			<div id="conversa-box" class="container">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h2 class="title-pag">Mensagem</h2>
-				<div id="conversas" class="row">
-					<p class="left">Teste one</p>
-					<p class="right">One two</p>
+				<h2 class="title-pag">Conversa</h2>
+				<div class="form-group col-md-12">
+					<div class="input-group">
+						<input type="hidden" id="id-msg">
+						<textarea id="descricao-msg" name="descricao" type="text" class="form-control"></textarea>
+						<div class="input-group-append" id="button-addon4">
+							<button id="salvar-msg" class="btn btn-primary" type="button">Enviar</button>
+							<button id="limpar-msg" class="btn btn-danger" type="button">Limpar</button>
+						</div>
+					</div>
 				</div>
-				<button id="enviar-conversa" type="button" class="btn btn-primary">Enviar</button>
+				<div id="conversas" class="row">
+					<div class="col-md-12 msg-conversas">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

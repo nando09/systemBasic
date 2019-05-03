@@ -354,14 +354,28 @@ td.big-text{
 #conversas{
 	clear: both;
 	margin: 20px 0;
+	border-radius: 10px;
+	background: #e28b04;
+}
+
+.mensagem-box{
+	border-radius: 10px;
+	padding: 10px;
+	margin-top: 10px;
 }
 
 .left{
 	text-align: left;
+	color: white;
+	background: #9ea0a2;
 }
 
 .right{
 	text-align: right;
+	background: #dee2e6;
 }
 
+#conversa-box .btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
 
