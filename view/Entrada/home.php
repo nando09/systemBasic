@@ -38,7 +38,7 @@
 				</button>
 				<h2 class="title-pag">Conversa</h2>
 				<div id="conversas" class="row">
-					<div class="form-group col-md-12">
+					<div class="form-group conversas-textarea col-md-12">
 						<div class="input-group">
 							<input type="hidden" id="id-msg">
 							<textarea id="descricao-msg" name="descricao" type="text" class="form-control"></textarea>

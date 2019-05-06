@@ -379,3 +379,6 @@ td.big-text{
     cursor: pointer;
 }
 
+.conversas-textarea{
+	padding: 20px;
+}

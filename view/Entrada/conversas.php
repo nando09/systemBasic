@@ -30,9 +30,13 @@
 					INNER JOIN
 						USUARIO AS S
 					ON
-						E.ID_ENVIANDO = S.ID";
+						E.ID_ENVIANDO = S.ID
+					WHERE E.ID = :id";
 
 		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+		$stmt->bindParam(':id', $nome, PDO::PARAM_INT);
+
+		// print_r($nome);
 
 		if ($stmt->execute()) {
 			$user = $stmt->fetch();
