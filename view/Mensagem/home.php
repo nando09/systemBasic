@@ -7,7 +7,6 @@
 			<th scope="col">Assunto</th>
 			<th scope="col">Descrição</th>
 			<th scope="col">Data</th>
-			<th scope="col" class="text-center">Responda</th>
 			<th scope="col" class="text-center">Excluir</th>
 		</tr>
 	</thead>

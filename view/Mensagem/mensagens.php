@@ -17,10 +17,7 @@
 							"<td>". $key['assunto'] . "</td>".
 							"<td>". $key['descricao'] ."</td>".
 							"<td>". $key['data_msg'] ."</td>".
-							"<td class='text-center'>".
-								"<i data-toggle='modal' data-target='.bd-example-mensagem-lg' class='fas fa-reply response'></i>".
-							"</td>".
-							"<td class='text-center'>".
+							"<td class='text-center excluir-msg'>".
 								"<i class='far fa-trash-alt excluir'></i>".
 							"</td>".
 							"<td id='id' class='none'>".

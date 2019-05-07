@@ -382,3 +382,9 @@ td.big-text{
 .conversas-textarea{
 	padding: 20px;
 }
+
+.excluir-msg{
+	cursor: pointer;
+}
+
+

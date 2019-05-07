@@ -86,9 +86,9 @@
 		=>	Como ser o envios de mensagem e como vai ser os retornos.
 
 	## MENSAGEM ##
-		=>	Quanto passar uma vez pelo "ja" ele não retornora mais sobre o comando VERIFICAR.
-		=>	Mensagem sobre o assunto de estoque, pagamento e saida e entrada de produtos
-		=>	Apagar mensagem e deixar como lida
+[OK]	=>	Quanto passar uma vez pelo "ja" ele não retornora mais sobre o comando VERIFICAR.
+[OK]	=>	Mensagem sobre o assunto de estoque, pagamento e saida e entrada de produtos
+[OK]	=>	Apagar mensagem e deixar como lida
 		[FAZER PLANEJAR]
 
 
