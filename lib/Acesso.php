@@ -16,21 +16,21 @@ class Acesso{
 		// $pagina É o arquivo atal que o usuario esta acessando
 
 		if ($pagina == 'Perfil' || $pagina == 'Servicos') {
+			// Pasta Perfiel e servicos
 			$this->acesso = in_array('1', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
 		}else if ($pagina == 'Mensagem') {
+			// Mensagem
 			$this->acesso = in_array('4', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
 		}else if ($pagina == 'Fornecedores' || $pagina == 'Clientes' || $pagina == 'Produtos') {
+			// Fornecedores, Clientes e Produtos
 			$this->acesso = in_array('5', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
+		}else if ($pagina == 'Pedidos') {
+			// Pedidos
+			$this->acesso = in_array('6', $this->arrays) ? true : in_array('0', $this->arrays) ? true : false;
 		}else{
 			// Liberado
 			$this->acesso = true;
 		}
-
-		// // exit();
-
-		// if ($this->acessos == '0' || $this->acessos == null) {
-		// 	$this->acesso = true;
-		// }
 
 		return $this->acesso;
 	}
@@ -38,9 +38,6 @@ class Acesso{
 	public function setTipos(){
 		$this->acessos = $_SESSION['acessos'] ?? '0';
 		$this->arrays = explode("/", $this->acessos);
-
-		// print_r($this->arrays);
-		// exit();
 	}
 }
 

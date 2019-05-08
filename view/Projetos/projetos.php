@@ -1,6 +1,16 @@
 <?php
+
+	// Usuarios			1		=>	Perfil, Servicos
+	// Projetos			2		=>	Projetos
+	// Relatorios		3		=>	Click, relatorios
+	// Mensagens		4		=>	Mensagem
+	// Fornecedores		5		=>	Fornecedores, CLientes, Produtos
+
 	session_start();
+
 	$id = $_SESSION['id_usuario'];
+	$acessos = $_SESSION['acessos'] ?? '0';
+	$arraysAcesso = explode("/", $acessos);
 
 	function situacaoCor($situacao){
 		if ($situacao) {
@@ -16,21 +26,9 @@
 	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
-		$query = "SELECT T.ACESSO AS ACESSO FROM USUARIO AS U INNER JOIN TIPOS AS T ON T.ID = U.ID_TIPOS WHERE U.ID = " . $id;
-		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-		$stmt->execute();
-		$user = $stmt->fetch();
-		$acesso = $user['acesso'];
+		$acesso = in_array('2', $arraysAcesso) ? true : in_array('0', $arraysAcesso) ? true : false;
 
-		// if ($acesso == '0') {
-		// 	print_r('Passando!');
-		// }
-		// print_r($acesso);
-		// exit();
-
-
-		if ($acesso == '0') {
-			$acessos = true;
+		if ($acesso) {
 			$query = "SELECT
 						P.ID AS ID,
 						U.NOME AS NOME,
@@ -45,7 +43,6 @@
 					ON
 						P.ID_USER = U.ID";
 		}else{
-			$acessos = false;
 			$query = "SELECT
 						P.ID AS ID,
 						U.NOME AS NOME,

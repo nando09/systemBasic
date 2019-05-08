@@ -37,6 +37,8 @@
 	<meta name="author" content="Fernando Batista">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link type="text/css" href="/System/systemBasic/bootstrap/css2/bootstrap.css" rel="stylesheet">
+	<script src="/System/systemBasic/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="/System/systemBasic/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="/System/systemBasic/css/login.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -81,5 +83,5 @@
 		?>
 	</div>
 </body>
-
+<script src="/System/systemBasic/js/patternsMontar.js" type="text/javascript"></script>
 </html>

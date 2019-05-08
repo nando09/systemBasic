@@ -135,6 +135,7 @@ function salvarAcesso(){
 		Relatorios		:	$('#Relatorios').is(':checked'),
 		Mensagens		:	$('#Mensagens').is(':checked'),
 		Fornecedores	:	$('#Fornecedores').is(':checked'),
+		entradaSaida	:	$('#entradaSaida').is(':checked'),
 		nome			:	$('#nome-acesso').val()
 	}
 

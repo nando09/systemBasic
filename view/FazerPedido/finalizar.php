@@ -25,6 +25,16 @@
 
 
 			if ($retorno->execute()) {
+				// $query = "SELECT ID_PRODUTO, QUANTIDADE FROM PEDINDO WHERE PE.FINALIZADO = 'NAO' AND PE.ID_CLIENTE = " . $id_cf;
+				// $stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+				// $stmt->execute();
+				// $sum = $stmt->fetch();
+				// $id_detalhe = $sum['id'];
+
+				// $updade_pedido = "UPDATE PEDINDO SET FINALIZADO = 'SIM', ID_DETALHE = ". $id_detalhe ." WHERE ID_CLIENTE = " . $id_cf;
+				// $up = $db->prepare($updade_pedido, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+				// $up->execute();
+
 				$retorno = 'C';
 				$query = "SELECT ID FROM DETALHE_PEDIDO WHERE ID_CLIENTE = $id_cf AND VALOR = $valor AND VENCIMENTO = '$vencimento' AND STATUS = '$status'";
 				$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));

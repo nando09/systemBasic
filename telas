@@ -89,6 +89,7 @@
 [OK]	=>	Quanto passar uma vez pelo "ja" ele não retornora mais sobre o comando VERIFICAR.
 [OK]	=>	Mensagem sobre o assunto de estoque, pagamento e saida e entrada de produtos
 [OK]	=>	Apagar mensagem e deixar como lida
+		=>	Não atualizar sempre com o refresh, e sim quando o usuario quiser ou quando sair produto
 		[FAZER PLANEJAR]
 
 

@@ -12,9 +12,10 @@
 			$Relatorios			=	($_POST['Relatorios'] == 'true') 	?	'/3'	:	''	;
 			$Mensagens			=	($_POST['Mensagens'] == 'true') 	?	'/4'	:	''	;
 			$Fornecedores		=	($_POST['Fornecedores'] == 'true') 	?	'/5'	:	''	;
+			$entradaSaida		=	($_POST['entradaSaida'] == 'true') 	?	'/6'	:	''	;
 			$nome				=	$_POST['nome'];
 
-			$acessos = $Usuarios . $Projetos . $Relatorios . $Mensagens . $Fornecedores . '/';
+			$acessos = $Usuarios . $Projetos . $Relatorios . $Mensagens . $Fornecedores . $entradaSaida . '/';
 
 
 			// exit();

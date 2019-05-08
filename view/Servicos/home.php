@@ -116,6 +116,13 @@
 								<span class="float-right">(Poderar mexer em todas as funções)</span>
 							</div>
 						</div>
+						<div class="col-md-12">
+							<div class="form-check border-gray">
+								<input class="form-check-input position-static margin-zero" type="checkbox" id="entradaSaida" value="5" aria-label="...">
+								<label>Entrada/Saída</label>
+								<span class="float-right">(Ver tudo sobre entrada e saída)</span>
+							</div>
+						</div>
 					</div>
 					<button id="salvar-acesso" type="button" class="btn btn-primary">SALVAR</button>
 				</div>
