@@ -115,20 +115,20 @@ function adicionaProjetos(){
 }
 
 function validaProjeto(){
-	var nome = $("#nome").val('');
-	var data = $("#data").val('');
-	var descricao = $("#descricao").val('');
+	var nome		=	$("#nome").val();
+	var data		=	$("#data").val();
+	var descricao	=	$("#descricao").val();
 
 	if(nome == ''){
-		mensagemValida(nome);
+		mensagemValida('nome');
 		$("#nome").focus();
 		return false;
 	}else if(data == ''){
-		mensagemValida(data);
+		mensagemValida('data');
 		$("#data").focus();
 		return false;
 	}else if(descricao == ''){
-		mensagemValida(descrição);
+		mensagemValida('descrição');
 		$("#descricao").focus();
 		return false;
 	}else{
