@@ -1,6 +1,14 @@
 <?php
 	include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
+	function subtraiEstoque($produto_id, $qnt, $db){
+		$updade_pedido = "UPDATE PRODUTO SET QUANTIDADE = QUANTIDADE - :quantidade WHERE ID = :id_produto";
+		$up = $db->prepare($updade_pedido, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+		$up->bindParam(':quantidade', $qnt, PDO::PARAM_INT);
+		$up->bindParam(':id_produto', $produto_id, PDO::PARAM_INT);
+		$up->execute();
+	}
+
 	try{
 		$id_produto = $_POST['id_produto'];
 		$id_cf = $_POST['id_cf'];
@@ -9,9 +17,12 @@
 		$finalizado = $_POST['finalizado'] ?? '';
 
 
+
 		if (empty($finalizado)) {
 			if ($tipo == 'Cliente') {
 				if ($db->query("INSERT INTO PEDINDO (ID_PRODUTO, ID_CLIENTE, QUANTIDADE) VALUES (". $id_produto .", ". $id_cf .", ". $quantidade .")")) {
+
+					subtraiEstoque($id_produto, $quantidade, $db);
 					$retorno = 'S';
 				}
 			}else{
@@ -33,6 +44,7 @@
 					$retorno = $db->prepare($update, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 					$retorno->execute();
 
+					subtraiEstoque($id_produto, $quantidade, $db);
 					$retorno = 'S';
 				}
 			}else{

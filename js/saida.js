@@ -66,10 +66,11 @@ function nroProdutosCarrinho(id_cf, tipo){
 
 function tirarCarrinho(id_produto, id_cf, tipo, id_finalizado){
 	var posts = {
-		id_produto: id_produto,
-		id_cf: id_cf,
-		tipo: tipo,
-		finalizado: id_finalizado
+		id_produto		:	id_produto,
+		id_cf			:	id_cf,
+		tipo			:	tipo,
+		finalizado		:	id_finalizado,
+		id_finalizado	:	$("#id_finalizado").text()
 	}
 
 	$.ajax({
