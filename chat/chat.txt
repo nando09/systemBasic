@@ -1,0 +1,3 @@
+chat{
+	mensagem:	id, id_de, id_para, mensagem
+	usuarios:	id, nome, usuario, senha, foto
