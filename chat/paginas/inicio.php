@@ -9,4 +9,9 @@
 		<p><input type="submit" name="Entrar"  placeholder="********" class="btn btn-primary btn-lg btn-block"></p>
 		<input type="hidden" name="env" value="login">
 	</form>
+	<?php 
+		if (isset($_POST['env']) && $_POST['env'] == "login") {
+			echo "Tentei logar!";
+		}
+	?>
 </div>
