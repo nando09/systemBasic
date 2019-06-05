@@ -1,6 +1,7 @@
 <?php
 	$id = $view_dados[0];
 	$id_detalhe = $view_dados[1] ?? '';
+	$id_pedido = isset($view_dados[1])? '|' . $view_dados[1] : '';
 
 	// print_r($view_dados);
 	// exit();
@@ -40,7 +41,9 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
 			<div class="col-md-1">
-				<p class="admin-home">System</p>
+				<div class="header_logo">
+					<a href="http://stockys.com.br/" target="_blank">Stock<span>Ys</span></a>
+				</div>
 			</div>
 			<div class="col-md-3 admin-search">
 				<div class="input-group">
@@ -56,7 +59,7 @@
 						<a class="nav-item nav-link" href="/System/systemBasic/">Entre em contado</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-item nav-link" href="/System/systemBasic/FazerPedido/<?= $tipo ?>/<?= $id ?>">
+						<a class="nav-item nav-link" href="/System/systemBasic/FazerPedido/<?= $tipo ?>/<?= $id . $id_pedido ?>">
 							<i class="fas fa-cart-plus"></i>
 							<span class="pedidos_feitos badge badge-light"></span>
 						</a>

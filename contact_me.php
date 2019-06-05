@@ -1,5 +1,5 @@
 <?php
-// Check for empty fields
+
 if(empty($_POST['name'])      ||
    empty($_POST['email'])     ||
    empty($_POST['phone'])     ||
@@ -9,18 +9,28 @@ if(empty($_POST['name'])      ||
    echo "No arguments Provided!";
    return false;
    }
-   
+
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $phone = strip_tags(htmlspecialchars($_POST['phone']));
 $message = strip_tags(htmlspecialchars($_POST['message']));
-   
-// Create the email and send the message
-$to = 'softica@softica.com.br'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+
 $email_subject = "Contato pelo site:  $name";
+
 $email_body = "Nova mensagem recebida.\n\n"."Detalhes do e-mail:\n\nNome: $name\n\nE-mail: $email_address\n\nTelefone: $phone\n\nMensagem:\n$message";
-$headers = "From: noreply@yourdomain.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-$headers .= "Reply-To: $email_address";   
-mail($to,$email_subject,$email_body,$headers);
-return true;         
+
+// O remetente deve ser um e-mail do seu domínio conforme determina a RFC 822.
+// O return-path deve ser ser o mesmo e-mail do remetente.
+$to = 'softica@softica.com.br';
+$headers = "MIME-Version: 1.1\n";
+$headers .= "Content-type: text/plain; charset=UTF-8\n";
+$headers .= "From: softica@softica.com.br\n"; // remetente
+$headers .= "Return-Path: softica@softica.com.br\n"; // return-path
+$headers .= "Reply-To: $email_address\n";
+$envio = mail("softica@softica.com.br", $email_subject, $email_body, $headers, "-r".'softica@outlook');
+ 
+if($envio)
+ echo "Mensagem enviada com sucesso seis!";
+else
+ echo "A mensagem não pode ser enviada";
 ?>

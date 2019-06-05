@@ -46,7 +46,7 @@
 				$sum = $stmt->fetch();
 				$id_detalhe = $sum['id'];
 
-				$updade_pedido = "UPDATE PEDINDO SET FINALIZADO = 'SIM', ID_DETALHE = ". $id_detalhe ." WHERE ID_CLIENTE = " . $id_cf;
+				$updade_pedido = "UPDATE PEDINDO SET FINALIZADO = 'SIM', ID_DETALHE = ". $id_detalhe ." WHERE ID_CLIENTE = " . $id_cf . " AND FINALIZADO = 'NAO'";
 				$up = $db->prepare($updade_pedido, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 				$up->execute();
 			}
@@ -72,7 +72,7 @@
 				$sum = $stmt->fetch();
 				$id_detalhe = $sum['id'];
 
-				$db->query("UPDATE FORNECENDO SET FINALIZADO = 'SIM', ID_DETALHE = ". $id_detalhe ." WHERE ID_FORNECEDOR = " . $id_cf);
+				$db->query("UPDATE FORNECENDO SET FINALIZADO = 'SIM', ID_DETALHE = ". $id_detalhe ." WHERE ID_FORNECEDOR = " . $id_cf . "AND FINALIZADO = 'NAO'");
 			}
 		}
 
