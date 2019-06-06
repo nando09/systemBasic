@@ -119,6 +119,20 @@ a:hover{
 	font-weight: bold;
 }
 
+#footer .header_logo a{
+	padding: 20px;
+	background: wheat;
+}
+
+#footer .header_logo_fernando a{
+	padding: 20px;
+	color: wheat;
+}
+
+#footer .header_logo_fernando img{
+	margin-left: 20px;
+}
+
 .header_logo a span
 {
 	color: #ff6b09;
