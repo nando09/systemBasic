@@ -3,7 +3,6 @@
 	$cf = 'Cliente';
 ?>
 <?php include 'view/patterns/header1.php' ?>
-	<button onclick='history.go(-1);'>Voltar</button>;
 	<div class="container">
 		<div id="produtos" class="row">
 			<div class="col-md-12">
@@ -25,17 +24,8 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<div class="form-group">
-						<label for="data-finalizar">Data de entrega!</label>
-						<input type="date" class="form-control" id="data-finalizar" placeholder="name@example.com">
-					</div>
-					<select id="status" class="form-control" id="exampleFormControlSelect1">
-						<option>PENDENTE</option>
-						<option>PAGO</option>
-					</select>
-				</div>
-				<div class="modal-footer">
-					<button id="finalizar" type="button" class="btn btn-primary">Gravar pedido</button>
+					<p class="text-center">Não precisa finalizar somente fazer suas alterações que já atualiza o pedido automaticamente.</p>
+					<p class="text-center">Sempre verifique o detalhe do pedido para ter a certeza da atualização.</p>
 				</div>
 			</div>
 		</div>

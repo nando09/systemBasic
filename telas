@@ -94,6 +94,10 @@
 
 
 
+	## PEDIDO ##
+[OK]	=>	Quando registrar um pedido com o mesmo produto da erro no detalhe
+		=>	Finalização na hora de edição dos pedidos da erro.
+
 
 
 

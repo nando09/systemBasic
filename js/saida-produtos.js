@@ -167,6 +167,12 @@ function nroProdutosCarrinho(id_cf, tipo){
 
 function finalizar(id_cf, cf, vencimento, status){
 	// console.log('ID: ' + id_cf + '<br>TIPO: ' + cf + '<br>VENCIMENTO: ' + vencimento + '<br>STATUS: ' + status);
+
+		// id_cf = 'ID que identifica o cliente ou fornecedor';
+		// cf = 'Sabe se é cliente ou fornecedor';
+		// vencimento = 'Data indicada para entregue';
+		// status = 'Se já foi pago ou não';
+
 	$.ajax({
 		url: '/System/systemBasic/view/FazerPedido/finalizar.php', // Url do lado server que vai receber o arquivo
 		dataType: 'json',

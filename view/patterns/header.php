@@ -40,7 +40,9 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<div class="col-md-1">
-				<p class="admin-home">System</p>
+				<div class="header_logo">
+					<a href="http://stockys.com.br/" target="_blank">Stock<span>Ys</span></a>
+				</div>
 			</div>
 			<div class="col-md-3 admin-search">
 				<div class="input-group">
@@ -57,13 +59,14 @@
 					</li>
 					<li class="nav-item">
 						<div class="btn-group">
-							<div class="nav-link">
+							<div id="nav_mensagem" class="nav-link">
 								<div class="msg-principal">
 									<p id="msg-top" class="text-center none">0</p>
 								</div>
 								<a href="/System/systemBasic/Mensagem">
 									<i class="fas fa-sms"></i>
 								</a>
+								<i id="reload_msg" class="nav-link font-weight-bold fas fa-sync-alt"></i>
 							</div>
 						</div>
 					</li>

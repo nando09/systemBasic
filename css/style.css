@@ -113,6 +113,31 @@ a:hover{
 	padding: 0.5rem;
 }
 
+.header_logo a
+{
+	color: #e38c01;
+	font-weight: bold;
+}
+
+#footer .header_logo a{
+	padding: 20px;
+	background: wheat;
+}
+
+#footer .header_logo_fernando a{
+	padding: 20px;
+	color: wheat;
+}
+
+#footer .header_logo_fernando img{
+	margin-left: 20px;
+}
+
+.header_logo a span
+{
+	color: #ff6b09;
+}
+
 .list-group-item {
 	background-color: #f8f9fa;
 	border-radius: 0;
@@ -217,8 +242,16 @@ a:hover{
 .msg-principal, .msg-entrada{
 	position: absolute;
 	top: 0;
-	left: 24px;
+	left: 18px;
 	width: 18px;
+}
+
+#nav_mensagem{
+    padding: 0.2rem;
+}
+
+#nav_mensagem #reload_msg{
+	cursor: pointer;
 }
 
 .msg-principal > p, .msg-entrada > p{
@@ -376,7 +409,7 @@ td.big-text{
 }
 
 #conversa-box .btn:not(:disabled):not(.disabled) {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .conversas-textarea{
