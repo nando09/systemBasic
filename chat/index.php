@@ -12,6 +12,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Mukta+Vaani" rel="stylesheet">
 </head>
 <body>
+	<?php if (isset($_SESSION['nome'])): ?>
+		<p>Bem vindo <code><?= $_SESSION['nome']; ?><code></code></p>
+	<?php endif ?>
 	<div class="row">
 		<div class="col-md-6 offset-md-3">
 			<?php

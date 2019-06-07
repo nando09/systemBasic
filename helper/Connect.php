@@ -5,7 +5,7 @@ namespace helper;
 class Connect{
 	const srvMyhost = 'localhost';
 	const srvMyuser = 'postgres';
-	const srvMypass = 'fer7660nando';
+	const srvMypass = 'Sof@1502';
 	const srvMyname = 'system';
 	const srvMyport = '5432';
 

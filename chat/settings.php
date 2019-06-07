@@ -1,6 +1,6 @@
 <?php
 	$user = 'root';
-	$pass = 'fer7660nando';
+	$pass = '';
 	$base = 'chat';
 	$host = 'localhost';
 	$port = '';
