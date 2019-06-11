@@ -12,26 +12,32 @@
 	try{
 		include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
-		$nome = $_POST['id'];
-
+		$nome		=	$_POST['id'];
+		// print_r($nome);
 		$query = "SELECT
 						E.ID AS ID,
 						U.NOME AS RECEBENDO,
+						A.ID_ENVIANDO AS EU,
+						E.ENVIADO_POR AS ENVIADO_POR,
 						S.NOME AS ENVIANDO,
 						E.ASSUNTO AS ASSUNTO,
 						E.MENSAGEM AS MENSAGEM,
 						E.LIDA AS LIDA
 					FROM
+						ASSUNTO AS A
+					INNER JOIN
 						ENTRADAMENSAGEM AS E
+					ON
+						E.ASSUNTO = A.ID
 					INNER JOIN
 						USUARIO AS U
 					ON
-						E.ID_RECEBENDO = U.ID
+						A.ID_RECEBENDO = U.ID
 					INNER JOIN
 						USUARIO AS S
 					ON
-						E.ID_ENVIANDO = S.ID
-					WHERE E.ID = :id";
+						A.ID_ENVIANDO = S.ID
+					WHERE E.ASSUNTO = :id";
 
 		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 		$stmt->bindParam(':id', $nome, PDO::PARAM_INT);
@@ -39,14 +45,16 @@
 		// print_r($nome);
 
 		if ($stmt->execute()) {
-			$user = $stmt->fetch();
+			$user = $stmt->fetchAll();
 
-			$mensagem = explode("&&END", $user['mensagem']);
-			$mensagem = array_reverse($mensagem);
+			foreach ($user as $key) {
+				if ($key['enviado_por'] == $key['eu']) {
+					$lado = 'right';
+				}else{
+					$lado = 'left';
+				}
 
-			foreach ($mensagem as $key => $value) {
-				$lado = !($key % 2) ? 'left' : 'right';
-				$p .= "<p class='" . $lado . " mensagem-box'>". $value ."</p>";
+				$p .= "<p class='". $lado ." mensagem-box'>". $key['mensagem'] ."</p>";
 			}
 
 			$retorno = array(

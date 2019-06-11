@@ -15,40 +15,48 @@
 
 		if ($acesso) {
 			$query = "SELECT
-						E.ID AS ID,
+						A.ID AS ID,
 						U.NOME AS RECEBENDO,
 						S.NOME AS ENVIANDO,
-						E.ASSUNTO AS ASSUNTO,
+						A.NOME AS ASSUNTO,
 						E.MENSAGEM AS MENSAGEM,
 						E.LIDA AS LIDA
 					FROM
-						ENTRADAMENSAGEM AS E
+						ASSUNTO AS A
 					INNER JOIN
 						USUARIO AS U
 					ON
-						E.ID_RECEBENDO = U.ID
+						A.ID_RECEBENDO = U.ID
 					INNER JOIN
 						USUARIO AS S
 					ON
-						E.ID_ENVIANDO = S.ID";
+						A.ID_ENVIANDO = S.ID
+					INNER JOIN
+						ENTRADAMENSAGEM AS E
+					ON
+						E.ASSUNTO = A.ID";
 		}else{
 			$query = "SELECT
-						E.ID AS ID,
+						A.ID AS ID,
 						U.NOME AS RECEBENDO,
 						S.NOME AS ENVIANDO,
-						E.ASSUNTO AS ASSUNTO,
+						A.NOME AS ASSUNTO,
 						E.MENSAGEM AS MENSAGEM,
 						E.LIDA AS LIDA
 					FROM
-						ENTRADAMENSAGEM AS E
+						ASSUNTO AS A
 					INNER JOIN
 						USUARIO AS U
 					ON
-						E.ID_RECEBENDO = U.ID
+						A.ID_RECEBENDO = U.ID
 					INNER JOIN
 						USUARIO AS S
 					ON
-						E.ID_ENVIANDO = S.ID
+						A.ID_ENVIANDO = S.ID
+					INNER JOIN
+						ENTRADAMENSAGEM AS E
+					ON
+						E.ASSUNTO = A.ID
 					WHERE
 						E.ID = " . $id;
 		}
@@ -63,7 +71,7 @@
 				<td>". $key['recebendo'] ."</td>
 				<td class='text-center'>". $key['assunto'] ."</td>
 				<td title='". $key['mensagem'] ."' class='big-text'>". $key['mensagem'] ."</td>
-				<td id='id' class='none'>". $key['id'] ."</td>				
+				<td id='id' class='none'>". $key['id'] ."</td>
 			</tr>";
 		}
 

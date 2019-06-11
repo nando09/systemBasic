@@ -113,8 +113,8 @@ function adicionaProjetos(){
 
 function adicionarMsg(){
 	var post = {
-		id			:	$("#id-msg").val(),
-		descricao	:	$("#descricao-msg").val()
+		id					:	$("#id-msg").val(),
+		descricao			:	$("#descricao-msg").val(),
 	}
 
 	// console.log(post);
@@ -158,6 +158,7 @@ function chamaMensagem(id){
 		data: post,
 		success: function(dados) {
 			if (dados.retorno == 'S') {
+				$("#assunto_id").text(dados.assunto);
 				$("#conversas .msg-conversas p").remove();
 				$("#conversas .msg-conversas").append(dados.p);
 			}
