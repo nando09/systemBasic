@@ -19,8 +19,7 @@
 						U.NOME AS RECEBENDO,
 						S.NOME AS ENVIANDO,
 						A.NOME AS ASSUNTO,
-						E.MENSAGEM AS MENSAGEM,
-						E.LIDA AS LIDA
+						A.MENSAGEM AS MENSAGEM
 					FROM
 						ASSUNTO AS A
 					INNER JOIN
@@ -30,19 +29,14 @@
 					INNER JOIN
 						USUARIO AS S
 					ON
-						A.ID_ENVIANDO = S.ID
-					INNER JOIN
-						ENTRADAMENSAGEM AS E
-					ON
-						E.ASSUNTO = A.ID";
+						A.ID_ENVIANDO = S.ID";
 		}else{
 			$query = "SELECT
 						A.ID AS ID,
 						U.NOME AS RECEBENDO,
 						S.NOME AS ENVIANDO,
 						A.NOME AS ASSUNTO,
-						E.MENSAGEM AS MENSAGEM,
-						E.LIDA AS LIDA
+						A.MENSAGEM AS MENSAGEM
 					FROM
 						ASSUNTO AS A
 					INNER JOIN
@@ -53,12 +47,10 @@
 						USUARIO AS S
 					ON
 						A.ID_ENVIANDO = S.ID
-					INNER JOIN
-						ENTRADAMENSAGEM AS E
-					ON
-						E.ASSUNTO = A.ID
 					WHERE
-						E.ID = " . $id;
+						A.ID_RECEBENDO = " . $id . "
+					OR
+						A.ID_ENVIANDO = " . $id;
 		}
 
 		$stmt = $db->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));

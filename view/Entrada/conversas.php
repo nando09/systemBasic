@@ -48,7 +48,7 @@
 			$user = $stmt->fetchAll();
 
 			foreach ($user as $key) {
-				if ($key['enviado_por'] == $key['eu']) {
+				if ($key['enviado_por'] == $id) {
 					$lado = 'right';
 				}else{
 					$lado = 'left';
@@ -59,7 +59,8 @@
 
 			$retorno = array(
 				'retorno'	=>	'S',
-				'p'			=>	$p
+				'p'			=>	$p,
+				'conversa'	=>	$nome
 			);
 		}
 

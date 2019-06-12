@@ -161,6 +161,17 @@ function chamaMensagem(id){
 				$("#assunto_id").text(dados.assunto);
 				$("#conversas .msg-conversas p").remove();
 				$("#conversas .msg-conversas").append(dados.p);
+				var fechouConversa = true;
+
+				setTimeout(function(){
+					if (fechouConversa) {
+						chamaMensagem(dados.conversa);
+					}
+				}, 3000);
+
+				$('.modal-mensagem').on('hide.bs.modal', function (event) {
+					fechouConversa = false;
+				});
 			}
 		},
 		error: function(dados) {

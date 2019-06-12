@@ -395,17 +395,20 @@ td.big-text{
 	border-radius: 10px;
 	padding: 10px;
 	margin-top: 10px;
+	max-width: 400px;
 }
 
 .left{
-	text-align: left;
+	float: left;
+	clear: both;
 	color: white;
-	background: #9ea0a2;
+	background: #724521;
 }
 
 .right{
-	text-align: right;
-	background: #dee2e6;
+	float: right;
+	clear: both;
+	background: #fff;
 }
 
 #conversa-box .btn:not(:disabled):not(.disabled) {
