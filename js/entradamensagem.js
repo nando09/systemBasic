@@ -145,8 +145,6 @@ function adicionarMsg(){
 }
 
 function chamaMensagem(id){
-	var objDiv = document.getElementById("style-6");
-	objDiv.scrollTop = objDiv.scrollHeight;
 
 	var post = {
 		id	:	id
@@ -164,11 +162,15 @@ function chamaMensagem(id){
 				$("#assunto_id").text(dados.assunto);
 				$("#conversas .msg-conversas > div").remove();
 				$("#conversas .msg-conversas").append(dados.p);
+
+				var objDiv = document.getElementById("style-6");
+				objDiv.scrollTop = objDiv.scrollHeight;
+
 				var fechouConversa = true;
 
 				setTimeout(function(){
 					if (fechouConversa) {
-						// chamaMensagem(dados.conversa);
+						chamaMensagem(dados.conversa);
 					}
 				}, 3000);
 
