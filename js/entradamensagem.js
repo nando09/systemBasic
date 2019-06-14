@@ -145,6 +145,9 @@ function adicionarMsg(){
 }
 
 function chamaMensagem(id){
+	var objDiv = document.getElementById("style-6");
+	objDiv.scrollTop = objDiv.scrollHeight;
+
 	var post = {
 		id	:	id
 	}
@@ -159,13 +162,13 @@ function chamaMensagem(id){
 		success: function(dados) {
 			if (dados.retorno == 'S') {
 				$("#assunto_id").text(dados.assunto);
-				$("#conversas .msg-conversas p").remove();
+				$("#conversas .msg-conversas > div").remove();
 				$("#conversas .msg-conversas").append(dados.p);
 				var fechouConversa = true;
 
 				setTimeout(function(){
 					if (fechouConversa) {
-						chamaMensagem(dados.conversa);
+						// chamaMensagem(dados.conversa);
 					}
 				}, 3000);
 
@@ -208,6 +211,7 @@ $(document).ready(function() {
 	});
 
 	$("#salvar-msg").click(function(){
+		$('.input-group .richText .richText-editor > div').remove();
 		adicionarMsg();
 	});
 

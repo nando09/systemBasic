@@ -54,7 +54,10 @@
 					$lado = 'left';
 				}
 
-				$p .= "<p class='". $lado ." mensagem-box'>". $key['mensagem'] ."</p>";
+				$mensagem = str_replace("<div", "<p", $key['mensagem']);
+				$mensagem = str_replace("/div>", "/p>", $mensagem);
+
+				$p .= "<div class='". $lado ." mensagem-box'>". $mensagem ."</div>";
 			}
 
 			$retorno = array(

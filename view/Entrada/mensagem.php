@@ -57,12 +57,15 @@
 		$stmt->execute();
 		$user = $stmt->fetchAll();
 		foreach ($user as $key) {
+			$mensagem = str_replace("<div>", "", $key['mensagem']);
+			$mensagem = str_replace("</div>", " ", $mensagem);
+
 			$retorno .= "
 			<tr data-toggle='modal' data-target='.modal-mensagem'>
 				<td>". $key['enviando'] ."</td>
 				<td>". $key['recebendo'] ."</td>
 				<td class='text-center'>". $key['assunto'] ."</td>
-				<td title='". $key['mensagem'] ."' class='big-text'>". $key['mensagem'] ."</td>
+				<td title='". $key['mensagem'] ."' class='big-text'>". $mensagem ."</td>
 				<td id='id' class='none'>". $key['id'] ."</td>
 			</tr>";
 		}

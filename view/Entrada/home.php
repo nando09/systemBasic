@@ -21,7 +21,65 @@
 					</div>
 					<div class="form-group col-md-12">
 						<label>Mensagem </label>
-						<textarea id="descricao" name="descricao" type="text" class="form-control"></textarea>
+						<input type="text" name="descricao" id="descricao" class="form-control">
+						<script type="text/javascript">
+							$(document).ready(function(){
+								$("#descricao").richText({
+									// text formatting
+									bold: false,
+									italic: false,
+									underline: false,
+
+									// text alignment
+									leftAlign: false,
+									centerAlign: false,
+									rightAlign: false,
+									justify: false,
+
+									// lists
+									ol: false,
+									ul: false,
+
+									// title
+									heading: false,
+
+									// fonts
+									fonts: false,
+									fontColor: false,
+									fontSize: false,
+
+									// uploads
+									imageUpload: false,
+									fileUpload: false,
+
+									// media
+									videoEmbed: false,
+
+									// link
+									urls: false,
+
+									// tables
+									table: false,
+
+									// code
+									removeStyles: false,
+									code: false,
+
+									// privacy
+									youtubeCookies: false,
+									
+									// developer settings
+									useSingleQuotes: false,
+									height: 0,
+									heightPercentage: 0,
+									id: "",
+									class: "",
+									useParagraph: false,
+									maxlength: 0
+								});
+							});
+						</script>
+						<!-- <textarea id="descricao" name="descricao" type="text" class="form-control"></textarea> -->
 					</div>
 				</div>
 				<button id="salvar-projeto" type="button" class="btn btn-primary">Salvar</button>
@@ -38,17 +96,74 @@
 				</button>
 				<h2 class="title-pag">Conversa</h2>
 				<div id="conversas" class="row">
+					<div id="style-6" class="col-md-12 msg-conversas">
+					</div>
 					<div class="form-group conversas-textarea col-md-12">
 						<div class="input-group">
 							<input type="hidden" id="id-msg">
-							<textarea id="descricao-msg" name="descricao" type="text" class="form-control"></textarea>
-							<div class="input-group-append" id="button-addon4">
-								<button id="salvar-msg" class="btn btn-primary" type="button">Enviar</button>
-								<button id="limpar-msg" class="btn btn-danger" type="button">Limpar</button>
-							</div>
+							<input type="text" name="descricao" id="descricao-msg" class="form-control">
+							<script type="text/javascript">
+								$(document).ready(function(){
+									$("#descricao-msg").richText({
+										// text formatting
+										bold: false,
+										italic: false,
+										underline: false,
+
+										// text alignment
+										leftAlign: false,
+										centerAlign: false,
+										rightAlign: false,
+										justify: false,
+
+										// lists
+										ol: false,
+										ul: false,
+
+										// title
+										heading: false,
+
+										// fonts
+										fonts: false,
+										fontColor: false,
+										fontSize: false,
+
+										// uploads
+										imageUpload: false,
+										fileUpload: false,
+
+										// media
+										videoEmbed: false,
+
+										// link
+										urls: false,
+
+										// tables
+										table: false,
+
+										// code
+										removeStyles: false,
+										code: false,
+
+										// privacy
+										youtubeCookies: false,
+										
+										// developer settings
+										useSingleQuotes: false,
+										height: 0,
+										heightPercentage: 0,
+										id: "",
+										class: "",
+										useParagraph: false,
+										maxlength: 0
+									});
+								});
+							</script>
 						</div>
-					</div>
-					<div class="col-md-12 msg-conversas">
+						<div class="input-group-append" id="button-addon4">
+							<button id="salvar-msg" class="btn btn-primary" type="button">Enviar</button>
+							<button id="limpar-msg" class="btn btn-danger" type="button">Limpar</button>
+						</div>
 					</div>
 				</div>
 			</div>

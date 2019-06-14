@@ -17,6 +17,9 @@
 	<script src="/System/systemBasic/sweetalert/docs/assets/sweetalert/sweetalert.min.js"></script>
 	<script src="/System/systemBasic/chart/chart.js/dist/Chart.min.js"></script>
 	<script src="/System/systemBasic/js/money.js" type="text/javascript"></script>
+
+	<link rel="stylesheet" type="text/css" href="/System/systemBasic/js/RichText/src/richtext.min.css">
+	<script src="/System/systemBasic/js/RichText/src/jquery.richtext.js" type="text/javascript"></script>
 <!-- 	<script src="/System/systemBasic/js/script.js" type="text/javascript"></script> -->
 	<style type="text/css">
 		table {
