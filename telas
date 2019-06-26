@@ -75,15 +75,17 @@
 [OK]	=>	O master do sistema, pode dar projetos para seus usuarios do sistema.
 [OK]	=>	O usuario vai receber esse projeto para fazer e mandar quando tiver concluido
 
+
 	## NOTICIA ##
 		=>	Todos as noticias sobre o sistema.
 		[FAZER PLANEJAR]
 		=>	Banco de dados e de onde vai vir que todos os clientes possam ter acesso.
 
 	## ENTRADA ##
-		=>	Conversa entra usuarios
+[OK]	=>	Conversa entra usuarios
 		[FAZER PLANEJAR]
-		=>	Como ser o envios de mensagem e como vai ser os retornos.
+[OK]	=>	Como ser o envios de mensagem e como vai ser os retornos.
+		=>	Numeros de mensagens não lida.
 
 	## MENSAGEM ##
 [OK]	=>	Quanto passar uma vez pelo "ja" ele não retornora mais sobre o comando VERIFICAR.
@@ -114,6 +116,7 @@
 	## SERVIÇO ##
 		=>	Vai encontrar os usuarios em suas redes e seus projetos, mensagens e PLANEJAR MELHOR!
 		=>	Adicionar usuarios e editar o que cada um vai fazer
+		=>	Apagar o projeto em serviços
 		[FAZER PLANEJAR]
 
 
