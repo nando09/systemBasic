@@ -1,6 +1,9 @@
 <?php
 	include_once 'C:/xampp/htdocs/System/systemBasic/lib/conexao.php';
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 	function somarEstoque($produto_id, $qnt, $db){
 		$updade_pedido = "UPDATE PRODUTO SET QUANTIDADE = QUANTIDADE + :quantidade WHERE ID = :id_produto";
 		$up = $db->prepare($updade_pedido, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
