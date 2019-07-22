@@ -11,19 +11,25 @@ X-men
 J	3. A Saga da Fênix Negra
 J	4. Dias de um Futuro Esquecido
 J	5. Deus Ama, Homem Mata
-V	6. Massacre de Mutantes
-V	X - factr = A queda dos mutantes
-V	7. Inferno
+J	6. Massacre de Mutantes
+J	X - factr = A queda dos mutantes
+V	7. Inferno X-factor
 V	8. Programa de Extermínio
 V	9. Atração Fatal
-	10. A Era do Apocalipse
-	11. Massacre
-	12. Fase do Grant Morrison
-	13. Fase do Joss Whedon
-	14. Dinastia M
-	15. Complexo de Messias
-	16. Cisma
-	17. Vingadores vs. X-Men
+T	10. A Era do Apocalipse										não recomenda (tem que saber mais sobre os livros)
+T	11. Massacre												não recomenda (tem que saber mais sobre os livros)
+V	12. X-men E de extinção "Fase do Grant Morrison"
+V	13. X-men SUPERDOTADOS Fase do Joss Whedon
+V	14. Dinastia M
+V	15. Complexo de Messias
+V	X	-	X-men guerra messianica
+V	X	-	X-men Segundo advento
+V	16. Cisma
+V	17. Vingadores vs. X-Men
+V	X	-	Novissimos X-men - X-men de ontem
+V	X	-	Novissimos X-men + Fabulosos X-Men
+V	X	-	Inumanos vs X-men
+
 	18. Fabulosos X-Men - Fase de Brian Michael Bendins
 	19. A Batalha do Átomo
 
