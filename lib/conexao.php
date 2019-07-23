@@ -4,8 +4,7 @@
 	// $db = new PDO('pgsql:host=localhost;port=5432;dbname=system', $user, $pass);
 
 	$user = 'postgres';
-	// $pass = 'Sof@1502';
-	$pass = 'fer7660nando';
+	$pass = 'Sof@1502';
 	$base = 'system';
 	$host = 'localhost';
 	$port = ';port=5432';
